@@ -4,9 +4,9 @@
     <originFiles name="patchMaker.cpp" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\patchMaker.cpp"/>
   </source>
   <testbench>
-    <originFiles name="cppOutput.txt" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\cppOutput.txt"/>
-    <originFiles name="cppOutputRef.txt" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\cppOutputRef.txt"/>
-    <originFiles name="test_bench.cpp" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\test_bench.cpp"/>
     <originFiles name="wedgeData_v3_128.txt" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\wedgeData_v3_128.txt"/>
+    <originFiles name="test_bench.cpp" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\test_bench.cpp"/>
+    <originFiles name="cppOutputRef.txt" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\cppOutputRef.txt"/>
+    <originFiles name="cppOutput.txt" path="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\tanishTestBench\cppOutput.txt"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>
