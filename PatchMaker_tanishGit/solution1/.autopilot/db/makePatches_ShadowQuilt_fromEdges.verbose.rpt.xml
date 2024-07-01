@@ -1,0 +1,188 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'makePatches_ShadowQuilt_fromEdges'" level="0">
+<item name = "Date">Mon Jul  1 18:54:48 2024
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">PatchMaker_tanishGit</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu19p-fsvb3824-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.323 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_solveNextPatchPair_fu_205">solveNextPatchPair, ?, ?, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- shadowQuilt_loop">?, ?, ?, -, -, ?, no</column>
+<column name=" + solveNextColumn_loop">?, ?, ?, -, -, ?, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 1257, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">40, 257, 39655, 117535, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 148, -</column>
+<column name="Register">-, -, 428, -, -</column>
+<specialColumn name="Available SLR">1080, 960, 2042880, 1021440, 80</specialColumn>
+<specialColumn name="Utilization SLR (%)">3, 26, 1, 11, 0</specialColumn>
+<specialColumn name="Available">4320, 3840, 8171520, 4085760, 320</specialColumn>
+<specialColumn name="Utilization (%)">~0, 6, ~0, 2, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="fmul_32ns_32ns_32_2_max_dsp_1_U175">fmul_32ns_32ns_32_2_max_dsp_1, 0, 3, 128, 77, 0</column>
+<column name="sitofp_64ns_32_2_no_dsp_1_U176">sitofp_64ns_32_2_no_dsp_1, 0, 0, 0, 0, 0</column>
+<column name="grp_solveNextPatchPair_fu_205">solveNextPatchPair, 40, 254, 39527, 117458, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln145_fu_403_p2">+, 0, 0, 71, 64, 26</column>
+<column name="add_ln341_fu_307_p2">+, 0, 0, 16, 9, 8</column>
+<column name="result_V_17_fu_389_p2">-, 0, 0, 71, 1, 64</column>
+<column name="sub_ln1311_fu_321_p2">-, 0, 0, 15, 7, 8</column>
+<column name="and_ln501_1_fu_436_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln501_fu_430_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln458_fu_252_p2">icmp, 0, 0, 29, 64, 26</column>
+<column name="icmp_ln475_fu_258_p2">icmp, 0, 0, 20, 32, 1</column>
+<column name="icmp_ln477_fu_409_p2">icmp, 0, 0, 29, 64, 26</column>
+<column name="icmp_ln486_1_fu_476_p2">icmp, 0, 0, 29, 64, 24</column>
+<column name="icmp_ln486_fu_470_p2">icmp, 0, 0, 29, 64, 27</column>
+<column name="icmp_ln501_fu_424_p2">icmp, 0, 0, 20, 32, 27</column>
+<column name="r_V_fu_347_p2">lshr, 0, 0, 363, 111, 111</column>
+<column name="result_V_fu_395_p3">select, 0, 0, 63, 1, 64</column>
+<column name="ush_fu_331_p3">select, 0, 0, 9, 1, 9</column>
+<column name="val_fu_381_p3">select, 0, 0, 63, 1, 64</column>
+<column name="z_top_max_fu_415_p3">select, 0, 0, 63, 1, 26</column>
+<column name="r_V_14_fu_353_p2">shl, 0, 0, 363, 111, 111</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">49, 9, 1, 9</column>
+<column name="ap_phi_mux_z_top_max_19_ph_phi_fu_128_p4">9, 2, 64, 128</column>
+<column name="complementary_apexZ0_0_reg_181">9, 2, 64, 128</column>
+<column name="nPatchesInColumn_assign_reg_147">9, 2, 32, 64</column>
+<column name="n_patches_o">9, 2, 32, 64</column>
+<column name="n_patches_o_ap_vld">9, 2, 1, 2</column>
+<column name="phi_ln501_1_reg_170">9, 2, 1, 2</column>
+<column name="phi_ln501_reg_136">9, 2, 1, 2</column>
+<column name="saved_apexZ0_fu_108">9, 2, 64, 128</column>
+<column name="z_top_max_19_ph_reg_124">9, 2, 64, 128</column>
+<column name="z_top_max_19_reg_159">9, 2, 64, 128</column>
+<column name="z_top_min_0_reg_193">9, 2, 64, 128</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">8, 0, 8, 0</column>
+<column name="complementary_apexZ0_0_reg_181">64, 0, 64, 0</column>
+<column name="conv2_i_reg_509">32, 0, 32, 0</column>
+<column name="dc_reg_514">32, 0, 32, 0</column>
+<column name="grp_solveNextPatchPair_fu_205_ap_start_reg">1, 0, 1, 0</column>
+<column name="icmp_ln475_reg_505">1, 0, 1, 0</column>
+<column name="nPatchesInColumn_assign_reg_147">32, 0, 32, 0</column>
+<column name="phi_ln501_1_reg_170">1, 0, 1, 0</column>
+<column name="phi_ln501_reg_136">1, 0, 1, 0</column>
+<column name="saved_apexZ0_fu_108">64, 0, 64, 0</column>
+<column name="z_top_max_19_ph_reg_124">64, 0, 64, 0</column>
+<column name="z_top_max_19_reg_159">64, 0, 64, 0</column>
+<column name="z_top_min_0_reg_193">64, 0, 64, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, makePatches_ShadowQuilt_fromEdges, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, makePatches_ShadowQuilt_fromEdges, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, makePatches_ShadowQuilt_fromEdges, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, makePatches_ShadowQuilt_fromEdges, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, makePatches_ShadowQuilt_fromEdges, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, makePatches_ShadowQuilt_fromEdges, return value</column>
+<column name="apexZ0">in, 64, ap_none, apexZ0, scalar</column>
+<column name="stop">in, 32, ap_none, stop, scalar</column>
+<column name="ppl">in, 32, ap_none, ppl, scalar</column>
+<column name="leftRight">in, 1, ap_none, leftRight, scalar</column>
+<column name="n_patches_i">in, 32, ap_ovld, n_patches, pointer</column>
+<column name="n_patches_o">out, 32, ap_ovld, n_patches, pointer</column>
+<column name="n_patches_o_ap_vld">out, 1, ap_ovld, n_patches, pointer</column>
+<column name="GDarray_address0">out, 11, ap_memory, GDarray, array</column>
+<column name="GDarray_ce0">out, 1, ap_memory, GDarray, array</column>
+<column name="GDarray_q0">in, 192, ap_memory, GDarray, array</column>
+<column name="GDn_points_address0">out, 3, ap_memory, GDn_points, array</column>
+<column name="GDn_points_ce0">out, 1, ap_memory, GDn_points, array</column>
+<column name="GDn_points_q0">in, 32, ap_memory, GDn_points, array</column>
+<column name="patches_superpoints_address0">out, 15, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_ce0">out, 1, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_we0">out, 1, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_d0">out, 64, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_q0">in, 64, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_address1">out, 15, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_ce1">out, 1, ap_memory, patches_superpoints, array</column>
+<column name="patches_superpoints_q1">in, 64, ap_memory, patches_superpoints, array</column>
+<column name="patches_parameters_address0">out, 12, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_ce0">out, 1, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_we0">out, 1, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_d0">out, 64, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_q0">in, 64, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_address1">out, 12, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_ce1">out, 1, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_we1">out, 1, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_d1">out, 64, ap_memory, patches_parameters, array</column>
+<column name="patches_parameters_q1">in, 64, ap_memory, patches_parameters, array</column>
+</table>
+</item>
+</section>
+</profile>

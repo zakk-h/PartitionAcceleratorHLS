@@ -1,0 +1,15 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "makePatches_ShadowQuilt_fromEdges",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "makePatches_ShadowQuilt_fromEdges"
+              }]
+          }
+        }]
+    }]}

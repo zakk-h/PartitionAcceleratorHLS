@@ -1,0 +1,144 @@
+
+
+================================================================
+== Synthesis Summary Report of 'makePatches_ShadowQuilt_fromEdges'
+================================================================
++ General Information: 
+    * Date:           Mon Jul  1 18:54:59 2024
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+    * Project:        PatchMaker_tanishGit
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu19p-fsvb3824-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    |                            Modules                            |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
+    |                            & Loops                            |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
+    +---------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    |+ makePatches_ShadowQuilt_fromEdges                            |  Timing|   0.02|        -|          -|         -|        -|     -|        no|  40 (~0%)|  257 (6%)|  40083 (~0%)|  118940 (2%)|    -|
+    | + grp_solveNextPatchPair_fu_205                               |  Timing|   0.02|        -|          -|         -|        -|     -|        no|  40 (~0%)|  254 (6%)|  39527 (~0%)|  117458 (2%)|    -|
+    |  + grp_makeThirdPatch_fu_509                                  |  Timing|   0.02|        -|          -|         -|        -|     -|        no|  12 (~0%)|   78 (2%)|  16069 (~0%)|  40229 (~0%)|    -|
+    |   + grp_makePatch_alignedToLine_fu_463                        |       -|  -0.23|        -|          -|         -|        -|     -|        no|  12 (~0%)|   53 (1%)|   7634 (~0%)|  23171 (~0%)|    -|
+    |    + grp_makeSuperPoint_alignedToLine_fu_791                  |       -|  -0.23|        -|          -|         -|        -|     -|        no|   2 (~0%)|   42 (1%)|   4012 (~0%)|  14077 (~0%)|    -|
+    |     o rowListSet_loop                                         |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o start_value_loop                                        |      II|  -7.30|        -|          -|         5|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |     o LRdiscovery_loop                                        |       -|  -7.30|        -|          -|         4|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1197_1_VITIS_LOOP_1199_2                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1209_3_VITIS_LOOP_1211_4                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1238_5_VITIS_LOOP_1240_6                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1250_7_VITIS_LOOP_1252_8                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o initWedgeSP_loop                                        |      II|  -7.30|        -|          -|         4|        4|     -|       yes|         -|         -|            -|            -|    -|
+    |    + grp_add_patch6_fu_814                                    |       -|  -1.89|        -|          -|         -|        -|     -|        no|         -|         -|    386 (~0%)|   2247 (~0%)|    -|
+    |     o VITIS_LOOP_295_1_VITIS_LOOP_299_3_VITIS_LOOP_301_4      |       -|  -7.30|      720|  7.200e+03|         2|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_309_5_VITIS_LOOP_311_6_VITIS_LOOP_313_7      |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_330_8                                        |      II|  -7.30|        -|          -|         3|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_345_9_VITIS_LOOP_349_11_VITIS_LOOP_351_12    |       -|  -7.30|      720|  7.200e+03|         2|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_359_13_VITIS_LOOP_361_14_VITIS_LOOP_363_15   |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    + grp_straightLineProjectorFromLayerIJtoK_fu_827           |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |    + grp_get_acceptanceCorners_fu_841                         |       -|  -3.83|        -|          -|         -|        -|     -|        no|         -|         -|    704 (~0%)|   1063 (~0%)|    -|
+    |     o minMaxAcceptanceCorners_loop                            |      II|  -7.30|        -|          -|         3|        2|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1072_1_VITIS_LOOP_1076_3_VITIS_LOOP_1078_4    |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o makeSuperpoint_loop                                      |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1098_5_VITIS_LOOP_1102_7_VITIS_LOOP_1104_8    |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1112_9_VITIS_LOOP_1114_10_VITIS_LOOP_1116_11  |       -|  -7.30|      120|  1.200e+03|         1|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_91_1_VITIS_LOOP_96_3_VITIS_LOOP_98_4          |       -|  -7.30|        -|          -|         2|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o getParallelograms_loop                                   |      II|  -7.30|        -|          -|        18|        6|     -|       yes|         -|         -|            -|            -|    -|
+    |   + grp_getShadows_fu_488                                     |  Timing|   0.00|        -|          -|         -|        -|     -|        no|         -|  24 (~0%)|   5296 (~0%)|  11363 (~0%)|    -|
+    |    + grp_straightLineProjectorFromLayerIJtoK_fu_287           |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |    + grp_straightLineProjectorFromLayerIJtoK_fu_300           |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |    + grp_straightLineProjectorFromLayerIJtoK_fu_313           |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |    + grp_straightLineProjectorFromLayerIJtoK_fu_326           |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |    o getShadows_loop                                          |       -|  -7.30|        -|          -|        14|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o GSmaxFinding_loop                                        |      II|  -7.30|        -|          -|         2|        2|     -|       yes|         -|         -|            -|            -|    -|
+    |   + grp_delete_patch_fu_506                                   |       -|  -0.56|        -|          -|         -|        -|     -|        no|         -|   1 (~0%)|    634 (~0%)|   1659 (~0%)|    -|
+    |    o VITIS_LOOP_388_1                                         |       -|  -7.30|        -|          -|       846|        -|     -|        no|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_390_2_VITIS_LOOP_394_4_VITIS_LOOP_396_5      |       -|  -7.30|      721|  7.210e+03|         3|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_404_6_VITIS_LOOP_406_7_VITIS_LOOP_408_8      |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    o Loop 2                                                   |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o Loop 3                                                   |       -|  -7.30|      120|  1.200e+03|         1|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |   + grp_straightLineProjectorFromLayerIJtoK_fu_518            |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |   + grp_straightLineProjectorFromLayerIJtoK_fu_532            |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |   o thirdPatch_loop                                           |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |  + grp_solveComplmentaryPatch_fu_538                          |  Timing|   0.00|        -|          -|         -|        -|     -|        no|  12 (~0%)|  104 (2%)|  12231 (~0%)|   40973 (1%)|    -|
+    |   + grp_makePatch_alignedToLine_fu_772                        |       -|  -0.23|        -|          -|         -|        -|     -|        no|  12 (~0%)|   53 (1%)|   7634 (~0%)|  23171 (~0%)|    -|
+    |    + grp_makeSuperPoint_alignedToLine_fu_791                  |       -|  -0.23|        -|          -|         -|        -|     -|        no|   2 (~0%)|   42 (1%)|   4012 (~0%)|  14077 (~0%)|    -|
+    |     o rowListSet_loop                                         |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o start_value_loop                                        |      II|  -7.30|        -|          -|         5|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |     o LRdiscovery_loop                                        |       -|  -7.30|        -|          -|         4|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1197_1_VITIS_LOOP_1199_2                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1209_3_VITIS_LOOP_1211_4                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1238_5_VITIS_LOOP_1240_6                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_1250_7_VITIS_LOOP_1252_8                     |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |     o initWedgeSP_loop                                        |      II|  -7.30|        -|          -|         4|        4|     -|       yes|         -|         -|            -|            -|    -|
+    |    + grp_add_patch6_fu_814                                    |       -|  -1.89|        -|          -|         -|        -|     -|        no|         -|         -|    386 (~0%)|   2247 (~0%)|    -|
+    |     o VITIS_LOOP_295_1_VITIS_LOOP_299_3_VITIS_LOOP_301_4      |       -|  -7.30|      720|  7.200e+03|         2|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_309_5_VITIS_LOOP_311_6_VITIS_LOOP_313_7      |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_330_8                                        |      II|  -7.30|        -|          -|         3|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_345_9_VITIS_LOOP_349_11_VITIS_LOOP_351_12    |       -|  -7.30|      720|  7.200e+03|         2|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_359_13_VITIS_LOOP_361_14_VITIS_LOOP_363_15   |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    + grp_straightLineProjectorFromLayerIJtoK_fu_827           |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |    + grp_get_acceptanceCorners_fu_841                         |       -|  -3.83|        -|          -|         -|        -|     -|        no|         -|         -|    704 (~0%)|   1063 (~0%)|    -|
+    |     o minMaxAcceptanceCorners_loop                            |      II|  -7.30|        -|          -|         3|        2|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1072_1_VITIS_LOOP_1076_3_VITIS_LOOP_1078_4    |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o makeSuperpoint_loop                                      |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1098_5_VITIS_LOOP_1102_7_VITIS_LOOP_1104_8    |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1112_9_VITIS_LOOP_1114_10_VITIS_LOOP_1116_11  |       -|  -7.30|      120|  1.200e+03|         1|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_91_1_VITIS_LOOP_96_3_VITIS_LOOP_98_4          |       -|  -7.30|        -|          -|         2|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o getParallelograms_loop                                   |      II|  -7.30|        -|          -|        18|        6|     -|       yes|         -|         -|            -|            -|    -|
+    |   + grp_get_index_from_z_fu_797                               |       -|  -1.14|        -|          -|         -|        -|     -|        no|         -|   8 (~0%)|    583 (~0%)|   2695 (~0%)|    -|
+    |    o getIndexFromZ_loop                                       |       -|  -7.30|        -|          -|         6|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |   + grp_delete_patch_fu_811                                   |       -|  -0.56|        -|          -|         -|        -|     -|        no|         -|   1 (~0%)|    634 (~0%)|   1659 (~0%)|    -|
+    |    o VITIS_LOOP_388_1                                         |       -|  -7.30|        -|          -|       846|        -|     -|        no|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_390_2_VITIS_LOOP_394_4_VITIS_LOOP_396_5      |       -|  -7.30|      721|  7.210e+03|         3|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |     o VITIS_LOOP_404_6_VITIS_LOOP_406_7_VITIS_LOOP_408_8      |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    o Loop 2                                                   |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o Loop 3                                                   |       -|  -7.30|      120|  1.200e+03|         1|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |   + grp_straightLineProjectorFromLayerIJtoK_fu_823            |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |   + grp_areWedgeSuperPointsEqual_fu_839                       |      II|  -0.37|        4|     40.000|         -|        2|     -|       yes|         -|         -|    156 (~0%)|   3003 (~0%)|    -|
+    |   o VITIS_LOOP_855_1                                          |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_863_2                                          |       -|  -7.30|        5|     50.000|         2|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_875_3                                          |       -|  -7.30|        5|     50.000|         2|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_884_4                                          |       -|  -7.30|        5|     50.000|         2|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_892_5                                          |       -|  -7.30|       11|    110.000|         8|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_897_6                                          |       -|  -7.30|        7|     70.000|         4|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_903_7                                          |       -|  -7.30|        7|     70.000|         4|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_909_8                                          |       -|  -7.30|       15|    150.000|        13|        1|     4|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_921_9                                          |       -|  -7.30|        5|     50.000|         3|        1|     4|       yes|         -|         -|            -|            -|    -|
+    |   o superpointEqualCheck_2_loop                               |      II|  -7.30|       35|    350.000|         6|        6|     5|       yes|         -|         -|            -|            -|    -|
+    |  + grp_makePatch_alignedToLine_fu_573                         |       -|  -0.23|        -|          -|         -|        -|     -|        no|  12 (~0%)|   53 (1%)|   7634 (~0%)|  23171 (~0%)|    -|
+    |   + grp_makeSuperPoint_alignedToLine_fu_791                   |       -|  -0.23|        -|          -|         -|        -|     -|        no|   2 (~0%)|   42 (1%)|   4012 (~0%)|  14077 (~0%)|    -|
+    |    o rowListSet_loop                                          |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o start_value_loop                                         |      II|  -7.30|        -|          -|         5|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |    o LRdiscovery_loop                                         |       -|  -7.30|        -|          -|         4|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1197_1_VITIS_LOOP_1199_2                      |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1209_3_VITIS_LOOP_1211_4                      |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1238_5_VITIS_LOOP_1240_6                      |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_1250_7_VITIS_LOOP_1252_8                      |       -|  -7.30|        -|          -|         3|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |    o initWedgeSP_loop                                         |      II|  -7.30|        -|          -|         4|        4|     -|       yes|         -|         -|            -|            -|    -|
+    |   + grp_add_patch6_fu_814                                     |       -|  -1.89|        -|          -|         -|        -|     -|        no|         -|         -|    386 (~0%)|   2247 (~0%)|    -|
+    |    o VITIS_LOOP_295_1_VITIS_LOOP_299_3_VITIS_LOOP_301_4       |       -|  -7.30|      720|  7.200e+03|         2|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_309_5_VITIS_LOOP_311_6_VITIS_LOOP_313_7       |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_330_8                                         |      II|  -7.30|        -|          -|         3|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_345_9_VITIS_LOOP_349_11_VITIS_LOOP_351_12     |       -|  -7.30|      720|  7.200e+03|         2|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |    o VITIS_LOOP_359_13_VITIS_LOOP_361_14_VITIS_LOOP_363_15    |       -|  -7.30|      120|  1.200e+03|         2|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |   + grp_straightLineProjectorFromLayerIJtoK_fu_827            |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |   + grp_get_acceptanceCorners_fu_841                          |       -|  -3.83|        -|          -|         -|        -|     -|        no|         -|         -|    704 (~0%)|   1063 (~0%)|    -|
+    |    o minMaxAcceptanceCorners_loop                             |      II|  -7.30|        -|          -|         3|        2|     -|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_1072_1_VITIS_LOOP_1076_3_VITIS_LOOP_1078_4     |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |   o makeSuperpoint_loop                                       |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_1098_5_VITIS_LOOP_1102_7_VITIS_LOOP_1104_8     |       -|  -7.30|      720|  7.200e+03|         1|        1|   720|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_1112_9_VITIS_LOOP_1114_10_VITIS_LOOP_1116_11   |       -|  -7.30|      120|  1.200e+03|         1|        1|   120|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_91_1_VITIS_LOOP_96_3_VITIS_LOOP_98_4           |       -|  -7.30|        -|          -|         2|        1|     -|       yes|         -|         -|            -|            -|    -|
+    |   o getParallelograms_loop                                    |      II|  -7.30|        -|          -|        18|        6|     -|       yes|         -|         -|            -|            -|    -|
+    |  + grp_straightLineProjectorFromLayerIJtoK_fu_602             |      II|  -0.23|       11|    110.000|         -|        1|     -|       yes|         -|   6 (~0%)|    783 (~0%)|   2546 (~0%)|    -|
+    |  + grp_areWedgeSuperPointsEqual_fu_619                        |      II|  -0.37|        4|     40.000|         -|        2|     -|       yes|         -|         -|    156 (~0%)|   3003 (~0%)|    -|
+    |  o superPointEqualCheck_loop                                  |       -|  -7.30|       47|    470.000|         8|        -|     5|        no|         -|         -|            -|            -|    -|
+    |  o solvePatchPair_loop                                        |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    | o shadowQuilt_loop                                            |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |  o solveNextColumn_loop                                       |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    +---------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+

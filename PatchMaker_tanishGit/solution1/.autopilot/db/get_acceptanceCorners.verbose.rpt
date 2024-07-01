@@ -1,0 +1,2744 @@
+
+
+================================================================
+== Vitis HLS Report for 'get_acceptanceCorners'
+================================================================
+* Date:           Mon Jul  1 18:54:14 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        PatchMaker_tanishGit
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu19p-fsvb3824-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.465 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |            Loop Name           |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- minMaxAcceptanceCorners_loop  |        ?|        ?|         3|          2|          1|     ?|       yes|
+        +--------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      652|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|      411|    -|
+|Register             |        -|     -|      704|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|      704|     1063|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1080|   960|  2042880|  1021440|   80|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  3840|  8171520|  4085760|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|       ~0|       ~0|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |add_ln222_fu_360_p2       |         +|   0|  0|  39|          32|           1|
+    |add_ln232_fu_417_p2       |         +|   0|  0|  14|           7|           2|
+    |add_ln236_fu_427_p2       |         +|   0|  0|  14|           7|           2|
+    |sub_ln224_fu_395_p2       |         -|   0|  0|  14|           7|           7|
+    |icmp_ln222_fu_366_p2      |      icmp|   0|  0|  20|          32|          32|
+    |icmp_ln224_fu_437_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln228_fu_451_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln232_fu_465_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln236_fu_479_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln253_fu_493_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln258_fu_499_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln263_fu_505_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln268_fu_511_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln275_fu_517_p2      |      icmp|   0|  0|  29|          64|          64|
+    |icmp_ln282_fu_523_p2      |      icmp|   0|  0|  29|          64|          64|
+    |or_ln228_fu_406_p2        |        or|   0|  0|   7|           7|           1|
+    |a_corner_min_1_fu_443_p3  |    select|   0|  0|  63|           1|          64|
+    |b_corner_min_2_fu_457_p3  |    select|   0|  0|  63|           1|          64|
+    |c_corner_max_1_fu_471_p3  |    select|   0|  0|  63|           1|          64|
+    |d_corner_max_2_fu_485_p3  |    select|   0|  0|  63|           1|          64|
+    |ap_enable_pp0             |       xor|   0|  0|   2|           1|           2|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |Total                     |          |   0|  0| 652|         737|         943|
+    +--------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+-----+-----------+-----+-----------+
+    |            Name            | LUT | Input Size| Bits| Total Bits|
+    +----------------------------+-----+-----------+-----+-----------+
+    |a_corner_min_reg_302        |    9|          2|   64|        128|
+    |ap_NS_fsm                   |  102|         21|    1|         21|
+    |ap_enable_reg_pp0_iter1     |    9|          2|    1|          2|
+    |ap_phi_mux_i_phi_fu_282_p4  |    9|          2|   32|         64|
+    |b_corner_min_reg_315        |    9|          2|   64|        128|
+    |c_corner_max_reg_329        |    9|          2|   64|        128|
+    |d_corner_max_reg_289        |    9|          2|   64|        128|
+    |empty_98_reg_342            |    9|          2|   64|        128|
+    |i_reg_278                   |    9|          2|   32|         64|
+    |wp_parameters_address0      |   86|         18|    7|        126|
+    |wp_parameters_address1      |   65|         15|    7|        105|
+    |wp_parameters_d0            |   37|          7|   64|        448|
+    |wp_parameters_d1            |   49|          9|   64|        576|
+    +----------------------------+-----+-----------+-----+-----------+
+    |Total                       |  411|         86|  528|       2046|
+    +----------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------+----+----+-----+-----------+
+    |             Name             | FF | LUT| Bits| Const Bits|
+    +------------------------------+----+----+-----+-----------+
+    |a_corner_min_1_reg_668        |  64|   0|   64|          0|
+    |a_corner_min_reg_302          |  64|   0|   64|          0|
+    |add_ln222_reg_633             |  32|   0|   32|          0|
+    |ap_CS_fsm                     |  20|   0|   20|          0|
+    |ap_enable_reg_pp0_iter0       |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1       |   1|   0|    1|          0|
+    |b_corner_min_2_reg_673        |  64|   0|   64|          0|
+    |b_corner_min_reg_315          |  64|   0|   64|          0|
+    |c_corner_max_reg_329          |  64|   0|   64|          0|
+    |d_corner_max_reg_289          |  64|   0|   64|          0|
+    |empty_98_reg_342              |  64|   0|   64|          0|
+    |empty_reg_545                 |  32|   0|   32|          0|
+    |i_reg_278                     |  32|   0|   32|          0|
+    |icmp_ln222_reg_638            |   1|   0|    1|          0|
+    |icmp_ln253_reg_699            |   1|   0|    1|          0|
+    |icmp_ln275_reg_712            |   1|   0|    1|          0|
+    |icmp_ln282_reg_716            |   1|   0|    1|          0|
+    |sub_ln224_reg_642             |   6|   0|    7|          1|
+    |wp_parameters_load_1_reg_688  |  64|   0|   64|          0|
+    |wp_parameters_load_2_reg_694  |  64|   0|   64|          0|
+    +------------------------------+----+----+-----+-----------+
+    |Total                         | 704|   0|  705|          1|
+    +------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-----------------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |     Source Object     |    C Type    |
++------------------------+-----+-----+------------+-----------------------+--------------+
+|ap_clk                  |   in|    1|  ap_ctrl_hs|  get_acceptanceCorners|  return value|
+|ap_rst                  |   in|    1|  ap_ctrl_hs|  get_acceptanceCorners|  return value|
+|ap_start                |   in|    1|  ap_ctrl_hs|  get_acceptanceCorners|  return value|
+|ap_done                 |  out|    1|  ap_ctrl_hs|  get_acceptanceCorners|  return value|
+|ap_idle                 |  out|    1|  ap_ctrl_hs|  get_acceptanceCorners|  return value|
+|ap_ready                |  out|    1|  ap_ctrl_hs|  get_acceptanceCorners|  return value|
+|wp_parameters_address0  |  out|    7|   ap_memory|          wp_parameters|         array|
+|wp_parameters_ce0       |  out|    1|   ap_memory|          wp_parameters|         array|
+|wp_parameters_we0       |  out|    1|   ap_memory|          wp_parameters|         array|
+|wp_parameters_d0        |  out|   64|   ap_memory|          wp_parameters|         array|
+|wp_parameters_q0        |   in|   64|   ap_memory|          wp_parameters|         array|
+|wp_parameters_address1  |  out|    7|   ap_memory|          wp_parameters|         array|
+|wp_parameters_ce1       |  out|    1|   ap_memory|          wp_parameters|         array|
+|wp_parameters_we1       |  out|    1|   ap_memory|          wp_parameters|         array|
+|wp_parameters_d1        |  out|   64|   ap_memory|          wp_parameters|         array|
+|wp_parameters_q1        |   in|   64|   ap_memory|          wp_parameters|         array|
++------------------------+-----+-----+------------+-----------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 2, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 21
+* Pipeline : 1
+  Pipeline-0 : II = 2, D = 3, States = { 4 5 6 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 7 5 
+5 --> 6 
+6 --> 4 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 20 
+19 --> 20 
+20 --> 21 
+21 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.20>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%wp_parameters_addr_4 = getelementptr i64 %wp_parameters, i64 0, i64 108"   --->   Operation 22 'getelementptr' 'wp_parameters_addr_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [2/2] (1.20ns)   --->   "%wp_parameters_load = load i7 %wp_parameters_addr_4"   --->   Operation 23 'load' 'wp_parameters_load' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 2 <SV = 1> <Delay = 1.20>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%wp_parameters_addr = getelementptr i64 %wp_parameters, i64 0, i64 84" [patchMaker.cpp:210]   --->   Operation 24 'getelementptr' 'wp_parameters_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%wp_parameters_addr_1 = getelementptr i64 %wp_parameters, i64 0, i64 78" [patchMaker.cpp:211]   --->   Operation 25 'getelementptr' 'wp_parameters_addr_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 26 [1/1] (1.20ns)   --->   "%store_ln210 = store i64 1, i7 %wp_parameters_addr" [patchMaker.cpp:210]   --->   Operation 26 'store' 'store_ln210' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_2 : Operation 27 [1/1] (1.20ns)   --->   "%store_ln211 = store i64 1, i7 %wp_parameters_addr_1" [patchMaker.cpp:211]   --->   Operation 27 'store' 'store_ln211' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_2 : Operation 28 [1/2] (1.20ns)   --->   "%wp_parameters_load = load i7 %wp_parameters_addr_4"   --->   Operation 28 'load' 'wp_parameters_load' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%empty = trunc i64 %wp_parameters_load"   --->   Operation 29 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.20>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%wp_parameters_addr_2 = getelementptr i64 %wp_parameters, i64 0, i64 72" [patchMaker.cpp:212]   --->   Operation 30 'getelementptr' 'wp_parameters_addr_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%wp_parameters_addr_3 = getelementptr i64 %wp_parameters, i64 0, i64 90" [patchMaker.cpp:213]   --->   Operation 31 'getelementptr' 'wp_parameters_addr_3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%wp_parameters_addr_5 = getelementptr i64 %wp_parameters, i64 0, i64 4" [patchMaker.cpp:243]   --->   Operation 32 'getelementptr' 'wp_parameters_addr_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 33 [1/1] (0.00ns)   --->   "%wp_parameters_addr_6 = getelementptr i64 %wp_parameters, i64 0, i64 48" [patchMaker.cpp:243]   --->   Operation 33 'getelementptr' 'wp_parameters_addr_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%wp_parameters_addr_7 = getelementptr i64 %wp_parameters, i64 0, i64 49" [patchMaker.cpp:244]   --->   Operation 34 'getelementptr' 'wp_parameters_addr_7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 35 [1/1] (0.00ns)   --->   "%wp_parameters_addr_8 = getelementptr i64 %wp_parameters, i64 0, i64 5" [patchMaker.cpp:245]   --->   Operation 35 'getelementptr' 'wp_parameters_addr_8' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%wp_parameters_addr_9 = getelementptr i64 %wp_parameters, i64 0, i64 54" [patchMaker.cpp:245]   --->   Operation 36 'getelementptr' 'wp_parameters_addr_9' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%wp_parameters_addr_10 = getelementptr i64 %wp_parameters, i64 0, i64 55" [patchMaker.cpp:246]   --->   Operation 37 'getelementptr' 'wp_parameters_addr_10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%wp_parameters_addr_11 = getelementptr i64 %wp_parameters, i64 0, i64 60" [patchMaker.cpp:247]   --->   Operation 38 'getelementptr' 'wp_parameters_addr_11' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%wp_parameters_addr_12 = getelementptr i64 %wp_parameters, i64 0, i64 61" [patchMaker.cpp:248]   --->   Operation 39 'getelementptr' 'wp_parameters_addr_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%wp_parameters_addr_13 = getelementptr i64 %wp_parameters, i64 0, i64 66" [patchMaker.cpp:249]   --->   Operation 40 'getelementptr' 'wp_parameters_addr_13' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%wp_parameters_addr_14 = getelementptr i64 %wp_parameters, i64 0, i64 67" [patchMaker.cpp:250]   --->   Operation 41 'getelementptr' 'wp_parameters_addr_14' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%wp_parameters_addr_15 = getelementptr i64 %wp_parameters, i64 0, i64 18" [patchMaker.cpp:253]   --->   Operation 42 'getelementptr' 'wp_parameters_addr_15' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%wp_parameters_addr_20 = getelementptr i64 %wp_parameters, i64 0, i64 19" [patchMaker.cpp:258]   --->   Operation 43 'getelementptr' 'wp_parameters_addr_20' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%wp_parameters_addr_21 = getelementptr i64 %wp_parameters, i64 0, i64 20" [patchMaker.cpp:263]   --->   Operation 44 'getelementptr' 'wp_parameters_addr_21' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%wp_parameters_addr_22 = getelementptr i64 %wp_parameters, i64 0, i64 21" [patchMaker.cpp:268]   --->   Operation 45 'getelementptr' 'wp_parameters_addr_22' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (1.20ns)   --->   "%store_ln212 = store i64 1, i7 %wp_parameters_addr_2" [patchMaker.cpp:212]   --->   Operation 46 'store' 'store_ln212' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_3 : Operation 47 [1/1] (1.20ns)   --->   "%store_ln213 = store i64 0, i7 %wp_parameters_addr_3" [patchMaker.cpp:213]   --->   Operation 47 'store' 'store_ln213' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_3 : Operation 48 [1/1] (0.38ns)   --->   "%br_ln222 = br void" [patchMaker.cpp:222]   --->   Operation 48 'br' 'br_ln222' <Predicate = true> <Delay = 0.38>
+
+State 4 <SV = 3> <Delay = 1.90>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%i = phi i32 0, void %.lr.ph, i32 %add_ln222, void %.split" [patchMaker.cpp:222]   --->   Operation 49 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%d_corner_max = phi i64 9223372036854775808, void %.lr.ph, i64 %d_corner_max_2, void %.split"   --->   Operation 50 'phi' 'd_corner_max' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (0.00ns)   --->   "%a_corner_min = phi i64 9223372036854775807, void %.lr.ph, i64 %a_corner_min_1, void %.split"   --->   Operation 51 'phi' 'a_corner_min' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%b_corner_min = phi i64 9223372036854775807, void %.lr.ph, i64 %b_corner_min_2, void %.split"   --->   Operation 52 'phi' 'b_corner_min' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%c_corner_max = phi i64 9223372036854775808, void %.lr.ph, i64 %c_corner_max_1, void %.split"   --->   Operation 53 'phi' 'c_corner_max' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (0.88ns)   --->   "%add_ln222 = add i32 %i, i32 1" [patchMaker.cpp:222]   --->   Operation 54 'add' 'add_ln222' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 55 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 55 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 56 [1/1] (0.85ns)   --->   "%icmp_ln222 = icmp_eq  i32 %i, i32 %empty" [patchMaker.cpp:222]   --->   Operation 56 'icmp' 'icmp_ln222' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln222 = br i1 %icmp_ln222, void %.split, void %._crit_edge.loopexit" [patchMaker.cpp:222]   --->   Operation 57 'br' 'br_ln222' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "%trunc_ln224 = trunc i32 %i" [patchMaker.cpp:224]   --->   Operation 58 'trunc' 'trunc_ln224' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_cast = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i4.i3, i4 %trunc_ln224, i3 0" [patchMaker.cpp:224]   --->   Operation 59 'bitconcatenate' 'tmp_cast' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%trunc_ln224_1 = trunc i32 %i" [patchMaker.cpp:224]   --->   Operation 60 'trunc' 'trunc_ln224_1' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_159_cast = bitconcatenate i7 @_ssdm_op_BitConcatenate.i7.i6.i1, i6 %trunc_ln224_1, i1 0" [patchMaker.cpp:224]   --->   Operation 61 'bitconcatenate' 'tmp_159_cast' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.70ns)   --->   "%sub_ln224 = sub i7 %tmp_cast, i7 %tmp_159_cast" [patchMaker.cpp:224]   --->   Operation 62 'sub' 'sub_ln224' <Predicate = (!icmp_ln222)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%zext_ln224 = zext i7 %sub_ln224" [patchMaker.cpp:224]   --->   Operation 63 'zext' 'zext_ln224' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%wp_parameters_addr_16 = getelementptr i64 %wp_parameters, i64 0, i64 %zext_ln224" [patchMaker.cpp:224]   --->   Operation 64 'getelementptr' 'wp_parameters_addr_16' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%or_ln228 = or i7 %sub_ln224, i7 1" [patchMaker.cpp:228]   --->   Operation 65 'or' 'or_ln228' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%zext_ln228 = zext i7 %or_ln228" [patchMaker.cpp:228]   --->   Operation 66 'zext' 'zext_ln228' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%wp_parameters_addr_17 = getelementptr i64 %wp_parameters, i64 0, i64 %zext_ln228" [patchMaker.cpp:228]   --->   Operation 67 'getelementptr' 'wp_parameters_addr_17' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_4 : Operation 68 [2/2] (1.20ns)   --->   "%wp_parameters_load_4 = load i7 %wp_parameters_addr_16" [patchMaker.cpp:224]   --->   Operation 68 'load' 'wp_parameters_load_4' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_4 : Operation 69 [2/2] (1.20ns)   --->   "%b_corner_min_1 = load i7 %wp_parameters_addr_17" [patchMaker.cpp:228]   --->   Operation 69 'load' 'b_corner_min_1' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 5 <SV = 4> <Delay = 2.67>
+ST_5 : Operation 70 [1/1] (0.70ns)   --->   "%add_ln232 = add i7 %sub_ln224, i7 2" [patchMaker.cpp:232]   --->   Operation 70 'add' 'add_ln232' <Predicate = (!icmp_ln222)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%zext_ln232 = zext i7 %add_ln232" [patchMaker.cpp:232]   --->   Operation 71 'zext' 'zext_ln232' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%wp_parameters_addr_18 = getelementptr i64 %wp_parameters, i64 0, i64 %zext_ln232" [patchMaker.cpp:232]   --->   Operation 72 'getelementptr' 'wp_parameters_addr_18' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.70ns)   --->   "%add_ln236 = add i7 %sub_ln224, i7 3" [patchMaker.cpp:236]   --->   Operation 73 'add' 'add_ln236' <Predicate = (!icmp_ln222)> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%zext_ln236 = zext i7 %add_ln236" [patchMaker.cpp:236]   --->   Operation 74 'zext' 'zext_ln236' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%wp_parameters_addr_19 = getelementptr i64 %wp_parameters, i64 0, i64 %zext_ln236" [patchMaker.cpp:236]   --->   Operation 75 'getelementptr' 'wp_parameters_addr_19' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_5 : Operation 76 [1/2] (1.20ns)   --->   "%wp_parameters_load_4 = load i7 %wp_parameters_addr_16" [patchMaker.cpp:224]   --->   Operation 76 'load' 'wp_parameters_load_4' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_5 : Operation 77 [1/1] (1.06ns)   --->   "%icmp_ln224 = icmp_slt  i64 %wp_parameters_load_4, i64 %a_corner_min" [patchMaker.cpp:224]   --->   Operation 77 'icmp' 'icmp_ln224' <Predicate = (!icmp_ln222)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 78 [1/1] (0.41ns)   --->   "%a_corner_min_1 = select i1 %icmp_ln224, i64 %wp_parameters_load_4, i64 %a_corner_min" [patchMaker.cpp:224]   --->   Operation 78 'select' 'a_corner_min_1' <Predicate = (!icmp_ln222)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 79 [1/2] (1.20ns)   --->   "%b_corner_min_1 = load i7 %wp_parameters_addr_17" [patchMaker.cpp:228]   --->   Operation 79 'load' 'b_corner_min_1' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_5 : Operation 80 [1/1] (1.06ns)   --->   "%icmp_ln228 = icmp_slt  i64 %b_corner_min_1, i64 %b_corner_min" [patchMaker.cpp:228]   --->   Operation 80 'icmp' 'icmp_ln228' <Predicate = (!icmp_ln222)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 81 [1/1] (0.41ns)   --->   "%b_corner_min_2 = select i1 %icmp_ln228, i64 %b_corner_min_1, i64 %b_corner_min" [patchMaker.cpp:228]   --->   Operation 81 'select' 'b_corner_min_2' <Predicate = (!icmp_ln222)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_5 : Operation 82 [2/2] (1.20ns)   --->   "%wp_parameters_load_6 = load i7 %wp_parameters_addr_18" [patchMaker.cpp:232]   --->   Operation 82 'load' 'wp_parameters_load_6' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_5 : Operation 83 [2/2] (1.20ns)   --->   "%d_corner_max_1 = load i7 %wp_parameters_addr_19" [patchMaker.cpp:236]   --->   Operation 83 'load' 'd_corner_max_1' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 6 <SV = 5> <Delay = 2.67>
+ST_6 : Operation 84 [1/1] (0.00ns)   --->   "%specloopname_ln217 = specloopname void @_ssdm_op_SpecLoopName, void @empty_5" [patchMaker.cpp:217]   --->   Operation 84 'specloopname' 'specloopname_ln217' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+ST_6 : Operation 85 [1/2] (1.20ns)   --->   "%wp_parameters_load_6 = load i7 %wp_parameters_addr_18" [patchMaker.cpp:232]   --->   Operation 85 'load' 'wp_parameters_load_6' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_6 : Operation 86 [1/1] (1.06ns)   --->   "%icmp_ln232 = icmp_sgt  i64 %wp_parameters_load_6, i64 %c_corner_max" [patchMaker.cpp:232]   --->   Operation 86 'icmp' 'icmp_ln232' <Predicate = (!icmp_ln222)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 87 [1/1] (0.41ns)   --->   "%c_corner_max_1 = select i1 %icmp_ln232, i64 %wp_parameters_load_6, i64 %c_corner_max" [patchMaker.cpp:232]   --->   Operation 87 'select' 'c_corner_max_1' <Predicate = (!icmp_ln222)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 88 [1/2] (1.20ns)   --->   "%d_corner_max_1 = load i7 %wp_parameters_addr_19" [patchMaker.cpp:236]   --->   Operation 88 'load' 'd_corner_max_1' <Predicate = (!icmp_ln222)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_6 : Operation 89 [1/1] (1.06ns)   --->   "%icmp_ln236 = icmp_sgt  i64 %d_corner_max_1, i64 %d_corner_max" [patchMaker.cpp:236]   --->   Operation 89 'icmp' 'icmp_ln236' <Predicate = (!icmp_ln222)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 90 [1/1] (0.41ns)   --->   "%d_corner_max_2 = select i1 %icmp_ln236, i64 %d_corner_max_1, i64 %d_corner_max" [patchMaker.cpp:236]   --->   Operation 90 'select' 'd_corner_max_2' <Predicate = (!icmp_ln222)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 91 'br' 'br_ln0' <Predicate = (!icmp_ln222)> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 1.20>
+ST_7 : Operation 92 [2/2] (1.20ns)   --->   "%wp_parameters_load_1 = load i7 %wp_parameters_addr_5" [patchMaker.cpp:243]   --->   Operation 92 'load' 'wp_parameters_load_1' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_7 : Operation 93 [2/2] (1.20ns)   --->   "%wp_parameters_load_2 = load i7 %wp_parameters_addr_8" [patchMaker.cpp:245]   --->   Operation 93 'load' 'wp_parameters_load_2' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 8 <SV = 5> <Delay = 1.20>
+ST_8 : Operation 94 [1/2] (1.20ns)   --->   "%wp_parameters_load_1 = load i7 %wp_parameters_addr_5" [patchMaker.cpp:243]   --->   Operation 94 'load' 'wp_parameters_load_1' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_8 : Operation 95 [1/1] (1.20ns)   --->   "%store_ln244 = store i64 %a_corner_min, i7 %wp_parameters_addr_7" [patchMaker.cpp:244]   --->   Operation 95 'store' 'store_ln244' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_8 : Operation 96 [1/2] (1.20ns)   --->   "%wp_parameters_load_2 = load i7 %wp_parameters_addr_8" [patchMaker.cpp:245]   --->   Operation 96 'load' 'wp_parameters_load_2' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_8 : Operation 97 [2/2] (1.20ns)   --->   "%wp_parameters_load_3 = load i7 %wp_parameters_addr_15" [patchMaker.cpp:253]   --->   Operation 97 'load' 'wp_parameters_load_3' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 9 <SV = 6> <Delay = 2.26>
+ST_9 : Operation 98 [1/1] (1.20ns)   --->   "%store_ln246 = store i64 %b_corner_min, i7 %wp_parameters_addr_10" [patchMaker.cpp:246]   --->   Operation 98 'store' 'store_ln246' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_9 : Operation 99 [1/1] (1.20ns)   --->   "%store_ln248 = store i64 %c_corner_max, i7 %wp_parameters_addr_12" [patchMaker.cpp:248]   --->   Operation 99 'store' 'store_ln248' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_9 : Operation 100 [1/2] (1.20ns)   --->   "%wp_parameters_load_3 = load i7 %wp_parameters_addr_15" [patchMaker.cpp:253]   --->   Operation 100 'load' 'wp_parameters_load_3' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_9 : Operation 101 [1/1] (1.06ns)   --->   "%icmp_ln253 = icmp_eq  i64 %a_corner_min, i64 %wp_parameters_load_3" [patchMaker.cpp:253]   --->   Operation 101 'icmp' 'icmp_ln253' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 10 <SV = 7> <Delay = 1.20>
+ST_10 : Operation 102 [1/1] (1.20ns)   --->   "%store_ln243 = store i64 %wp_parameters_load_1, i7 %wp_parameters_addr_6" [patchMaker.cpp:243]   --->   Operation 102 'store' 'store_ln243' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_10 : Operation 103 [1/1] (1.20ns)   --->   "%store_ln250 = store i64 %d_corner_max, i7 %wp_parameters_addr_14" [patchMaker.cpp:250]   --->   Operation 103 'store' 'store_ln250' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 11 <SV = 8> <Delay = 1.20>
+ST_11 : Operation 104 [1/1] (1.20ns)   --->   "%store_ln245 = store i64 %wp_parameters_load_2, i7 %wp_parameters_addr_9" [patchMaker.cpp:245]   --->   Operation 104 'store' 'store_ln245' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_11 : Operation 105 [1/1] (1.20ns)   --->   "%store_ln247 = store i64 %wp_parameters_load_1, i7 %wp_parameters_addr_11" [patchMaker.cpp:247]   --->   Operation 105 'store' 'store_ln247' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 12 <SV = 9> <Delay = 1.20>
+ST_12 : Operation 106 [1/1] (1.20ns)   --->   "%store_ln249 = store i64 %wp_parameters_load_2, i7 %wp_parameters_addr_13" [patchMaker.cpp:249]   --->   Operation 106 'store' 'store_ln249' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_12 : Operation 107 [1/1] (0.00ns)   --->   "%br_ln253 = br i1 %icmp_ln253, void, void %._crit_edge.loopexit._crit_edge" [patchMaker.cpp:253]   --->   Operation 107 'br' 'br_ln253' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 108 [1/1] (1.20ns)   --->   "%store_ln255 = store i64 0, i7 %wp_parameters_addr" [patchMaker.cpp:255]   --->   Operation 108 'store' 'store_ln255' <Predicate = (!icmp_ln253)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 13 <SV = 10> <Delay = 1.20>
+ST_13 : Operation 109 [1/1] (1.20ns)   --->   "%store_ln256 = store i64 0, i7 %wp_parameters_addr_1" [patchMaker.cpp:256]   --->   Operation 109 'store' 'store_ln256' <Predicate = (!icmp_ln253)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_13 : Operation 110 [1/1] (0.00ns)   --->   "%br_ln257 = br void %._crit_edge.loopexit._crit_edge" [patchMaker.cpp:257]   --->   Operation 110 'br' 'br_ln257' <Predicate = (!icmp_ln253)> <Delay = 0.00>
+ST_13 : Operation 111 [2/2] (1.20ns)   --->   "%wp_parameters_load_8 = load i7 %wp_parameters_addr_20" [patchMaker.cpp:258]   --->   Operation 111 'load' 'wp_parameters_load_8' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 14 <SV = 11> <Delay = 3.46>
+ST_14 : Operation 112 [1/2] (1.20ns)   --->   "%wp_parameters_load_8 = load i7 %wp_parameters_addr_20" [patchMaker.cpp:258]   --->   Operation 112 'load' 'wp_parameters_load_8' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_14 : Operation 113 [1/1] (1.06ns)   --->   "%icmp_ln258 = icmp_eq  i64 %b_corner_min, i64 %wp_parameters_load_8" [patchMaker.cpp:258]   --->   Operation 113 'icmp' 'icmp_ln258' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 114 [1/1] (0.00ns)   --->   "%br_ln258 = br i1 %icmp_ln258, void, void %._crit_edge" [patchMaker.cpp:258]   --->   Operation 114 'br' 'br_ln258' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 115 [1/1] (1.20ns)   --->   "%store_ln260 = store i64 0, i7 %wp_parameters_addr" [patchMaker.cpp:260]   --->   Operation 115 'store' 'store_ln260' <Predicate = (!icmp_ln258)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_14 : Operation 116 [1/1] (1.20ns)   --->   "%store_ln261 = store i64 0, i7 %wp_parameters_addr_1" [patchMaker.cpp:261]   --->   Operation 116 'store' 'store_ln261' <Predicate = (!icmp_ln258)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_14 : Operation 117 [1/1] (0.00ns)   --->   "%br_ln262 = br void %._crit_edge" [patchMaker.cpp:262]   --->   Operation 117 'br' 'br_ln262' <Predicate = (!icmp_ln258)> <Delay = 0.00>
+
+State 15 <SV = 12> <Delay = 1.20>
+ST_15 : Operation 118 [2/2] (1.20ns)   --->   "%wp_parameters_load_9 = load i7 %wp_parameters_addr_21" [patchMaker.cpp:263]   --->   Operation 118 'load' 'wp_parameters_load_9' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 16 <SV = 13> <Delay = 3.46>
+ST_16 : Operation 119 [1/2] (1.20ns)   --->   "%wp_parameters_load_9 = load i7 %wp_parameters_addr_21" [patchMaker.cpp:263]   --->   Operation 119 'load' 'wp_parameters_load_9' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_16 : Operation 120 [1/1] (1.06ns)   --->   "%icmp_ln263 = icmp_eq  i64 %c_corner_max, i64 %wp_parameters_load_9" [patchMaker.cpp:263]   --->   Operation 120 'icmp' 'icmp_ln263' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 121 [1/1] (0.00ns)   --->   "%br_ln263 = br i1 %icmp_ln263, void, void %._crit_edge1" [patchMaker.cpp:263]   --->   Operation 121 'br' 'br_ln263' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 122 [1/1] (1.20ns)   --->   "%store_ln265 = store i64 0, i7 %wp_parameters_addr" [patchMaker.cpp:265]   --->   Operation 122 'store' 'store_ln265' <Predicate = (!icmp_ln263)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_16 : Operation 123 [1/1] (1.20ns)   --->   "%store_ln266 = store i64 0, i7 %wp_parameters_addr_2" [patchMaker.cpp:266]   --->   Operation 123 'store' 'store_ln266' <Predicate = (!icmp_ln263)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_16 : Operation 124 [1/1] (0.00ns)   --->   "%br_ln267 = br void %._crit_edge1" [patchMaker.cpp:267]   --->   Operation 124 'br' 'br_ln267' <Predicate = (!icmp_ln263)> <Delay = 0.00>
+
+State 17 <SV = 14> <Delay = 1.20>
+ST_17 : Operation 125 [2/2] (1.20ns)   --->   "%wp_parameters_load_10 = load i7 %wp_parameters_addr_22" [patchMaker.cpp:268]   --->   Operation 125 'load' 'wp_parameters_load_10' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 18 <SV = 15> <Delay = 3.46>
+ST_18 : Operation 126 [1/2] (1.20ns)   --->   "%wp_parameters_load_10 = load i7 %wp_parameters_addr_22" [patchMaker.cpp:268]   --->   Operation 126 'load' 'wp_parameters_load_10' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_18 : Operation 127 [1/1] (1.06ns)   --->   "%icmp_ln268 = icmp_eq  i64 %d_corner_max, i64 %wp_parameters_load_10" [patchMaker.cpp:268]   --->   Operation 127 'icmp' 'icmp_ln268' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 128 [1/1] (0.00ns)   --->   "%br_ln268 = br i1 %icmp_ln268, void, void %._crit_edge2" [patchMaker.cpp:268]   --->   Operation 128 'br' 'br_ln268' <Predicate = true> <Delay = 0.00>
+ST_18 : Operation 129 [1/1] (1.20ns)   --->   "%store_ln270 = store i64 0, i7 %wp_parameters_addr" [patchMaker.cpp:270]   --->   Operation 129 'store' 'store_ln270' <Predicate = (!icmp_ln268)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_18 : Operation 130 [1/1] (1.20ns)   --->   "%store_ln271 = store i64 0, i7 %wp_parameters_addr_2" [patchMaker.cpp:271]   --->   Operation 130 'store' 'store_ln271' <Predicate = (!icmp_ln268)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_18 : Operation 131 [1/1] (0.00ns)   --->   "%br_ln272 = br void %._crit_edge2" [patchMaker.cpp:272]   --->   Operation 131 'br' 'br_ln272' <Predicate = (!icmp_ln268)> <Delay = 0.00>
+ST_18 : Operation 132 [1/1] (1.06ns)   --->   "%icmp_ln275 = icmp_sgt  i64 %c_corner_max, i64 %a_corner_min" [patchMaker.cpp:275]   --->   Operation 132 'icmp' 'icmp_ln275' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 133 [1/1] (0.38ns)   --->   "%br_ln275 = br i1 %icmp_ln275, void %._crit_edge3, void" [patchMaker.cpp:275]   --->   Operation 133 'br' 'br_ln275' <Predicate = true> <Delay = 0.38>
+
+State 19 <SV = 16> <Delay = 1.20>
+ST_19 : Operation 134 [1/1] (1.20ns)   --->   "%store_ln277 = store i64 1, i7 %wp_parameters_addr_3" [patchMaker.cpp:277]   --->   Operation 134 'store' 'store_ln277' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_19 : Operation 135 [1/1] (1.20ns)   --->   "%store_ln278 = store i64 %b_corner_min, i7 %wp_parameters_addr_12" [patchMaker.cpp:278]   --->   Operation 135 'store' 'store_ln278' <Predicate = true> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 20 <SV = 17> <Delay = 2.26>
+ST_20 : Operation 136 [1/1] (1.20ns)   --->   "%store_ln279 = store i64 %b_corner_min, i7 %wp_parameters_addr_7" [patchMaker.cpp:279]   --->   Operation 136 'store' 'store_ln279' <Predicate = (icmp_ln275)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_20 : Operation 137 [1/1] (0.38ns)   --->   "%br_ln280 = br void %._crit_edge3" [patchMaker.cpp:280]   --->   Operation 137 'br' 'br_ln280' <Predicate = (icmp_ln275)> <Delay = 0.38>
+ST_20 : Operation 138 [1/1] (0.00ns)   --->   "%empty_98 = phi i64 %b_corner_min, void, i64 %c_corner_max, void %._crit_edge2"   --->   Operation 138 'phi' 'empty_98' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 139 [1/1] (1.06ns)   --->   "%icmp_ln282 = icmp_slt  i64 %b_corner_min, i64 %d_corner_max" [patchMaker.cpp:282]   --->   Operation 139 'icmp' 'icmp_ln282' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.06> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 140 [1/1] (0.00ns)   --->   "%br_ln282 = br i1 %icmp_ln282, void %._crit_edge4, void" [patchMaker.cpp:282]   --->   Operation 140 'br' 'br_ln282' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 141 [1/1] (1.20ns)   --->   "%store_ln284 = store i64 1, i7 %wp_parameters_addr_3" [patchMaker.cpp:284]   --->   Operation 141 'store' 'store_ln284' <Predicate = (icmp_ln282)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+
+State 21 <SV = 18> <Delay = 1.20>
+ST_21 : Operation 142 [1/1] (1.20ns)   --->   "%store_ln285 = store i64 %empty_98, i7 %wp_parameters_addr_10" [patchMaker.cpp:285]   --->   Operation 142 'store' 'store_ln285' <Predicate = (icmp_ln282)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_21 : Operation 143 [1/1] (1.20ns)   --->   "%store_ln286 = store i64 %empty_98, i7 %wp_parameters_addr_14" [patchMaker.cpp:286]   --->   Operation 143 'store' 'store_ln286' <Predicate = (icmp_ln282)> <Delay = 1.20> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.20> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 120> <RAM>
+ST_21 : Operation 144 [1/1] (0.00ns)   --->   "%br_ln287 = br void %._crit_edge4" [patchMaker.cpp:287]   --->   Operation 144 'br' 'br_ln287' <Predicate = (icmp_ln282)> <Delay = 0.00>
+ST_21 : Operation 145 [1/1] (0.00ns)   --->   "%ret_ln288 = ret" [patchMaker.cpp:288]   --->   Operation 145 'ret' 'ret_ln288' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ wp_parameters]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[22]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+wp_parameters_addr_4  (getelementptr ) [ 0010000000000000000000]
+wp_parameters_addr    (getelementptr ) [ 0001111111111111111000]
+wp_parameters_addr_1  (getelementptr ) [ 0001111111111110000000]
+store_ln210           (store         ) [ 0000000000000000000000]
+store_ln211           (store         ) [ 0000000000000000000000]
+wp_parameters_load    (load          ) [ 0000000000000000000000]
+empty                 (trunc         ) [ 0001111000000000000000]
+wp_parameters_addr_2  (getelementptr ) [ 0000111111111111111000]
+wp_parameters_addr_3  (getelementptr ) [ 0000111111111111111110]
+wp_parameters_addr_5  (getelementptr ) [ 0000111110000000000000]
+wp_parameters_addr_6  (getelementptr ) [ 0000111111100000000000]
+wp_parameters_addr_7  (getelementptr ) [ 0000111111111111111110]
+wp_parameters_addr_8  (getelementptr ) [ 0000111110000000000000]
+wp_parameters_addr_9  (getelementptr ) [ 0000111111110000000000]
+wp_parameters_addr_10 (getelementptr ) [ 0000111111111111111111]
+wp_parameters_addr_11 (getelementptr ) [ 0000111111110000000000]
+wp_parameters_addr_12 (getelementptr ) [ 0000111111111111111100]
+wp_parameters_addr_13 (getelementptr ) [ 0000111111111000000000]
+wp_parameters_addr_14 (getelementptr ) [ 0000111111111111111111]
+wp_parameters_addr_15 (getelementptr ) [ 0000111111000000000000]
+wp_parameters_addr_20 (getelementptr ) [ 0000111111111110000000]
+wp_parameters_addr_21 (getelementptr ) [ 0000111111111111100000]
+wp_parameters_addr_22 (getelementptr ) [ 0000111111111111111000]
+store_ln212           (store         ) [ 0000000000000000000000]
+store_ln213           (store         ) [ 0000000000000000000000]
+br_ln222              (br            ) [ 0001111000000000000000]
+i                     (phi           ) [ 0000100000000000000000]
+d_corner_max          (phi           ) [ 0000111111111111111110]
+a_corner_min          (phi           ) [ 0000110111111111111000]
+b_corner_min          (phi           ) [ 0000110111111111111110]
+c_corner_max          (phi           ) [ 0000111111111111111110]
+add_ln222             (add           ) [ 0001111000000000000000]
+specpipeline_ln0      (specpipeline  ) [ 0000000000000000000000]
+icmp_ln222            (icmp          ) [ 0000111000000000000000]
+br_ln222              (br            ) [ 0000000000000000000000]
+trunc_ln224           (trunc         ) [ 0000000000000000000000]
+tmp_cast              (bitconcatenate) [ 0000000000000000000000]
+trunc_ln224_1         (trunc         ) [ 0000000000000000000000]
+tmp_159_cast          (bitconcatenate) [ 0000000000000000000000]
+sub_ln224             (sub           ) [ 0000010000000000000000]
+zext_ln224            (zext          ) [ 0000000000000000000000]
+wp_parameters_addr_16 (getelementptr ) [ 0000010000000000000000]
+or_ln228              (or            ) [ 0000000000000000000000]
+zext_ln228            (zext          ) [ 0000000000000000000000]
+wp_parameters_addr_17 (getelementptr ) [ 0000010000000000000000]
+add_ln232             (add           ) [ 0000000000000000000000]
+zext_ln232            (zext          ) [ 0000000000000000000000]
+wp_parameters_addr_18 (getelementptr ) [ 0000101000000000000000]
+add_ln236             (add           ) [ 0000000000000000000000]
+zext_ln236            (zext          ) [ 0000000000000000000000]
+wp_parameters_addr_19 (getelementptr ) [ 0000101000000000000000]
+wp_parameters_load_4  (load          ) [ 0000000000000000000000]
+icmp_ln224            (icmp          ) [ 0000000000000000000000]
+a_corner_min_1        (select        ) [ 0001101000000000000000]
+b_corner_min_1        (load          ) [ 0000000000000000000000]
+icmp_ln228            (icmp          ) [ 0000000000000000000000]
+b_corner_min_2        (select        ) [ 0001101000000000000000]
+specloopname_ln217    (specloopname  ) [ 0000000000000000000000]
+wp_parameters_load_6  (load          ) [ 0000000000000000000000]
+icmp_ln232            (icmp          ) [ 0000000000000000000000]
+c_corner_max_1        (select        ) [ 0001111000000000000000]
+d_corner_max_1        (load          ) [ 0000000000000000000000]
+icmp_ln236            (icmp          ) [ 0000000000000000000000]
+d_corner_max_2        (select        ) [ 0001111000000000000000]
+br_ln0                (br            ) [ 0001111000000000000000]
+wp_parameters_load_1  (load          ) [ 0000000001110000000000]
+store_ln244           (store         ) [ 0000000000000000000000]
+wp_parameters_load_2  (load          ) [ 0000000001111000000000]
+store_ln246           (store         ) [ 0000000000000000000000]
+store_ln248           (store         ) [ 0000000000000000000000]
+wp_parameters_load_3  (load          ) [ 0000000000000000000000]
+icmp_ln253            (icmp          ) [ 0000000000111100000000]
+store_ln243           (store         ) [ 0000000000000000000000]
+store_ln250           (store         ) [ 0000000000000000000000]
+store_ln245           (store         ) [ 0000000000000000000000]
+store_ln247           (store         ) [ 0000000000000000000000]
+store_ln249           (store         ) [ 0000000000000000000000]
+br_ln253              (br            ) [ 0000000000000000000000]
+store_ln255           (store         ) [ 0000000000000000000000]
+store_ln256           (store         ) [ 0000000000000000000000]
+br_ln257              (br            ) [ 0000000000000000000000]
+wp_parameters_load_8  (load          ) [ 0000000000000000000000]
+icmp_ln258            (icmp          ) [ 0000000000000010000000]
+br_ln258              (br            ) [ 0000000000000000000000]
+store_ln260           (store         ) [ 0000000000000000000000]
+store_ln261           (store         ) [ 0000000000000000000000]
+br_ln262              (br            ) [ 0000000000000000000000]
+wp_parameters_load_9  (load          ) [ 0000000000000000000000]
+icmp_ln263            (icmp          ) [ 0000000000000000100000]
+br_ln263              (br            ) [ 0000000000000000000000]
+store_ln265           (store         ) [ 0000000000000000000000]
+store_ln266           (store         ) [ 0000000000000000000000]
+br_ln267              (br            ) [ 0000000000000000000000]
+wp_parameters_load_10 (load          ) [ 0000000000000000000000]
+icmp_ln268            (icmp          ) [ 0000000000000000001000]
+br_ln268              (br            ) [ 0000000000000000000000]
+store_ln270           (store         ) [ 0000000000000000000000]
+store_ln271           (store         ) [ 0000000000000000000000]
+br_ln272              (br            ) [ 0000000000000000000000]
+icmp_ln275            (icmp          ) [ 0000000000000000001110]
+br_ln275              (br            ) [ 0000000000000000001110]
+store_ln277           (store         ) [ 0000000000000000000000]
+store_ln278           (store         ) [ 0000000000000000000000]
+store_ln279           (store         ) [ 0000000000000000000000]
+br_ln280              (br            ) [ 0000000000000000000000]
+empty_98              (phi           ) [ 0000000000000000000111]
+icmp_ln282            (icmp          ) [ 0000000000000000000011]
+br_ln282              (br            ) [ 0000000000000000000000]
+store_ln284           (store         ) [ 0000000000000000000000]
+store_ln285           (store         ) [ 0000000000000000000000]
+store_ln286           (store         ) [ 0000000000000000000000]
+br_ln287              (br            ) [ 0000000000000000000000]
+ret_ln288             (ret           ) [ 0000000000000000000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="wp_parameters">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="wp_parameters"/><MemPortTyVec>2 2 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1001" name="const_2">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1001" name="const_4">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1001" name="const_6">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1001" name="const_8">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1001" name="const_10">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1001" name="const_32">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecPipeline"/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_str"/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1001" name="const_58">
+<pin_list>
+<pin id="59" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i7.i4.i3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="60" class="1001" name="const_60">
+<pin_list>
+<pin id="61" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="62" class="1001" name="const_62">
+<pin_list>
+<pin id="63" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitConcatenate.i7.i6.i1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="64" class="1001" name="const_64">
+<pin_list>
+<pin id="65" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="66" class="1001" name="const_66">
+<pin_list>
+<pin id="67" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="68" class="1001" name="const_68">
+<pin_list>
+<pin id="69" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="70" class="1001" name="const_70">
+<pin_list>
+<pin id="71" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="72" class="1001" name="const_72">
+<pin_list>
+<pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopName"/></StgValue>
+</bind>
+</comp>
+
+<comp id="74" class="1001" name="const_74">
+<pin_list>
+<pin id="75" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="76" class="1004" name="wp_parameters_addr_4_gep_fu_76">
+<pin_list>
+<pin id="77" dir="0" index="0" bw="64" slack="0"/>
+<pin id="78" dir="0" index="1" bw="1" slack="0"/>
+<pin id="79" dir="0" index="2" bw="8" slack="0"/>
+<pin id="80" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_4/1 "/>
+</bind>
+</comp>
+
+<comp id="84" class="1004" name="grp_access_fu_84">
+<pin_list>
+<pin id="85" dir="0" index="0" bw="7" slack="0"/>
+<pin id="86" dir="0" index="1" bw="64" slack="0"/>
+<pin id="87" dir="0" index="2" bw="0" slack="0"/>
+<pin id="106" dir="0" index="4" bw="7" slack="0"/>
+<pin id="107" dir="0" index="5" bw="64" slack="2147483647"/>
+<pin id="108" dir="0" index="6" bw="0" slack="2147483647"/>
+<pin id="88" dir="1" index="3" bw="64" slack="0"/>
+<pin id="109" dir="1" index="7" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="wp_parameters_load/1 store_ln210/2 store_ln211/2 store_ln212/3 store_ln213/3 wp_parameters_load_4/4 b_corner_min_1/4 wp_parameters_load_6/5 d_corner_max_1/5 wp_parameters_load_1/7 wp_parameters_load_2/7 store_ln244/8 wp_parameters_load_3/8 store_ln246/9 store_ln248/9 store_ln243/10 store_ln250/10 store_ln245/11 store_ln247/11 store_ln249/12 store_ln255/12 store_ln256/13 wp_parameters_load_8/13 store_ln260/14 store_ln261/14 wp_parameters_load_9/15 store_ln265/16 store_ln266/16 wp_parameters_load_10/17 store_ln270/18 store_ln271/18 store_ln277/19 store_ln278/19 store_ln279/20 store_ln284/20 store_ln285/21 store_ln286/21 "/>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="wp_parameters_addr_gep_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="64" slack="0"/>
+<pin id="92" dir="0" index="1" bw="1" slack="0"/>
+<pin id="93" dir="0" index="2" bw="8" slack="0"/>
+<pin id="94" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr/2 "/>
+</bind>
+</comp>
+
+<comp id="98" class="1004" name="wp_parameters_addr_1_gep_fu_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="64" slack="0"/>
+<pin id="100" dir="0" index="1" bw="1" slack="0"/>
+<pin id="101" dir="0" index="2" bw="8" slack="0"/>
+<pin id="102" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_1/2 "/>
+</bind>
+</comp>
+
+<comp id="114" class="1004" name="wp_parameters_addr_2_gep_fu_114">
+<pin_list>
+<pin id="115" dir="0" index="0" bw="64" slack="0"/>
+<pin id="116" dir="0" index="1" bw="1" slack="0"/>
+<pin id="117" dir="0" index="2" bw="8" slack="0"/>
+<pin id="118" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_2/3 "/>
+</bind>
+</comp>
+
+<comp id="122" class="1004" name="wp_parameters_addr_3_gep_fu_122">
+<pin_list>
+<pin id="123" dir="0" index="0" bw="64" slack="0"/>
+<pin id="124" dir="0" index="1" bw="1" slack="0"/>
+<pin id="125" dir="0" index="2" bw="8" slack="0"/>
+<pin id="126" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_3/3 "/>
+</bind>
+</comp>
+
+<comp id="130" class="1004" name="wp_parameters_addr_5_gep_fu_130">
+<pin_list>
+<pin id="131" dir="0" index="0" bw="64" slack="0"/>
+<pin id="132" dir="0" index="1" bw="1" slack="0"/>
+<pin id="133" dir="0" index="2" bw="4" slack="0"/>
+<pin id="134" dir="1" index="3" bw="7" slack="2"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_5/3 "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="wp_parameters_addr_6_gep_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="64" slack="0"/>
+<pin id="140" dir="0" index="1" bw="1" slack="0"/>
+<pin id="141" dir="0" index="2" bw="7" slack="0"/>
+<pin id="142" dir="1" index="3" bw="7" slack="5"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_6/3 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="wp_parameters_addr_7_gep_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="64" slack="0"/>
+<pin id="148" dir="0" index="1" bw="1" slack="0"/>
+<pin id="149" dir="0" index="2" bw="7" slack="0"/>
+<pin id="150" dir="1" index="3" bw="7" slack="3"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_7/3 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="wp_parameters_addr_8_gep_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="64" slack="0"/>
+<pin id="156" dir="0" index="1" bw="1" slack="0"/>
+<pin id="157" dir="0" index="2" bw="4" slack="0"/>
+<pin id="158" dir="1" index="3" bw="7" slack="2"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_8/3 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="wp_parameters_addr_9_gep_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="64" slack="0"/>
+<pin id="164" dir="0" index="1" bw="1" slack="0"/>
+<pin id="165" dir="0" index="2" bw="7" slack="0"/>
+<pin id="166" dir="1" index="3" bw="7" slack="6"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_9/3 "/>
+</bind>
+</comp>
+
+<comp id="170" class="1004" name="wp_parameters_addr_10_gep_fu_170">
+<pin_list>
+<pin id="171" dir="0" index="0" bw="64" slack="0"/>
+<pin id="172" dir="0" index="1" bw="1" slack="0"/>
+<pin id="173" dir="0" index="2" bw="7" slack="0"/>
+<pin id="174" dir="1" index="3" bw="7" slack="4"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_10/3 "/>
+</bind>
+</comp>
+
+<comp id="178" class="1004" name="wp_parameters_addr_11_gep_fu_178">
+<pin_list>
+<pin id="179" dir="0" index="0" bw="64" slack="0"/>
+<pin id="180" dir="0" index="1" bw="1" slack="0"/>
+<pin id="181" dir="0" index="2" bw="7" slack="0"/>
+<pin id="182" dir="1" index="3" bw="7" slack="6"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_11/3 "/>
+</bind>
+</comp>
+
+<comp id="186" class="1004" name="wp_parameters_addr_12_gep_fu_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="64" slack="0"/>
+<pin id="188" dir="0" index="1" bw="1" slack="0"/>
+<pin id="189" dir="0" index="2" bw="7" slack="0"/>
+<pin id="190" dir="1" index="3" bw="7" slack="4"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_12/3 "/>
+</bind>
+</comp>
+
+<comp id="194" class="1004" name="wp_parameters_addr_13_gep_fu_194">
+<pin_list>
+<pin id="195" dir="0" index="0" bw="64" slack="0"/>
+<pin id="196" dir="0" index="1" bw="1" slack="0"/>
+<pin id="197" dir="0" index="2" bw="8" slack="0"/>
+<pin id="198" dir="1" index="3" bw="7" slack="7"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_13/3 "/>
+</bind>
+</comp>
+
+<comp id="202" class="1004" name="wp_parameters_addr_14_gep_fu_202">
+<pin_list>
+<pin id="203" dir="0" index="0" bw="64" slack="0"/>
+<pin id="204" dir="0" index="1" bw="1" slack="0"/>
+<pin id="205" dir="0" index="2" bw="8" slack="0"/>
+<pin id="206" dir="1" index="3" bw="7" slack="5"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_14/3 "/>
+</bind>
+</comp>
+
+<comp id="210" class="1004" name="wp_parameters_addr_15_gep_fu_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="64" slack="0"/>
+<pin id="212" dir="0" index="1" bw="1" slack="0"/>
+<pin id="213" dir="0" index="2" bw="6" slack="0"/>
+<pin id="214" dir="1" index="3" bw="7" slack="3"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_15/3 "/>
+</bind>
+</comp>
+
+<comp id="218" class="1004" name="wp_parameters_addr_20_gep_fu_218">
+<pin_list>
+<pin id="219" dir="0" index="0" bw="64" slack="0"/>
+<pin id="220" dir="0" index="1" bw="1" slack="0"/>
+<pin id="221" dir="0" index="2" bw="6" slack="0"/>
+<pin id="222" dir="1" index="3" bw="7" slack="8"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_20/3 "/>
+</bind>
+</comp>
+
+<comp id="226" class="1004" name="wp_parameters_addr_21_gep_fu_226">
+<pin_list>
+<pin id="227" dir="0" index="0" bw="64" slack="0"/>
+<pin id="228" dir="0" index="1" bw="1" slack="0"/>
+<pin id="229" dir="0" index="2" bw="6" slack="0"/>
+<pin id="230" dir="1" index="3" bw="7" slack="10"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_21/3 "/>
+</bind>
+</comp>
+
+<comp id="234" class="1004" name="wp_parameters_addr_22_gep_fu_234">
+<pin_list>
+<pin id="235" dir="0" index="0" bw="64" slack="0"/>
+<pin id="236" dir="0" index="1" bw="1" slack="0"/>
+<pin id="237" dir="0" index="2" bw="6" slack="0"/>
+<pin id="238" dir="1" index="3" bw="7" slack="12"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_22/3 "/>
+</bind>
+</comp>
+
+<comp id="245" class="1004" name="wp_parameters_addr_16_gep_fu_245">
+<pin_list>
+<pin id="246" dir="0" index="0" bw="64" slack="0"/>
+<pin id="247" dir="0" index="1" bw="1" slack="0"/>
+<pin id="248" dir="0" index="2" bw="7" slack="0"/>
+<pin id="249" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_16/4 "/>
+</bind>
+</comp>
+
+<comp id="252" class="1004" name="wp_parameters_addr_17_gep_fu_252">
+<pin_list>
+<pin id="253" dir="0" index="0" bw="64" slack="0"/>
+<pin id="254" dir="0" index="1" bw="1" slack="0"/>
+<pin id="255" dir="0" index="2" bw="7" slack="0"/>
+<pin id="256" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_17/4 "/>
+</bind>
+</comp>
+
+<comp id="261" class="1004" name="wp_parameters_addr_18_gep_fu_261">
+<pin_list>
+<pin id="262" dir="0" index="0" bw="64" slack="0"/>
+<pin id="263" dir="0" index="1" bw="1" slack="0"/>
+<pin id="264" dir="0" index="2" bw="7" slack="0"/>
+<pin id="265" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_18/5 "/>
+</bind>
+</comp>
+
+<comp id="268" class="1004" name="wp_parameters_addr_19_gep_fu_268">
+<pin_list>
+<pin id="269" dir="0" index="0" bw="64" slack="0"/>
+<pin id="270" dir="0" index="1" bw="1" slack="0"/>
+<pin id="271" dir="0" index="2" bw="7" slack="0"/>
+<pin id="272" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="wp_parameters_addr_19/5 "/>
+</bind>
+</comp>
+
+<comp id="278" class="1005" name="i_reg_278">
+<pin_list>
+<pin id="279" dir="0" index="0" bw="32" slack="1"/>
+<pin id="280" dir="1" index="1" bw="32" slack="1"/>
+</pin_list>
+<bind>
+<opset="i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="282" class="1004" name="i_phi_fu_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="1" slack="1"/>
+<pin id="284" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="285" dir="0" index="2" bw="32" slack="0"/>
+<pin id="286" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="287" dir="1" index="4" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="i/4 "/>
+</bind>
+</comp>
+
+<comp id="289" class="1005" name="d_corner_max_reg_289">
+<pin_list>
+<pin id="290" dir="0" index="0" bw="64" slack="1"/>
+<pin id="291" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="d_corner_max (phireg) "/>
+</bind>
+</comp>
+
+<comp id="294" class="1004" name="d_corner_max_phi_fu_294">
+<pin_list>
+<pin id="295" dir="0" index="0" bw="64" slack="1"/>
+<pin id="296" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="297" dir="0" index="2" bw="64" slack="1"/>
+<pin id="298" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="299" dir="1" index="4" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="d_corner_max/4 "/>
+</bind>
+</comp>
+
+<comp id="302" class="1005" name="a_corner_min_reg_302">
+<pin_list>
+<pin id="303" dir="0" index="0" bw="64" slack="1"/>
+<pin id="304" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="a_corner_min (phireg) "/>
+</bind>
+</comp>
+
+<comp id="307" class="1004" name="a_corner_min_phi_fu_307">
+<pin_list>
+<pin id="308" dir="0" index="0" bw="64" slack="1"/>
+<pin id="309" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="310" dir="0" index="2" bw="64" slack="1"/>
+<pin id="311" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="312" dir="1" index="4" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="a_corner_min/4 "/>
+</bind>
+</comp>
+
+<comp id="315" class="1005" name="b_corner_min_reg_315">
+<pin_list>
+<pin id="316" dir="0" index="0" bw="64" slack="1"/>
+<pin id="317" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="b_corner_min (phireg) "/>
+</bind>
+</comp>
+
+<comp id="321" class="1004" name="b_corner_min_phi_fu_321">
+<pin_list>
+<pin id="322" dir="0" index="0" bw="64" slack="1"/>
+<pin id="323" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="324" dir="0" index="2" bw="64" slack="1"/>
+<pin id="325" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="326" dir="1" index="4" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="b_corner_min/4 "/>
+</bind>
+</comp>
+
+<comp id="329" class="1005" name="c_corner_max_reg_329">
+<pin_list>
+<pin id="330" dir="0" index="0" bw="64" slack="1"/>
+<pin id="331" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="c_corner_max (phireg) "/>
+</bind>
+</comp>
+
+<comp id="334" class="1004" name="c_corner_max_phi_fu_334">
+<pin_list>
+<pin id="335" dir="0" index="0" bw="64" slack="1"/>
+<pin id="336" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="337" dir="0" index="2" bw="64" slack="1"/>
+<pin id="338" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="339" dir="1" index="4" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="c_corner_max/4 "/>
+</bind>
+</comp>
+
+<comp id="342" class="1005" name="empty_98_reg_342">
+<pin_list>
+<pin id="343" dir="0" index="0" bw="64" slack="1"/>
+<pin id="344" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="empty_98 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="347" class="1004" name="empty_98_phi_fu_347">
+<pin_list>
+<pin id="348" dir="0" index="0" bw="64" slack="14"/>
+<pin id="349" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="350" dir="0" index="2" bw="64" slack="14"/>
+<pin id="351" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="352" dir="1" index="4" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="empty_98/20 "/>
+</bind>
+</comp>
+
+<comp id="356" class="1004" name="empty_fu_356">
+<pin_list>
+<pin id="357" dir="0" index="0" bw="64" slack="0"/>
+<pin id="358" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="empty/2 "/>
+</bind>
+</comp>
+
+<comp id="360" class="1004" name="add_ln222_fu_360">
+<pin_list>
+<pin id="361" dir="0" index="0" bw="32" slack="0"/>
+<pin id="362" dir="0" index="1" bw="1" slack="0"/>
+<pin id="363" dir="1" index="2" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln222/4 "/>
+</bind>
+</comp>
+
+<comp id="366" class="1004" name="icmp_ln222_fu_366">
+<pin_list>
+<pin id="367" dir="0" index="0" bw="32" slack="0"/>
+<pin id="368" dir="0" index="1" bw="32" slack="2"/>
+<pin id="369" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln222/4 "/>
+</bind>
+</comp>
+
+<comp id="371" class="1004" name="trunc_ln224_fu_371">
+<pin_list>
+<pin id="372" dir="0" index="0" bw="32" slack="0"/>
+<pin id="373" dir="1" index="1" bw="4" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln224/4 "/>
+</bind>
+</comp>
+
+<comp id="375" class="1004" name="tmp_cast_fu_375">
+<pin_list>
+<pin id="376" dir="0" index="0" bw="7" slack="0"/>
+<pin id="377" dir="0" index="1" bw="4" slack="0"/>
+<pin id="378" dir="0" index="2" bw="1" slack="0"/>
+<pin id="379" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="tmp_cast/4 "/>
+</bind>
+</comp>
+
+<comp id="383" class="1004" name="trunc_ln224_1_fu_383">
+<pin_list>
+<pin id="384" dir="0" index="0" bw="32" slack="0"/>
+<pin id="385" dir="1" index="1" bw="6" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="trunc_ln224_1/4 "/>
+</bind>
+</comp>
+
+<comp id="387" class="1004" name="tmp_159_cast_fu_387">
+<pin_list>
+<pin id="388" dir="0" index="0" bw="7" slack="0"/>
+<pin id="389" dir="0" index="1" bw="6" slack="0"/>
+<pin id="390" dir="0" index="2" bw="1" slack="0"/>
+<pin id="391" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
+<opset="tmp_159_cast/4 "/>
+</bind>
+</comp>
+
+<comp id="395" class="1004" name="sub_ln224_fu_395">
+<pin_list>
+<pin id="396" dir="0" index="0" bw="7" slack="0"/>
+<pin id="397" dir="0" index="1" bw="7" slack="0"/>
+<pin id="398" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="sub(10) " fcode="sub"/>
+<opset="sub_ln224/4 "/>
+</bind>
+</comp>
+
+<comp id="401" class="1004" name="zext_ln224_fu_401">
+<pin_list>
+<pin id="402" dir="0" index="0" bw="7" slack="0"/>
+<pin id="403" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln224/4 "/>
+</bind>
+</comp>
+
+<comp id="406" class="1004" name="or_ln228_fu_406">
+<pin_list>
+<pin id="407" dir="0" index="0" bw="7" slack="0"/>
+<pin id="408" dir="0" index="1" bw="7" slack="0"/>
+<pin id="409" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="or(24) " fcode="or"/>
+<opset="or_ln228/4 "/>
+</bind>
+</comp>
+
+<comp id="412" class="1004" name="zext_ln228_fu_412">
+<pin_list>
+<pin id="413" dir="0" index="0" bw="7" slack="0"/>
+<pin id="414" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln228/4 "/>
+</bind>
+</comp>
+
+<comp id="417" class="1004" name="add_ln232_fu_417">
+<pin_list>
+<pin id="418" dir="0" index="0" bw="7" slack="1"/>
+<pin id="419" dir="0" index="1" bw="3" slack="0"/>
+<pin id="420" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln232/5 "/>
+</bind>
+</comp>
+
+<comp id="422" class="1004" name="zext_ln232_fu_422">
+<pin_list>
+<pin id="423" dir="0" index="0" bw="7" slack="0"/>
+<pin id="424" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln232/5 "/>
+</bind>
+</comp>
+
+<comp id="427" class="1004" name="add_ln236_fu_427">
+<pin_list>
+<pin id="428" dir="0" index="0" bw="7" slack="1"/>
+<pin id="429" dir="0" index="1" bw="3" slack="0"/>
+<pin id="430" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="add_ln236/5 "/>
+</bind>
+</comp>
+
+<comp id="432" class="1004" name="zext_ln236_fu_432">
+<pin_list>
+<pin id="433" dir="0" index="0" bw="7" slack="0"/>
+<pin id="434" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="zext_ln236/5 "/>
+</bind>
+</comp>
+
+<comp id="437" class="1004" name="icmp_ln224_fu_437">
+<pin_list>
+<pin id="438" dir="0" index="0" bw="64" slack="0"/>
+<pin id="439" dir="0" index="1" bw="64" slack="1"/>
+<pin id="440" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln224/5 "/>
+</bind>
+</comp>
+
+<comp id="443" class="1004" name="a_corner_min_1_fu_443">
+<pin_list>
+<pin id="444" dir="0" index="0" bw="1" slack="0"/>
+<pin id="445" dir="0" index="1" bw="64" slack="0"/>
+<pin id="446" dir="0" index="2" bw="64" slack="1"/>
+<pin id="447" dir="1" index="3" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="a_corner_min_1/5 "/>
+</bind>
+</comp>
+
+<comp id="451" class="1004" name="icmp_ln228_fu_451">
+<pin_list>
+<pin id="452" dir="0" index="0" bw="64" slack="0"/>
+<pin id="453" dir="0" index="1" bw="64" slack="1"/>
+<pin id="454" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln228/5 "/>
+</bind>
+</comp>
+
+<comp id="457" class="1004" name="b_corner_min_2_fu_457">
+<pin_list>
+<pin id="458" dir="0" index="0" bw="1" slack="0"/>
+<pin id="459" dir="0" index="1" bw="64" slack="0"/>
+<pin id="460" dir="0" index="2" bw="64" slack="1"/>
+<pin id="461" dir="1" index="3" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="b_corner_min_2/5 "/>
+</bind>
+</comp>
+
+<comp id="465" class="1004" name="icmp_ln232_fu_465">
+<pin_list>
+<pin id="466" dir="0" index="0" bw="64" slack="0"/>
+<pin id="467" dir="0" index="1" bw="64" slack="2"/>
+<pin id="468" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln232/6 "/>
+</bind>
+</comp>
+
+<comp id="471" class="1004" name="c_corner_max_1_fu_471">
+<pin_list>
+<pin id="472" dir="0" index="0" bw="1" slack="0"/>
+<pin id="473" dir="0" index="1" bw="64" slack="0"/>
+<pin id="474" dir="0" index="2" bw="64" slack="2"/>
+<pin id="475" dir="1" index="3" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="c_corner_max_1/6 "/>
+</bind>
+</comp>
+
+<comp id="479" class="1004" name="icmp_ln236_fu_479">
+<pin_list>
+<pin id="480" dir="0" index="0" bw="64" slack="0"/>
+<pin id="481" dir="0" index="1" bw="64" slack="2"/>
+<pin id="482" dir="1" index="2" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln236/6 "/>
+</bind>
+</comp>
+
+<comp id="485" class="1004" name="d_corner_max_2_fu_485">
+<pin_list>
+<pin id="486" dir="0" index="0" bw="1" slack="0"/>
+<pin id="487" dir="0" index="1" bw="64" slack="0"/>
+<pin id="488" dir="0" index="2" bw="64" slack="2"/>
+<pin id="489" dir="1" index="3" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="d_corner_max_2/6 "/>
+</bind>
+</comp>
+
+<comp id="493" class="1004" name="icmp_ln253_fu_493">
+<pin_list>
+<pin id="494" dir="0" index="0" bw="64" slack="3"/>
+<pin id="495" dir="0" index="1" bw="64" slack="0"/>
+<pin id="496" dir="1" index="2" bw="1" slack="3"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln253/9 "/>
+</bind>
+</comp>
+
+<comp id="499" class="1004" name="icmp_ln258_fu_499">
+<pin_list>
+<pin id="500" dir="0" index="0" bw="64" slack="8"/>
+<pin id="501" dir="0" index="1" bw="64" slack="0"/>
+<pin id="502" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln258/14 "/>
+</bind>
+</comp>
+
+<comp id="505" class="1004" name="icmp_ln263_fu_505">
+<pin_list>
+<pin id="506" dir="0" index="0" bw="64" slack="10"/>
+<pin id="507" dir="0" index="1" bw="64" slack="0"/>
+<pin id="508" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln263/16 "/>
+</bind>
+</comp>
+
+<comp id="511" class="1004" name="icmp_ln268_fu_511">
+<pin_list>
+<pin id="512" dir="0" index="0" bw="64" slack="12"/>
+<pin id="513" dir="0" index="1" bw="64" slack="0"/>
+<pin id="514" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln268/18 "/>
+</bind>
+</comp>
+
+<comp id="517" class="1004" name="icmp_ln275_fu_517">
+<pin_list>
+<pin id="518" dir="0" index="0" bw="64" slack="12"/>
+<pin id="519" dir="0" index="1" bw="64" slack="12"/>
+<pin id="520" dir="1" index="2" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln275/18 "/>
+</bind>
+</comp>
+
+<comp id="523" class="1004" name="icmp_ln282_fu_523">
+<pin_list>
+<pin id="524" dir="0" index="0" bw="64" slack="14"/>
+<pin id="525" dir="0" index="1" bw="64" slack="14"/>
+<pin id="526" dir="1" index="2" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="icmp_ln282/20 "/>
+</bind>
+</comp>
+
+<comp id="529" class="1005" name="wp_parameters_addr_4_reg_529">
+<pin_list>
+<pin id="530" dir="0" index="0" bw="7" slack="1"/>
+<pin id="531" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_4 "/>
+</bind>
+</comp>
+
+<comp id="534" class="1005" name="wp_parameters_addr_reg_534">
+<pin_list>
+<pin id="535" dir="0" index="0" bw="7" slack="8"/>
+<pin id="536" dir="1" index="1" bw="7" slack="8"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr "/>
+</bind>
+</comp>
+
+<comp id="540" class="1005" name="wp_parameters_addr_1_reg_540">
+<pin_list>
+<pin id="541" dir="0" index="0" bw="7" slack="9"/>
+<pin id="542" dir="1" index="1" bw="7" slack="9"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_1 "/>
+</bind>
+</comp>
+
+<comp id="545" class="1005" name="empty_reg_545">
+<pin_list>
+<pin id="546" dir="0" index="0" bw="32" slack="2"/>
+<pin id="547" dir="1" index="1" bw="32" slack="2"/>
+</pin_list>
+<bind>
+<opset="empty "/>
+</bind>
+</comp>
+
+<comp id="550" class="1005" name="wp_parameters_addr_2_reg_550">
+<pin_list>
+<pin id="551" dir="0" index="0" bw="7" slack="11"/>
+<pin id="552" dir="1" index="1" bw="7" slack="11"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_2 "/>
+</bind>
+</comp>
+
+<comp id="556" class="1005" name="wp_parameters_addr_3_reg_556">
+<pin_list>
+<pin id="557" dir="0" index="0" bw="7" slack="14"/>
+<pin id="558" dir="1" index="1" bw="7" slack="14"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_3 "/>
+</bind>
+</comp>
+
+<comp id="562" class="1005" name="wp_parameters_addr_5_reg_562">
+<pin_list>
+<pin id="563" dir="0" index="0" bw="7" slack="2"/>
+<pin id="564" dir="1" index="1" bw="7" slack="2"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_5 "/>
+</bind>
+</comp>
+
+<comp id="567" class="1005" name="wp_parameters_addr_6_reg_567">
+<pin_list>
+<pin id="568" dir="0" index="0" bw="7" slack="5"/>
+<pin id="569" dir="1" index="1" bw="7" slack="5"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_6 "/>
+</bind>
+</comp>
+
+<comp id="572" class="1005" name="wp_parameters_addr_7_reg_572">
+<pin_list>
+<pin id="573" dir="0" index="0" bw="7" slack="3"/>
+<pin id="574" dir="1" index="1" bw="7" slack="3"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_7 "/>
+</bind>
+</comp>
+
+<comp id="578" class="1005" name="wp_parameters_addr_8_reg_578">
+<pin_list>
+<pin id="579" dir="0" index="0" bw="7" slack="2"/>
+<pin id="580" dir="1" index="1" bw="7" slack="2"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_8 "/>
+</bind>
+</comp>
+
+<comp id="583" class="1005" name="wp_parameters_addr_9_reg_583">
+<pin_list>
+<pin id="584" dir="0" index="0" bw="7" slack="6"/>
+<pin id="585" dir="1" index="1" bw="7" slack="6"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_9 "/>
+</bind>
+</comp>
+
+<comp id="588" class="1005" name="wp_parameters_addr_10_reg_588">
+<pin_list>
+<pin id="589" dir="0" index="0" bw="7" slack="4"/>
+<pin id="590" dir="1" index="1" bw="7" slack="4"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_10 "/>
+</bind>
+</comp>
+
+<comp id="593" class="1005" name="wp_parameters_addr_11_reg_593">
+<pin_list>
+<pin id="594" dir="0" index="0" bw="7" slack="6"/>
+<pin id="595" dir="1" index="1" bw="7" slack="6"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_11 "/>
+</bind>
+</comp>
+
+<comp id="598" class="1005" name="wp_parameters_addr_12_reg_598">
+<pin_list>
+<pin id="599" dir="0" index="0" bw="7" slack="4"/>
+<pin id="600" dir="1" index="1" bw="7" slack="4"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_12 "/>
+</bind>
+</comp>
+
+<comp id="603" class="1005" name="wp_parameters_addr_13_reg_603">
+<pin_list>
+<pin id="604" dir="0" index="0" bw="7" slack="7"/>
+<pin id="605" dir="1" index="1" bw="7" slack="7"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_13 "/>
+</bind>
+</comp>
+
+<comp id="608" class="1005" name="wp_parameters_addr_14_reg_608">
+<pin_list>
+<pin id="609" dir="0" index="0" bw="7" slack="5"/>
+<pin id="610" dir="1" index="1" bw="7" slack="5"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_14 "/>
+</bind>
+</comp>
+
+<comp id="613" class="1005" name="wp_parameters_addr_15_reg_613">
+<pin_list>
+<pin id="614" dir="0" index="0" bw="7" slack="3"/>
+<pin id="615" dir="1" index="1" bw="7" slack="3"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_15 "/>
+</bind>
+</comp>
+
+<comp id="618" class="1005" name="wp_parameters_addr_20_reg_618">
+<pin_list>
+<pin id="619" dir="0" index="0" bw="7" slack="8"/>
+<pin id="620" dir="1" index="1" bw="7" slack="8"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_20 "/>
+</bind>
+</comp>
+
+<comp id="623" class="1005" name="wp_parameters_addr_21_reg_623">
+<pin_list>
+<pin id="624" dir="0" index="0" bw="7" slack="10"/>
+<pin id="625" dir="1" index="1" bw="7" slack="10"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_21 "/>
+</bind>
+</comp>
+
+<comp id="628" class="1005" name="wp_parameters_addr_22_reg_628">
+<pin_list>
+<pin id="629" dir="0" index="0" bw="7" slack="12"/>
+<pin id="630" dir="1" index="1" bw="7" slack="12"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_22 "/>
+</bind>
+</comp>
+
+<comp id="633" class="1005" name="add_ln222_reg_633">
+<pin_list>
+<pin id="634" dir="0" index="0" bw="32" slack="0"/>
+<pin id="635" dir="1" index="1" bw="32" slack="0"/>
+</pin_list>
+<bind>
+<opset="add_ln222 "/>
+</bind>
+</comp>
+
+<comp id="638" class="1005" name="icmp_ln222_reg_638">
+<pin_list>
+<pin id="639" dir="0" index="0" bw="1" slack="1"/>
+<pin id="640" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln222 "/>
+</bind>
+</comp>
+
+<comp id="642" class="1005" name="sub_ln224_reg_642">
+<pin_list>
+<pin id="643" dir="0" index="0" bw="7" slack="1"/>
+<pin id="644" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="sub_ln224 "/>
+</bind>
+</comp>
+
+<comp id="648" class="1005" name="wp_parameters_addr_16_reg_648">
+<pin_list>
+<pin id="649" dir="0" index="0" bw="7" slack="1"/>
+<pin id="650" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_16 "/>
+</bind>
+</comp>
+
+<comp id="653" class="1005" name="wp_parameters_addr_17_reg_653">
+<pin_list>
+<pin id="654" dir="0" index="0" bw="7" slack="1"/>
+<pin id="655" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_17 "/>
+</bind>
+</comp>
+
+<comp id="658" class="1005" name="wp_parameters_addr_18_reg_658">
+<pin_list>
+<pin id="659" dir="0" index="0" bw="7" slack="1"/>
+<pin id="660" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_18 "/>
+</bind>
+</comp>
+
+<comp id="663" class="1005" name="wp_parameters_addr_19_reg_663">
+<pin_list>
+<pin id="664" dir="0" index="0" bw="7" slack="1"/>
+<pin id="665" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_addr_19 "/>
+</bind>
+</comp>
+
+<comp id="668" class="1005" name="a_corner_min_1_reg_668">
+<pin_list>
+<pin id="669" dir="0" index="0" bw="64" slack="1"/>
+<pin id="670" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="a_corner_min_1 "/>
+</bind>
+</comp>
+
+<comp id="673" class="1005" name="b_corner_min_2_reg_673">
+<pin_list>
+<pin id="674" dir="0" index="0" bw="64" slack="1"/>
+<pin id="675" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="b_corner_min_2 "/>
+</bind>
+</comp>
+
+<comp id="678" class="1005" name="c_corner_max_1_reg_678">
+<pin_list>
+<pin id="679" dir="0" index="0" bw="64" slack="1"/>
+<pin id="680" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="c_corner_max_1 "/>
+</bind>
+</comp>
+
+<comp id="683" class="1005" name="d_corner_max_2_reg_683">
+<pin_list>
+<pin id="684" dir="0" index="0" bw="64" slack="1"/>
+<pin id="685" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="d_corner_max_2 "/>
+</bind>
+</comp>
+
+<comp id="688" class="1005" name="wp_parameters_load_1_reg_688">
+<pin_list>
+<pin id="689" dir="0" index="0" bw="64" slack="2"/>
+<pin id="690" dir="1" index="1" bw="64" slack="2"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_load_1 "/>
+</bind>
+</comp>
+
+<comp id="694" class="1005" name="wp_parameters_load_2_reg_694">
+<pin_list>
+<pin id="695" dir="0" index="0" bw="64" slack="3"/>
+<pin id="696" dir="1" index="1" bw="64" slack="3"/>
+</pin_list>
+<bind>
+<opset="wp_parameters_load_2 "/>
+</bind>
+</comp>
+
+<comp id="699" class="1005" name="icmp_ln253_reg_699">
+<pin_list>
+<pin id="700" dir="0" index="0" bw="1" slack="3"/>
+<pin id="701" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln253 "/>
+</bind>
+</comp>
+
+<comp id="712" class="1005" name="icmp_ln275_reg_712">
+<pin_list>
+<pin id="713" dir="0" index="0" bw="1" slack="2"/>
+<pin id="714" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln275 "/>
+</bind>
+</comp>
+
+<comp id="716" class="1005" name="icmp_ln282_reg_716">
+<pin_list>
+<pin id="717" dir="0" index="0" bw="1" slack="1"/>
+<pin id="718" dir="1" index="1" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opset="icmp_ln282 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="81"><net_src comp="0" pin="0"/><net_sink comp="76" pin=0"/></net>
+
+<net id="82"><net_src comp="2" pin="0"/><net_sink comp="76" pin=1"/></net>
+
+<net id="83"><net_src comp="4" pin="0"/><net_sink comp="76" pin=2"/></net>
+
+<net id="89"><net_src comp="76" pin="3"/><net_sink comp="84" pin=0"/></net>
+
+<net id="95"><net_src comp="0" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="96"><net_src comp="2" pin="0"/><net_sink comp="90" pin=1"/></net>
+
+<net id="97"><net_src comp="6" pin="0"/><net_sink comp="90" pin=2"/></net>
+
+<net id="103"><net_src comp="0" pin="0"/><net_sink comp="98" pin=0"/></net>
+
+<net id="104"><net_src comp="2" pin="0"/><net_sink comp="98" pin=1"/></net>
+
+<net id="105"><net_src comp="8" pin="0"/><net_sink comp="98" pin=2"/></net>
+
+<net id="110"><net_src comp="10" pin="0"/><net_sink comp="84" pin=4"/></net>
+
+<net id="111"><net_src comp="90" pin="3"/><net_sink comp="84" pin=2"/></net>
+
+<net id="112"><net_src comp="10" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="113"><net_src comp="98" pin="3"/><net_sink comp="84" pin=0"/></net>
+
+<net id="119"><net_src comp="0" pin="0"/><net_sink comp="114" pin=0"/></net>
+
+<net id="120"><net_src comp="2" pin="0"/><net_sink comp="114" pin=1"/></net>
+
+<net id="121"><net_src comp="12" pin="0"/><net_sink comp="114" pin=2"/></net>
+
+<net id="127"><net_src comp="0" pin="0"/><net_sink comp="122" pin=0"/></net>
+
+<net id="128"><net_src comp="2" pin="0"/><net_sink comp="122" pin=1"/></net>
+
+<net id="129"><net_src comp="14" pin="0"/><net_sink comp="122" pin=2"/></net>
+
+<net id="135"><net_src comp="0" pin="0"/><net_sink comp="130" pin=0"/></net>
+
+<net id="136"><net_src comp="2" pin="0"/><net_sink comp="130" pin=1"/></net>
+
+<net id="137"><net_src comp="16" pin="0"/><net_sink comp="130" pin=2"/></net>
+
+<net id="143"><net_src comp="0" pin="0"/><net_sink comp="138" pin=0"/></net>
+
+<net id="144"><net_src comp="2" pin="0"/><net_sink comp="138" pin=1"/></net>
+
+<net id="145"><net_src comp="18" pin="0"/><net_sink comp="138" pin=2"/></net>
+
+<net id="151"><net_src comp="0" pin="0"/><net_sink comp="146" pin=0"/></net>
+
+<net id="152"><net_src comp="2" pin="0"/><net_sink comp="146" pin=1"/></net>
+
+<net id="153"><net_src comp="20" pin="0"/><net_sink comp="146" pin=2"/></net>
+
+<net id="159"><net_src comp="0" pin="0"/><net_sink comp="154" pin=0"/></net>
+
+<net id="160"><net_src comp="2" pin="0"/><net_sink comp="154" pin=1"/></net>
+
+<net id="161"><net_src comp="22" pin="0"/><net_sink comp="154" pin=2"/></net>
+
+<net id="167"><net_src comp="0" pin="0"/><net_sink comp="162" pin=0"/></net>
+
+<net id="168"><net_src comp="2" pin="0"/><net_sink comp="162" pin=1"/></net>
+
+<net id="169"><net_src comp="24" pin="0"/><net_sink comp="162" pin=2"/></net>
+
+<net id="175"><net_src comp="0" pin="0"/><net_sink comp="170" pin=0"/></net>
+
+<net id="176"><net_src comp="2" pin="0"/><net_sink comp="170" pin=1"/></net>
+
+<net id="177"><net_src comp="26" pin="0"/><net_sink comp="170" pin=2"/></net>
+
+<net id="183"><net_src comp="0" pin="0"/><net_sink comp="178" pin=0"/></net>
+
+<net id="184"><net_src comp="2" pin="0"/><net_sink comp="178" pin=1"/></net>
+
+<net id="185"><net_src comp="28" pin="0"/><net_sink comp="178" pin=2"/></net>
+
+<net id="191"><net_src comp="0" pin="0"/><net_sink comp="186" pin=0"/></net>
+
+<net id="192"><net_src comp="2" pin="0"/><net_sink comp="186" pin=1"/></net>
+
+<net id="193"><net_src comp="30" pin="0"/><net_sink comp="186" pin=2"/></net>
+
+<net id="199"><net_src comp="0" pin="0"/><net_sink comp="194" pin=0"/></net>
+
+<net id="200"><net_src comp="2" pin="0"/><net_sink comp="194" pin=1"/></net>
+
+<net id="201"><net_src comp="32" pin="0"/><net_sink comp="194" pin=2"/></net>
+
+<net id="207"><net_src comp="0" pin="0"/><net_sink comp="202" pin=0"/></net>
+
+<net id="208"><net_src comp="2" pin="0"/><net_sink comp="202" pin=1"/></net>
+
+<net id="209"><net_src comp="34" pin="0"/><net_sink comp="202" pin=2"/></net>
+
+<net id="215"><net_src comp="0" pin="0"/><net_sink comp="210" pin=0"/></net>
+
+<net id="216"><net_src comp="2" pin="0"/><net_sink comp="210" pin=1"/></net>
+
+<net id="217"><net_src comp="36" pin="0"/><net_sink comp="210" pin=2"/></net>
+
+<net id="223"><net_src comp="0" pin="0"/><net_sink comp="218" pin=0"/></net>
+
+<net id="224"><net_src comp="2" pin="0"/><net_sink comp="218" pin=1"/></net>
+
+<net id="225"><net_src comp="38" pin="0"/><net_sink comp="218" pin=2"/></net>
+
+<net id="231"><net_src comp="0" pin="0"/><net_sink comp="226" pin=0"/></net>
+
+<net id="232"><net_src comp="2" pin="0"/><net_sink comp="226" pin=1"/></net>
+
+<net id="233"><net_src comp="40" pin="0"/><net_sink comp="226" pin=2"/></net>
+
+<net id="239"><net_src comp="0" pin="0"/><net_sink comp="234" pin=0"/></net>
+
+<net id="240"><net_src comp="2" pin="0"/><net_sink comp="234" pin=1"/></net>
+
+<net id="241"><net_src comp="42" pin="0"/><net_sink comp="234" pin=2"/></net>
+
+<net id="242"><net_src comp="114" pin="3"/><net_sink comp="84" pin=0"/></net>
+
+<net id="243"><net_src comp="2" pin="0"/><net_sink comp="84" pin=4"/></net>
+
+<net id="244"><net_src comp="122" pin="3"/><net_sink comp="84" pin=2"/></net>
+
+<net id="250"><net_src comp="0" pin="0"/><net_sink comp="245" pin=0"/></net>
+
+<net id="251"><net_src comp="2" pin="0"/><net_sink comp="245" pin=1"/></net>
+
+<net id="257"><net_src comp="0" pin="0"/><net_sink comp="252" pin=0"/></net>
+
+<net id="258"><net_src comp="2" pin="0"/><net_sink comp="252" pin=1"/></net>
+
+<net id="259"><net_src comp="245" pin="3"/><net_sink comp="84" pin=0"/></net>
+
+<net id="260"><net_src comp="252" pin="3"/><net_sink comp="84" pin=2"/></net>
+
+<net id="266"><net_src comp="0" pin="0"/><net_sink comp="261" pin=0"/></net>
+
+<net id="267"><net_src comp="2" pin="0"/><net_sink comp="261" pin=1"/></net>
+
+<net id="273"><net_src comp="0" pin="0"/><net_sink comp="268" pin=0"/></net>
+
+<net id="274"><net_src comp="2" pin="0"/><net_sink comp="268" pin=1"/></net>
+
+<net id="275"><net_src comp="261" pin="3"/><net_sink comp="84" pin=0"/></net>
+
+<net id="276"><net_src comp="268" pin="3"/><net_sink comp="84" pin=2"/></net>
+
+<net id="277"><net_src comp="2" pin="0"/><net_sink comp="84" pin=1"/></net>
+
+<net id="281"><net_src comp="44" pin="0"/><net_sink comp="278" pin=0"/></net>
+
+<net id="288"><net_src comp="278" pin="1"/><net_sink comp="282" pin=0"/></net>
+
+<net id="292"><net_src comp="46" pin="0"/><net_sink comp="289" pin=0"/></net>
+
+<net id="293"><net_src comp="289" pin="1"/><net_sink comp="84" pin=4"/></net>
+
+<net id="300"><net_src comp="289" pin="1"/><net_sink comp="294" pin=0"/></net>
+
+<net id="301"><net_src comp="294" pin="4"/><net_sink comp="289" pin=0"/></net>
+
+<net id="305"><net_src comp="48" pin="0"/><net_sink comp="302" pin=0"/></net>
+
+<net id="306"><net_src comp="302" pin="1"/><net_sink comp="84" pin=4"/></net>
+
+<net id="313"><net_src comp="302" pin="1"/><net_sink comp="307" pin=0"/></net>
+
+<net id="314"><net_src comp="307" pin="4"/><net_sink comp="302" pin=0"/></net>
+
+<net id="318"><net_src comp="48" pin="0"/><net_sink comp="315" pin=0"/></net>
+
+<net id="319"><net_src comp="315" pin="1"/><net_sink comp="84" pin=1"/></net>
+
+<net id="320"><net_src comp="315" pin="1"/><net_sink comp="84" pin=4"/></net>
+
+<net id="327"><net_src comp="315" pin="1"/><net_sink comp="321" pin=0"/></net>
+
+<net id="328"><net_src comp="321" pin="4"/><net_sink comp="315" pin=0"/></net>
+
+<net id="332"><net_src comp="46" pin="0"/><net_sink comp="329" pin=0"/></net>
+
+<net id="333"><net_src comp="329" pin="1"/><net_sink comp="84" pin=4"/></net>
+
+<net id="340"><net_src comp="329" pin="1"/><net_sink comp="334" pin=0"/></net>
+
+<net id="341"><net_src comp="334" pin="4"/><net_sink comp="329" pin=0"/></net>
+
+<net id="345"><net_src comp="342" pin="1"/><net_sink comp="84" pin=1"/></net>
+
+<net id="346"><net_src comp="342" pin="1"/><net_sink comp="84" pin=4"/></net>
+
+<net id="353"><net_src comp="315" pin="1"/><net_sink comp="347" pin=0"/></net>
+
+<net id="354"><net_src comp="329" pin="1"/><net_sink comp="347" pin=2"/></net>
+
+<net id="355"><net_src comp="347" pin="4"/><net_sink comp="342" pin=0"/></net>
+
+<net id="359"><net_src comp="84" pin="3"/><net_sink comp="356" pin=0"/></net>
+
+<net id="364"><net_src comp="282" pin="4"/><net_sink comp="360" pin=0"/></net>
+
+<net id="365"><net_src comp="50" pin="0"/><net_sink comp="360" pin=1"/></net>
+
+<net id="370"><net_src comp="282" pin="4"/><net_sink comp="366" pin=0"/></net>
+
+<net id="374"><net_src comp="282" pin="4"/><net_sink comp="371" pin=0"/></net>
+
+<net id="380"><net_src comp="58" pin="0"/><net_sink comp="375" pin=0"/></net>
+
+<net id="381"><net_src comp="371" pin="1"/><net_sink comp="375" pin=1"/></net>
+
+<net id="382"><net_src comp="60" pin="0"/><net_sink comp="375" pin=2"/></net>
+
+<net id="386"><net_src comp="282" pin="4"/><net_sink comp="383" pin=0"/></net>
+
+<net id="392"><net_src comp="62" pin="0"/><net_sink comp="387" pin=0"/></net>
+
+<net id="393"><net_src comp="383" pin="1"/><net_sink comp="387" pin=1"/></net>
+
+<net id="394"><net_src comp="64" pin="0"/><net_sink comp="387" pin=2"/></net>
+
+<net id="399"><net_src comp="375" pin="3"/><net_sink comp="395" pin=0"/></net>
+
+<net id="400"><net_src comp="387" pin="3"/><net_sink comp="395" pin=1"/></net>
+
+<net id="404"><net_src comp="395" pin="2"/><net_sink comp="401" pin=0"/></net>
+
+<net id="405"><net_src comp="401" pin="1"/><net_sink comp="245" pin=2"/></net>
+
+<net id="410"><net_src comp="395" pin="2"/><net_sink comp="406" pin=0"/></net>
+
+<net id="411"><net_src comp="66" pin="0"/><net_sink comp="406" pin=1"/></net>
+
+<net id="415"><net_src comp="406" pin="2"/><net_sink comp="412" pin=0"/></net>
+
+<net id="416"><net_src comp="412" pin="1"/><net_sink comp="252" pin=2"/></net>
+
+<net id="421"><net_src comp="68" pin="0"/><net_sink comp="417" pin=1"/></net>
+
+<net id="425"><net_src comp="417" pin="2"/><net_sink comp="422" pin=0"/></net>
+
+<net id="426"><net_src comp="422" pin="1"/><net_sink comp="261" pin=2"/></net>
+
+<net id="431"><net_src comp="70" pin="0"/><net_sink comp="427" pin=1"/></net>
+
+<net id="435"><net_src comp="427" pin="2"/><net_sink comp="432" pin=0"/></net>
+
+<net id="436"><net_src comp="432" pin="1"/><net_sink comp="268" pin=2"/></net>
+
+<net id="441"><net_src comp="84" pin="3"/><net_sink comp="437" pin=0"/></net>
+
+<net id="442"><net_src comp="302" pin="1"/><net_sink comp="437" pin=1"/></net>
+
+<net id="448"><net_src comp="437" pin="2"/><net_sink comp="443" pin=0"/></net>
+
+<net id="449"><net_src comp="84" pin="3"/><net_sink comp="443" pin=1"/></net>
+
+<net id="450"><net_src comp="302" pin="1"/><net_sink comp="443" pin=2"/></net>
+
+<net id="455"><net_src comp="84" pin="7"/><net_sink comp="451" pin=0"/></net>
+
+<net id="456"><net_src comp="315" pin="1"/><net_sink comp="451" pin=1"/></net>
+
+<net id="462"><net_src comp="451" pin="2"/><net_sink comp="457" pin=0"/></net>
+
+<net id="463"><net_src comp="84" pin="7"/><net_sink comp="457" pin=1"/></net>
+
+<net id="464"><net_src comp="315" pin="1"/><net_sink comp="457" pin=2"/></net>
+
+<net id="469"><net_src comp="84" pin="3"/><net_sink comp="465" pin=0"/></net>
+
+<net id="470"><net_src comp="329" pin="1"/><net_sink comp="465" pin=1"/></net>
+
+<net id="476"><net_src comp="465" pin="2"/><net_sink comp="471" pin=0"/></net>
+
+<net id="477"><net_src comp="84" pin="3"/><net_sink comp="471" pin=1"/></net>
+
+<net id="478"><net_src comp="329" pin="1"/><net_sink comp="471" pin=2"/></net>
+
+<net id="483"><net_src comp="84" pin="7"/><net_sink comp="479" pin=0"/></net>
+
+<net id="484"><net_src comp="289" pin="1"/><net_sink comp="479" pin=1"/></net>
+
+<net id="490"><net_src comp="479" pin="2"/><net_sink comp="485" pin=0"/></net>
+
+<net id="491"><net_src comp="84" pin="7"/><net_sink comp="485" pin=1"/></net>
+
+<net id="492"><net_src comp="289" pin="1"/><net_sink comp="485" pin=2"/></net>
+
+<net id="497"><net_src comp="302" pin="1"/><net_sink comp="493" pin=0"/></net>
+
+<net id="498"><net_src comp="84" pin="3"/><net_sink comp="493" pin=1"/></net>
+
+<net id="503"><net_src comp="315" pin="1"/><net_sink comp="499" pin=0"/></net>
+
+<net id="504"><net_src comp="84" pin="3"/><net_sink comp="499" pin=1"/></net>
+
+<net id="509"><net_src comp="329" pin="1"/><net_sink comp="505" pin=0"/></net>
+
+<net id="510"><net_src comp="84" pin="7"/><net_sink comp="505" pin=1"/></net>
+
+<net id="515"><net_src comp="289" pin="1"/><net_sink comp="511" pin=0"/></net>
+
+<net id="516"><net_src comp="84" pin="3"/><net_sink comp="511" pin=1"/></net>
+
+<net id="521"><net_src comp="329" pin="1"/><net_sink comp="517" pin=0"/></net>
+
+<net id="522"><net_src comp="302" pin="1"/><net_sink comp="517" pin=1"/></net>
+
+<net id="527"><net_src comp="315" pin="1"/><net_sink comp="523" pin=0"/></net>
+
+<net id="528"><net_src comp="289" pin="1"/><net_sink comp="523" pin=1"/></net>
+
+<net id="532"><net_src comp="76" pin="3"/><net_sink comp="529" pin=0"/></net>
+
+<net id="533"><net_src comp="529" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="537"><net_src comp="90" pin="3"/><net_sink comp="534" pin=0"/></net>
+
+<net id="538"><net_src comp="534" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="539"><net_src comp="534" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="543"><net_src comp="98" pin="3"/><net_sink comp="540" pin=0"/></net>
+
+<net id="544"><net_src comp="540" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="548"><net_src comp="356" pin="1"/><net_sink comp="545" pin=0"/></net>
+
+<net id="549"><net_src comp="545" pin="1"/><net_sink comp="366" pin=1"/></net>
+
+<net id="553"><net_src comp="114" pin="3"/><net_sink comp="550" pin=0"/></net>
+
+<net id="554"><net_src comp="550" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="555"><net_src comp="550" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="559"><net_src comp="122" pin="3"/><net_sink comp="556" pin=0"/></net>
+
+<net id="560"><net_src comp="556" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="561"><net_src comp="556" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="565"><net_src comp="130" pin="3"/><net_sink comp="562" pin=0"/></net>
+
+<net id="566"><net_src comp="562" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="570"><net_src comp="138" pin="3"/><net_sink comp="567" pin=0"/></net>
+
+<net id="571"><net_src comp="567" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="575"><net_src comp="146" pin="3"/><net_sink comp="572" pin=0"/></net>
+
+<net id="576"><net_src comp="572" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="577"><net_src comp="572" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="581"><net_src comp="154" pin="3"/><net_sink comp="578" pin=0"/></net>
+
+<net id="582"><net_src comp="578" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="586"><net_src comp="162" pin="3"/><net_sink comp="583" pin=0"/></net>
+
+<net id="587"><net_src comp="583" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="591"><net_src comp="170" pin="3"/><net_sink comp="588" pin=0"/></net>
+
+<net id="592"><net_src comp="588" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="596"><net_src comp="178" pin="3"/><net_sink comp="593" pin=0"/></net>
+
+<net id="597"><net_src comp="593" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="601"><net_src comp="186" pin="3"/><net_sink comp="598" pin=0"/></net>
+
+<net id="602"><net_src comp="598" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="606"><net_src comp="194" pin="3"/><net_sink comp="603" pin=0"/></net>
+
+<net id="607"><net_src comp="603" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="611"><net_src comp="202" pin="3"/><net_sink comp="608" pin=0"/></net>
+
+<net id="612"><net_src comp="608" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="616"><net_src comp="210" pin="3"/><net_sink comp="613" pin=0"/></net>
+
+<net id="617"><net_src comp="613" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="621"><net_src comp="218" pin="3"/><net_sink comp="618" pin=0"/></net>
+
+<net id="622"><net_src comp="618" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="626"><net_src comp="226" pin="3"/><net_sink comp="623" pin=0"/></net>
+
+<net id="627"><net_src comp="623" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="631"><net_src comp="234" pin="3"/><net_sink comp="628" pin=0"/></net>
+
+<net id="632"><net_src comp="628" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="636"><net_src comp="360" pin="2"/><net_sink comp="633" pin=0"/></net>
+
+<net id="637"><net_src comp="633" pin="1"/><net_sink comp="282" pin=2"/></net>
+
+<net id="641"><net_src comp="366" pin="2"/><net_sink comp="638" pin=0"/></net>
+
+<net id="645"><net_src comp="395" pin="2"/><net_sink comp="642" pin=0"/></net>
+
+<net id="646"><net_src comp="642" pin="1"/><net_sink comp="417" pin=0"/></net>
+
+<net id="647"><net_src comp="642" pin="1"/><net_sink comp="427" pin=0"/></net>
+
+<net id="651"><net_src comp="245" pin="3"/><net_sink comp="648" pin=0"/></net>
+
+<net id="652"><net_src comp="648" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="656"><net_src comp="252" pin="3"/><net_sink comp="653" pin=0"/></net>
+
+<net id="657"><net_src comp="653" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="661"><net_src comp="261" pin="3"/><net_sink comp="658" pin=0"/></net>
+
+<net id="662"><net_src comp="658" pin="1"/><net_sink comp="84" pin=0"/></net>
+
+<net id="666"><net_src comp="268" pin="3"/><net_sink comp="663" pin=0"/></net>
+
+<net id="667"><net_src comp="663" pin="1"/><net_sink comp="84" pin=2"/></net>
+
+<net id="671"><net_src comp="443" pin="3"/><net_sink comp="668" pin=0"/></net>
+
+<net id="672"><net_src comp="668" pin="1"/><net_sink comp="307" pin=2"/></net>
+
+<net id="676"><net_src comp="457" pin="3"/><net_sink comp="673" pin=0"/></net>
+
+<net id="677"><net_src comp="673" pin="1"/><net_sink comp="321" pin=2"/></net>
+
+<net id="681"><net_src comp="471" pin="3"/><net_sink comp="678" pin=0"/></net>
+
+<net id="682"><net_src comp="678" pin="1"/><net_sink comp="334" pin=2"/></net>
+
+<net id="686"><net_src comp="485" pin="3"/><net_sink comp="683" pin=0"/></net>
+
+<net id="687"><net_src comp="683" pin="1"/><net_sink comp="294" pin=2"/></net>
+
+<net id="691"><net_src comp="84" pin="3"/><net_sink comp="688" pin=0"/></net>
+
+<net id="692"><net_src comp="688" pin="1"/><net_sink comp="84" pin=1"/></net>
+
+<net id="693"><net_src comp="688" pin="1"/><net_sink comp="84" pin=4"/></net>
+
+<net id="697"><net_src comp="84" pin="7"/><net_sink comp="694" pin=0"/></net>
+
+<net id="698"><net_src comp="694" pin="1"/><net_sink comp="84" pin=1"/></net>
+
+<net id="702"><net_src comp="493" pin="2"/><net_sink comp="699" pin=0"/></net>
+
+<net id="715"><net_src comp="517" pin="2"/><net_sink comp="712" pin=0"/></net>
+
+<net id="719"><net_src comp="523" pin="2"/><net_sink comp="716" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: wp_parameters | {2 3 8 9 10 11 12 13 14 16 18 19 20 21 }
+ - Input state : 
+	Port: get_acceptanceCorners : wp_parameters | {1 2 4 5 6 7 8 9 13 14 15 16 17 18 }
+  - Chain level:
+	State 1
+		wp_parameters_load : 1
+	State 2
+		store_ln210 : 1
+		store_ln211 : 1
+		empty : 1
+	State 3
+		store_ln212 : 1
+		store_ln213 : 1
+	State 4
+		add_ln222 : 1
+		icmp_ln222 : 1
+		br_ln222 : 2
+		trunc_ln224 : 1
+		tmp_cast : 2
+		trunc_ln224_1 : 1
+		tmp_159_cast : 2
+		sub_ln224 : 3
+		zext_ln224 : 4
+		wp_parameters_addr_16 : 5
+		or_ln228 : 4
+		zext_ln228 : 4
+		wp_parameters_addr_17 : 5
+		wp_parameters_load_4 : 6
+		b_corner_min_1 : 6
+	State 5
+		zext_ln232 : 1
+		wp_parameters_addr_18 : 2
+		zext_ln236 : 1
+		wp_parameters_addr_19 : 2
+		icmp_ln224 : 1
+		a_corner_min_1 : 2
+		icmp_ln228 : 1
+		b_corner_min_2 : 2
+		wp_parameters_load_6 : 3
+		d_corner_max_1 : 3
+	State 6
+		icmp_ln232 : 1
+		c_corner_max_1 : 2
+		icmp_ln236 : 1
+		d_corner_max_2 : 2
+	State 7
+	State 8
+	State 9
+		icmp_ln253 : 1
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+		icmp_ln258 : 1
+		br_ln258 : 2
+	State 15
+	State 16
+		icmp_ln263 : 1
+		br_ln263 : 2
+	State 17
+	State 18
+		icmp_ln268 : 1
+		br_ln268 : 2
+		br_ln275 : 1
+	State 19
+	State 20
+		empty_98 : 1
+		br_ln282 : 1
+	State 21
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|-----------------------|---------|---------|
+| Operation|    Functional Unit    |    FF   |   LUT   |
+|----------|-----------------------|---------|---------|
+|          |   icmp_ln222_fu_366   |    0    |    20   |
+|          |   icmp_ln224_fu_437   |    0    |    29   |
+|          |   icmp_ln228_fu_451   |    0    |    29   |
+|          |   icmp_ln232_fu_465   |    0    |    29   |
+|          |   icmp_ln236_fu_479   |    0    |    29   |
+|   icmp   |   icmp_ln253_fu_493   |    0    |    29   |
+|          |   icmp_ln258_fu_499   |    0    |    29   |
+|          |   icmp_ln263_fu_505   |    0    |    29   |
+|          |   icmp_ln268_fu_511   |    0    |    29   |
+|          |   icmp_ln275_fu_517   |    0    |    29   |
+|          |   icmp_ln282_fu_523   |    0    |    29   |
+|----------|-----------------------|---------|---------|
+|          | a_corner_min_1_fu_443 |    0    |    63   |
+|  select  | b_corner_min_2_fu_457 |    0    |    63   |
+|          | c_corner_max_1_fu_471 |    0    |    63   |
+|          | d_corner_max_2_fu_485 |    0    |    63   |
+|----------|-----------------------|---------|---------|
+|          |    add_ln222_fu_360   |    0    |    39   |
+|    add   |    add_ln232_fu_417   |    0    |    14   |
+|          |    add_ln236_fu_427   |    0    |    14   |
+|----------|-----------------------|---------|---------|
+|    sub   |    sub_ln224_fu_395   |    0    |    14   |
+|----------|-----------------------|---------|---------|
+|          |      empty_fu_356     |    0    |    0    |
+|   trunc  |   trunc_ln224_fu_371  |    0    |    0    |
+|          |  trunc_ln224_1_fu_383 |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|bitconcatenate|    tmp_cast_fu_375    |    0    |    0    |
+|          |  tmp_159_cast_fu_387  |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|          |   zext_ln224_fu_401   |    0    |    0    |
+|   zext   |   zext_ln228_fu_412   |    0    |    0    |
+|          |   zext_ln232_fu_422   |    0    |    0    |
+|          |   zext_ln236_fu_432   |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|    or    |    or_ln228_fu_406    |    0    |    0    |
+|----------|-----------------------|---------|---------|
+|   Total  |                       |    0    |   643   |
+|----------|-----------------------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++-----------------------------+--------+
+|                             |   FF   |
++-----------------------------+--------+
+|    a_corner_min_1_reg_668   |   64   |
+|     a_corner_min_reg_302    |   64   |
+|      add_ln222_reg_633      |   32   |
+|    b_corner_min_2_reg_673   |   64   |
+|     b_corner_min_reg_315    |   64   |
+|    c_corner_max_1_reg_678   |   64   |
+|     c_corner_max_reg_329    |   64   |
+|    d_corner_max_2_reg_683   |   64   |
+|     d_corner_max_reg_289    |   64   |
+|       empty_98_reg_342      |   64   |
+|        empty_reg_545        |   32   |
+|          i_reg_278          |   32   |
+|      icmp_ln222_reg_638     |    1   |
+|      icmp_ln253_reg_699     |    1   |
+|      icmp_ln275_reg_712     |    1   |
+|      icmp_ln282_reg_716     |    1   |
+|      sub_ln224_reg_642      |    7   |
+|wp_parameters_addr_10_reg_588|    7   |
+|wp_parameters_addr_11_reg_593|    7   |
+|wp_parameters_addr_12_reg_598|    7   |
+|wp_parameters_addr_13_reg_603|    7   |
+|wp_parameters_addr_14_reg_608|    7   |
+|wp_parameters_addr_15_reg_613|    7   |
+|wp_parameters_addr_16_reg_648|    7   |
+|wp_parameters_addr_17_reg_653|    7   |
+|wp_parameters_addr_18_reg_658|    7   |
+|wp_parameters_addr_19_reg_663|    7   |
+| wp_parameters_addr_1_reg_540|    7   |
+|wp_parameters_addr_20_reg_618|    7   |
+|wp_parameters_addr_21_reg_623|    7   |
+|wp_parameters_addr_22_reg_628|    7   |
+| wp_parameters_addr_2_reg_550|    7   |
+| wp_parameters_addr_3_reg_556|    7   |
+| wp_parameters_addr_4_reg_529|    7   |
+| wp_parameters_addr_5_reg_562|    7   |
+| wp_parameters_addr_6_reg_567|    7   |
+| wp_parameters_addr_7_reg_572|    7   |
+| wp_parameters_addr_8_reg_578|    7   |
+| wp_parameters_addr_9_reg_583|    7   |
+|  wp_parameters_addr_reg_534 |    7   |
+| wp_parameters_load_1_reg_688|   64   |
+| wp_parameters_load_2_reg_694|   64   |
++-----------------------------+--------+
+|            Total            |   972  |
++-----------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|----------------------|------|------|------|--------||---------||---------|
+|         Comp         |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|----------------------|------|------|------|--------||---------||---------|
+|   grp_access_fu_84   |  p0  |  20  |   7  |   140  ||    97   |
+|   grp_access_fu_84   |  p1  |   6  |  64  |   384  ||    26   |
+|   grp_access_fu_84   |  p2  |  16  |   0  |    0   ||    65   |
+|   grp_access_fu_84   |  p4  |   8  |   7  |   56   ||    37   |
+| d_corner_max_reg_289 |  p0  |   2  |  64  |   128  ||    9    |
+| a_corner_min_reg_302 |  p0  |   2  |  64  |   128  ||    9    |
+| b_corner_min_reg_315 |  p0  |   2  |  64  |   128  ||    9    |
+| c_corner_max_reg_329 |  p0  |   2  |  64  |   128  ||    9    |
+|----------------------|------|------|------|--------||---------||---------|
+|         Total        |      |      |      |  1092  || 3.81632 ||   261   |
+|----------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+
+|           |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+
+|  Function |    -   |    0   |   643  |
+|   Memory  |    -   |    -   |    -   |
+|Multiplexer|    3   |    -   |   261  |
+|  Register |    -   |   972  |    -   |
++-----------+--------+--------+--------+
+|   Total   |    3   |   972  |   904  |
++-----------+--------+--------+--------+

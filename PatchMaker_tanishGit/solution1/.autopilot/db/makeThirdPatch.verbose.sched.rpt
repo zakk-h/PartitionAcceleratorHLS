@@ -1,0 +1,1445 @@
+
+
+================================================================
+== Vitis HLS Report for 'makeThirdPatch'
+================================================================
+* Date:           Mon Jul  1 18:53:30 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        PatchMaker_tanishGit
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu19p-fsvb3824-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- thirdPatch_loop  |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 115
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 21 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 37 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 37 
+37 --> 38 
+38 --> 39 53 
+39 --> 40 
+40 --> 41 
+41 --> 42 
+42 --> 43 
+43 --> 44 
+44 --> 45 
+45 --> 46 
+46 --> 47 
+47 --> 48 
+48 --> 49 
+49 --> 50 
+50 --> 51 
+51 --> 52 
+52 --> 53 
+53 --> 54 
+54 --> 55 69 
+55 --> 56 
+56 --> 57 
+57 --> 58 
+58 --> 59 
+59 --> 60 
+60 --> 61 
+61 --> 62 
+62 --> 63 
+63 --> 64 
+64 --> 65 
+65 --> 66 
+66 --> 67 
+67 --> 68 
+68 --> 69 
+69 --> 70 
+70 --> 71 
+71 --> 72 
+72 --> 73 
+73 --> 74 
+74 --> 75 
+75 --> 76 
+76 --> 77 
+77 --> 78 
+78 --> 79 
+79 --> 80 
+80 --> 81 
+81 --> 82 83 102 115 
+82 --> 83 
+83 --> 84 
+84 --> 85 
+85 --> 86 
+86 --> 87 
+87 --> 88 
+88 --> 89 
+89 --> 90 
+90 --> 91 101 
+91 --> 92 
+92 --> 93 
+93 --> 94 
+94 --> 95 
+95 --> 96 
+96 --> 97 
+97 --> 98 
+98 --> 99 
+99 --> 100 
+100 --> 101 
+101 --> 81 
+102 --> 103 
+103 --> 104 
+104 --> 105 
+105 --> 106 
+106 --> 107 
+107 --> 108 
+108 --> 109 
+109 --> 110 
+110 --> 111 
+111 --> 112 
+112 --> 113 
+113 --> 114 115 
+114 --> 115 
+115 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.55>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%z_top_max_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %z_top_max" [patchMaker.cpp:673]   --->   Operation 116 'read' 'z_top_max_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%z_top_min_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %z_top_min" [patchMaker.cpp:673]   --->   Operation 117 'read' 'z_top_min_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (0.00ns)   --->   "%lastPatchIndex_read = read i5 @_ssdm_op_Read.ap_auto.i5, i5 %lastPatchIndex" [patchMaker.cpp:673]   --->   Operation 118 'read' 'lastPatchIndex_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 119 [2/2] (3.55ns)   --->   "%call_ln678 = call void @getShadows, i64 %patches_superpoints, i64 %patches_parameters, i5 %lastPatchIndex_read, i5 %lastPatchIndex_read, i64 %z_top_min_read, i64 %z_top_max_read, i25 %radii" [patchMaker.cpp:678]   --->   Operation 119 'call' 'call_ln678' <Predicate = true> <Delay = 3.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 120 [1/2] (0.00ns)   --->   "%call_ln678 = call void @getShadows, i64 %patches_superpoints, i64 %patches_parameters, i5 %lastPatchIndex_read, i5 %lastPatchIndex_read, i64 %z_top_min_read, i64 %z_top_max_read, i25 %radii" [patchMaker.cpp:678]   --->   Operation 120 'call' 'call_ln678' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 4.26>
+ST_3 : Operation 121 [1/1] (0.70ns)   --->   "%secondLastPatchIndex = add i5 %lastPatchIndex_read, i5 31" [patchMaker.cpp:675]   --->   Operation 121 'add' 'secondLastPatchIndex' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 122 [2/2] (3.55ns)   --->   "%call_ln679 = call void @getShadows, i64 %patches_superpoints, i64 %patches_parameters, i5 %secondLastPatchIndex, i5 %secondLastPatchIndex, i64 %z_top_min_read, i64 %z_top_max_read, i25 %radii" [patchMaker.cpp:679]   --->   Operation 122 'call' 'call_ln679' <Predicate = true> <Delay = 3.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 123 [1/2] (0.00ns)   --->   "%call_ln679 = call void @getShadows, i64 %patches_superpoints, i64 %patches_parameters, i5 %secondLastPatchIndex, i5 %secondLastPatchIndex, i64 %z_top_min_read, i64 %z_top_max_read, i25 %radii" [patchMaker.cpp:679]   --->   Operation 123 'call' 'call_ln679' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 3.13>
+ST_5 : Operation 124 [1/1] (0.00ns)   --->   "%tmp_37 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i5.i7, i5 %secondLastPatchIndex, i7 0" [patchMaker.cpp:681]   --->   Operation 124 'bitconcatenate' 'tmp_37' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 125 [1/1] (0.00ns)   --->   "%tmp_38 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %secondLastPatchIndex, i3 0" [patchMaker.cpp:681]   --->   Operation 125 'bitconcatenate' 'tmp_38' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 126 [1/1] (0.00ns)   --->   "%zext_ln681 = zext i8 %tmp_38" [patchMaker.cpp:681]   --->   Operation 126 'zext' 'zext_ln681' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 127 [1/1] (0.74ns)   --->   "%sub_ln681 = sub i12 %tmp_37, i12 %zext_ln681" [patchMaker.cpp:681]   --->   Operation 127 'sub' 'sub_ln681' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 128 [1/1] (0.74ns)   --->   "%add_ln681 = add i12 %sub_ln681, i12 36" [patchMaker.cpp:681]   --->   Operation 128 'add' 'add_ln681' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 129 [1/1] (0.00ns)   --->   "%zext_ln681_1 = zext i12 %add_ln681" [patchMaker.cpp:681]   --->   Operation 129 'zext' 'zext_ln681_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 130 [1/1] (0.00ns)   --->   "%patches_parameters_addr = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln681_1" [patchMaker.cpp:681]   --->   Operation 130 'getelementptr' 'patches_parameters_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 131 [2/2] (1.64ns)   --->   "%original_topR_jL = load i12 %patches_parameters_addr" [patchMaker.cpp:681]   --->   Operation 131 'load' 'original_topR_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+
+State 6 <SV = 5> <Delay = 2.83>
+ST_6 : Operation 132 [1/1] (0.00ns)   --->   "%apexZ0_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %apexZ0" [patchMaker.cpp:673]   --->   Operation 132 'read' 'apexZ0_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 133 [1/1] (0.00ns)   --->   "%complementary_apexZ0_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %complementary_apexZ0" [patchMaker.cpp:673]   --->   Operation 133 'read' 'complementary_apexZ0_read' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 134 [1/2] (1.64ns)   --->   "%original_topR_jL = load i12 %patches_parameters_addr" [patchMaker.cpp:681]   --->   Operation 134 'load' 'original_topR_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_6 : Operation 135 [1/1] (1.06ns)   --->   "%icmp_ln682 = icmp_sgt  i64 %original_topR_jL, i64 %complementary_apexZ0_read" [patchMaker.cpp:682]   --->   Operation 135 'icmp' 'icmp_ln682' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 136 [1/1] (1.06ns)   --->   "%icmp_ln682_1 = icmp_slt  i64 %original_topR_jL, i64 %apexZ0_read" [patchMaker.cpp:682]   --->   Operation 136 'icmp' 'icmp_ln682_1' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 137 [1/1] (0.12ns)   --->   "%and_ln682 = and i1 %icmp_ln682, i1 %icmp_ln682_1" [patchMaker.cpp:682]   --->   Operation 137 'and' 'and_ln682' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 4.93>
+ST_7 : Operation 138 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i192 %GDarray, void @empty_34, i32 0, i32 0, void @empty_3, i32 4294967295, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 138 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 139 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %GDn_points, void @empty_34, i32 0, i32 0, void @empty_3, i32 4294967295, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 139 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 140 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %patches_superpoints, void @empty_34, i32 0, i32 0, void @empty_3, i32 4294967295, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 140 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 141 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %patches_parameters, void @empty_34, i32 0, i32 0, void @empty_3, i32 4294967295, i32 0, void @empty_3, void @empty_3, void @empty_3, i32 0, i32 0, i32 0, i32 0, void @empty_3, void @empty_3"   --->   Operation 141 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 142 [1/1] (0.00ns)   --->   "%ppl_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %ppl" [patchMaker.cpp:673]   --->   Operation 142 'read' 'ppl_read' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 143 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i5.i7, i5 %lastPatchIndex_read, i7 0" [patchMaker.cpp:690]   --->   Operation 143 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 144 [1/1] (0.00ns)   --->   "%tmp_35 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %lastPatchIndex_read, i3 0" [patchMaker.cpp:690]   --->   Operation 144 'bitconcatenate' 'tmp_35' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 145 [1/1] (0.00ns)   --->   "%zext_ln690 = zext i8 %tmp_35" [patchMaker.cpp:690]   --->   Operation 145 'zext' 'zext_ln690' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 146 [1/1] (0.74ns)   --->   "%sub_ln690 = sub i12 %tmp, i12 %zext_ln690" [patchMaker.cpp:690]   --->   Operation 146 'sub' 'sub_ln690' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 147 [1/1] (0.74ns)   --->   "%add_ln690 = add i12 %sub_ln690, i12 42" [patchMaker.cpp:690]   --->   Operation 147 'add' 'add_ln690' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%zext_ln690_1 = zext i12 %add_ln690" [patchMaker.cpp:690]   --->   Operation 148 'zext' 'zext_ln690_1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 149 [1/1] (0.00ns)   --->   "%patches_parameters_addr_14 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln690_1" [patchMaker.cpp:690]   --->   Operation 149 'getelementptr' 'patches_parameters_addr_14' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 150 [1/1] (0.74ns)   --->   "%add_ln695 = add i12 %sub_ln690, i12 30" [patchMaker.cpp:695]   --->   Operation 150 'add' 'add_ln695' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 151 [1/1] (0.00ns)   --->   "%zext_ln695 = zext i12 %add_ln695" [patchMaker.cpp:695]   --->   Operation 151 'zext' 'zext_ln695' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 152 [1/1] (0.00ns)   --->   "%patches_parameters_addr_15 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln695" [patchMaker.cpp:695]   --->   Operation 152 'getelementptr' 'patches_parameters_addr_15' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 153 [1/1] (0.74ns)   --->   "%add_ln703 = add i12 %sub_ln690, i12 36" [patchMaker.cpp:703]   --->   Operation 153 'add' 'add_ln703' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 154 [1/1] (0.00ns)   --->   "%zext_ln703 = zext i12 %add_ln703" [patchMaker.cpp:703]   --->   Operation 154 'zext' 'zext_ln703' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 155 [1/1] (0.00ns)   --->   "%patches_parameters_addr_16 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln703" [patchMaker.cpp:703]   --->   Operation 155 'getelementptr' 'patches_parameters_addr_16' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 156 [1/1] (0.74ns)   --->   "%add_ln704 = add i12 %sub_ln690, i12 24" [patchMaker.cpp:704]   --->   Operation 156 'add' 'add_ln704' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 157 [1/1] (0.00ns)   --->   "%zext_ln704 = zext i12 %add_ln704" [patchMaker.cpp:704]   --->   Operation 157 'zext' 'zext_ln704' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 158 [1/1] (0.00ns)   --->   "%patches_parameters_addr_17 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln704" [patchMaker.cpp:704]   --->   Operation 158 'getelementptr' 'patches_parameters_addr_17' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 159 [1/1] (0.74ns)   --->   "%add_ln685 = add i12 %sub_ln681, i12 24" [patchMaker.cpp:685]   --->   Operation 159 'add' 'add_ln685' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 160 [1/1] (0.00ns)   --->   "%zext_ln685 = zext i12 %add_ln685" [patchMaker.cpp:685]   --->   Operation 160 'zext' 'zext_ln685' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 161 [1/1] (0.00ns)   --->   "%patches_parameters_addr_13 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln685" [patchMaker.cpp:685]   --->   Operation 161 'getelementptr' 'patches_parameters_addr_13' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 162 [1/1] (0.74ns)   --->   "%add_ln705 = add i12 %sub_ln681, i12 42" [patchMaker.cpp:705]   --->   Operation 162 'add' 'add_ln705' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 163 [1/1] (0.00ns)   --->   "%zext_ln705 = zext i12 %add_ln705" [patchMaker.cpp:705]   --->   Operation 163 'zext' 'zext_ln705' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 164 [1/1] (0.00ns)   --->   "%patches_parameters_addr_18 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln705" [patchMaker.cpp:705]   --->   Operation 164 'getelementptr' 'patches_parameters_addr_18' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 165 [1/1] (0.74ns)   --->   "%add_ln706 = add i12 %sub_ln681, i12 30" [patchMaker.cpp:706]   --->   Operation 165 'add' 'add_ln706' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 166 [1/1] (0.00ns)   --->   "%zext_ln706 = zext i12 %add_ln706" [patchMaker.cpp:706]   --->   Operation 166 'zext' 'zext_ln706' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 167 [1/1] (0.00ns)   --->   "%patches_parameters_addr_19 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln706" [patchMaker.cpp:706]   --->   Operation 167 'getelementptr' 'patches_parameters_addr_19' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 168 [1/1] (0.38ns)   --->   "%br_ln682 = br i1 %and_ln682, void %._crit_edge, void" [patchMaker.cpp:682]   --->   Operation 168 'br' 'br_ln682' <Predicate = true> <Delay = 0.38>
+ST_7 : Operation 169 [12/12] (4.93ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 169 'call' 'p_x_assign' <Predicate = (and_ln682)> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 170 [11/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 170 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 9 <SV = 8> <Delay = 7.30>
+ST_9 : Operation 171 [10/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 171 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 7.30>
+ST_10 : Operation 172 [9/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 172 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 173 [8/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 173 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 174 [7/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 174 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 175 [6/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 175 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 176 [5/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 176 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 177 [4/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 177 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 178 [3/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 178 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 179 [2/12] (7.30ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 179 'call' 'p_x_assign' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 18 <SV = 17> <Delay = 4.46>
+ST_18 : Operation 180 [1/12] (4.46ns)   --->   "%p_x_assign = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jL, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:683]   --->   Operation 180 'call' 'p_x_assign' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 4.65>
+ST_19 : Operation 181 [2/2] (4.65ns)   --->   "%dc = sitodp i64 %p_x_assign" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:683]   --->   Operation 181 'sitodp' 'dc' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.66>
+ST_20 : Operation 182 [1/2] (4.65ns)   --->   "%dc = sitodp i64 %p_x_assign" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:683]   --->   Operation 182 'sitodp' 'dc' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_20 : Operation 183 [1/1] (0.00ns)   --->   "%data_V = bitcast i64 %dc" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 183 'bitcast' 'data_V' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 184 [1/1] (0.00ns)   --->   "%p_Result_s = trunc i64 %data_V"   --->   Operation 184 'trunc' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 185 [1/1] (0.00ns)   --->   "%zext_ln368 = zext i63 %p_Result_s"   --->   Operation 185 'zext' 'zext_ln368' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 186 [1/1] (0.00ns)   --->   "%bitcast_ln521 = bitcast i64 %zext_ln368" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 186 'bitcast' 'bitcast_ln521' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 187 [1/1] (0.00ns)   --->   "%tmp_s = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data_V, i32 52, i32 62" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 187 'partselect' 'tmp_s' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 188 [1/1] (0.00ns)   --->   "%empty = trunc i64 %data_V" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 188 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 189 [1/1] (0.61ns)   --->   "%notlhs9 = icmp_ne  i11 %tmp_s, i11 2047" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 189 'icmp' 'notlhs9' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 190 [1/1] (0.98ns)   --->   "%notrhs10 = icmp_eq  i52 %empty, i52 0" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 190 'icmp' 'notrhs10' <Predicate = true> <Delay = 0.98> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 191 [2/2] (2.01ns)   --->   "%tmp_27 = fcmp_olt  i64 %bitcast_ln521, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 191 'dcmp' 'tmp_27' <Predicate = true> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 2.13>
+ST_21 : Operation 192 [1/1] (0.00ns) (grouped into LUT with out node empty_75)   --->   "%empty_73 = or i1 %notrhs10, i1 %notlhs9" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 192 'or' 'empty_73' <Predicate = (and_ln682)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 193 [1/2] (2.01ns)   --->   "%tmp_27 = fcmp_olt  i64 %bitcast_ln521, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 193 'dcmp' 'tmp_27' <Predicate = (and_ln682)> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 194 [1/1] (0.00ns) (grouped into LUT with out node empty_75)   --->   "%empty_74 = and i1 %empty_73, i1 %tmp_27" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 194 'and' 'empty_74' <Predicate = (and_ln682)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 195 [1/1] (0.12ns) (out node of the LUT)   --->   "%empty_75 = xor i1 %empty_74, i1 1" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 195 'xor' 'empty_75' <Predicate = (and_ln682)> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 196 [1/1] (0.38ns)   --->   "%br_ln0 = br void %._crit_edge"   --->   Operation 196 'br' 'br_ln0' <Predicate = (and_ln682)> <Delay = 0.38>
+ST_21 : Operation 197 [2/2] (1.64ns)   --->   "%original_topL_jL = load i12 %patches_parameters_addr_13" [patchMaker.cpp:685]   --->   Operation 197 'load' 'original_topL_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+
+State 22 <SV = 21> <Delay = 4.36>
+ST_22 : Operation 198 [1/1] (0.00ns)   --->   "%empty_76 = phi i1 %empty_75, void, i1 1, void" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 198 'phi' 'empty_76' <Predicate = true> <Delay = 0.00>
+ST_22 : Operation 199 [1/2] (1.64ns)   --->   "%original_topL_jL = load i12 %patches_parameters_addr_13" [patchMaker.cpp:685]   --->   Operation 199 'load' 'original_topL_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_22 : Operation 200 [1/1] (1.06ns)   --->   "%icmp_ln687 = icmp_sgt  i64 %original_topL_jL, i64 %complementary_apexZ0_read" [patchMaker.cpp:687]   --->   Operation 200 'icmp' 'icmp_ln687' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 201 [1/1] (1.14ns)   --->   "%sub_ln687 = sub i64 %original_topL_jL, i64 %apexZ0_read" [patchMaker.cpp:687]   --->   Operation 201 'sub' 'sub_ln687' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 202 [1/1] (1.06ns)   --->   "%icmp_ln687_1 = icmp_slt  i64 %sub_ln687, i64 18446744073709551516" [patchMaker.cpp:687]   --->   Operation 202 'icmp' 'icmp_ln687_1' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 203 [1/1] (0.12ns)   --->   "%and_ln687 = and i1 %icmp_ln687, i1 %icmp_ln687_1" [patchMaker.cpp:687]   --->   Operation 203 'and' 'and_ln687' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_22 : Operation 204 [1/1] (0.38ns)   --->   "%br_ln687 = br i1 %and_ln687, void %._crit_edge1, void" [patchMaker.cpp:687]   --->   Operation 204 'br' 'br_ln687' <Predicate = true> <Delay = 0.38>
+
+State 23 <SV = 22> <Delay = 4.93>
+ST_23 : Operation 205 [12/12] (4.93ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 205 'call' 'p_x_assign_4' <Predicate = true> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 7.30>
+ST_24 : Operation 206 [11/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 206 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 25 <SV = 24> <Delay = 7.30>
+ST_25 : Operation 207 [10/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 207 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 26 <SV = 25> <Delay = 7.30>
+ST_26 : Operation 208 [9/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 208 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 27 <SV = 26> <Delay = 7.30>
+ST_27 : Operation 209 [8/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 209 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 28 <SV = 27> <Delay = 7.30>
+ST_28 : Operation 210 [7/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 210 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 29 <SV = 28> <Delay = 7.30>
+ST_29 : Operation 211 [6/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 211 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 30 <SV = 29> <Delay = 7.30>
+ST_30 : Operation 212 [5/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 212 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 31 <SV = 30> <Delay = 7.30>
+ST_31 : Operation 213 [4/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 213 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 32 <SV = 31> <Delay = 7.30>
+ST_32 : Operation 214 [3/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 214 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 33 <SV = 32> <Delay = 7.30>
+ST_33 : Operation 215 [2/12] (7.30ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 215 'call' 'p_x_assign_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 34 <SV = 33> <Delay = 4.46>
+ST_34 : Operation 216 [1/12] (4.46ns)   --->   "%p_x_assign_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topL_jL, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:688]   --->   Operation 216 'call' 'p_x_assign_4' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 35 <SV = 34> <Delay = 4.65>
+ST_35 : Operation 217 [2/2] (4.65ns)   --->   "%dc_6 = sitodp i64 %p_x_assign_4" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:688]   --->   Operation 217 'sitodp' 'dc_6' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 36 <SV = 35> <Delay = 6.66>
+ST_36 : Operation 218 [1/2] (4.65ns)   --->   "%dc_6 = sitodp i64 %p_x_assign_4" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:688]   --->   Operation 218 'sitodp' 'dc_6' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_36 : Operation 219 [1/1] (0.00ns)   --->   "%data_V_7 = bitcast i64 %dc_6" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 219 'bitcast' 'data_V_7' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 220 [1/1] (0.00ns)   --->   "%p_Result_6 = trunc i64 %data_V_7"   --->   Operation 220 'trunc' 'p_Result_6' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 221 [1/1] (0.00ns)   --->   "%zext_ln368_3 = zext i63 %p_Result_6"   --->   Operation 221 'zext' 'zext_ln368_3' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 222 [1/1] (0.00ns)   --->   "%bitcast_ln521_3 = bitcast i64 %zext_ln368_3" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 222 'bitcast' 'bitcast_ln521_3' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 223 [1/1] (0.00ns)   --->   "%tmp_28 = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data_V_7, i32 52, i32 62" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 223 'partselect' 'tmp_28' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 224 [1/1] (0.00ns)   --->   "%empty_77 = trunc i64 %data_V_7" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 224 'trunc' 'empty_77' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 225 [1/1] (0.61ns)   --->   "%notlhs7 = icmp_ne  i11 %tmp_28, i11 2047" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 225 'icmp' 'notlhs7' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 226 [1/1] (0.98ns)   --->   "%notrhs8 = icmp_eq  i52 %empty_77, i52 0" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 226 'icmp' 'notrhs8' <Predicate = true> <Delay = 0.98> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 227 [2/2] (2.01ns)   --->   "%tmp_30 = fcmp_olt  i64 %bitcast_ln521_3, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 227 'dcmp' 'tmp_30' <Predicate = true> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 37 <SV = 36> <Delay = 2.13>
+ST_37 : Operation 228 [1/1] (0.00ns) (grouped into LUT with out node empty_80)   --->   "%empty_78 = or i1 %notrhs8, i1 %notlhs7" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 228 'or' 'empty_78' <Predicate = (and_ln687)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 229 [1/2] (2.01ns)   --->   "%tmp_30 = fcmp_olt  i64 %bitcast_ln521_3, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 229 'dcmp' 'tmp_30' <Predicate = (and_ln687)> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 230 [1/1] (0.00ns) (grouped into LUT with out node empty_80)   --->   "%empty_79 = and i1 %empty_78, i1 %tmp_30" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 230 'and' 'empty_79' <Predicate = (and_ln687)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 231 [1/1] (0.12ns) (out node of the LUT)   --->   "%empty_80 = xor i1 %empty_79, i1 1" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 231 'xor' 'empty_80' <Predicate = (and_ln687)> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_37 : Operation 232 [1/1] (0.38ns)   --->   "%br_ln0 = br void %._crit_edge1"   --->   Operation 232 'br' 'br_ln0' <Predicate = (and_ln687)> <Delay = 0.38>
+ST_37 : Operation 233 [2/2] (1.64ns)   --->   "%complementary_topR_jR = load i12 %patches_parameters_addr_14" [patchMaker.cpp:690]   --->   Operation 233 'load' 'complementary_topR_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+
+State 38 <SV = 37> <Delay = 4.36>
+ST_38 : Operation 234 [1/1] (0.00ns)   --->   "%empty_81 = phi i1 %empty_80, void, i1 1, void %._crit_edge" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 234 'phi' 'empty_81' <Predicate = true> <Delay = 0.00>
+ST_38 : Operation 235 [1/2] (1.64ns)   --->   "%complementary_topR_jR = load i12 %patches_parameters_addr_14" [patchMaker.cpp:690]   --->   Operation 235 'load' 'complementary_topR_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_38 : Operation 236 [1/1] (1.14ns)   --->   "%sub_ln692 = sub i64 %complementary_topR_jR, i64 %complementary_apexZ0_read" [patchMaker.cpp:692]   --->   Operation 236 'sub' 'sub_ln692' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 237 [1/1] (1.06ns)   --->   "%icmp_ln692 = icmp_sgt  i64 %sub_ln692, i64 50" [patchMaker.cpp:692]   --->   Operation 237 'icmp' 'icmp_ln692' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 238 [1/1] (1.06ns)   --->   "%icmp_ln692_1 = icmp_slt  i64 %complementary_topR_jR, i64 %apexZ0_read" [patchMaker.cpp:692]   --->   Operation 238 'icmp' 'icmp_ln692_1' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 239 [1/1] (0.12ns)   --->   "%and_ln692 = and i1 %icmp_ln692, i1 %icmp_ln692_1" [patchMaker.cpp:692]   --->   Operation 239 'and' 'and_ln692' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_38 : Operation 240 [1/1] (0.38ns)   --->   "%br_ln692 = br i1 %and_ln692, void %._crit_edge2, void" [patchMaker.cpp:692]   --->   Operation 240 'br' 'br_ln692' <Predicate = true> <Delay = 0.38>
+
+State 39 <SV = 38> <Delay = 4.93>
+ST_39 : Operation 241 [12/12] (4.93ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 241 'call' 'p_x_assign_5' <Predicate = true> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 40 <SV = 39> <Delay = 7.30>
+ST_40 : Operation 242 [11/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 242 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 41 <SV = 40> <Delay = 7.30>
+ST_41 : Operation 243 [10/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 243 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 42 <SV = 41> <Delay = 7.30>
+ST_42 : Operation 244 [9/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 244 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 43 <SV = 42> <Delay = 7.30>
+ST_43 : Operation 245 [8/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 245 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 44 <SV = 43> <Delay = 7.30>
+ST_44 : Operation 246 [7/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 246 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 45 <SV = 44> <Delay = 7.30>
+ST_45 : Operation 247 [6/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 247 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 46 <SV = 45> <Delay = 7.30>
+ST_46 : Operation 248 [5/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 248 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 47 <SV = 46> <Delay = 7.30>
+ST_47 : Operation 249 [4/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 249 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 48 <SV = 47> <Delay = 7.30>
+ST_48 : Operation 250 [3/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 250 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 49 <SV = 48> <Delay = 7.30>
+ST_49 : Operation 251 [2/12] (7.30ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 251 'call' 'p_x_assign_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 50 <SV = 49> <Delay = 4.46>
+ST_50 : Operation 252 [1/12] (4.46ns)   --->   "%p_x_assign_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topR_jR, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:693]   --->   Operation 252 'call' 'p_x_assign_5' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 51 <SV = 50> <Delay = 4.65>
+ST_51 : Operation 253 [2/2] (4.65ns)   --->   "%dc_7 = sitodp i64 %p_x_assign_5" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:693]   --->   Operation 253 'sitodp' 'dc_7' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 52 <SV = 51> <Delay = 6.66>
+ST_52 : Operation 254 [1/2] (4.65ns)   --->   "%dc_7 = sitodp i64 %p_x_assign_5" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:693]   --->   Operation 254 'sitodp' 'dc_7' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_52 : Operation 255 [1/1] (0.00ns)   --->   "%data_V_8 = bitcast i64 %dc_7" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 255 'bitcast' 'data_V_8' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 256 [1/1] (0.00ns)   --->   "%p_Result_7 = trunc i64 %data_V_8"   --->   Operation 256 'trunc' 'p_Result_7' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 257 [1/1] (0.00ns)   --->   "%zext_ln368_4 = zext i63 %p_Result_7"   --->   Operation 257 'zext' 'zext_ln368_4' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 258 [1/1] (0.00ns)   --->   "%bitcast_ln521_4 = bitcast i64 %zext_ln368_4" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 258 'bitcast' 'bitcast_ln521_4' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 259 [1/1] (0.00ns)   --->   "%tmp_31 = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data_V_8, i32 52, i32 62" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 259 'partselect' 'tmp_31' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 260 [1/1] (0.00ns)   --->   "%empty_82 = trunc i64 %data_V_8" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 260 'trunc' 'empty_82' <Predicate = true> <Delay = 0.00>
+ST_52 : Operation 261 [1/1] (0.61ns)   --->   "%notlhs5 = icmp_ne  i11 %tmp_31, i11 2047" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 261 'icmp' 'notlhs5' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 262 [1/1] (0.98ns)   --->   "%notrhs6 = icmp_eq  i52 %empty_82, i52 0" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 262 'icmp' 'notrhs6' <Predicate = true> <Delay = 0.98> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_52 : Operation 263 [2/2] (2.01ns)   --->   "%tmp_33 = fcmp_olt  i64 %bitcast_ln521_4, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 263 'dcmp' 'tmp_33' <Predicate = true> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 53 <SV = 52> <Delay = 2.13>
+ST_53 : Operation 264 [1/1] (0.00ns) (grouped into LUT with out node empty_85)   --->   "%empty_83 = or i1 %notrhs6, i1 %notlhs5" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 264 'or' 'empty_83' <Predicate = (and_ln692)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 265 [1/2] (2.01ns)   --->   "%tmp_33 = fcmp_olt  i64 %bitcast_ln521_4, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 265 'dcmp' 'tmp_33' <Predicate = (and_ln692)> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 266 [1/1] (0.00ns) (grouped into LUT with out node empty_85)   --->   "%empty_84 = and i1 %empty_83, i1 %tmp_33" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 266 'and' 'empty_84' <Predicate = (and_ln692)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 267 [1/1] (0.12ns) (out node of the LUT)   --->   "%empty_85 = xor i1 %empty_84, i1 1" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 267 'xor' 'empty_85' <Predicate = (and_ln692)> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_53 : Operation 268 [1/1] (0.38ns)   --->   "%br_ln0 = br void %._crit_edge2"   --->   Operation 268 'br' 'br_ln0' <Predicate = (and_ln692)> <Delay = 0.38>
+ST_53 : Operation 269 [2/2] (1.64ns)   --->   "%complementary_topL_jR = load i12 %patches_parameters_addr_15" [patchMaker.cpp:695]   --->   Operation 269 'load' 'complementary_topL_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+
+State 54 <SV = 53> <Delay = 4.36>
+ST_54 : Operation 270 [1/1] (0.00ns)   --->   "%empty_86 = phi i1 %empty_85, void, i1 1, void %._crit_edge1" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 270 'phi' 'empty_86' <Predicate = true> <Delay = 0.00>
+ST_54 : Operation 271 [1/2] (1.64ns)   --->   "%complementary_topL_jR = load i12 %patches_parameters_addr_15" [patchMaker.cpp:695]   --->   Operation 271 'load' 'complementary_topL_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_54 : Operation 272 [1/1] (1.06ns)   --->   "%icmp_ln697 = icmp_sgt  i64 %complementary_topL_jR, i64 %complementary_apexZ0_read" [patchMaker.cpp:697]   --->   Operation 272 'icmp' 'icmp_ln697' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 273 [1/1] (1.14ns)   --->   "%sub_ln697 = sub i64 %complementary_topL_jR, i64 %apexZ0_read" [patchMaker.cpp:697]   --->   Operation 273 'sub' 'sub_ln697' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 274 [1/1] (1.06ns)   --->   "%icmp_ln697_1 = icmp_slt  i64 %sub_ln697, i64 18446744073709551516" [patchMaker.cpp:697]   --->   Operation 274 'icmp' 'icmp_ln697_1' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 275 [1/1] (0.12ns)   --->   "%and_ln697 = and i1 %icmp_ln697, i1 %icmp_ln697_1" [patchMaker.cpp:697]   --->   Operation 275 'and' 'and_ln697' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_54 : Operation 276 [1/1] (0.38ns)   --->   "%br_ln697 = br i1 %and_ln697, void %._crit_edge3, void" [patchMaker.cpp:697]   --->   Operation 276 'br' 'br_ln697' <Predicate = true> <Delay = 0.38>
+
+State 55 <SV = 54> <Delay = 4.93>
+ST_55 : Operation 277 [12/12] (4.93ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 277 'call' 'p_x_assign_6' <Predicate = true> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 56 <SV = 55> <Delay = 7.30>
+ST_56 : Operation 278 [11/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 278 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 57 <SV = 56> <Delay = 7.30>
+ST_57 : Operation 279 [10/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 279 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 58 <SV = 57> <Delay = 7.30>
+ST_58 : Operation 280 [9/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 280 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 59 <SV = 58> <Delay = 7.30>
+ST_59 : Operation 281 [8/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 281 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 60 <SV = 59> <Delay = 7.30>
+ST_60 : Operation 282 [7/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 282 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 61 <SV = 60> <Delay = 7.30>
+ST_61 : Operation 283 [6/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 283 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 62 <SV = 61> <Delay = 7.30>
+ST_62 : Operation 284 [5/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 284 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 63 <SV = 62> <Delay = 7.30>
+ST_63 : Operation 285 [4/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 285 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 64 <SV = 63> <Delay = 7.30>
+ST_64 : Operation 286 [3/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 286 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 65 <SV = 64> <Delay = 7.30>
+ST_65 : Operation 287 [2/12] (7.30ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 287 'call' 'p_x_assign_6' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 66 <SV = 65> <Delay = 4.46>
+ST_66 : Operation 288 [1/12] (4.46ns)   --->   "%p_x_assign_6 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_topL_jR, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:698]   --->   Operation 288 'call' 'p_x_assign_6' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 67 <SV = 66> <Delay = 4.65>
+ST_67 : Operation 289 [2/2] (4.65ns)   --->   "%dc_8 = sitodp i64 %p_x_assign_6" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:698]   --->   Operation 289 'sitodp' 'dc_8' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+
+State 68 <SV = 67> <Delay = 6.66>
+ST_68 : Operation 290 [1/2] (4.65ns)   --->   "%dc_8 = sitodp i64 %p_x_assign_6" [C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:698]   --->   Operation 290 'sitodp' 'dc_8' <Predicate = true> <Delay = 4.65> <CoreInst = "Int2Double">   --->   Core 66 'Int2Double' <Latency = 1> <II = 1> <Delay = 4.65> <FuncUnit> <Opcode : 'sitodp' 'uitodp'> <InPorts = 1> <OutPorts = 1>
+ST_68 : Operation 291 [1/1] (0.00ns)   --->   "%data_V_9 = bitcast i64 %dc_8" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 291 'bitcast' 'data_V_9' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 292 [1/1] (0.00ns)   --->   "%p_Result_8 = trunc i64 %data_V_9"   --->   Operation 292 'trunc' 'p_Result_8' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 293 [1/1] (0.00ns)   --->   "%zext_ln368_5 = zext i63 %p_Result_8"   --->   Operation 293 'zext' 'zext_ln368_5' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 294 [1/1] (0.00ns)   --->   "%bitcast_ln521_5 = bitcast i64 %zext_ln368_5" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 294 'bitcast' 'bitcast_ln521_5' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 295 [1/1] (0.00ns)   --->   "%tmp_34 = partselect i11 @_ssdm_op_PartSelect.i11.i64.i32.i32, i64 %data_V_9, i32 52, i32 62" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 295 'partselect' 'tmp_34' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 296 [1/1] (0.00ns)   --->   "%empty_87 = trunc i64 %data_V_9" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 296 'trunc' 'empty_87' <Predicate = true> <Delay = 0.00>
+ST_68 : Operation 297 [1/1] (0.61ns)   --->   "%notlhs = icmp_ne  i11 %tmp_34, i11 2047" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 297 'icmp' 'notlhs' <Predicate = true> <Delay = 0.61> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 298 [1/1] (0.98ns)   --->   "%notrhs = icmp_eq  i52 %empty_87, i52 0" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 298 'icmp' 'notrhs' <Predicate = true> <Delay = 0.98> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_68 : Operation 299 [2/2] (2.01ns)   --->   "%tmp_36 = fcmp_olt  i64 %bitcast_ln521_5, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 299 'dcmp' 'tmp_36' <Predicate = true> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+
+State 69 <SV = 68> <Delay = 4.93>
+ST_69 : Operation 300 [1/1] (0.00ns) (grouped into LUT with out node empty_90)   --->   "%empty_88 = or i1 %notrhs, i1 %notlhs" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 300 'or' 'empty_88' <Predicate = (and_ln697)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 301 [1/2] (2.01ns)   --->   "%tmp_36 = fcmp_olt  i64 %bitcast_ln521_5, i64 3e+08" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521]   --->   Operation 301 'dcmp' 'tmp_36' <Predicate = (and_ln697)> <Delay = 2.01> <CoreInst = "DCompare">   --->   Core 38 'DCompare' <Latency = 1> <II = 1> <Delay = 2.01> <FuncUnit> <Opcode : 'dcmp'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 302 [1/1] (0.00ns) (grouped into LUT with out node empty_90)   --->   "%empty_89 = and i1 %empty_88, i1 %tmp_36" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 302 'and' 'empty_89' <Predicate = (and_ln697)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 303 [1/1] (0.12ns) (out node of the LUT)   --->   "%empty_90 = xor i1 %empty_89, i1 1" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 303 'xor' 'empty_90' <Predicate = (and_ln697)> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 304 [1/1] (0.38ns)   --->   "%br_ln0 = br void %._crit_edge3"   --->   Operation 304 'br' 'br_ln0' <Predicate = (and_ln697)> <Delay = 0.38>
+ST_69 : Operation 305 [1/1] (0.00ns)   --->   "%horizontalOverlapBottom = alloca i32 1"   --->   Operation 305 'alloca' 'horizontalOverlapBottom' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 306 [1/1] (0.00ns)   --->   "%horizontalOverlapTop = alloca i32 1"   --->   Operation 306 'alloca' 'horizontalOverlapTop' <Predicate = true> <Delay = 0.00>
+ST_69 : Operation 307 [12/12] (4.93ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 307 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_69 : Operation 308 [12/12] (4.93ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 308 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_69 : Operation 309 [1/1] (0.12ns)   --->   "%or_ln749 = or i1 %empty_76, i1 %empty_86" [patchMaker.cpp:749]   --->   Operation 309 'or' 'or_ln749' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_69 : Operation 310 [1/1] (0.38ns)   --->   "%store_ln749 = store i64 18446744073708551616, i64 %horizontalOverlapTop" [patchMaker.cpp:749]   --->   Operation 310 'store' 'store_ln749' <Predicate = true> <Delay = 0.38>
+ST_69 : Operation 311 [1/1] (0.38ns)   --->   "%store_ln749 = store i64 18446744073708551616, i64 %horizontalOverlapBottom" [patchMaker.cpp:749]   --->   Operation 311 'store' 'store_ln749' <Predicate = true> <Delay = 0.38>
+
+State 70 <SV = 69> <Delay = 7.30>
+ST_70 : Operation 312 [1/1] (0.00ns) (grouped into LUT with out node or_ln749_2)   --->   "%empty_91 = phi i1 %empty_90, void, i1 1, void %._crit_edge2" [r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483]   --->   Operation 312 'phi' 'empty_91' <Predicate = true> <Delay = 0.00>
+ST_70 : Operation 313 [11/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 313 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_70 : Operation 314 [11/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 314 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_70 : Operation 315 [1/1] (0.12ns) (out node of the LUT)   --->   "%or_ln749_2 = or i1 %empty_81, i1 %empty_91" [patchMaker.cpp:749]   --->   Operation 315 'or' 'or_ln749_2' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+
+State 71 <SV = 70> <Delay = 7.30>
+ST_71 : Operation 316 [10/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 316 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_71 : Operation 317 [10/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 317 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 72 <SV = 71> <Delay = 7.30>
+ST_72 : Operation 318 [9/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 318 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_72 : Operation 319 [9/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 319 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 73 <SV = 72> <Delay = 7.30>
+ST_73 : Operation 320 [8/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 320 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_73 : Operation 321 [8/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 321 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 74 <SV = 73> <Delay = 7.30>
+ST_74 : Operation 322 [7/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 322 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_74 : Operation 323 [7/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 323 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 75 <SV = 74> <Delay = 7.30>
+ST_75 : Operation 324 [6/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 324 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_75 : Operation 325 [6/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 325 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 76 <SV = 75> <Delay = 7.30>
+ST_76 : Operation 326 [5/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 326 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_76 : Operation 327 [5/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 327 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 77 <SV = 76> <Delay = 7.30>
+ST_77 : Operation 328 [4/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 328 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_77 : Operation 329 [4/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 329 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 78 <SV = 77> <Delay = 7.30>
+ST_78 : Operation 330 [2/2] (1.64ns)   --->   "%complementary_topR_jL = load i12 %patches_parameters_addr_16" [patchMaker.cpp:703]   --->   Operation 330 'load' 'complementary_topR_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_78 : Operation 331 [2/2] (1.64ns)   --->   "%complementary_topL_jL = load i12 %patches_parameters_addr_17" [patchMaker.cpp:704]   --->   Operation 331 'load' 'complementary_topL_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_78 : Operation 332 [3/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 332 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_78 : Operation 333 [3/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 333 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 79 <SV = 78> <Delay = 7.30>
+ST_79 : Operation 334 [1/2] (1.64ns)   --->   "%complementary_topR_jL = load i12 %patches_parameters_addr_16" [patchMaker.cpp:703]   --->   Operation 334 'load' 'complementary_topR_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_79 : Operation 335 [1/2] (1.64ns)   --->   "%complementary_topL_jL = load i12 %patches_parameters_addr_17" [patchMaker.cpp:704]   --->   Operation 335 'load' 'complementary_topL_jL' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_79 : Operation 336 [2/2] (1.64ns)   --->   "%original_topR_jR = load i12 %patches_parameters_addr_18" [patchMaker.cpp:705]   --->   Operation 336 'load' 'original_topR_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_79 : Operation 337 [2/2] (1.64ns)   --->   "%original_topL_jR = load i12 %patches_parameters_addr_19" [patchMaker.cpp:706]   --->   Operation 337 'load' 'original_topL_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_79 : Operation 338 [2/12] (7.30ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 338 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_79 : Operation 339 [2/12] (7.30ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 339 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 80 <SV = 79> <Delay = 6.06>
+ST_80 : Operation 340 [1/1] (1.14ns)   --->   "%horizontalShiftTop = sub i64 %original_topR_jL, i64 %complementary_topR_jR" [patchMaker.cpp:700]   --->   Operation 340 'sub' 'horizontalShiftTop' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 341 [1/1] (1.14ns)   --->   "%horizontalShiftBottom = sub i64 %original_topL_jL, i64 %complementary_topL_jR" [patchMaker.cpp:701]   --->   Operation 341 'sub' 'horizontalShiftBottom' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 342 [1/2] (1.64ns)   --->   "%original_topR_jR = load i12 %patches_parameters_addr_18" [patchMaker.cpp:705]   --->   Operation 342 'load' 'original_topR_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_80 : Operation 343 [1/2] (1.64ns)   --->   "%original_topL_jR = load i12 %patches_parameters_addr_19" [patchMaker.cpp:706]   --->   Operation 343 'load' 'original_topL_jR' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_80 : Operation 344 [1/12] (4.46ns)   --->   "%z0_original_bCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %apexZ0_read, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:722]   --->   Operation 344 'call' 'z0_original_bCorner' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_80 : Operation 345 [1/12] (4.46ns)   --->   "%z0_complementary_cCorner = call i64 @straightLineProjectorFromLayerIJtoK, i64 %complementary_apexZ0_read, i64 %z_top_min_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:723]   --->   Operation 345 'call' 'z0_complementary_cCorner' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_80 : Operation 346 [1/1] (0.00ns)   --->   "%tmp_48 = bitselect i1 @_ssdm_op_BitSelect.i1.i64.i32, i64 %z0_original_bCorner, i32 63" [patchMaker.cpp:726]   --->   Operation 346 'bitselect' 'tmp_48' <Predicate = true> <Delay = 0.00>
+ST_80 : Operation 347 [1/1] (0.00ns) (grouped into LUT with out node shifted_Align_1)   --->   "%shifted_Align = select i1 %tmp_48, i64 %complementary_apexZ0_read, i64 %apexZ0_read" [patchMaker.cpp:726]   --->   Operation 347 'select' 'shifted_Align' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_80 : Operation 348 [1/1] (0.00ns) (grouped into LUT with out node shiftOriginal_1)   --->   "%shiftOriginal = xor i1 %tmp_48, i1 1" [patchMaker.cpp:726]   --->   Operation 348 'xor' 'shiftOriginal' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 349 [1/1] (1.06ns)   --->   "%icmp_ln732 = icmp_sgt  i64 %z0_complementary_cCorner, i64 0" [patchMaker.cpp:732]   --->   Operation 349 'icmp' 'icmp_ln732' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 350 [1/1] (0.41ns) (out node of the LUT)   --->   "%shifted_Align_1 = select i1 %icmp_ln732, i64 %apexZ0_read, i64 %shifted_Align" [patchMaker.cpp:732]   --->   Operation 350 'select' 'shifted_Align_1' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_80 : Operation 351 [1/1] (0.12ns) (out node of the LUT)   --->   "%shiftOriginal_1 = or i1 %icmp_ln732, i1 %shiftOriginal" [patchMaker.cpp:732]   --->   Operation 351 'or' 'shiftOriginal_1' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 352 [1/1] (0.00ns) (grouped into LUT with out node lnot)   --->   "%cmp84_not = xor i1 %icmp_ln732, i1 1" [patchMaker.cpp:732]   --->   Operation 352 'xor' 'cmp84_not' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 353 [1/1] (0.12ns) (out node of the LUT)   --->   "%lnot = and i1 %tmp_48, i1 %cmp84_not" [patchMaker.cpp:726]   --->   Operation 353 'and' 'lnot' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_80 : Operation 354 [1/1] (0.41ns)   --->   "%newZtop_1 = select i1 %shiftOriginal_1, i64 %z_top_max_read, i64 %z_top_min_read" [patchMaker.cpp:732]   --->   Operation 354 'select' 'newZtop_1' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_80 : Operation 355 [1/1] (0.38ns)   --->   "%br_ln749 = br void" [patchMaker.cpp:749]   --->   Operation 355 'br' 'br_ln749' <Predicate = true> <Delay = 0.38>
+
+State 81 <SV = 80> <Delay = 3.03>
+ST_81 : Operation 356 [1/1] (0.00ns)   --->   "%ppl_assign_0 = phi i32 %ppl_read, void %._crit_edge3, i32 %ppl_assign1, void %._crit_edge8" [patchMaker.cpp:673]   --->   Operation 356 'phi' 'ppl_assign_0' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 357 [1/1] (0.00ns)   --->   "%complementary_topR_jR_1 = phi i64 %complementary_topR_jR, void %._crit_edge3, i64 %complementary_topR_jR_2, void %._crit_edge8"   --->   Operation 357 'phi' 'complementary_topR_jR_1' <Predicate = (shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 358 [1/1] (0.00ns)   --->   "%complementary_topL_jR_1 = phi i64 %complementary_topL_jR, void %._crit_edge3, i64 %complementary_topL_jR_2, void %._crit_edge8"   --->   Operation 358 'phi' 'complementary_topL_jR_1' <Predicate = (shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 359 [1/1] (0.00ns)   --->   "%original_topL_jL_1 = phi i64 %original_topL_jL, void %._crit_edge3, i64 %original_topL_jL_2, void %._crit_edge8"   --->   Operation 359 'phi' 'original_topL_jL_1' <Predicate = (!shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 360 [1/1] (0.00ns)   --->   "%horizontalShiftTop_1 = phi i64 %horizontalShiftTop, void %._crit_edge3, i64 %horizontalShiftTop_2, void %._crit_edge8"   --->   Operation 360 'phi' 'horizontalShiftTop_1' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 361 [1/1] (0.00ns)   --->   "%original_topR_jL_1 = phi i64 %original_topR_jL, void %._crit_edge3, i64 %original_topR_jL_2, void %._crit_edge8"   --->   Operation 361 'phi' 'original_topR_jL_1' <Predicate = (!shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 362 [1/1] (0.00ns)   --->   "%horizontalShiftBottom_1 = phi i64 %horizontalShiftBottom, void %._crit_edge3, i64 %horizontalShiftBottom_2, void %._crit_edge8"   --->   Operation 362 'phi' 'horizontalShiftBottom_1' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 363 [1/1] (0.00ns)   --->   "%complementary_topR_jL_1 = phi i64 %complementary_topR_jL, void %._crit_edge3, i64 %complementary_topR_jL_2, void %._crit_edge8"   --->   Operation 363 'phi' 'complementary_topR_jL_1' <Predicate = (shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 364 [1/1] (0.00ns)   --->   "%complementary_topL_jL_1 = phi i64 %complementary_topL_jL, void %._crit_edge3, i64 %complementary_topL_jL_2, void %._crit_edge8"   --->   Operation 364 'phi' 'complementary_topL_jL_1' <Predicate = (shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 365 [1/1] (0.00ns)   --->   "%original_topR_jR_1 = phi i64 %original_topR_jR, void %._crit_edge3, i64 %original_topR_jR_2, void %._crit_edge8"   --->   Operation 365 'phi' 'original_topR_jR_1' <Predicate = (!shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 366 [1/1] (0.00ns)   --->   "%original_topL_jR_1 = phi i64 %original_topL_jR, void %._crit_edge3, i64 %original_topL_jR_2, void %._crit_edge8"   --->   Operation 366 'phi' 'original_topL_jR_1' <Predicate = (!shiftOriginal_1)> <Delay = 0.00>
+ST_81 : Operation 367 [1/1] (0.00ns)   --->   "%makeHorizontallyShiftedPatch = phi i1 0, void %._crit_edge3, i1 1, void %._crit_edge8"   --->   Operation 367 'phi' 'makeHorizontallyShiftedPatch' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 368 [1/1] (0.00ns)   --->   "%shifted_Align_2 = phi i64 %shifted_Align_1, void %._crit_edge3, i64 %shifted_Align_5, void %._crit_edge8"   --->   Operation 368 'phi' 'shifted_Align_2' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 369 [1/1] (0.00ns)   --->   "%newZtop = phi i64 0, void %._crit_edge3, i64 %newZtop_1, void %._crit_edge8"   --->   Operation 369 'phi' 'newZtop' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 370 [1/1] (0.00ns)   --->   "%specloopname_ln720 = specloopname void @_ssdm_op_SpecLoopName, void @empty_27" [patchMaker.cpp:720]   --->   Operation 370 'specloopname' 'specloopname_ln720' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 371 [1/1] (0.00ns)   --->   "%tmp_49 = partselect i63 @_ssdm_op_PartSelect.i63.i64.i32.i32, i64 %horizontalShiftTop_1, i32 1, i32 63" [patchMaker.cpp:749]   --->   Operation 371 'partselect' 'tmp_49' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 372 [1/1] (1.05ns)   --->   "%icmp_ln749 = icmp_slt  i63 %tmp_49, i63 1" [patchMaker.cpp:749]   --->   Operation 372 'icmp' 'icmp_ln749' <Predicate = true> <Delay = 1.05> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 373 [1/1] (0.12ns)   --->   "%or_ln749_1 = or i1 %or_ln749, i1 %icmp_ln749" [patchMaker.cpp:749]   --->   Operation 373 'or' 'or_ln749_1' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 374 [1/1] (0.00ns)   --->   "%horizontalOverlapBottom_load = load i64 %horizontalOverlapBottom" [patchMaker.cpp:749]   --->   Operation 374 'load' 'horizontalOverlapBottom_load' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 375 [1/1] (0.00ns)   --->   "%horizontalOverlapTop_load = load i64 %horizontalOverlapTop" [patchMaker.cpp:749]   --->   Operation 375 'load' 'horizontalOverlapTop_load' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 376 [1/1] (0.00ns)   --->   "%br_ln749 = br i1 %or_ln749_1, void, void" [patchMaker.cpp:749]   --->   Operation 376 'br' 'br_ln749' <Predicate = true> <Delay = 0.00>
+ST_81 : Operation 377 [1/1] (1.06ns)   --->   "%icmp_ln749_4 = icmp_slt  i64 %horizontalOverlapTop_load, i64 1" [patchMaker.cpp:749]   --->   Operation 377 'icmp' 'icmp_ln749_4' <Predicate = (!or_ln749_1)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 378 [1/1] (1.06ns)   --->   "%icmp_ln749_5 = icmp_slt  i64 %horizontalOverlapBottom_load, i64 1" [patchMaker.cpp:749]   --->   Operation 378 'icmp' 'icmp_ln749_5' <Predicate = (!or_ln749_1)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 379 [1/1] (0.12ns)   --->   "%and_ln749_2 = and i1 %icmp_ln749_4, i1 %icmp_ln749_5" [patchMaker.cpp:749]   --->   Operation 379 'and' 'and_ln749_2' <Predicate = (!or_ln749_1)> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 380 [1/1] (0.00ns)   --->   "%br_ln749 = br i1 %and_ln749_2, void %.critedge, void %._crit_edge4" [patchMaker.cpp:749]   --->   Operation 380 'br' 'br_ln749' <Predicate = (!or_ln749_1)> <Delay = 0.00>
+ST_81 : Operation 381 [1/1] (0.00ns)   --->   "%tmp_50 = partselect i63 @_ssdm_op_PartSelect.i63.i64.i32.i32, i64 %horizontalShiftBottom_1, i32 1, i32 63" [patchMaker.cpp:749]   --->   Operation 381 'partselect' 'tmp_50' <Predicate = (or_ln749_1)> <Delay = 0.00>
+ST_81 : Operation 382 [1/1] (1.05ns)   --->   "%icmp_ln749_1 = icmp_slt  i63 %tmp_50, i63 1" [patchMaker.cpp:749]   --->   Operation 382 'icmp' 'icmp_ln749_1' <Predicate = (or_ln749_1)> <Delay = 1.05> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 383 [1/1] (0.00ns) (grouped into LUT with out node and_ln749_1)   --->   "%or_ln749_3 = or i1 %or_ln749_2, i1 %icmp_ln749_1" [patchMaker.cpp:749]   --->   Operation 383 'or' 'or_ln749_3' <Predicate = (or_ln749_1)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 384 [1/1] (0.00ns) (grouped into LUT with out node and_ln749_1)   --->   "%xor_ln749 = xor i1 %or_ln749_3, i1 1" [patchMaker.cpp:749]   --->   Operation 384 'xor' 'xor_ln749' <Predicate = (or_ln749_1)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 385 [1/1] (1.06ns)   --->   "%icmp_ln749_2 = icmp_slt  i64 %horizontalOverlapBottom_load, i64 1" [patchMaker.cpp:749]   --->   Operation 385 'icmp' 'icmp_ln749_2' <Predicate = (or_ln749_1)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 386 [1/1] (0.00ns) (grouped into LUT with out node and_ln749_1)   --->   "%and_ln749 = and i1 %icmp_ln749_2, i1 %xor_ln749" [patchMaker.cpp:749]   --->   Operation 386 'and' 'and_ln749' <Predicate = (or_ln749_1)> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 387 [1/1] (1.06ns)   --->   "%icmp_ln749_3 = icmp_slt  i64 %horizontalOverlapTop_load, i64 1" [patchMaker.cpp:749]   --->   Operation 387 'icmp' 'icmp_ln749_3' <Predicate = (or_ln749_1)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 388 [1/1] (0.12ns) (out node of the LUT)   --->   "%and_ln749_1 = and i1 %and_ln749, i1 %icmp_ln749_3" [patchMaker.cpp:749]   --->   Operation 388 'and' 'and_ln749_1' <Predicate = (or_ln749_1)> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 389 [1/1] (0.00ns)   --->   "%br_ln749 = br i1 %and_ln749_1, void %.critedge, void %._crit_edge4" [patchMaker.cpp:749]   --->   Operation 389 'br' 'br_ln749' <Predicate = (or_ln749_1)> <Delay = 0.00>
+ST_81 : Operation 390 [1/1] (1.06ns)   --->   "%cmp93 = icmp_slt  i64 %horizontalShiftTop_1, i64 %horizontalShiftBottom_1" [patchMaker.cpp:700]   --->   Operation 390 'icmp' 'cmp93' <Predicate = (or_ln749_1 & and_ln749_1) | (!or_ln749_1 & and_ln749_2)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 391 [1/1] (0.41ns)   --->   "%horizontalShiftBottom_0_horizontalShiftTop_0 = select i1 %cmp93, i64 %horizontalShiftBottom_1, i64 %horizontalShiftTop_1" [patchMaker.cpp:700]   --->   Operation 391 'select' 'horizontalShiftBottom_0_horizontalShiftTop_0' <Predicate = (or_ln749_1 & and_ln749_1) | (!or_ln749_1 & and_ln749_2)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_81 : Operation 392 [1/1] (1.14ns)   --->   "%shifted_Align_3 = sub i64 %shifted_Align_2, i64 %horizontalShiftBottom_0_horizontalShiftTop_0" [patchMaker.cpp:759]   --->   Operation 392 'sub' 'shifted_Align_3' <Predicate = (or_ln749_1 & and_ln749_1 & shiftOriginal_1) | (!or_ln749_1 & and_ln749_2 & shiftOriginal_1)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 393 [1/1] (1.14ns)   --->   "%shifted_Align_4 = add i64 %shifted_Align_2, i64 %horizontalShiftBottom_0_horizontalShiftTop_0" [patchMaker.cpp:763]   --->   Operation 393 'add' 'shifted_Align_4' <Predicate = (or_ln749_1 & and_ln749_1 & !shiftOriginal_1) | (!or_ln749_1 & and_ln749_2 & !shiftOriginal_1)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_81 : Operation 394 [1/1] (0.41ns)   --->   "%shifted_Align_5 = select i1 %shiftOriginal_1, i64 %shifted_Align_3, i64 %shifted_Align_4" [patchMaker.cpp:757]   --->   Operation 394 'select' 'shifted_Align_5' <Predicate = (or_ln749_1 & and_ln749_1) | (!or_ln749_1 & and_ln749_2)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_81 : Operation 395 [1/1] (0.00ns)   --->   "%br_ln767 = br i1 %makeHorizontallyShiftedPatch, void %._crit_edge7, void" [patchMaker.cpp:767]   --->   Operation 395 'br' 'br_ln767' <Predicate = (or_ln749_1 & and_ln749_1) | (!or_ln749_1 & and_ln749_2)> <Delay = 0.00>
+ST_81 : Operation 396 [1/1] (0.00ns)   --->   "%n_patches_read = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %n_patches" [patchMaker.cpp:769]   --->   Operation 396 'read' 'n_patches_read' <Predicate = (or_ln749_1 & and_ln749_1 & makeHorizontallyShiftedPatch) | (!or_ln749_1 & and_ln749_2 & makeHorizontallyShiftedPatch)> <Delay = 0.00>
+ST_81 : Operation 397 [1/1] (0.00ns)   --->   "%br_ln813 = br i1 %makeHorizontallyShiftedPatch, void %.critedge._crit_edge, void" [patchMaker.cpp:813]   --->   Operation 397 'br' 'br_ln813' <Predicate = (or_ln749_1 & !and_ln749_1) | (!or_ln749_1 & !and_ln749_2)> <Delay = 0.00>
+
+State 82 <SV = 81> <Delay = 2.89>
+ST_82 : Operation 398 [1/1] (0.88ns)   --->   "%add_ln769 = add i32 %n_patches_read, i32 4294967295" [patchMaker.cpp:769]   --->   Operation 398 'add' 'add_ln769' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_82 : Operation 399 [2/2] (2.01ns)   --->   "%call_ln769 = call void @delete_patch, i32 %n_patches, i32 %n_patches_read, i64 %patches_superpoints, i64 %patches_parameters, i32 %add_ln769" [patchMaker.cpp:769]   --->   Operation 399 'call' 'call_ln769' <Predicate = true> <Delay = 2.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 83 <SV = 82> <Delay = 0.00>
+ST_83 : Operation 400 [1/2] (0.00ns)   --->   "%call_ln769 = call void @delete_patch, i32 %n_patches, i32 %n_patches_read, i64 %patches_superpoints, i64 %patches_parameters, i32 %add_ln769" [patchMaker.cpp:769]   --->   Operation 400 'call' 'call_ln769' <Predicate = (makeHorizontallyShiftedPatch)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_83 : Operation 401 [1/1] (0.00ns)   --->   "%br_ln771 = br void %._crit_edge7" [patchMaker.cpp:771]   --->   Operation 401 'br' 'br_ln771' <Predicate = (makeHorizontallyShiftedPatch)> <Delay = 0.00>
+
+State 84 <SV = 83> <Delay = 0.00>
+ST_84 : Operation 402 [2/2] (0.00ns)   --->   "%ppl_assign1 = call i32 @makePatch_alignedToLine, i32 %n_patches, i192 %GDarray, i32 %GDn_points, i64 %patches_superpoints, i64 %patches_parameters, i64 %shifted_Align_5, i64 %newZtop_1, i32 %ppl_assign_0, i1 %lnot, i25 %radii, i26 %trapezoid_edges, i64 %temp" [patchMaker.cpp:773]   --->   Operation 402 'call' 'ppl_assign1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 85 <SV = 84> <Delay = 0.00>
+ST_85 : Operation 403 [1/2] (0.00ns)   --->   "%ppl_assign1 = call i32 @makePatch_alignedToLine, i32 %n_patches, i192 %GDarray, i32 %GDn_points, i64 %patches_superpoints, i64 %patches_parameters, i64 %shifted_Align_5, i64 %newZtop_1, i32 %ppl_assign_0, i1 %lnot, i25 %radii, i26 %trapezoid_edges, i64 %temp" [patchMaker.cpp:773]   --->   Operation 403 'call' 'ppl_assign1' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 86 <SV = 85> <Delay = 4.26>
+ST_86 : Operation 404 [1/1] (0.00ns)   --->   "%n_patches_read_2 = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %n_patches" [patchMaker.cpp:775]   --->   Operation 404 'read' 'n_patches_read_2' <Predicate = true> <Delay = 0.00>
+ST_86 : Operation 405 [1/1] (0.00ns)   --->   "%trunc_ln775 = trunc i32 %n_patches_read_2" [patchMaker.cpp:775]   --->   Operation 405 'trunc' 'trunc_ln775' <Predicate = true> <Delay = 0.00>
+ST_86 : Operation 406 [1/1] (0.70ns)   --->   "%add_ln775 = add i5 %trunc_ln775, i5 31" [patchMaker.cpp:775]   --->   Operation 406 'add' 'add_ln775' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_86 : Operation 407 [2/2] (3.55ns)   --->   "%call_ln775 = call void @getShadows, i64 %patches_superpoints, i64 %patches_parameters, i5 %add_ln775, i5 %add_ln775, i64 %z_top_min_read, i64 %z_top_max_read, i25 %radii" [patchMaker.cpp:775]   --->   Operation 407 'call' 'call_ln775' <Predicate = true> <Delay = 3.55> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 87 <SV = 86> <Delay = 0.00>
+ST_87 : Operation 408 [1/2] (0.00ns)   --->   "%call_ln775 = call void @getShadows, i64 %patches_superpoints, i64 %patches_parameters, i5 %add_ln775, i5 %add_ln775, i64 %z_top_min_read, i64 %z_top_max_read, i25 %radii" [patchMaker.cpp:775]   --->   Operation 408 'call' 'call_ln775' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 88 <SV = 87> <Delay = 3.13>
+ST_88 : Operation 409 [1/1] (0.00ns)   --->   "%tmp_39 = bitconcatenate i12 @_ssdm_op_BitConcatenate.i12.i5.i7, i5 %add_ln775, i7 0" [patchMaker.cpp:779]   --->   Operation 409 'bitconcatenate' 'tmp_39' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 410 [1/1] (0.00ns)   --->   "%tmp_40 = bitconcatenate i8 @_ssdm_op_BitConcatenate.i8.i5.i3, i5 %add_ln775, i3 0" [patchMaker.cpp:779]   --->   Operation 410 'bitconcatenate' 'tmp_40' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 411 [1/1] (0.00ns)   --->   "%zext_ln779 = zext i8 %tmp_40" [patchMaker.cpp:779]   --->   Operation 411 'zext' 'zext_ln779' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 412 [1/1] (0.74ns)   --->   "%sub_ln779 = sub i12 %tmp_39, i12 %zext_ln779" [patchMaker.cpp:779]   --->   Operation 412 'sub' 'sub_ln779' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 413 [1/1] (0.74ns)   --->   "%add_ln779 = add i12 %sub_ln779, i12 36" [patchMaker.cpp:779]   --->   Operation 413 'add' 'add_ln779' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 414 [1/1] (0.00ns)   --->   "%zext_ln779_1 = zext i12 %add_ln779" [patchMaker.cpp:779]   --->   Operation 414 'zext' 'zext_ln779_1' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 415 [1/1] (0.00ns)   --->   "%patches_parameters_addr_20 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln779_1" [patchMaker.cpp:779]   --->   Operation 415 'getelementptr' 'patches_parameters_addr_20' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 416 [1/1] (0.74ns)   --->   "%add_ln780 = add i12 %sub_ln779, i12 24" [patchMaker.cpp:780]   --->   Operation 416 'add' 'add_ln780' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_88 : Operation 417 [1/1] (0.00ns)   --->   "%zext_ln780 = zext i12 %add_ln780" [patchMaker.cpp:780]   --->   Operation 417 'zext' 'zext_ln780' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 418 [1/1] (0.00ns)   --->   "%patches_parameters_addr_21 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln780" [patchMaker.cpp:780]   --->   Operation 418 'getelementptr' 'patches_parameters_addr_21' <Predicate = true> <Delay = 0.00>
+ST_88 : Operation 419 [2/2] (1.64ns)   --->   "%patches_parameters_load = load i12 %patches_parameters_addr_20" [patchMaker.cpp:779]   --->   Operation 419 'load' 'patches_parameters_load' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_88 : Operation 420 [2/2] (1.64ns)   --->   "%patches_parameters_load_15 = load i12 %patches_parameters_addr_21" [patchMaker.cpp:780]   --->   Operation 420 'load' 'patches_parameters_load_15' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+
+State 89 <SV = 88> <Delay = 2.39>
+ST_89 : Operation 421 [1/1] (0.74ns)   --->   "%add_ln781 = add i12 %sub_ln779, i12 42" [patchMaker.cpp:781]   --->   Operation 421 'add' 'add_ln781' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 422 [1/1] (0.00ns)   --->   "%zext_ln781 = zext i12 %add_ln781" [patchMaker.cpp:781]   --->   Operation 422 'zext' 'zext_ln781' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 423 [1/1] (0.00ns)   --->   "%patches_parameters_addr_22 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln781" [patchMaker.cpp:781]   --->   Operation 423 'getelementptr' 'patches_parameters_addr_22' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 424 [1/1] (0.74ns)   --->   "%add_ln782 = add i12 %sub_ln779, i12 30" [patchMaker.cpp:782]   --->   Operation 424 'add' 'add_ln782' <Predicate = true> <Delay = 0.74> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_89 : Operation 425 [1/1] (0.00ns)   --->   "%zext_ln782 = zext i12 %add_ln782" [patchMaker.cpp:782]   --->   Operation 425 'zext' 'zext_ln782' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 426 [1/1] (0.00ns)   --->   "%patches_parameters_addr_23 = getelementptr i64 %patches_parameters, i64 0, i64 %zext_ln782" [patchMaker.cpp:782]   --->   Operation 426 'getelementptr' 'patches_parameters_addr_23' <Predicate = true> <Delay = 0.00>
+ST_89 : Operation 427 [1/2] (1.64ns)   --->   "%patches_parameters_load = load i12 %patches_parameters_addr_20" [patchMaker.cpp:779]   --->   Operation 427 'load' 'patches_parameters_load' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_89 : Operation 428 [1/2] (1.64ns)   --->   "%patches_parameters_load_15 = load i12 %patches_parameters_addr_21" [patchMaker.cpp:780]   --->   Operation 428 'load' 'patches_parameters_load_15' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_89 : Operation 429 [2/2] (1.64ns)   --->   "%patches_parameters_load_16 = load i12 %patches_parameters_addr_22" [patchMaker.cpp:781]   --->   Operation 429 'load' 'patches_parameters_load_16' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_89 : Operation 430 [2/2] (1.64ns)   --->   "%patches_parameters_load_17 = load i12 %patches_parameters_addr_23" [patchMaker.cpp:782]   --->   Operation 430 'load' 'patches_parameters_load_17' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_89 : Operation 431 [1/1] (0.41ns)   --->   "%original_topL_jL_2 = select i1 %shiftOriginal_1, i64 %patches_parameters_load_15, i64 %original_topL_jL_1" [patchMaker.cpp:783]   --->   Operation 431 'select' 'original_topL_jL_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_89 : Operation 432 [1/1] (0.41ns)   --->   "%original_topR_jL_2 = select i1 %shiftOriginal_1, i64 %patches_parameters_load, i64 %original_topR_jL_1" [patchMaker.cpp:783]   --->   Operation 432 'select' 'original_topR_jL_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_89 : Operation 433 [1/1] (0.41ns)   --->   "%complementary_topR_jL_2 = select i1 %shiftOriginal_1, i64 %complementary_topR_jL_1, i64 %patches_parameters_load" [patchMaker.cpp:783]   --->   Operation 433 'select' 'complementary_topR_jL_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_89 : Operation 434 [1/1] (0.41ns)   --->   "%complementary_topL_jL_2 = select i1 %shiftOriginal_1, i64 %complementary_topL_jL_1, i64 %patches_parameters_load_15" [patchMaker.cpp:783]   --->   Operation 434 'select' 'complementary_topL_jL_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+State 90 <SV = 89> <Delay = 6.99>
+ST_90 : Operation 435 [1/2] (1.64ns)   --->   "%patches_parameters_load_16 = load i12 %patches_parameters_addr_22" [patchMaker.cpp:781]   --->   Operation 435 'load' 'patches_parameters_load_16' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_90 : Operation 436 [1/2] (1.64ns)   --->   "%patches_parameters_load_17 = load i12 %patches_parameters_addr_23" [patchMaker.cpp:782]   --->   Operation 436 'load' 'patches_parameters_load_17' <Predicate = true> <Delay = 1.64> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 1.64> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 3840> <RAM>
+ST_90 : Operation 437 [1/1] (0.41ns)   --->   "%complementary_topR_jR_2 = select i1 %shiftOriginal_1, i64 %complementary_topR_jR_1, i64 %patches_parameters_load_16" [patchMaker.cpp:783]   --->   Operation 437 'select' 'complementary_topR_jR_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_90 : Operation 438 [1/1] (0.41ns)   --->   "%complementary_topL_jR_2 = select i1 %shiftOriginal_1, i64 %complementary_topL_jR_1, i64 %patches_parameters_load_17" [patchMaker.cpp:783]   --->   Operation 438 'select' 'complementary_topL_jR_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_90 : Operation 439 [1/1] (0.41ns)   --->   "%original_topR_jR_2 = select i1 %shiftOriginal_1, i64 %patches_parameters_load_16, i64 %original_topR_jR_1" [patchMaker.cpp:783]   --->   Operation 439 'select' 'original_topR_jR_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_90 : Operation 440 [1/1] (0.41ns)   --->   "%original_topL_jR_2 = select i1 %shiftOriginal_1, i64 %patches_parameters_load_17, i64 %original_topL_jR_1" [patchMaker.cpp:783]   --->   Operation 440 'select' 'original_topL_jR_2' <Predicate = true> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_90 : Operation 441 [1/1] (1.14ns)   --->   "%horizontalShiftTop_2 = sub i64 %original_topR_jL_2, i64 %complementary_topR_jR_2" [patchMaker.cpp:792]   --->   Operation 441 'sub' 'horizontalShiftTop_2' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_90 : Operation 442 [1/1] (1.14ns)   --->   "%horizontalShiftBottom_2 = sub i64 %original_topL_jL_2, i64 %complementary_topL_jR_2" [patchMaker.cpp:793]   --->   Operation 442 'sub' 'horizontalShiftBottom_2' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_90 : Operation 443 [1/1] (0.00ns)   --->   "%br_ln795 = br i1 %shiftOriginal_1, void %._crit_edge8, void" [patchMaker.cpp:795]   --->   Operation 443 'br' 'br_ln795' <Predicate = true> <Delay = 0.00>
+ST_90 : Operation 444 [12/12] (4.93ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 444 'call' 'tmp_5' <Predicate = (shiftOriginal_1)> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 91 <SV = 90> <Delay = 7.30>
+ST_91 : Operation 445 [11/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 445 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 92 <SV = 91> <Delay = 7.30>
+ST_92 : Operation 446 [10/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 446 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 93 <SV = 92> <Delay = 7.30>
+ST_93 : Operation 447 [9/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 447 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 94 <SV = 93> <Delay = 7.30>
+ST_94 : Operation 448 [8/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 448 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 95 <SV = 94> <Delay = 7.30>
+ST_95 : Operation 449 [7/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 449 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 96 <SV = 95> <Delay = 7.30>
+ST_96 : Operation 450 [6/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 450 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 97 <SV = 96> <Delay = 7.30>
+ST_97 : Operation 451 [5/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 451 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 98 <SV = 97> <Delay = 7.30>
+ST_98 : Operation 452 [4/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 452 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 99 <SV = 98> <Delay = 7.30>
+ST_99 : Operation 453 [3/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 453 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 100 <SV = 99> <Delay = 7.30>
+ST_100 : Operation 454 [2/12] (7.30ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 454 'call' 'tmp_5' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 101 <SV = 100> <Delay = 5.91>
+ST_101 : Operation 455 [1/12] (4.46ns)   --->   "%tmp_5 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %original_topR_jR_2, i64 %z_top_max_read, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:795]   --->   Operation 455 'call' 'tmp_5' <Predicate = (shiftOriginal_1)> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_101 : Operation 456 [1/1] (1.06ns)   --->   "%icmp_ln795 = icmp_slt  i64 %tmp_5, i64 15000000" [patchMaker.cpp:795]   --->   Operation 456 'icmp' 'icmp_ln795' <Predicate = (shiftOriginal_1)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 457 [1/1] (0.00ns)   --->   "%br_ln795 = br i1 %icmp_ln795, void %._crit_edge8, void" [patchMaker.cpp:795]   --->   Operation 457 'br' 'br_ln795' <Predicate = (shiftOriginal_1)> <Delay = 0.00>
+ST_101 : Operation 458 [1/1] (1.14ns)   --->   "%sub_ln797 = sub i64 %complementary_topR_jL_2, i64 %original_topR_jL_2" [patchMaker.cpp:797]   --->   Operation 458 'sub' 'sub_ln797' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 459 [1/1] (1.14ns)   --->   "%sub_ln797_1 = sub i64 %complementary_topR_jR_2, i64 %original_topR_jR_2" [patchMaker.cpp:797]   --->   Operation 459 'sub' 'sub_ln797_1' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 460 [1/1] (1.06ns)   --->   "%icmp_ln797 = icmp_slt  i64 %sub_ln797, i64 %sub_ln797_1" [patchMaker.cpp:797]   --->   Operation 460 'icmp' 'icmp_ln797' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 461 [1/1] (0.41ns)   --->   "%horizontalOverlapTop_1 = select i1 %icmp_ln797, i64 %sub_ln797_1, i64 %sub_ln797" [patchMaker.cpp:797]   --->   Operation 461 'select' 'horizontalOverlapTop_1' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_101 : Operation 462 [1/1] (1.14ns)   --->   "%sub_ln798 = sub i64 %complementary_topL_jL_2, i64 %original_topL_jL_2" [patchMaker.cpp:798]   --->   Operation 462 'sub' 'sub_ln798' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 463 [1/1] (1.14ns)   --->   "%sub_ln798_1 = sub i64 %complementary_topL_jR_2, i64 %original_topL_jR_2" [patchMaker.cpp:798]   --->   Operation 463 'sub' 'sub_ln798_1' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 464 [1/1] (1.06ns)   --->   "%icmp_ln798 = icmp_slt  i64 %sub_ln798, i64 %sub_ln798_1" [patchMaker.cpp:798]   --->   Operation 464 'icmp' 'icmp_ln798' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_101 : Operation 465 [1/1] (0.41ns)   --->   "%select_ln798 = select i1 %icmp_ln798, i64 %sub_ln798_1, i64 %sub_ln798" [patchMaker.cpp:798]   --->   Operation 465 'select' 'select_ln798' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 0.41> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_101 : Operation 466 [1/1] (0.38ns)   --->   "%store_ln798 = store i64 %horizontalOverlapTop_1, i64 %horizontalOverlapTop" [patchMaker.cpp:798]   --->   Operation 466 'store' 'store_ln798' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 0.38>
+ST_101 : Operation 467 [1/1] (0.38ns)   --->   "%store_ln798 = store i64 %select_ln798, i64 %horizontalOverlapBottom" [patchMaker.cpp:798]   --->   Operation 467 'store' 'store_ln798' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 0.38>
+ST_101 : Operation 468 [1/1] (0.00ns)   --->   "%br_ln798 = br void %._crit_edge8" [patchMaker.cpp:798]   --->   Operation 468 'br' 'br_ln798' <Predicate = (shiftOriginal_1 & icmp_ln795)> <Delay = 0.00>
+ST_101 : Operation 469 [1/1] (0.00ns)   --->   "%br_ln749 = br void" [patchMaker.cpp:749]   --->   Operation 469 'br' 'br_ln749' <Predicate = true> <Delay = 0.00>
+
+State 102 <SV = 81> <Delay = 4.93>
+ST_102 : Operation 470 [12/12] (4.93ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 470 'call' 'tmp_4' <Predicate = true> <Delay = 4.93> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 103 <SV = 82> <Delay = 7.30>
+ST_103 : Operation 471 [11/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 471 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 104 <SV = 83> <Delay = 7.30>
+ST_104 : Operation 472 [10/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 472 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 105 <SV = 84> <Delay = 7.30>
+ST_105 : Operation 473 [9/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 473 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 106 <SV = 85> <Delay = 7.30>
+ST_106 : Operation 474 [8/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 474 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 107 <SV = 86> <Delay = 7.30>
+ST_107 : Operation 475 [7/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 475 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 108 <SV = 87> <Delay = 7.30>
+ST_108 : Operation 476 [6/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 476 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 109 <SV = 88> <Delay = 7.30>
+ST_109 : Operation 477 [5/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 477 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 110 <SV = 89> <Delay = 7.30>
+ST_110 : Operation 478 [4/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 478 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 111 <SV = 90> <Delay = 7.30>
+ST_111 : Operation 479 [3/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 479 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 112 <SV = 91> <Delay = 7.30>
+ST_112 : Operation 480 [2/12] (7.30ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 480 'call' 'tmp_4' <Predicate = true> <Delay = 7.30> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 113 <SV = 92> <Delay = 5.64>
+ST_113 : Operation 481 [1/12] (4.46ns)   --->   "%tmp_4 = call i64 @straightLineProjectorFromLayerIJtoK, i64 %shifted_Align_2, i64 %newZtop, i3 1, i32 5, i3 0, i25 %radii" [patchMaker.cpp:815]   --->   Operation 481 'call' 'tmp_4' <Predicate = true> <Delay = 4.46> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_113 : Operation 482 [1/1] (1.06ns)   --->   "%icmp_ln815 = icmp_slt  i64 %tmp_4, i64 15000001" [patchMaker.cpp:815]   --->   Operation 482 'icmp' 'icmp_ln815' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_113 : Operation 483 [1/1] (0.00ns) (grouped into LUT with out node and_ln815)   --->   "%or_ln815 = or i1 %icmp_ln815, i1 %lnot" [patchMaker.cpp:815]   --->   Operation 483 'or' 'or_ln815' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_113 : Operation 484 [1/1] (0.00ns) (grouped into LUT with out node and_ln815)   --->   "%xor_ln815 = xor i1 %or_ln815, i1 1" [patchMaker.cpp:815]   --->   Operation 484 'xor' 'xor_ln815' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_113 : Operation 485 [1/1] (0.00ns)   --->   "%n_patches_read_3 = read i32 @_ssdm_op_Read.ap_auto.i32P0A, i32 %n_patches" [patchMaker.cpp:817]   --->   Operation 485 'read' 'n_patches_read_3' <Predicate = true> <Delay = 0.00>
+ST_113 : Operation 486 [1/1] (0.85ns)   --->   "%icmp_ln817 = icmp_sgt  i32 %n_patches_read_3, i32 2" [patchMaker.cpp:817]   --->   Operation 486 'icmp' 'icmp_ln817' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_113 : Operation 487 [1/1] (0.12ns) (out node of the LUT)   --->   "%and_ln815 = and i1 %icmp_ln817, i1 %xor_ln815" [patchMaker.cpp:815]   --->   Operation 487 'and' 'and_ln815' <Predicate = true> <Delay = 0.12> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.12> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_113 : Operation 488 [1/1] (0.00ns)   --->   "%br_ln815 = br i1 %and_ln815, void %.critedge._crit_edge, void" [patchMaker.cpp:815]   --->   Operation 488 'br' 'br_ln815' <Predicate = true> <Delay = 0.00>
+
+State 114 <SV = 93> <Delay = 2.89>
+ST_114 : Operation 489 [1/1] (0.88ns)   --->   "%add_ln819 = add i32 %n_patches_read_3, i32 4294967293" [patchMaker.cpp:819]   --->   Operation 489 'add' 'add_ln819' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_114 : Operation 490 [2/2] (2.01ns)   --->   "%call_ln819 = call void @delete_patch, i32 %n_patches, i32 %n_patches_read_3, i64 %patches_superpoints, i64 %patches_parameters, i32 %add_ln819" [patchMaker.cpp:819]   --->   Operation 490 'call' 'call_ln819' <Predicate = true> <Delay = 2.01> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 115 <SV = 94> <Delay = 0.00>
+ST_115 : Operation 491 [1/2] (0.00ns)   --->   "%call_ln819 = call void @delete_patch, i32 %n_patches, i32 %n_patches_read_3, i64 %patches_superpoints, i64 %patches_parameters, i32 %add_ln819" [patchMaker.cpp:819]   --->   Operation 491 'call' 'call_ln819' <Predicate = (makeHorizontallyShiftedPatch & and_ln815)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_115 : Operation 492 [1/1] (0.00ns)   --->   "%br_ln820 = br void %.critedge._crit_edge" [patchMaker.cpp:820]   --->   Operation 492 'br' 'br_ln820' <Predicate = (makeHorizontallyShiftedPatch & and_ln815)> <Delay = 0.00>
+ST_115 : Operation 493 [1/1] (0.00ns)   --->   "%ret_ln823 = ret" [patchMaker.cpp:823]   --->   Operation 493 'ret' 'ret_ln823' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 3.55ns
+The critical path consists of the following:
+	wire read on port 'z_top_max' (patchMaker.cpp:673) [25]  (0 ns)
+	'call' operation ('call_ln678', patchMaker.cpp:678) to 'getShadows' [45]  (3.55 ns)
+
+ <State 2>: 0ns
+The critical path consists of the following:
+
+ <State 3>: 4.26ns
+The critical path consists of the following:
+	'add' operation ('secondLastPatchIndex', patchMaker.cpp:675) [28]  (0.707 ns)
+	'call' operation ('call_ln679', patchMaker.cpp:679) to 'getShadows' [62]  (3.55 ns)
+
+ <State 4>: 0ns
+The critical path consists of the following:
+
+ <State 5>: 3.13ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln681', patchMaker.cpp:681) [49]  (0.745 ns)
+	'add' operation ('add_ln681', patchMaker.cpp:681) [50]  (0.745 ns)
+	'getelementptr' operation ('patches_parameters_addr', patchMaker.cpp:681) [52]  (0 ns)
+	'load' operation ('original_topR_jL', patchMaker.cpp:681) on array 'patches_parameters' [63]  (1.65 ns)
+
+ <State 6>: 2.83ns
+The critical path consists of the following:
+	'load' operation ('original_topR_jL', patchMaker.cpp:681) on array 'patches_parameters' [63]  (1.65 ns)
+	'icmp' operation ('icmp_ln682', patchMaker.cpp:682) [64]  (1.06 ns)
+	'and' operation ('and_ln682', patchMaker.cpp:682) [66]  (0.122 ns)
+
+ <State 7>: 4.94ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (4.94 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 9>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 10>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 11>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 12>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 13>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 14>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 15>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 16>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 17>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (7.3 ns)
+
+ <State 18>: 4.46ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:683) to 'straightLineProjectorFromLayerIJtoK' [69]  (4.46 ns)
+
+ <State 19>: 4.65ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:683) [70]  (4.65 ns)
+
+ <State 20>: 6.66ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:683) [70]  (4.65 ns)
+	'dcmp' operation ('tmp_27', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [80]  (2.01 ns)
+
+ <State 21>: 2.13ns
+The critical path consists of the following:
+	'dcmp' operation ('tmp_27', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [80]  (2.01 ns)
+	'and' operation ('empty_74', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [81]  (0 ns)
+	'xor' operation ('empty_75', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [82]  (0.122 ns)
+
+ <State 22>: 4.37ns
+The critical path consists of the following:
+	'load' operation ('original_topL_jL', patchMaker.cpp:685) on array 'patches_parameters' [86]  (1.65 ns)
+	'sub' operation ('sub_ln687', patchMaker.cpp:687) [88]  (1.15 ns)
+	'icmp' operation ('icmp_ln687_1', patchMaker.cpp:687) [89]  (1.06 ns)
+	'and' operation ('and_ln687', patchMaker.cpp:687) [90]  (0.122 ns)
+	multiplexor before 'phi' operation ('empty_81', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) with incoming values : ('empty_80', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [109]  (0.387 ns)
+
+ <State 23>: 4.94ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (4.94 ns)
+
+ <State 24>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 25>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 26>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 27>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 28>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 29>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 30>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 31>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 32>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 33>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (7.3 ns)
+
+ <State 34>: 4.46ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:688) to 'straightLineProjectorFromLayerIJtoK' [93]  (4.46 ns)
+
+ <State 35>: 4.65ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:688) [94]  (4.65 ns)
+
+ <State 36>: 6.66ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:688) [94]  (4.65 ns)
+	'dcmp' operation ('tmp_30', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [104]  (2.01 ns)
+
+ <State 37>: 2.13ns
+The critical path consists of the following:
+	'dcmp' operation ('tmp_30', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [104]  (2.01 ns)
+	'and' operation ('empty_79', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [105]  (0 ns)
+	'xor' operation ('empty_80', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [106]  (0.122 ns)
+
+ <State 38>: 4.37ns
+The critical path consists of the following:
+	'load' operation ('complementary_topR_jR', patchMaker.cpp:690) on array 'patches_parameters' [110]  (1.65 ns)
+	'sub' operation ('sub_ln692', patchMaker.cpp:692) [111]  (1.15 ns)
+	'icmp' operation ('icmp_ln692', patchMaker.cpp:692) [112]  (1.06 ns)
+	'and' operation ('and_ln692', patchMaker.cpp:692) [114]  (0.122 ns)
+	multiplexor before 'phi' operation ('empty_86', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) with incoming values : ('empty_85', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [133]  (0.387 ns)
+
+ <State 39>: 4.94ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (4.94 ns)
+
+ <State 40>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 41>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 42>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 43>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 44>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 45>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 46>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 47>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 48>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 49>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (7.3 ns)
+
+ <State 50>: 4.46ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:693) to 'straightLineProjectorFromLayerIJtoK' [117]  (4.46 ns)
+
+ <State 51>: 4.65ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:693) [118]  (4.65 ns)
+
+ <State 52>: 6.66ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:693) [118]  (4.65 ns)
+	'dcmp' operation ('tmp_33', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [128]  (2.01 ns)
+
+ <State 53>: 2.13ns
+The critical path consists of the following:
+	'dcmp' operation ('tmp_33', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [128]  (2.01 ns)
+	'and' operation ('empty_84', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [129]  (0 ns)
+	'xor' operation ('empty_85', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [130]  (0.122 ns)
+
+ <State 54>: 4.37ns
+The critical path consists of the following:
+	'load' operation ('complementary_topL_jR', patchMaker.cpp:695) on array 'patches_parameters' [134]  (1.65 ns)
+	'sub' operation ('sub_ln697', patchMaker.cpp:697) [136]  (1.15 ns)
+	'icmp' operation ('icmp_ln697_1', patchMaker.cpp:697) [137]  (1.06 ns)
+	'and' operation ('and_ln697', patchMaker.cpp:697) [138]  (0.122 ns)
+	multiplexor before 'phi' operation ('empty_91', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) with incoming values : ('empty_90', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:483) [157]  (0.387 ns)
+
+ <State 55>: 4.94ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (4.94 ns)
+
+ <State 56>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 57>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 58>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 59>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 60>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 61>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 62>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 63>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 64>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 65>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (7.3 ns)
+
+ <State 66>: 4.46ns
+The critical path consists of the following:
+	'call' operation ('__x', patchMaker.cpp:698) to 'straightLineProjectorFromLayerIJtoK' [141]  (4.46 ns)
+
+ <State 67>: 4.65ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:698) [142]  (4.65 ns)
+
+ <State 68>: 6.66ns
+The critical path consists of the following:
+	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277->patchMaker.cpp:698) [142]  (4.65 ns)
+	'dcmp' operation ('tmp_36', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:521) [152]  (2.01 ns)
+
+ <State 69>: 4.94ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (4.94 ns)
+
+ <State 70>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 71>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 72>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 73>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 74>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 75>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 76>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 77>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 78>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 79>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('z0_original_bCorner', patchMaker.cpp:722) to 'straightLineProjectorFromLayerIJtoK' [166]  (7.3 ns)
+
+ <State 80>: 6.06ns
+The critical path consists of the following:
+	'call' operation ('z0_complementary_cCorner', patchMaker.cpp:723) to 'straightLineProjectorFromLayerIJtoK' [167]  (4.46 ns)
+	'icmp' operation ('icmp_ln732', patchMaker.cpp:732) [171]  (1.06 ns)
+	'or' operation ('shiftOriginal', patchMaker.cpp:732) [173]  (0.122 ns)
+	'select' operation ('newZtop', patchMaker.cpp:732) [176]  (0.411 ns)
+
+ <State 81>: 3.03ns
+The critical path consists of the following:
+	'phi' operation ('horizontalShiftTop') with incoming values : ('horizontalShiftTop', patchMaker.cpp:700) ('horizontalShiftTop', patchMaker.cpp:792) [187]  (0 ns)
+	'icmp' operation ('cmp93', patchMaker.cpp:700) [220]  (1.06 ns)
+	'select' operation ('horizontalShiftBottom_0_horizontalShiftTop_0', patchMaker.cpp:700) [221]  (0.411 ns)
+	'sub' operation ('shifted_Align', patchMaker.cpp:759) [222]  (1.15 ns)
+	'select' operation ('shifted_Align', patchMaker.cpp:757) [224]  (0.411 ns)
+
+ <State 82>: 2.89ns
+The critical path consists of the following:
+	'add' operation ('add_ln769', patchMaker.cpp:769) [228]  (0.88 ns)
+	'call' operation ('call_ln769', patchMaker.cpp:769) to 'delete_patch' [229]  (2.01 ns)
+
+ <State 83>: 0ns
+The critical path consists of the following:
+
+ <State 84>: 0ns
+The critical path consists of the following:
+
+ <State 85>: 0ns
+The critical path consists of the following:
+
+ <State 86>: 4.26ns
+The critical path consists of the following:
+	wire read on port 'n_patches' (patchMaker.cpp:775) [233]  (0 ns)
+	'add' operation ('add_ln775', patchMaker.cpp:775) [235]  (0.707 ns)
+	'call' operation ('call_ln775', patchMaker.cpp:775) to 'getShadows' [252]  (3.55 ns)
+
+ <State 87>: 0ns
+The critical path consists of the following:
+
+ <State 88>: 3.13ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln779', patchMaker.cpp:779) [239]  (0.745 ns)
+	'add' operation ('add_ln779', patchMaker.cpp:779) [240]  (0.745 ns)
+	'getelementptr' operation ('patches_parameters_addr_20', patchMaker.cpp:779) [242]  (0 ns)
+	'load' operation ('patches_parameters_load', patchMaker.cpp:779) on array 'patches_parameters' [253]  (1.65 ns)
+
+ <State 89>: 2.39ns
+The critical path consists of the following:
+	'add' operation ('add_ln781', patchMaker.cpp:781) [246]  (0.745 ns)
+	'getelementptr' operation ('patches_parameters_addr_22', patchMaker.cpp:781) [248]  (0 ns)
+	'load' operation ('patches_parameters_load_16', patchMaker.cpp:781) on array 'patches_parameters' [255]  (1.65 ns)
+
+ <State 90>: 6.99ns
+The critical path consists of the following:
+	'load' operation ('patches_parameters_load_16', patchMaker.cpp:781) on array 'patches_parameters' [255]  (1.65 ns)
+	'select' operation ('original_topR_jR', patchMaker.cpp:783) [263]  (0.411 ns)
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (4.94 ns)
+
+ <State 91>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 92>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 93>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 94>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 95>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 96>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 97>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 98>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 99>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 100>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (7.3 ns)
+
+ <State 101>: 5.91ns
+The critical path consists of the following:
+	'call' operation ('tmp_5', patchMaker.cpp:795) to 'straightLineProjectorFromLayerIJtoK' [269]  (4.46 ns)
+	'icmp' operation ('icmp_ln795', patchMaker.cpp:795) [270]  (1.06 ns)
+	blocking operation 0.387 ns on control path)
+
+ <State 102>: 4.94ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (4.94 ns)
+
+ <State 103>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 104>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 105>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 106>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 107>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 108>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 109>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 110>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 111>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 112>: 7.3ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (7.3 ns)
+
+ <State 113>: 5.65ns
+The critical path consists of the following:
+	'call' operation ('tmp_4', patchMaker.cpp:815) to 'straightLineProjectorFromLayerIJtoK' [289]  (4.46 ns)
+	'icmp' operation ('icmp_ln815', patchMaker.cpp:815) [290]  (1.06 ns)
+	'or' operation ('or_ln815', patchMaker.cpp:815) [291]  (0 ns)
+	'xor' operation ('xor_ln815', patchMaker.cpp:815) [292]  (0 ns)
+	'and' operation ('and_ln815', patchMaker.cpp:815) [295]  (0.122 ns)
+
+ <State 114>: 2.89ns
+The critical path consists of the following:
+	'add' operation ('add_ln819', patchMaker.cpp:819) [298]  (0.88 ns)
+	'call' operation ('call_ln819', patchMaker.cpp:819) to 'delete_patch' [299]  (2.01 ns)
+
+ <State 115>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+	State 37
+	State 38
+	State 39
+	State 40
+	State 41
+	State 42
+	State 43
+	State 44
+	State 45
+	State 46
+	State 47
+	State 48
+	State 49
+	State 50
+	State 51
+	State 52
+	State 53
+	State 54
+	State 55
+	State 56
+	State 57
+	State 58
+	State 59
+	State 60
+	State 61
+	State 62
+	State 63
+	State 64
+	State 65
+	State 66
+	State 67
+	State 68
+	State 69
+	State 70
+	State 71
+	State 72
+	State 73
+	State 74
+	State 75
+	State 76
+	State 77
+	State 78
+	State 79
+	State 80
+	State 81
+	State 82
+	State 83
+	State 84
+	State 85
+	State 86
+	State 87
+	State 88
+	State 89
+	State 90
+	State 91
+	State 92
+	State 93
+	State 94
+	State 95
+	State 96
+	State 97
+	State 98
+	State 99
+	State 100
+	State 101
+	State 102
+	State 103
+	State 104
+	State 105
+	State 106
+	State 107
+	State 108
+	State 109
+	State 110
+	State 111
+	State 112
+	State 113
+	State 114
+	State 115
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

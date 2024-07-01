@@ -1,0 +1,59 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'rapiduser' on host 'rapid-1511' (Windows NT_amd64 version 6.2) on Mon Jul 01 18:55:35 -0400 2024
+INFO: [HLS 200-10] In directory 'C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS'
+Sourcing Tcl script 'C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/PatchMaker_tanishGit/solution1/cosim.tcl'
+INFO: [HLS 200-1510] Running: open_project PatchMaker_tanishGit 
+INFO: [HLS 200-10] Opening project 'C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/PatchMaker_tanishGit'.
+INFO: [HLS 200-1510] Running: set_top makePatches_ShadowQuilt_fromEdges 
+INFO: [HLS 200-1510] Running: add_files patchMaker.cpp -cflags -IC:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/patchMakerHeader 
+INFO: [HLS 200-10] Adding design file 'patchMaker.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tanishTestBench/cppOutput.txt 
+INFO: [HLS 200-10] Adding test bench file 'tanishTestBench/cppOutput.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tanishTestBench/cppOutputRef.txt 
+INFO: [HLS 200-10] Adding test bench file 'tanishTestBench/cppOutputRef.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tanishTestBench/test_bench.cpp 
+INFO: [HLS 200-10] Adding test bench file 'tanishTestBench/test_bench.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb tanishTestBench/wedgeData_v3_128.txt 
+INFO: [HLS 200-10] Adding test bench file 'tanishTestBench/wedgeData_v3_128.txt' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/PatchMaker_tanishGit/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcvu19p-fsvb3824-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu19p-fsvb3824-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: cosim_design 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "C:/Xilinx/Vitis_HLS/2020.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling apatb_makePatches_ShadowQuilt_fromEdges_util.cpp
+   Compiling test_bench.cpp_pre.cpp.tb.cpp
+   Compiling apatb_makePatches_ShadowQuilt_fromEdges.cpp
+   Compiling patchMaker.cpp_pre.cpp.tb.cpp
+   Compiling apatb_makePatches_ShadowQuilt_fromEdges_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: System recieved a signal named SIGSEGV and the program has to stop immediately!
+This signal was generated when a program tries to read or write outside the memory that is allocated for it, or to write memory that can only be read.
+Possible cause of this problem may be: 1) the depth setting of pointer type argument is much larger than it needed; 2)insufficient depth of array argument; 3)null pointer etc.
+Current execution stopped during CodeState = DELETE_CHAR_BUFFERS.
+You can search CodeState variable name in apatb*.cpp file under ./sim/wrapc dir to locate the position.
+
+ERROR: [COSIM 212-360] Aborting co-simulation: C TB simulation failed.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 25.638 seconds; current allocated memory: 95.917 MB.
+command 'ap_source' returned error code
+    while executing
+"source C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/PatchMaker_tanishGit/solution1/cosim.tcl"
+    invoked from within
+"hls::main C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/PatchMaker_tanishGit/solution1/cosim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"

@@ -1,0 +1,216 @@
+
+
+================================================================
+== Vitis HLS Report for 'makePatches_ShadowQuilt_fromEdges'
+================================================================
+* Date:           Mon Jul  1 18:54:48 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        PatchMaker_tanishGit
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu19p-fsvb3824-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.323 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------------+--------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                               |                    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |            Instance           |       Module       |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +-------------------------------+--------------------+---------+---------+----------+----------+-----+-----+---------+
+        |grp_solveNextPatchPair_fu_205  |solveNextPatchPair  |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+        +-------------------------------+--------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                         |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name        |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- shadowQuilt_loop       |        ?|        ?|         ?|          -|          -|     ?|        no|
+        | + solveNextColumn_loop  |        ?|        ?|         ?|          -|          -|     ?|        no|
+        +-------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|     1257|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |       40|   257|    39655|   117535|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|      148|    -|
+|Register             |        -|     -|      428|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |       40|   257|    40083|   118940|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1080|   960|  2042880|  1021440|   80|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        3|    26|        1|       11|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  3840|  8171520|  4085760|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |       ~0|     6|       ~0|        2|    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------+-------------------------------+---------+-----+-------+--------+-----+
+    |              Instance              |             Module            | BRAM_18K| DSP |   FF  |   LUT  | URAM|
+    +------------------------------------+-------------------------------+---------+-----+-------+--------+-----+
+    |fmul_32ns_32ns_32_2_max_dsp_1_U175  |fmul_32ns_32ns_32_2_max_dsp_1  |        0|    3|    128|      77|    0|
+    |sitofp_64ns_32_2_no_dsp_1_U176      |sitofp_64ns_32_2_no_dsp_1      |        0|    0|      0|       0|    0|
+    |grp_solveNextPatchPair_fu_205       |solveNextPatchPair             |       40|  254|  39527|  117458|    0|
+    +------------------------------------+-------------------------------+---------+-----+-------+--------+-----+
+    |Total                               |                               |       40|  257|  39655|  117535|    0|
+    +------------------------------------+-------------------------------+---------+-----+-------+--------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------+----------+----+---+-----+------------+------------+
+    |      Variable Name     | Operation| DSP| FF| LUT | Bitwidth P0| Bitwidth P1|
+    +------------------------+----------+----+---+-----+------------+------------+
+    |add_ln145_fu_403_p2     |         +|   0|  0|   71|          64|          26|
+    |add_ln341_fu_307_p2     |         +|   0|  0|   16|           9|           8|
+    |result_V_17_fu_389_p2   |         -|   0|  0|   71|           1|          64|
+    |sub_ln1311_fu_321_p2    |         -|   0|  0|   15|           7|           8|
+    |and_ln501_1_fu_436_p2   |       and|   0|  0|    2|           1|           1|
+    |and_ln501_fu_430_p2     |       and|   0|  0|    2|           1|           1|
+    |icmp_ln458_fu_252_p2    |      icmp|   0|  0|   29|          64|          26|
+    |icmp_ln475_fu_258_p2    |      icmp|   0|  0|   20|          32|           1|
+    |icmp_ln477_fu_409_p2    |      icmp|   0|  0|   29|          64|          26|
+    |icmp_ln486_1_fu_476_p2  |      icmp|   0|  0|   29|          64|          24|
+    |icmp_ln486_fu_470_p2    |      icmp|   0|  0|   29|          64|          27|
+    |icmp_ln501_fu_424_p2    |      icmp|   0|  0|   20|          32|          27|
+    |r_V_fu_347_p2           |      lshr|   0|  0|  363|         111|         111|
+    |result_V_fu_395_p3      |    select|   0|  0|   63|           1|          64|
+    |ush_fu_331_p3           |    select|   0|  0|    9|           1|           9|
+    |val_fu_381_p3           |    select|   0|  0|   63|           1|          64|
+    |z_top_max_fu_415_p3     |    select|   0|  0|   63|           1|          26|
+    |r_V_14_fu_353_p2        |       shl|   0|  0|  363|         111|         111|
+    +------------------------+----------+----+---+-----+------------+------------+
+    |Total                   |          |   0|  0| 1257|         629|         624|
+    +------------------------+----------+----+---+-----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------+----+-----------+-----+-----------+
+    |                   Name                   | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                 |  49|          9|    1|          9|
+    |ap_phi_mux_z_top_max_19_ph_phi_fu_128_p4  |   9|          2|   64|        128|
+    |complementary_apexZ0_0_reg_181            |   9|          2|   64|        128|
+    |nPatchesInColumn_assign_reg_147           |   9|          2|   32|         64|
+    |n_patches_o                               |   9|          2|   32|         64|
+    |n_patches_o_ap_vld                        |   9|          2|    1|          2|
+    |phi_ln501_1_reg_170                       |   9|          2|    1|          2|
+    |phi_ln501_reg_136                         |   9|          2|    1|          2|
+    |saved_apexZ0_fu_108                       |   9|          2|   64|        128|
+    |z_top_max_19_ph_reg_124                   |   9|          2|   64|        128|
+    |z_top_max_19_reg_159                      |   9|          2|   64|        128|
+    |z_top_min_0_reg_193                       |   9|          2|   64|        128|
+    +------------------------------------------+----+-----------+-----+-----------+
+    |Total                                     | 148|         31|  452|        911|
+    +------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------------+----+----+-----+-----------+
+    |                    Name                    | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                   |   8|   0|    8|          0|
+    |complementary_apexZ0_0_reg_181              |  64|   0|   64|          0|
+    |conv2_i_reg_509                             |  32|   0|   32|          0|
+    |dc_reg_514                                  |  32|   0|   32|          0|
+    |grp_solveNextPatchPair_fu_205_ap_start_reg  |   1|   0|    1|          0|
+    |icmp_ln475_reg_505                          |   1|   0|    1|          0|
+    |nPatchesInColumn_assign_reg_147             |  32|   0|   32|          0|
+    |phi_ln501_1_reg_170                         |   1|   0|    1|          0|
+    |phi_ln501_reg_136                           |   1|   0|    1|          0|
+    |saved_apexZ0_fu_108                         |  64|   0|   64|          0|
+    |z_top_max_19_ph_reg_124                     |  64|   0|   64|          0|
+    |z_top_max_19_reg_159                        |  64|   0|   64|          0|
+    |z_top_min_0_reg_193                         |  64|   0|   64|          0|
+    +--------------------------------------------+----+----+-----+-----------+
+    |Total                                       | 428|   0|  428|          0|
+    +--------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|           RTL Ports          | Dir | Bits|  Protocol  |           Source Object           |    C Type    |
++------------------------------+-----+-----+------------+-----------------------------------+--------------+
+|ap_clk                        |   in|    1|  ap_ctrl_hs|  makePatches_ShadowQuilt_fromEdges|  return value|
+|ap_rst                        |   in|    1|  ap_ctrl_hs|  makePatches_ShadowQuilt_fromEdges|  return value|
+|ap_start                      |   in|    1|  ap_ctrl_hs|  makePatches_ShadowQuilt_fromEdges|  return value|
+|ap_done                       |  out|    1|  ap_ctrl_hs|  makePatches_ShadowQuilt_fromEdges|  return value|
+|ap_idle                       |  out|    1|  ap_ctrl_hs|  makePatches_ShadowQuilt_fromEdges|  return value|
+|ap_ready                      |  out|    1|  ap_ctrl_hs|  makePatches_ShadowQuilt_fromEdges|  return value|
+|apexZ0                        |   in|   64|     ap_none|                             apexZ0|        scalar|
+|stop                          |   in|   32|     ap_none|                               stop|        scalar|
+|ppl                           |   in|   32|     ap_none|                                ppl|        scalar|
+|leftRight                     |   in|    1|     ap_none|                          leftRight|        scalar|
+|n_patches_i                   |   in|   32|     ap_ovld|                          n_patches|       pointer|
+|n_patches_o                   |  out|   32|     ap_ovld|                          n_patches|       pointer|
+|n_patches_o_ap_vld            |  out|    1|     ap_ovld|                          n_patches|       pointer|
+|GDarray_address0              |  out|   11|   ap_memory|                            GDarray|         array|
+|GDarray_ce0                   |  out|    1|   ap_memory|                            GDarray|         array|
+|GDarray_q0                    |   in|  192|   ap_memory|                            GDarray|         array|
+|GDn_points_address0           |  out|    3|   ap_memory|                         GDn_points|         array|
+|GDn_points_ce0                |  out|    1|   ap_memory|                         GDn_points|         array|
+|GDn_points_q0                 |   in|   32|   ap_memory|                         GDn_points|         array|
+|patches_superpoints_address0  |  out|   15|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_ce0       |  out|    1|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_we0       |  out|    1|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_d0        |  out|   64|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_q0        |   in|   64|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_address1  |  out|   15|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_ce1       |  out|    1|   ap_memory|                patches_superpoints|         array|
+|patches_superpoints_q1        |   in|   64|   ap_memory|                patches_superpoints|         array|
+|patches_parameters_address0   |  out|   12|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_ce0        |  out|    1|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_we0        |  out|    1|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_d0         |  out|   64|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_q0         |   in|   64|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_address1   |  out|   12|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_ce1        |  out|    1|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_we1        |  out|    1|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_d1         |  out|   64|   ap_memory|                 patches_parameters|         array|
+|patches_parameters_q1         |   in|   64|   ap_memory|                 patches_parameters|         array|
++------------------------------+-----+-----+------------+-----------------------------------+--------------+
+

@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1719874499671">
+  <ports id="1" name="apexZ0" type="PortType" originalName="apexZ0" coreId="1818455657" bitwidth="64"/>
+  <ports id="2" name="stop" type="PortType" originalName="stop" coreId="1752457581" bitwidth="32"/>
+  <ports id="3" name="ppl" type="PortType" originalName="ppl" coreId="1651076195" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="4" name="leftRight" type="PortType" originalName="leftRight" coreId="1818455657" bitwidth="1"/>
+  <ports id="5" name="n_patches" type="PortType" originalName="n_patches" coreId="1764714612" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>read</dataInputObjs>
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>read</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="6" name="GDarray" type="PortType" coreName="RAM" coreId="1818455657" bitwidth="192" iftype="IfTypeRegister" arraysize="1280">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="7" name="GDn_points" type="PortType" coreName="RAM" coreId="1752457581" bitwidth="32" iftype="IfTypeRegister" arraysize="5">
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="8" name="patches_superpoints" type="PortType" originalName="patches_superpoints" coreName="RAM" coreId="1764714612" bitwidth="64" direction="DirInOut" iftype="IfTypeRegister" arraysize="23040">
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="9" name="patches_parameters" type="PortType" originalName="patches_parameters" coreName="RAM" coreId="1764713065" bitwidth="64" direction="DirInOut" iftype="IfTypeRegister" arraysize="3840">
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <edges id="114" source_obj="//@ports.2" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="117" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="118" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="119" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="120" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.1/@node_objs.1"/>
+  <edges id="123" source_obj="//@blocks.1/@node_objs.1" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="124" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="125" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.1/@node_objs.2"/>
+  <edges id="128" source_obj="//@ports.4" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="129" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="132" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="133" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="134" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="135" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="136" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="139" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="142" source_obj="//@blocks.3/@node_objs.2" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="147" source_obj="//@blocks.3/@node_objs.2" sink_obj="//@blocks.3/@node_objs.4"/>
+  <edges id="152" source_obj="//@blocks.3/@node_objs.2" sink_obj="//@blocks.3/@node_objs.5"/>
+  <edges id="157" source_obj="//@blocks.3/@node_objs.5" sink_obj="//@blocks.3/@node_objs.6"/>
+  <edges id="160" source_obj="//@blocks.3/@node_objs.6" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="161" source_obj="//@blocks.3/@node_objs.4" sink_obj="//@blocks.3/@node_objs.8"/>
+  <edges id="162" source_obj="//@blocks.3/@node_objs.8" sink_obj="//@blocks.3/@node_objs.9"/>
+  <edges id="167" source_obj="//@blocks.3/@node_objs.9" sink_obj="//@blocks.3/@node_objs.10"/>
+  <edges id="172" source_obj="//@blocks.3/@node_objs.4" sink_obj="//@blocks.3/@node_objs.11"/>
+  <edges id="173" source_obj="//@blocks.3/@node_objs.11" sink_obj="//@blocks.3/@node_objs.12"/>
+  <edges id="174" source_obj="//@blocks.3/@node_objs.10" sink_obj="//@blocks.3/@node_objs.13"/>
+  <edges id="175" source_obj="//@blocks.3/@node_objs.12" sink_obj="//@blocks.3/@node_objs.13"/>
+  <edges id="176" source_obj="//@blocks.3/@node_objs.9" sink_obj="//@blocks.3/@node_objs.13"/>
+  <edges id="177" source_obj="//@blocks.3/@node_objs.13" sink_obj="//@blocks.3/@node_objs.14"/>
+  <edges id="178" source_obj="//@blocks.3/@node_objs.14" sink_obj="//@blocks.3/@node_objs.15"/>
+  <edges id="179" source_obj="//@blocks.3/@node_objs.7" sink_obj="//@blocks.3/@node_objs.16"/>
+  <edges id="180" source_obj="//@blocks.3/@node_objs.15" sink_obj="//@blocks.3/@node_objs.16"/>
+  <edges id="181" source_obj="//@blocks.3/@node_objs.7" sink_obj="//@blocks.3/@node_objs.17"/>
+  <edges id="182" source_obj="//@blocks.3/@node_objs.15" sink_obj="//@blocks.3/@node_objs.17"/>
+  <edges id="185" source_obj="//@blocks.3/@node_objs.16" sink_obj="//@blocks.3/@node_objs.18"/>
+  <edges id="188" source_obj="//@blocks.3/@node_objs.18" sink_obj="//@blocks.3/@node_objs.19"/>
+  <edges id="191" source_obj="//@blocks.3/@node_objs.17" sink_obj="//@blocks.3/@node_objs.20"/>
+  <edges id="195" source_obj="//@blocks.3/@node_objs.10" sink_obj="//@blocks.3/@node_objs.21"/>
+  <edges id="196" source_obj="//@blocks.3/@node_objs.19" sink_obj="//@blocks.3/@node_objs.21"/>
+  <edges id="197" source_obj="//@blocks.3/@node_objs.20" sink_obj="//@blocks.3/@node_objs.21"/>
+  <edges id="200" source_obj="//@blocks.3/@node_objs.21" sink_obj="//@blocks.3/@node_objs.22"/>
+  <edges id="201" source_obj="//@blocks.3/@node_objs.3" sink_obj="//@blocks.3/@node_objs.23"/>
+  <edges id="202" source_obj="//@blocks.3/@node_objs.22" sink_obj="//@blocks.3/@node_objs.23"/>
+  <edges id="203" source_obj="//@blocks.3/@node_objs.21" sink_obj="//@blocks.3/@node_objs.23"/>
+  <edges id="204" source_obj="//@blocks.3/@node_objs.23" sink_obj="//@blocks.3/@node_objs.24"/>
+  <edges id="207" source_obj="//@blocks.3/@node_objs.24" sink_obj="//@blocks.3/@node_objs.25"/>
+  <edges id="210" source_obj="//@blocks.3/@node_objs.25" sink_obj="//@blocks.3/@node_objs.26"/>
+  <edges id="212" source_obj="//@blocks.3/@node_objs.24" sink_obj="//@blocks.3/@node_objs.26"/>
+  <edges id="213" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.3/@node_objs.27"/>
+  <edges id="215" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="216" source_obj="//@blocks.3/@node_objs.26" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="217" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="218" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.4/@node_objs.1"/>
+  <edges id="219" source_obj="//@blocks.6/@node_objs.9" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
+  <edges id="220" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.0" is_back_edge="1"/>
+  <edges id="222" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="223" source_obj="//@blocks.6/@node_objs.4" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
+  <edges id="224" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.1" is_back_edge="1"/>
+  <edges id="226" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.1"/>
+  <edges id="227" source_obj="//@blocks.6/@node_objs.6" sink_obj="//@blocks.5/@node_objs.2" is_back_edge="1"/>
+  <edges id="228" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.2" is_back_edge="1"/>
+  <edges id="229" source_obj="//@blocks.4/@node_objs.0" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="230" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="231" source_obj="//@blocks.6/@node_objs.8" sink_obj="//@blocks.5/@node_objs.3" is_back_edge="1"/>
+  <edges id="232" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.3" is_back_edge="1"/>
+  <edges id="234" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="235" source_obj="//@blocks.6/@node_objs.1" sink_obj="//@blocks.5/@node_objs.4" is_back_edge="1"/>
+  <edges id="236" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.4" is_back_edge="1"/>
+  <edges id="238" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="239" source_obj="//@blocks.6/@node_objs.7" sink_obj="//@blocks.5/@node_objs.5" is_back_edge="1"/>
+  <edges id="240" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.5" is_back_edge="1"/>
+  <edges id="243" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5/@node_objs.5"/>
+  <edges id="244" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.5/@node_objs.6"/>
+  <edges id="247" source_obj="//@blocks.5/@node_objs.6" sink_obj="//@blocks.5/@node_objs.7"/>
+  <edges id="248" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.5/@node_objs.7"/>
+  <edges id="249" source_obj="//@blocks.5/@node_objs.7" sink_obj="//@blocks.5/@node_objs.8"/>
+  <edges id="250" source_obj="//@blocks.5/@node_objs.3" sink_obj="//@blocks.5/@node_objs.8"/>
+  <edges id="251" source_obj="//@blocks.5/@node_objs.8" sink_obj="//@blocks.5/@node_objs.9"/>
+  <edges id="252" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.9"/>
+  <edges id="253" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.9"/>
+  <edges id="256" source_obj="//@ports.4" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="257" source_obj="//@ports.5" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="258" source_obj="//@ports.6" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="259" source_obj="//@ports.7" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="260" source_obj="//@ports.8" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="261" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="262" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="263" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="264" source_obj="//@blocks.5/@node_objs.5" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="265" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="266" source_obj="//@blocks.5/@node_objs.4" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="267" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.1"/>
+  <edges id="268" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.2"/>
+  <edges id="269" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.3"/>
+  <edges id="270" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.4"/>
+  <edges id="271" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.5"/>
+  <edges id="272" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.6"/>
+  <edges id="273" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.7"/>
+  <edges id="274" source_obj="//@blocks.6/@node_objs.3" sink_obj="//@blocks.6/@node_objs.8"/>
+  <edges id="277" source_obj="//@blocks.6/@node_objs.2" sink_obj="//@blocks.6/@node_objs.9"/>
+  <edges id="280" source_obj="//@blocks.6/@node_objs.5" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="281" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="282" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6/@node_objs.11"/>
+  <edges id="283" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.7/@node_objs.0"/>
+  <edges id="284" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="285" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="286" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="481" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="482" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.2"/>
+  <edges id="483" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.8"/>
+  <edges id="484" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="485" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.4"/>
+  <edges id="486" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4"/>
+  <edges id="487" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5"/>
+  <edges id="488" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6"/>
+  <edges id="489" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.7"/>
+  <edges id="490" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5" is_back_edge="1"/>
+  <edges id="491" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.1" is_back_edge="1"/>
+  <edges id="492" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="493" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="494" edge_type="VirtEdge" source_obj="//@blocks.1/@node_objs.0" sink_obj="//@blocks.6/@node_objs.10"/>
+  <edges id="495" edge_type="VirtEdge" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="-128" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@ports.4"/>
+  <edges id="-256" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@ports.4"/>
+  <edges id="-259" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@ports.7"/>
+  <edges id="-260" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@ports.8"/>
+  <blocks id="39" name="block_39" type="BlockType">
+    <controlOutputObjs>block_43</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="16" name="saved_apexZ0" originalName="z_j" coreId="808595300" bitwidth="64" opcode="alloca" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="ppl_read" lineNumber="452" originalName="ppl" fileName="patchMaker.cpp" fileDirectory=".." coreId="1915695662" contextFuncName="makePatches_ShadowQuilt_fromEdges" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="452" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+      <dataInputObjs>ppl</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="saved_apexZ0_write_ln458" lineNumber="458" fileName="patchMaker.cpp" fileDirectory=".." coreId="1869770799" contextFuncName="makePatches_ShadowQuilt_fromEdges" opcode="store" m_display="0" m_delay="0.38" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="458" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+      <dataInputObjs>alloca</dataInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="br_ln458" lineNumber="458" fileName="patchMaker.cpp" fileDirectory=".." coreId="1919954793" contextFuncName="makePatches_ShadowQuilt_fromEdges" opcode="br" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="458" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+      <controlInputObjs>block_43</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>452</validLinenumbers>
+      <validLinenumbers>458</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="43" name="block_43" type="BlockType">
+    <controlInputObjs>block_39</controlInputObjs>
+    <controlInputObjs>_Z15solveNextColumnliibblRiRSt5arrayIS0_IS0_IlLm3EELm256EELm5EERA5_iRA32_A5_A3_A16_A3_lRA32_A5_A4_A6_l.exit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_48</controlOutputObjs>
+    <controlOutputObjs>block_109</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="saved_apexZ0_1" originalName="apexZ0" coreId="841966703" bitwidth="64" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <dataInputObjs>alloca</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>sitofp</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="icmp_ln458" lineNumber="458" fileName="patchMaker.cpp" fileDirectory=".." rtlName="icmp_ln458_fu_252_p2" opType="icmp" coreId="795111282" contextFuncName="makePatches_ShadowQuilt_fromEdges" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.06" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="458" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="br_ln458" lineNumber="458" fileName="patchMaker.cpp" fileDirectory=".." coreId="1882155363" contextFuncName="makePatches_ShadowQuilt_fromEdges" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="458" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>block_109</controlInputObjs>
+      <controlInputObjs>block_48</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>458</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="48" name="block_48" type="BlockType">
+    <controlInputObjs>block_43</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_77</controlOutputObjs>
+    <controlOutputObjs>._crit_edge.preheader</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="n_patches_read" lineNumber="475" fileName="patchMaker.cpp" fileDirectory=".." coreId="1919954793" contextFuncName="solveNextColumn" bitwidth="32" opcode="read" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="475" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>n_patches</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>n_patches</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="46" name="icmp_ln475" lineNumber="475" fileName="patchMaker.cpp" fileDirectory=".." rtlName="icmp_ln475_fu_258_p2" opType="icmp" coreId="1768107834" contextFuncName="solveNextColumn" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.85" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="475" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="br_ln475" lineNumber="475" fileName="patchMaker.cpp" fileDirectory=".." coreId="1600742514" contextFuncName="solveNextColumn" opcode="br" nodeLabel="1.0" m_display="0" m_delay="0.38" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="475" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+      <controlInputObjs>block_77</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>475</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="77" name="block_77" type="BlockType">
+    <controlInputObjs>block_48</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>._crit_edge.preheader</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="conv2_i" lineNumber="145" fileName="patchMaker.cpp" fileDirectory=".." rtlName="sitofp_64ns_32_2_no_dsp_1_U176" opType="sitofp" coreId="1869770799" contextFuncName="straightLineProjectorFromLayerIJtoK" bitwidth="32" opcode="sitofp" nodeLabel="1.0" nodeLatency="1" m_display="0" m_delay="4.35" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="477" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="145" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="straightLineProjectorFromLayerIJtoK"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="50" name="dc" lineNumber="145" originalName="x" fileName="patchMaker.cpp" fileDirectory=".." rtlName="fmul_32ns_32ns_32_2_max_dsp_1_U175" coreName="FMul_maxdsp" implIndex="maxdsp" control="auto" opType="fmul" coreId="30" contextFuncName="straightLineProjectorFromLayerIJtoK" bitwidth="32" opcode="fmul" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="4.9" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="477" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="145" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="straightLineProjectorFromLayerIJtoK"/>
+      <dataInputObjs>sitofp</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="data_V" lineNumber="312" originalName="data.V" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="data_V_fu_264_p1" coreId="1768107834" contextFuncName="fp_struct" bitwidth="32" opcode="bitcast" nodeLabel="5.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h" linenumber="312" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="fp_struct"/>
+      <dataInputObjs>fmul</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="52" name="p_Result_s" lineNumber="803" originalName="__Result__" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="p_Result_s_fu_267_p3" coreId="795111282" contextFuncName="operator_assign" bitwidth="1" opcode="bitselect" nodeLabel="5.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h" linenumber="803" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator="/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="tmp_75" lineNumber="628" originalName="tmp" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="tmp_75_fu_275_p4" coreId="1915695662" contextFuncName="get" bitwidth="8" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h" linenumber="628" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="get"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="tmp_76" lineNumber="628" originalName="tmp" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="tmp_76_fu_285_p1" coreId="792359464" contextFuncName="get" bitwidth="23" opcode="trunc" nodeLabel="5.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h" linenumber="628" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="get"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>bitconcatenate</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="mantissa" lineNumber="682" originalName="mantissa" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="mantissa_fu_289_p4" coreId="1915695662" contextFuncName="operator_assign_24_1_false_AP_TRN_AP_WRAP_0" bitwidth="25" opcode="bitconcatenate" nodeLabel="5.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="682" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator=&amp;lt;24, 1, false, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="zext_ln15" lineNumber="15" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="zext_ln15_fu_299_p1" coreId="1600742514" contextFuncName="generic_cast_IEEE754_long_long_AP_TRN_ZERO_float_s" bitwidth="111" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h" linenumber="15" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="generic_cast_IEEE754&amp;lt;long long, AP_TRN_ZERO, float&amp;gt;"/>
+      <dataInputObjs>bitconcatenate</dataInputObjs>
+      <dataOutputObjs>lshr</dataOutputObjs>
+      <dataOutputObjs>shl</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="zext_ln341" lineNumber="341" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="zext_ln341_fu_303_p1" coreId="792359464" contextFuncName="expv" bitwidth="9" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h" linenumber="341" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="expv"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="add_ln341" lineNumber="341" originalName="sh" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="add_ln341_fu_307_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="expv" bitwidth="9" opcode="add" nodeLabel="5.0" m_display="0" m_delay="0.7" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h" linenumber="341" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="expv"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="59" name="isNeg" lineNumber="1310" originalName="isNeg" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="isNeg_fu_313_p3" coreId="1915695662" contextFuncName="operator_ls" bitwidth="1" opcode="bitselect" nodeLabel="5.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1310" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="sub_ln1311" lineNumber="1311" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="sub_ln1311_fu_321_p2" coreName="Adder" implIndex="fabric" control="auto" opType="sub" coreId="1" contextFuncName="operator_ls" bitwidth="8" opcode="sub" nodeLabel="5.0" m_display="0" m_delay="0.7" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1311" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="sext_ln1311" lineNumber="1311" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="sext_ln1311_fu_327_p1" coreId="1919954793" contextFuncName="operator_ls" bitwidth="9" opcode="sext" nodeLabel="5.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1311" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="62" name="ush" lineNumber="1311" originalName="ush" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="ush_fu_331_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="operator_ls" bitwidth="9" opcode="select" nodeLabel="5.0" m_display="0" m_delay="0.3" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1311" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataInputObjs>sext</dataInputObjs>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>sext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="63" name="sh_prom_i_i_i_i_i_i_cast_cast_cast" lineNumber="1311" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="sh_prom_i_i_i_i_i_i_cast_cast_cast_fu_339_p1" coreId="1768107834" contextFuncName="operator_ls" bitwidth="32" opcode="sext" nodeLabel="5.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1311" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="64" name="sh_prom_i_i_i_i_i_i_cast_cast_cast_cast" lineNumber="1311" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="sh_prom_i_i_i_i_i_i_cast_cast_cast_cast_fu_343_p1" coreId="795111282" contextFuncName="operator_ls" bitwidth="111" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1311" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>sext</dataInputObjs>
+      <dataOutputObjs>lshr</dataOutputObjs>
+      <dataOutputObjs>shl</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="65" name="r_V" lineNumber="1287" originalName="r.V" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="r_V_fu_347_p2" coreName="Shifter" implIndex="auto_pipe" control="auto" opType="lshr" coreId="75" contextFuncName="operator_rs" bitwidth="111" opcode="lshr" nodeLabel="5.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1287" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;gt;&amp;gt;"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>bitselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="66" name="r_V_14" lineNumber="1253" originalName="r.V" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="r_V_14_fu_353_p2" coreName="Shifter" implIndex="auto_pipe" control="auto" opType="shl" coreId="75" contextFuncName="operator_ls" bitwidth="111" opcode="shl" nodeLabel="5.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1253" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="67" name="tmp" lineNumber="662" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="tmp_fu_359_p3" coreId="1882155363" contextFuncName="operator_assign_111_87_false_AP_TRN_AP_WRAP_0" bitwidth="1" opcode="bitselect" nodeLabel="5.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="662" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator=&amp;lt;111, 87, false, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+      <dataInputObjs>lshr</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="68" name="zext_ln662" lineNumber="662" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="zext_ln662_fu_367_p1" coreId="1882155363" contextFuncName="operator_assign_111_87_false_AP_TRN_AP_WRAP_0" bitwidth="64" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="662" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator=&amp;lt;111, 87, false, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="69" name="tmp_s" lineNumber="662" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="tmp_s_fu_371_p4" coreId="808595300" contextFuncName="operator_assign_111_87_false_AP_TRN_AP_WRAP_0" bitwidth="64" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="662" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator=&amp;lt;111, 87, false, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+      <dataInputObjs>shl</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="70" name="val" lineNumber="1312" originalName="val" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="val_fu_381_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="operator_ls" bitwidth="64" opcode="select" nodeLabel="5.0" m_display="0" m_delay="1.05" m_topoIndex="33" m_clusterGroupNumber="2">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="1312" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator&amp;lt;&amp;lt;"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>sub</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="71" name="result_V_17" lineNumber="657" originalName="result.V" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="result_V_17_fu_389_p2" coreName="Adder" implIndex="fabric" control="auto" opType="sub" coreId="1" contextFuncName="operator_assign_65_65_true_AP_TRN_AP_WRAP_0" bitwidth="64" opcode="sub" nodeLabel="5.0" m_display="0" m_delay="1.14" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h" linenumber="657" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="operator=&amp;lt;65, 65, true, AP_TRN, AP_WRAP, 0&amp;gt;"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="72" name="result_V" lineNumber="59" originalName="result.V" fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h" fileDirectory="R:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared" rtlName="result_V_fu_395_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="generic_cast_IEEE754_long_long_AP_TRN_ZERO_float_s" bitwidth="64" opcode="select" nodeLabel="5.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h" linenumber="59" fileDirectory="R:\ci\prod\2020.2\rdi_builds\continuous\2020_11_18_3064766\src\shared" functionName="generic_cast_IEEE754&amp;lt;long long, AP_TRN_ZERO, float&amp;gt;"/>
+      <dataInputObjs>bitselect</dataInputObjs>
+      <dataInputObjs>sub</dataInputObjs>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="73" name="add_ln145" lineNumber="145" fileName="patchMaker.cpp" fileDirectory=".." rtlName="add_ln145_fu_403_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="straightLineProjectorFromLayerIJtoK" bitwidth="64" opcode="add" nodeLabel="5.0" m_display="0" m_delay="1.14" m_topoIndex="36" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="477" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="145" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="straightLineProjectorFromLayerIJtoK"/>
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="74" name="icmp_ln477" lineNumber="477" fileName="patchMaker.cpp" fileDirectory=".." rtlName="icmp_ln477_fu_409_p2" opType="icmp" coreId="1919954793" contextFuncName="solveNextColumn" bitwidth="1" opcode="icmp" nodeLabel="5.0" m_display="0" m_delay="1.06" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="477" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>select</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="75" name="z_top_max" lineNumber="477" originalName="z_top_max" fileName="patchMaker.cpp" fileDirectory=".." rtlName="z_top_max_fu_415_p3" coreName="Sel" implIndex="auto_sel" control="auto" opType="select" coreId="73" contextFuncName="solveNextColumn" bitwidth="64" opcode="select" nodeLabel="5.0" m_display="0" m_delay="0.41" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="477" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="76" name="br_ln479" lineNumber="479" fileName="patchMaker.cpp" fileDirectory=".." coreId="792359464" contextFuncName="solveNextColumn" opcode="br" nodeLabel="5.0" m_display="0" m_delay="0.38" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="479" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_fixed_base.h">
+      <validLinenumbers>682</validLinenumbers>
+      <validLinenumbers>1310</validLinenumbers>
+      <validLinenumbers>1311</validLinenumbers>
+      <validLinenumbers>1287</validLinenumbers>
+      <validLinenumbers>1253</validLinenumbers>
+      <validLinenumbers>662</validLinenumbers>
+      <validLinenumbers>1312</validLinenumbers>
+      <validLinenumbers>657</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h">
+      <validLinenumbers>15</validLinenumbers>
+      <validLinenumbers>59</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/include/header_files\ap_int_ref.h">
+      <validLinenumbers>803</validLinenumbers>
+      <validLinenumbers>628</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>145</validLinenumbers>
+      <validLinenumbers>477</validLinenumbers>
+      <validLinenumbers>479</validLinenumbers>
+    </fileValidLineNumbers>
+    <fileValidLineNumbers fileName="r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h">
+      <validLinenumbers>312</validLinenumbers>
+      <validLinenumbers>341</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="80" name="._crit_edge.preheader" type="BlockType">
+    <controlInputObjs>block_48</controlInputObjs>
+    <controlInputObjs>block_77</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>._crit_edge</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="78" name="z_top_max_19_ph" originalName="z_top_max" coreId="1915695662" bitwidth="64" opcode="phi" nodeLabel="5.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+      <dataInputObjs>select</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_48</controlInputObjs>
+      <controlInputObjs>block_77</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="79" name="br_ln500" lineNumber="500" fileName="patchMaker.cpp" fileDirectory=".." coreId="792359464" contextFuncName="getSolveNextColumnWhileConditional" opcode="br" nodeLabel="5.0" m_display="0" m_delay="0.38" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="500" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="getSolveNextColumnWhileConditional"/>
+      <controlInputObjs>._crit_edge</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>500</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="91" name="._crit_edge" type="BlockType">
+    <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+    <controlInputObjs>block_105</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_105</controlOutputObjs>
+    <controlOutputObjs>_Z15solveNextColumnliibblRiRSt5arrayIS0_IS0_IlLm3EELm256EELm5EERA5_iRA32_A5_A3_A16_A3_lRA32_A5_A4_A6_l.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="81" name="phi_ln501" lineNumber="501" fileName="patchMaker.cpp" fileDirectory=".." coreId="795111282" contextFuncName="getSolveNextColumnWhileConditional" bitwidth="1" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="501" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="getSolveNextColumnWhileConditional"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="82" name="nPatchesInColumn_assign" originalName="nPatchesInColumn" coreId="1768107834" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="83" name="z_top_max_19" originalName="z_top_max" coreId="1915695662" bitwidth="64" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="84" name="phi_ln501_1" lineNumber="501" fileName="patchMaker.cpp" fileDirectory=".." coreId="841966703" contextFuncName="getSolveNextColumnWhileConditional" bitwidth="1" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="501" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="getSolveNextColumnWhileConditional"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="85" name="complementary_apexZ0_0" originalName="complementary_apexZ0" coreId="1882155363" bitwidth="64" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="86" name="z_top_min_0" originalName="z_top_min" coreId="1882155363" bitwidth="64" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataOutputObjs>call</dataOutputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+      <controlInputObjs>._crit_edge.preheader</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="87" name="icmp_ln501" lineNumber="501" fileName="patchMaker.cpp" fileDirectory=".." rtlName="icmp_ln501_fu_424_p2" opType="icmp" coreId="1919954793" contextFuncName="getSolveNextColumnWhileConditional" bitwidth="1" opcode="icmp" nodeLabel="6.0" m_display="0" m_delay="0.85" m_topoIndex="48" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="501" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="getSolveNextColumnWhileConditional"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="and_ln501" lineNumber="501" fileName="patchMaker.cpp" fileDirectory=".." rtlName="and_ln501_fu_430_p2" opType="and" coreId="1768107834" contextFuncName="getSolveNextColumnWhileConditional" bitwidth="1" opcode="and" nodeLabel="6.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="3">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="501" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="getSolveNextColumnWhileConditional"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>and</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="89" name="and_ln501_1" lineNumber="501" fileName="patchMaker.cpp" fileDirectory=".." rtlName="and_ln501_1_fu_436_p2" opType="and" coreId="1919954793" contextFuncName="getSolveNextColumnWhileConditional" bitwidth="1" opcode="and" nodeLabel="6.0" m_display="0" m_delay="0.12" m_topoIndex="50" m_clusterGroupNumber="3">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="501" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="getSolveNextColumnWhileConditional"/>
+      <dataInputObjs>and</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="br_ln486" lineNumber="486" fileName="patchMaker.cpp" fileDirectory=".." coreId="841966703" contextFuncName="solveNextColumn" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="486" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>and</dataInputObjs>
+      <controlInputObjs>_Z15solveNextColumnliibblRiRSt5arrayIS0_IS0_IlLm3EELm256EELm5EERA5_iRA32_A5_A3_A16_A3_lRA32_A5_A4_A6_l.exit</controlInputObjs>
+      <controlInputObjs>block_105</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>501</validLinenumbers>
+      <validLinenumbers>486</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="105" name="block_105" type="BlockType">
+    <controlInputObjs>._crit_edge</controlInputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>._crit_edge</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="93" name="call_ret1" lineNumber="488" fileName="patchMaker.cpp" fileDirectory=".." rtlName="grp_solveNextPatchPair_fu_205" coreId="795111282" contextFuncName="solveNextColumn" bitwidth="416" opcode="call" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="3.84" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>n_patches</dataInputObjs>
+      <dataInputObjs>GDarray</dataInputObjs>
+      <dataInputObjs>GDn_points</dataInputObjs>
+      <dataInputObjs>patches_superpoints</dataInputObjs>
+      <dataInputObjs>patches_parameters</dataInputObjs>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>read</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>extractvalue</dataOutputObjs>
+      <dataOutputObjs>n_patches</dataOutputObjs>
+      <dataOutputObjs>patches_superpoints</dataOutputObjs>
+      <dataOutputObjs>patches_parameters</dataOutputObjs>
+      <constName>solveNextPatchPair</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="94" name="complementary_apexZ0" lineNumber="488" originalName="complementary_apexZ0" fileName="patchMaker.cpp" fileDirectory=".." coreId="792359464" contextFuncName="solveNextColumn" bitwidth="64" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="95" name="projectionOfCornerToBeam" lineNumber="488" originalName="projectionOfCornerToBeam" fileName="patchMaker.cpp" fileDirectory=".." coreId="795111282" contextFuncName="solveNextColumn" bitwidth="64" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="4">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="96" name="c_corner" lineNumber="488" originalName="c_corner" fileName="patchMaker.cpp" fileDirectory=".." coreId="1685204786" contextFuncName="solveNextColumn" bitwidth="64" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="5">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="97" name="nPatchesInColumn" lineNumber="488" originalName="nPatchesInColumn" fileName="patchMaker.cpp" fileDirectory=".." coreId="1919954793" contextFuncName="solveNextColumn" bitwidth="32" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="98" name="saved_apexZ0_assign" lineNumber="488" originalName="saved_apexZ0" fileName="patchMaker.cpp" fileDirectory=".." coreId="1915695662" contextFuncName="solveNextColumn" bitwidth="64" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="99" name="z_top_max_1" lineNumber="488" originalName="z_top_max" fileName="patchMaker.cpp" fileDirectory=".." coreId="795111282" contextFuncName="solveNextColumn" bitwidth="64" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="100" name="z_top_min" lineNumber="488" originalName="z_top_min" fileName="patchMaker.cpp" fileDirectory=".." coreId="795111282" contextFuncName="solveNextColumn" bitwidth="64" opcode="extractvalue" nodeLabel="7.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="488" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>call</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="101" name="icmp_ln486" lineNumber="486" fileName="patchMaker.cpp" fileDirectory=".." rtlName="icmp_ln486_fu_470_p2" opType="icmp" coreId="808595300" contextFuncName="solveNextColumn" bitwidth="1" opcode="icmp" nodeLabel="7.0" m_display="0" m_delay="1.06" m_topoIndex="61" m_clusterGroupNumber="5">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="486" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="102" name="icmp_ln486_1" lineNumber="486" fileName="patchMaker.cpp" fileDirectory=".." rtlName="icmp_ln486_1_fu_476_p2" opType="icmp" coreId="808595300" contextFuncName="solveNextColumn" bitwidth="1" opcode="icmp" nodeLabel="7.0" m_display="0" m_delay="1.06" m_topoIndex="62" m_clusterGroupNumber="4">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="486" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="103" name="saved_apexZ0_write_ln486" lineNumber="486" fileName="patchMaker.cpp" fileDirectory=".." coreId="1768107834" contextFuncName="solveNextColumn" opcode="store" nodeLabel="7.0" m_display="0" m_delay="0.38" m_topoIndex="63" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="486" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <dataInputObjs>extractvalue</dataInputObjs>
+      <dataInputObjs>alloca</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="104" name="br_ln486" lineNumber="486" fileName="patchMaker.cpp" fileDirectory=".." coreId="2147483647" contextFuncName="solveNextColumn" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="486" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="solveNextColumn"/>
+      <controlInputObjs>._crit_edge</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>488</validLinenumbers>
+      <validLinenumbers>486</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="107" name="_Z15solveNextColumnliibblRiRSt5arrayIS0_IS0_IlLm3EELm256EELm5EERA5_iRA32_A5_A3_A16_A3_lRA32_A5_A4_A6_l.exit" type="BlockType">
+    <controlInputObjs>._crit_edge</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>block_43</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln458" lineNumber="458" fileName="patchMaker.cpp" fileDirectory=".." coreId="2147483647" contextFuncName="makePatches_ShadowQuilt_fromEdges" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="458" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+      <controlInputObjs>block_43</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>458</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="109" name="block_109" type="BlockType">
+    <controlInputObjs>block_43</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="108" name="_ln463" lineNumber="463" fileName="patchMaker.cpp" fileDirectory=".." coreId="841966703" contextFuncName="makePatches_ShadowQuilt_fromEdges" opcode="ret" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="patchMaker.cpp" linenumber="463" fileDirectory="C:\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS" functionName="makePatches_ShadowQuilt_fromEdges"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="patchMaker.cpp">
+      <validLinenumbers>463</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <regnodes realName="ppl_read_reg_494">
+    <nodeIds>36</nodeIds>
+  </regnodes>
+  <regnodes realName="dc_reg_514">
+    <nodeIds>50</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln486_1_reg_547">
+    <nodeIds>102</nodeIds>
+  </regnodes>
+  <regnodes realName="nPatchesInColumn_reg_527">
+    <nodeIds>97</nodeIds>
+  </regnodes>
+  <regnodes realName="complementary_apexZ0_reg_522">
+    <nodeIds>94</nodeIds>
+  </regnodes>
+  <regnodes realName="phi_ln501_1_reg_170">
+    <nodeIds>84</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln475_reg_505">
+    <nodeIds>46</nodeIds>
+  </regnodes>
+  <regnodes realName="phi_ln501_reg_136">
+    <nodeIds>81</nodeIds>
+  </regnodes>
+  <regnodes realName="conv2_i_reg_509">
+    <nodeIds>49</nodeIds>
+  </regnodes>
+  <regnodes realName="z_top_min_reg_537">
+    <nodeIds>100</nodeIds>
+  </regnodes>
+  <regnodes realName="z_top_max_19_ph_reg_124">
+    <nodeIds>78</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln486_reg_542">
+    <nodeIds>101</nodeIds>
+  </regnodes>
+  <regnodes realName="z_top_min_0_reg_193">
+    <nodeIds>86</nodeIds>
+  </regnodes>
+  <regnodes realName="complementary_apexZ0_0_reg_181">
+    <nodeIds>85</nodeIds>
+  </regnodes>
+  <regnodes realName="z_top_max_1_reg_532">
+    <nodeIds>99</nodeIds>
+  </regnodes>
+  <regnodes realName="nPatchesInColumn_assign_reg_147">
+    <nodeIds>82</nodeIds>
+  </regnodes>
+  <regnodes realName="saved_apexZ0_reg_487">
+    <nodeIds>16</nodeIds>
+  </regnodes>
+  <regnodes realName="z_top_max_19_reg_159">
+    <nodeIds>83</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln475_fu_258">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="z_top_max_fu_415">
+    <nodeIds>75</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="phi_ln501_1_phi_fu_174">
+    <nodeIds>84</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_359">
+    <nodeIds>67</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="saved_apexZ0_assign_fu_458">
+    <nodeIds>98</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_75_fu_275">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sub_ln1311_fu_321">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln1311_fu_327">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="c_corner_fu_450">
+    <nodeIds>96</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_V_14_fu_353">
+    <nodeIds>66</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln486_1_fu_476">
+    <nodeIds>102</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="z_top_min_0_phi_fu_197">
+    <nodeIds>86</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln501_1_fu_436">
+    <nodeIds>89</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln486_fu_470">
+    <nodeIds>101</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="isNeg_fu_313">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ush_fu_331">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sh_prom_i_i_i_i_i_i_cast_cast_cast_fu_339">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln458_fu_252">
+    <nodeIds>41</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="z_top_max_1_fu_462">
+    <nodeIds>99</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="projectionOfCornerToBeam_fu_446">
+    <nodeIds>95</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="z_top_max_19_ph_phi_fu_128">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="result_V_fu_395">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln341_fu_303">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln477_fu_409">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="r_V_fu_347">
+    <nodeIds>65</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="complementary_apexZ0_fu_442">
+    <nodeIds>94</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="data_V_fu_264">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sh_prom_i_i_i_i_i_i_cast_cast_cast_cast_fu_343">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mantissa_fu_289">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_76_fu_285">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="z_top_max_19_phi_fu_162">
+    <nodeIds>83</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="z_top_min_fu_466">
+    <nodeIds>100</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="saved_apexZ0_fu_108">
+    <nodeIds>16</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="nPatchesInColumn_fu_454">
+    <nodeIds>97</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln501_fu_424">
+    <nodeIds>87</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="complementary_apexZ0_0_phi_fu_185">
+    <nodeIds>85</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln15_fu_299">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="phi_ln501_phi_fu_140">
+    <nodeIds>81</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_s_fu_267">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln145_fu_403">
+    <nodeIds>73</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln341_fu_307">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_s_fu_371">
+    <nodeIds>69</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="and_ln501_fu_430">
+    <nodeIds>88</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="val_fu_381">
+    <nodeIds>70</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln662_fu_367">
+    <nodeIds>68</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="nPatchesInColumn_assign_phi_fu_151">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="result_V_17_fu_389">
+    <nodeIds>71</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_solveNextPatchPair_fu_205">
+    <nodeIds>93</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_235">
+    <nodeIds>50</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_240">
+    <nodeIds>49</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="ppl_read_read_fu_112">
+    <nodeIds>36</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln458_store_fu_243">
+    <nodeIds>37</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln486_store_fu_482">
+    <nodeIds>103</nodeIds>
+  </ioNodes>
+  <ioNodes realName="n_patches_read_read_fu_118">
+    <nodeIds>45</nodeIds>
+  </ioNodes>
+  <ioNodes realName="saved_apexZ0_1_load_fu_248">
+    <nodeIds>40</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="radii" portID="100">
+    <nodeIds>93</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="temp" portID="100">
+    <nodeIds>93</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="trapezoid_edges" portID="100">
+    <nodeIds>93</nodeIds>
+  </memoryPorts>
+  <ioPorts name="apexZ0"/>
+  <ioPorts name="leftRight"/>
+  <ioPorts name="n_patches">
+    <contents name="call">
+      <nodeIds>93</nodeIds>
+    </contents>
+    <contents name="read">
+      <nodeIds>45</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="ppl">
+    <contents name="read">
+      <nodeIds>36</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="stop"/>
+  <fsm>
+    <states id="1">
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+      <operations id="38" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="45" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="49" stage="2" latency="2"/>
+      <operations id="108" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="49" stage="1" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="50" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="50" stage="1" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="61" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="69" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+    </states>
+    <states id="7">
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="85" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="1" latency="1"/>
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+      <operations id="93" stage="2" latency="2"/>
+      <operations id="106" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="92" stage="1" latency="1"/>
+      <operations id="93" stage="1" latency="2"/>
+      <operations id="94" stage="1" latency="1"/>
+      <operations id="95" stage="1" latency="1"/>
+      <operations id="96" stage="1" latency="1"/>
+      <operations id="97" stage="1" latency="1"/>
+      <operations id="98" stage="1" latency="1"/>
+      <operations id="99" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="1"/>
+      <operations id="101" stage="1" latency="1"/>
+      <operations id="102" stage="1" latency="1"/>
+      <operations id="103" stage="1" latency="1"/>
+      <operations id="104" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="2">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="makePatches_ShadowQuilt_fromEdges" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>7</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>39</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="shadowQuilt_loop" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <subRegions>6</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMaxLatency="4">
+      <basicBlocks>43</basicBlocks>
+      <basicBlocks>48</basicBlocks>
+      <basicBlocks>77</basicBlocks>
+      <basicBlocks>80</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="solveNextColumn_loop" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mType="1">
+      <basicBlocks>91</basicBlocks>
+      <basicBlocks>105</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="6" mTag="Region 2" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>107</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="7" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>109</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

@@ -1,0 +1,60 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'solveComplmentaryPatch'" level="0">
+<item name = "Date">Mon Jul  1 18:53:24 2024
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">PatchMaker_tanishGit</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcvu19p-fsvb3824-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_makePatch_alignedToLine_fu_772">makePatch_alignedToLine, ?, ?, ?, ?, ?, ?, none</column>
+<column name="grp_get_index_from_z_fu_797">get_index_from_z, ?, ?, ?, ?, ?, ?, none</column>
+<column name="grp_delete_patch_fu_811">delete_patch, ?, ?, ?, ?, ?, ?, none</column>
+<column name="grp_straightLineProjectorFromLayerIJtoK_fu_823">straightLineProjectorFromLayerIJtoK, 11, 11, 0.110 us, 0.110 us, 1, 1, yes</column>
+<column name="grp_areWedgeSuperPointsEqual_fu_839">areWedgeSuperPointsEqual, 4, 4, 40.000 ns, 40.000 ns, 2, 2, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_855_1">?, ?, ?, -, -, 5, no</column>
+<column name="- VITIS_LOOP_863_2">5, 5, 2, 1, 1, 5, yes</column>
+<column name="- VITIS_LOOP_875_3">5, 5, 2, 1, 1, 5, yes</column>
+<column name="- VITIS_LOOP_884_4">5, 5, 2, 1, 1, 5, yes</column>
+<column name="- VITIS_LOOP_892_5">11, 11, 8, 1, 1, 5, yes</column>
+<column name="- VITIS_LOOP_897_6">7, 7, 4, 1, 1, 5, yes</column>
+<column name="- VITIS_LOOP_903_7">7, 7, 4, 1, 1, 5, yes</column>
+<column name="- VITIS_LOOP_909_8">15, 15, 13, 1, 1, 4, yes</column>
+<column name="- VITIS_LOOP_921_9">5, 5, 3, 1, 1, 4, yes</column>
+<column name="- superpointEqualCheck_2_loop">11, 35, 6, 6, 1, 1 ~ 5, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
