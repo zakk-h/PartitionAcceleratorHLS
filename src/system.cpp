@@ -533,8 +533,6 @@ alignedtoline_layer_loop:
         }
       })
 
-  PATCH_EXIT(2);
-
   return;
 }
 
@@ -754,7 +752,91 @@ _shadowquilt_column_loop:
         a_corner, b_corner, c_corner, d_corner, squareAcceptance, flatTop,
         flatBottom, triangleAcceptance, patch_stream);
 
-    // exit(0);
+    getParallelograms(patch_buffer[latest_patch_index],
+                      pSlope[latest_patch_index],
+                      shadow_bottomL_jR[latest_patch_index],
+                      shadow_bottomR_jR[latest_patch_index],
+                      shadow_bottomL_jL[latest_patch_index],
+                      shadow_bottomR_jL[latest_patch_index],
+                      z1_min[latest_patch_index], z1_max[latest_patch_index]);
+
+    get_acceptanceCorners(patch_buffer, latest_patch_index, num_patches, pSlope,
+                          shadow_bottomL_jR, shadow_bottomR_jR,
+                          shadow_bottomL_jL, shadow_bottomR_jL, z1_min, z1_max,
+                          a_corner, b_corner, c_corner, d_corner,
+                          squareAcceptance, flatTop, flatBottom,
+                          triangleAcceptance, patch_stream);
+
+    DEBUG_PRINT_ALL(
+        cout << "superpoints of patch_depth_1" << endl;
+        for (int i = 0; i < NUM_LAYERS; i++) {
+          cout << "superpoint " << i << " min: "
+               << get_superpoint_min_z(patch_buffer[latest_patch_index][i])
+               << " max: "
+               << get_superpoint_max_z(patch_buffer[latest_patch_index][i])
+               << endl;
+        })
+
+    DEBUG_PRINT_ALL(
+        cout << "superpoints of patch_depth_2" << endl;
+        for (int i = 0; i < NUM_LAYERS; i++) {
+          cout << "superpoint " << i << " min: "
+               << get_superpoint_min_z(patch_buffer[latest_patch_index - 1][i])
+               << " max: "
+               << get_superpoint_max_z(patch_buffer[latest_patch_index - 1][i])
+               << endl;
+        })
+
+    DEBUG_PRINT_ALL(cout << "complementary_apexZ0: " << complementary_apexZ0
+                         << endl;
+                    cout << "z_top_min: " << z_top_min << endl;)
+
+    // print patch_buffer[latest_patch_index - 1]
+    DEBUG_PRINT_ALL(cout << "Print patch num: " << num_patches << endl;
+                    for (int i = 0; i < NUM_LAYERS; i++) {
+                      for (int j = 0; j < NUM_POINTS_IN_SUPERPOINT; j++) {
+                        cout << "patch_buffer[1][" << i << "][" << j << "]: "
+                             << point_get_z(
+                                    patch_buffer[latest_patch_index - 1][i][j])
+                             << endl;
+                      }
+                    })
+
+    DEBUG_PRINT_ALL(if (num_patches == 2) {
+      // print min, max z of superpoints of last - 1 patch
+      cout << "Print patch num: " << num_patches - 1 << endl;
+      for (int i = 0; i < NUM_LAYERS; i++) {
+        cout << "superpoint " << i << " min: "
+             << get_superpoint_min_z(patch_buffer[latest_patch_index - 1][i])
+             << " max: "
+             << get_superpoint_max_z(patch_buffer[latest_patch_index - 1][i])
+             << endl;
+      }
+
+      // print min, max z of superpoints of last patch
+      cout << "Print patch num: " << num_patches << endl;
+      for (int i = 0; i < NUM_LAYERS; i++) {
+        cout << "superpoint " << i << " min: "
+             << get_superpoint_min_z(patch_buffer[latest_patch_index][i])
+             << " max: "
+             << get_superpoint_max_z(patch_buffer[latest_patch_index][i])
+             << endl;
+      }
+    })
+
+    madeComplementaryPatch = true;
+    cout << "complementary: [" << a_corner[latest_patch_index][0] << ", "
+         << a_corner[latest_patch_index][1] << "] for z_top_min: " << z_top_min
+         << endl;
+    cout << "complementary: [" << b_corner[latest_patch_index][0] << ", "
+         << b_corner[latest_patch_index][1] << "] for patch " << num_patches
+         << endl;
+    cout << "complementary: [" << c_corner[latest_patch_index][0] << ", "
+         << c_corner[latest_patch_index][1] << "]" << endl;
+    cout << "complementary: [" << d_corner[latest_patch_index][0] << ", "
+         << d_corner[latest_patch_index][1] << "]" << endl;
+
+    PATCH_EXIT(2);
 
     // get condition for next iteration
     _shadowquilt_column_loop_get_cond(c_corner_tmp, projectionOfCornerToBeam,

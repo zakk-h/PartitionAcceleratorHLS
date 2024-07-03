@@ -1142,6 +1142,37 @@ public:
               cout << "complementary_apexZ0: " << complementary_apexZ0 << endl;
               cout << "z_top_min: " << z_top_min << endl;)
 
+          // print superpoints of last patch, z values
+          DEBUG_PRINT_ALL(
+              cout << "Print patch num: " << patches.size() << endl;
+              for (int i = 0; i < env.num_layers; i++) {
+                for (int j = 0; j < ppl; j++) {
+                  cout << "patch_buffer[1][" << i << "][" << j << "]: "
+                       << patches[patches.size() - 1].superpoints[i].points[j].z
+                       << endl;
+                }
+              })
+
+          DEBUG_PRINT_ALL(if (n_patches == 2) {
+            // print min, max z of superpoints of last - 1 patch
+            cout << "Print patch num: " << patches.size() - 1 << endl;
+            for (int i = 0; i < env.num_layers; i++) {
+              cout << "superpoint " << i
+                   << " min: " << patches[patches.size() - 2].superpoints[i].min
+                   << " max: " << patches[patches.size() - 2].superpoints[i].max
+                   << endl;
+            }
+
+            // print min, max z of superpoints of last patch
+            cout << "Print patch num: " << patches.size() << endl;
+            for (int i = 0; i < env.num_layers; i++) {
+              cout << "superpoint " << i
+                   << " min: " << patches[patches.size() - 1].superpoints[i].min
+                   << " max: " << patches[patches.size() - 1].superpoints[i].max
+                   << endl;
+            }
+          })
+
           madeComplementaryPatch = true;
           cout << "complementary: [" << patches[patches.size() - 1].a_corner[0]
                << ", " << patches[patches.size() - 1].a_corner[1]
@@ -1150,9 +1181,16 @@ public:
                << ", " << patches[patches.size() - 1].b_corner[1]
                << "] for patch  " << patches.size() << endl;
           cout << "complementary: [" << patches[patches.size() - 1].c_corner[0]
-               << ", " << patches[patches.size() - 1].c_corner[1] << endl;
+               << ", " << patches[patches.size() - 1].c_corner[1] << "]"
+               << endl;
           cout << "complementary: [" << patches[patches.size() - 1].d_corner[0]
-               << ", " << patches[patches.size() - 1].d_corner[1] << endl;
+               << ", " << patches[patches.size() - 1].d_corner[1] << "]"
+               << endl;
+
+          if (n_patches == 2) {
+            cout << "patch 2 exit" << endl;
+            exit(0);
+          }
 
           float complementary_a = patches[patches.size() - 1].a_corner[1];
           float complementary_b = patches[patches.size() - 1].b_corner[1];
@@ -1773,11 +1811,6 @@ public:
                         cout << "left_bound: " << left_bound << endl;
                         cout << "ppl: " << ppl << endl;)
 
-        if (this->n_patches == 1) {
-          cout << "patch 1 exit" << endl;
-          exit(0);
-        }
-
         if ((start_index - ppl + 1) < left_bound) {
           vector<Point> temp(row_data[i].begin() + left_bound,
                              row_data[i].begin() + left_bound + ppl);
@@ -1821,11 +1854,6 @@ public:
                  << endl;
           }
         })
-
-    if (n_patches == 2) {
-      cout << "patch 2 exit" << endl;
-      exit(0);
-    }
   }
 
   void tester() {
