@@ -23,6 +23,9 @@
 
 using namespace std;
 
+// global variables for debug
+int current_patch_number = 0;
+
 class Point {
 public:
   int layer_num;
@@ -432,6 +435,11 @@ public:
 
     get_acceptanceCorners();
     get_end_layer();
+
+    if (current_patch_number == 2) {
+      cout << "now in the second patch" << endl;
+      exit(0);
+    }
   }
 
   float straightLineProjectorFromLayerIJtoK(float z_i, float z_j, int i, int j,
@@ -693,6 +701,18 @@ public:
                     cout << "b_corner[1]: " << b_corner[1] << endl;
                     cout << "c_corner[1]: " << c_corner[1] << endl;
                     cout << "d_corner[1]: " << d_corner[1] << endl;)
+
+    if (current_patch_number == 2) {
+      cout << "current_patch_number: " << current_patch_number << endl;
+      cout << "a_corner: [" << a_corner[0] << ", " << a_corner[1] << "]"
+           << endl;
+      cout << "b_corner: [" << b_corner[0] << ", " << b_corner[1] << "]"
+           << endl;
+      cout << "c_corner: [" << c_corner[0] << ", " << c_corner[1] << "]"
+           << endl;
+      cout << "d_corner: [" << d_corner[0] << ", " << d_corner[1] << "]"
+           << endl;
+    }
   }
 
   void get_end_layer() {
@@ -1659,6 +1679,8 @@ public:
   void makePatch_alignedToLine(float apexZ0 = 0, float z_top = -50,
                                int ppl = 16, bool leftRight = true,
                                bool float_middleLayers_ppl = false) {
+    current_patch_number += 1; // DEBUG
+
     vector<wedgeSuperPoint> init_patch;
     int original_ppl = ppl;
     float alignmentAccuracy = 0.00001;
@@ -2119,6 +2141,8 @@ int main() {
   wedgeCover cov(env, ds);
   cov.tester();
   */
+
+  current_patch_number = 0;
 
   string filepath = "wedgeData_v3_128.txt";
   vector<Event> events = FileReader::readFile(filepath);

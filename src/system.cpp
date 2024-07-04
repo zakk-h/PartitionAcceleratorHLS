@@ -273,6 +273,18 @@ loop_calculate_min_max_element_of_corner_lists:
                   cout << "d_corner[latest_patch_index][1]: "
                        << d_corner[latest_patch_index][1] << endl;)
 
+  if (num_patches == 2) {
+    cout << "current_patch_number: " << num_patches << endl;
+    cout << "a_corner: [" << a_corner[latest_patch_index][0] << ", "
+         << a_corner[latest_patch_index][1] << "]" << endl;
+    cout << "b_corner: [" << b_corner[latest_patch_index][0] << ", "
+         << b_corner[latest_patch_index][1] << "]" << endl;
+    cout << "c_corner: [" << c_corner[latest_patch_index][0] << ", "
+         << c_corner[latest_patch_index][1] << "]" << endl;
+    cout << "d_corner: [" << d_corner[latest_patch_index][0] << ", "
+         << d_corner[latest_patch_index][1] << "]" << endl;
+  }
+
   return;
 }
 // >>>>> END ACCEPTANCE CORNER CALCULATION <<<<<
@@ -766,6 +778,8 @@ _shadowquilt_column_loop:
                           a_corner, b_corner, c_corner, d_corner,
                           squareAcceptance, flatTop, flatBottom,
                           triangleAcceptance, patch_stream);
+
+    PATCH_EXIT(2);
 
     DEBUG_PRINT_ALL(
         cout << "superpoints of patch_depth_1" << endl;
