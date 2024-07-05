@@ -7,6 +7,11 @@
 #include <cstring>
 #include <hls_stream.h>
 
+#define LATEST_PATCH_INDEX latest_patch_index
+#define PREVIOUS_PATCH_INDEX ((latest_patch_index - 1) % PATCH_BUFFER_SIZE)
+#define PREVIOUS_PREVIOUS_PATCH_INDEX                                          \
+  ((latest_patch_index - 2) % PATCH_BUFFER_SIZE)
+
 void patch_buffer_add_patch(
     point_t new_patch[NUM_LAYERS][NUM_POINTS_IN_SUPERPOINT],
     point_t patch_buffer[PATCH_BUFFER_SIZE][NUM_LAYERS]

@@ -435,11 +435,6 @@ public:
 
     get_acceptanceCorners();
     get_end_layer();
-
-    if (current_patch_number == 2) {
-      cout << "now in the second patch" << endl;
-      exit(0);
-    }
   }
 
   float straightLineProjectorFromLayerIJtoK(float z_i, float z_j, int i, int j,
@@ -701,18 +696,6 @@ public:
                     cout << "b_corner[1]: " << b_corner[1] << endl;
                     cout << "c_corner[1]: " << c_corner[1] << endl;
                     cout << "d_corner[1]: " << d_corner[1] << endl;)
-
-    if (current_patch_number == 2) {
-      cout << "current_patch_number: " << current_patch_number << endl;
-      cout << "a_corner: [" << a_corner[0] << ", " << a_corner[1] << "]"
-           << endl;
-      cout << "b_corner: [" << b_corner[0] << ", " << b_corner[1] << "]"
-           << endl;
-      cout << "c_corner: [" << c_corner[0] << ", " << c_corner[1] << "]"
-           << endl;
-      cout << "d_corner: [" << d_corner[0] << ", " << d_corner[1] << "]"
-           << endl;
-    }
   }
 
   void get_end_layer() {
@@ -1194,23 +1177,22 @@ public:
           })
 
           madeComplementaryPatch = true;
-          cout << "complementary: [" << patches[patches.size() - 1].a_corner[0]
-               << ", " << patches[patches.size() - 1].a_corner[1]
-               << "] for z_top_min: " << z_top_min << endl;
-          cout << "complementary: [" << patches[patches.size() - 1].b_corner[0]
-               << ", " << patches[patches.size() - 1].b_corner[1]
-               << "] for patch  " << patches.size() << endl;
-          cout << "complementary: [" << patches[patches.size() - 1].c_corner[0]
-               << ", " << patches[patches.size() - 1].c_corner[1] << "]"
-               << endl;
-          cout << "complementary: [" << patches[patches.size() - 1].d_corner[0]
-               << ", " << patches[patches.size() - 1].d_corner[1] << "]"
-               << endl;
 
-          if (n_patches == 2) {
-            cout << "patch 2 exit" << endl;
-            exit(0);
-          }
+          DEBUG_PRINT_ALL(
+              cout << "complementary: ["
+                   << patches[patches.size() - 1].a_corner[0] << ", "
+                   << patches[patches.size() - 1].a_corner[1]
+                   << "] for z_top_min: " << z_top_min << endl;
+              cout << "complementary: ["
+                   << patches[patches.size() - 1].b_corner[0] << ", "
+                   << patches[patches.size() - 1].b_corner[1] << "] for patch  "
+                   << patches.size() << endl;
+              cout << "complementary: ["
+                   << patches[patches.size() - 1].c_corner[0] << ", "
+                   << patches[patches.size() - 1].c_corner[1] << "]" << endl;
+              cout << "complementary: ["
+                   << patches[patches.size() - 1].d_corner[0] << ", "
+                   << patches[patches.size() - 1].d_corner[1] << "]" << endl;)
 
           float complementary_a = patches[patches.size() - 1].a_corner[1];
           float complementary_b = patches[patches.size() - 1].b_corner[1];
@@ -1223,6 +1205,7 @@ public:
           int current_z_top_index = -1;
           double previous_z_top_min = -999;
 
+        loop_adjust_complementary_patch:
           while (!(white_space_height <= 0 &&
                    (previous_white_space_height >= 0)) &&
                  (abs(white_space_height) > 0.000001) &&
@@ -1243,6 +1226,9 @@ public:
                  << patches[patches.size() - 1].a_corner[1]
                  << " || complementary_b: " << complementary_b << " "
                  << patches[patches.size() - 1].b_corner[1] << endl;
+
+            // TODO: implement get_index_from_z
+
             current_z_top_index =
                 get_index_from_z(env.num_layers - 1, z_top_min);
             cout << "current white_space_height: " << white_space_height
@@ -1251,6 +1237,13 @@ public:
                  << " counterUpshift: " << counterUpshift << endl;
             cout << "orig_ztop: " << current_z_top_index
                  << " orig_z_top_min: " << z_top_min << endl;
+
+            if (n_patches == 2) {
+              cout << "patch 2 exit" << endl;
+              exit(0);
+            }
+
+            // TODO: resume here
 
             vector<float> current_z_i_index;
             vector<float> new_z_i_index;

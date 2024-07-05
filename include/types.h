@@ -103,3 +103,7 @@ constexpr float get_radii_leverArm(int idx) {
 
   return radii_leverArm[idx];
 }
+
+// min and max values
+#define FLOAT_VALUE_T_MIN ((float_value_t)(-0x800))
+#define FLOAT_VALUE_T_MAX ((float_value_t)(0x7FF))

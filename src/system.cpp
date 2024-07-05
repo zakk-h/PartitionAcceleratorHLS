@@ -185,10 +185,10 @@ loop_init_acceptance_corners_from_parallelograms:
       })
 
   // calculate min_element of corner lists
-  float_value_t a_corner_min = 1ULL << 10;
-  float_value_t b_corner_min = 1ULL << 10;
-  float_value_t c_corner_max = 0x0;
-  float_value_t d_corner_max = 0x0;
+  float_value_t a_corner_min = FLOAT_VALUE_T_MAX;
+  float_value_t b_corner_min = FLOAT_VALUE_T_MAX;
+  float_value_t c_corner_max = FLOAT_VALUE_T_MIN;
+  float_value_t d_corner_max = FLOAT_VALUE_T_MIN;
 
 loop_calculate_min_max_element_of_corner_lists:
   for (int i = 0; i < 4; i++) {
@@ -272,18 +272,6 @@ loop_calculate_min_max_element_of_corner_lists:
                        << c_corner[latest_patch_index][1] << endl;
                   cout << "d_corner[latest_patch_index][1]: "
                        << d_corner[latest_patch_index][1] << endl;)
-
-  if (num_patches == 2) {
-    cout << "current_patch_number: " << num_patches << endl;
-    cout << "a_corner: [" << a_corner[latest_patch_index][0] << ", "
-         << a_corner[latest_patch_index][1] << "]" << endl;
-    cout << "b_corner: [" << b_corner[latest_patch_index][0] << ", "
-         << b_corner[latest_patch_index][1] << "]" << endl;
-    cout << "c_corner: [" << c_corner[latest_patch_index][0] << ", "
-         << c_corner[latest_patch_index][1] << "]" << endl;
-    cout << "d_corner: [" << d_corner[latest_patch_index][0] << ", "
-         << d_corner[latest_patch_index][1] << "]" << endl;
-  }
 
   return;
 }
@@ -557,6 +545,25 @@ void _shadowquilt_column_loop_get_cond(float_value_t &c_corner_tmp,
   cond = cond_and_0 && cond_and_1;
 }
 
+int get_index_from_z(int layer, float_value_t z_value,
+                     point_t points[NUM_LAYERS][MAX_NUM_POINTS],
+                     index_t num_points[NUM_LAYERS], PATCH_BUFFER_ARGS) {
+  float_value_t minVal = FLOAT_VALUE_T_MAX;
+  int index = 0;
+
+loop_find_minimum_z_values_from_layer_with_index:
+  for (int i = 0; i < num_points[layer]; i++) {
+    if (std::abs((float)point_get_z(points[layer][i] - z_value)) <
+        std::abs((float)minVal)) {
+      minVal = (float_value_t)std::abs(
+          (float)point_get_z(points[layer][i] - z_value));
+      index = i;
+    }
+  }
+
+  return index;
+}
+
 void _shadowquilt_main_loop_make_verticle_strip(
     point_t points[NUM_LAYERS][MAX_NUM_POINTS], index_t num_points[NUM_LAYERS],
     z_value_t &apexZ0, PATCH_BUFFER_ARGS) {
@@ -779,8 +786,6 @@ _shadowquilt_column_loop:
                           squareAcceptance, flatTop, flatBottom,
                           triangleAcceptance, patch_stream);
 
-    PATCH_EXIT(2);
-
     DEBUG_PRINT_ALL(
         cout << "superpoints of patch_depth_1" << endl;
         for (int i = 0; i < NUM_LAYERS; i++) {
@@ -839,18 +844,75 @@ _shadowquilt_column_loop:
     })
 
     madeComplementaryPatch = true;
-    cout << "complementary: [" << a_corner[latest_patch_index][0] << ", "
-         << a_corner[latest_patch_index][1] << "] for z_top_min: " << z_top_min
-         << endl;
-    cout << "complementary: [" << b_corner[latest_patch_index][0] << ", "
-         << b_corner[latest_patch_index][1] << "] for patch " << num_patches
-         << endl;
-    cout << "complementary: [" << c_corner[latest_patch_index][0] << ", "
-         << c_corner[latest_patch_index][1] << "]" << endl;
-    cout << "complementary: [" << d_corner[latest_patch_index][0] << ", "
-         << d_corner[latest_patch_index][1] << "]" << endl;
 
-    PATCH_EXIT(2);
+    DEBUG_PRINT_ALL(
+        cout << "complementary: [" << a_corner[latest_patch_index][0] << ", "
+             << a_corner[latest_patch_index][1]
+             << "] for z_top_min: " << z_top_min << endl;
+        cout << "complementary: [" << b_corner[latest_patch_index][0] << ", "
+             << b_corner[latest_patch_index][1] << "] for patch " << num_patches
+             << endl;
+        cout << "complementary: [" << c_corner[latest_patch_index][0] << ", "
+             << c_corner[latest_patch_index][1] << "]" << endl;
+        cout << "complementary: [" << d_corner[latest_patch_index][0] << ", "
+             << d_corner[latest_patch_index][1] << "]" << endl;)
+
+    float_value_t complementary_a = a_corner[latest_patch_index][1];
+    float_value_t complementary_b = b_corner[latest_patch_index][1];
+
+    float_value_t white_space_height =
+        std::max(original_c - complementary_a, original_d - complementary_b);
+    float_value_t previous_white_space_height = -1;
+    int_value_t counter = 0;
+    int_value_t counterUpshift = 0;
+    int_value_t current_z_top_index = -1;
+    float_value_t previous_z_top_min = FLOAT_VALUE_T_MIN;
+
+    bool cond_loop_adjust_complementary_patch = false;
+
+    // TODO: extract to external function
+    cond_loop_adjust_complementary_patch =
+        !(white_space_height <= 0 && (previous_white_space_height >= 0) &&
+          (std::abs((double)white_space_height) > 0.000001) &&
+          ((c_corner[latest_patch_index][1] >
+            (float_value_t)(-1 * get_trapezoid_edges(NUM_LAYERS - 1))) ||
+           (white_space_height > 0)) &&
+          (current_z_top_index < (num_points[NUM_LAYERS - 1] - 1)) &&
+          !repeat_patch && !repeat_original);
+
+  loop_adjust_complementary_patch:
+    while (cond_loop_adjust_complementary_patch) {
+      cout << endl;
+      if (num_patches > 2) {
+        // this part not tested yet
+        cout << 'roginal c: ' << original_c << " "
+             << c_corner[PREVIOUS_PATCH_INDEX][1]
+             << " || original d: " << original_d << " "
+             << d_corner[PREVIOUS_PATCH_INDEX][1] << endl;
+      }
+
+      cout << "complementary_a: " << complementary_a << " "
+           << a_corner[LATEST_PATCH_INDEX][1]
+           << " || complementary_b: " << complementary_b << " "
+           << b_corner[LATEST_PATCH_INDEX][1] << endl;
+
+      current_z_top_index = get_index_from_z(
+          NUM_LAYERS - 1, z_top_min, points, num_points, patch_buffer,
+          latest_patch_index, num_patches, pSlope, shadow_bottomL_jR,
+          shadow_bottomR_jR, shadow_bottomL_jL, shadow_bottomR_jL, z1_min,
+          z1_max, a_corner, b_corner, c_corner, d_corner, squareAcceptance,
+          flatTop, flatBottom, triangleAcceptance, patch_stream);
+
+      cout << "current white_space_height: " << white_space_height << endl;
+      cout << "counter: " << counter << " counterUpshift: " << counterUpshift
+           << endl;
+      cout << "orig_ztop: " << current_z_top_index
+           << " orig_z_top_min: " << z_top_min << endl;
+
+      // TODO: resume here
+
+      PATCH_EXIT(2);
+    }
 
     // get condition for next iteration
     _shadowquilt_column_loop_get_cond(c_corner_tmp, projectionOfCornerToBeam,

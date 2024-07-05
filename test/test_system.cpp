@@ -19,6 +19,14 @@ bool compare_points(point_t p1, point_t p2) {
 }
 
 int main() {
+#if PRINT_EXTREMES == true
+  float_value_t float_value_min = FLOAT_VALUE_T_MIN;
+  float_value_t float_value_max = FLOAT_VALUE_T_MAX;
+
+  cout << "float_value_t min: " << float_value_min << endl;
+  cout << "float_value_t max: " << float_value_max << endl;
+#endif
+
 // main function for testing
 #if CONFIG_IS_SYNTHSIS == false
   string file_path = "./wedgeData_v3_128.txt";
