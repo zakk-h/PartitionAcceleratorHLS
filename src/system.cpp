@@ -15,6 +15,7 @@ float_value_t straightLineProjectorFromLayerIJtoK(float_value_t z_i,
                                                   float_value_t z_j,
                                                   int_value_t i, int_value_t j,
                                                   int_value_t k) {
+
   float_value_t radius_i = 0;
   float_value_t radius_j = 0;
   float_value_t radius_k = 0;
@@ -916,13 +917,196 @@ _shadowquilt_column_loop:
           z1_max, a_corner, b_corner, c_corner, d_corner, squareAcceptance,
           flatTop, flatBottom, triangleAcceptance, patch_stream);
 
-      cout << "current white_space_height: " << white_space_height << endl;
-      cout << "counter: " << counter << " counterUpshift: " << counterUpshift
-           << endl;
-      cout << "orig_ztop: " << current_z_top_index
-           << " orig_z_top_min: " << z_top_min << endl;
+      DEBUG_PRINT_ALL(
+          cout << "current white_space_height: " << white_space_height << endl;
+          cout << "counter: " << counter
+               << " counterUpshift: " << counterUpshift << endl;
+          cout << "orig_ztop: " << current_z_top_index
+               << " orig_z_top_min: " << z_top_min << endl;)
 
-      // TODO: resume here
+      float_value_t current_z_i_index[NUM_LAYERS] = {FLOAT_VALUE_T_MAX};
+      float_value_t new_z_i_index[NUM_LAYERS] = {FLOAT_VALUE_T_MAX};
+
+    loop_copy_z_values_to_current_z_array:
+      for (int i = 0; i < NUM_LAYERS; i++) {
+        float_value_t z_value_tmp = straightLineProjectorFromLayerIJtoK(
+            complementary_apexZ0, z_top_min, 1, NUM_LAYERS, i + 1);
+
+        current_z_i_index[i] = get_index_from_z(
+            i, z_value_tmp, points, num_points, patch_buffer,
+            latest_patch_index, num_patches, pSlope, shadow_bottomL_jR,
+            shadow_bottomR_jR, shadow_bottomL_jL, shadow_bottomR_jL, z1_min,
+            z1_max, a_corner, b_corner, c_corner, d_corner, squareAcceptance,
+            flatTop, flatBottom, triangleAcceptance, patch_stream);
+      }
+
+      DEBUG_PRINT_ALL(
+          // DEBUG: print current_z_i_index
+          for (int i = 0; i < NUM_LAYERS; i++) {
+            cout << "current_z_i_index[" << i << "]: " << current_z_i_index[i]
+                 << endl;
+          })
+
+      if (z_top_min == previous_z_top_min) {
+        current_z_top_index++;
+        for (int i = 0; i < NUM_LAYERS; i++) {
+          new_z_i_index[i] = current_z_i_index[i] + 1;
+        }
+      }
+
+      previous_z_top_min = z_top_min;
+
+      if (white_space_height < 0) {
+        counter++;
+        current_z_top_index--;
+
+        /**
+         * BUG: this is probably wrong, not sure about the actual size of
+         * new_z_i_index
+         */
+        for (int i = 0; i < NUM_LAYERS; i++) {
+          new_z_i_index[i] = current_z_i_index[i] - 1;
+        }
+      } else {
+        counterUpshift++;
+        current_z_top_index++;
+
+        for (int i = 0; i < NUM_LAYERS; i++) {
+          new_z_i_index[i] = current_z_i_index[i] + 1;
+        }
+      }
+
+      DEBUG_PRINT_ALL( // DEBUG: print new_z_i_index
+          for (int i = 0; i < NUM_LAYERS; i++) {
+            cout << "new_z_i_index[" << i << "]: " << new_z_i_index[i] << endl;
+          })
+
+      int x = num_points[NUM_LAYERS - 1] - 1;
+      current_z_top_index = std::min((int)current_z_top_index, x);
+
+      for (int i = 0; i < NUM_LAYERS; i++) {
+        new_z_i_index[i] =
+            std::min((float)new_z_i_index[i], (float)(num_points[i] - 1));
+      }
+
+      DEBUG_PRINT_ALL( // DEBUG: print new_z_i_index
+          for (int i = 0; i < NUM_LAYERS; i++) {
+            cout << "new_z_i_index[" << i << "]: " << new_z_i_index[i] << endl;
+          })
+
+      for (int i = 0; i < NUM_LAYERS; i++) {
+        new_z_i_index[i] = std::max((float)new_z_i_index[i], 0.0f);
+      }
+
+      float_value_t new_z_i[NUM_LAYERS] = {FLOAT_VALUE_T_MAX};
+
+      for (int i = 0; i < NUM_LAYERS; i++) {
+        new_z_i[i] = point_get_z(points[i][(int)new_z_i_index[i]]);
+      }
+
+      DEBUG_PRINT_ALL( // DEBUG: print new_z_i
+          for (int i = 0; i < NUM_LAYERS;
+               i++) { cout << "new_z_i[" << i << "]: " << new_z_i[i] << endl; })
+
+      float_value_t new_z_i_atTop[NUM_LAYERS] = {FLOAT_VALUE_T_MAX};
+
+      for (int i = 1; i < NUM_LAYERS; i++) {
+        new_z_i_atTop[i - 1] = straightLineProjectorFromLayerIJtoK(
+            complementary_apexZ0, new_z_i[i], 1, i + 1, NUM_LAYERS);
+      }
+
+      DEBUG_PRINT_ALL(
+          // DEBUG: print new_z_i_atTop
+          for (int i = 0; i < NUM_LAYERS - 1; i++) {
+            cout << "new_z_i_atTop[" << i << "]: " << new_z_i_atTop[i] << endl;
+          })
+
+      int layerWithSmallestShift = 0;
+      float_value_t layerSMin = FLOAT_VALUE_T_MAX;
+
+      for (int i = 0; i < NUM_LAYERS - 1; i++) {
+        if ((float_value_t)std::abs((float)new_z_i_atTop[i] -
+                                    (float)previous_z_top_min) < layerSMin) {
+          layerSMin =
+              std::abs((float)new_z_i_atTop[i] - (float)previous_z_top_min);
+          layerWithSmallestShift = i;
+        }
+      }
+
+      layerWithSmallestShift++;
+
+      DEBUG_PRINT_ALL( // DEBUG: print layerSMin and layerWithSmallestShift
+          cout << "layerSMin: " << layerSMin << " layerWithSmallestShift: "
+               << layerWithSmallestShift << endl;)
+
+      DEBUG_PRINT_ALL(for (int i = 0; i < NUM_LAYERS - 1; i++) {
+        cout << i + 1 << " new_z_i_atTop: " << new_z_i_atTop[i]
+             << " shift_i_ztop: " << new_z_i_atTop[i] - previous_z_top_min
+             << " layerWithSmallestShift: " << layerWithSmallestShift << endl;
+      })
+
+      z_top_min = new_z_i_atTop[layerWithSmallestShift - 1];
+
+      if (std::abs((float)(z_top_min - previous_z_top_min)) <
+          ALIGNMENT_ACCURACY * 0.1) {
+        z_top_min = point_get_z(points[NUM_LAYERS - 1][current_z_top_index]);
+      }
+
+      if (std::abs((float)(z_top_min - previous_z_top_min)) <
+          ALIGNMENT_ACCURACY * 0.1) {
+        z_top_min = point_get_z(points[NUM_LAYERS - 2][current_z_top_index]);
+      }
+
+      if (std::abs((float)(z_top_min - previous_z_top_min)) <
+          ALIGNMENT_ACCURACY * 0.1) {
+        z_top_min = point_get_z(points[NUM_LAYERS - 3][current_z_top_index]);
+      }
+
+      if (((z_top_min - previous_z_top_min) * (white_space_height)) < 0) {
+        z_top_min = new_z_i_atTop[NUM_LAYERS - 2];
+      }
+
+      DEBUG_PRINT_ALL( // DEBUG: print z_top_min
+          cout << "z_top_min: " << z_top_min << endl;)
+
+      DEBUG_PRINT_ALL(
+          /**
+           * BUG: new_def_z_top_min prints 1.90735e-06 instead of 0
+           */
+          cout << " new_def_z_top_min_diff: "
+               << z_top_min -
+                      point_get_z(points[NUM_LAYERS - 1][current_z_top_index])
+               << endl;
+
+          cout << " new_ztop_index: " << current_z_top_index
+               << " new_z_i_index: " << new_z_i_index[0] << " "
+               << new_z_i_index[1] << " " << new_z_i_index[2] << " "
+               << new_z_i_index[3] << " " << new_z_i_index[4]
+               << " new_z_top_min: " << z_top_min
+               << " shift_ztop: " << z_top_min - previous_z_top_min << endl;)
+
+      int nPatchesAtComplementary = num_patches;
+
+      if (nPatchesAtComplementary > nPatchesAtOriginal) {
+        DEBUG_PRINT_ALL(
+            cout << "deleted complementary: " << a_corner[LATEST_PATCH_INDEX][0]
+                 << " " << a_corner[LATEST_PATCH_INDEX][1] << " for patch"
+                 << num_patches << endl;
+
+            cout << "deleted complementary: " << b_corner[LATEST_PATCH_INDEX][0]
+                 << " " << b_corner[LATEST_PATCH_INDEX][1] << endl;
+
+            cout << "deleted complementary: " << c_corner[LATEST_PATCH_INDEX][0]
+                 << " " << c_corner[LATEST_PATCH_INDEX][1] << endl;
+
+            cout << "deleted complementary: " << d_corner[LATEST_PATCH_INDEX][0]
+                 << " " << d_corner[LATEST_PATCH_INDEX][1] << endl;)
+
+        /**
+         * TODO: resume here
+         */
+        return;
+      }
 
       PATCH_EXIT(2);
     }

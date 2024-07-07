@@ -1248,17 +1248,14 @@ public:
 
             current_z_top_index =
                 get_index_from_z(env.num_layers - 1, z_top_min);
-            cout << "current white_space_height: " << white_space_height
-                 << endl;
-            cout << "counter: " << counter
-                 << " counterUpshift: " << counterUpshift << endl;
-            cout << "orig_ztop: " << current_z_top_index
-                 << " orig_z_top_min: " << z_top_min << endl;
 
-            if (n_patches == 2) {
-              cout << "patch 2 exit" << endl;
-              exit(0);
-            }
+            DEBUG_PRINT_ALL(cout << "current white_space_height: "
+                                 << white_space_height << endl;
+                            cout << "counter: " << counter
+                                 << " counterUpshift: " << counterUpshift
+                                 << endl;
+                            cout << "orig_ztop: " << current_z_top_index
+                                 << " orig_z_top_min: " << z_top_min << endl;)
 
             // TODO: resume here
 
@@ -1272,6 +1269,13 @@ public:
                                               complementary_apexZ0, z_top_min,
                                               1, env.num_layers, i + 1)));
             }
+
+            DEBUG_PRINT_ALL(
+                // DEBUG: print current_z_i_index
+                for (int i = 0; i < current_z_i_index.size(); i++) {
+                  cout << "current_z_i_index[" << i
+                       << "]: " << current_z_i_index[i] << endl;
+                })
 
             if (z_top_min == previous_z_top_min) {
               current_z_top_index += 1;
@@ -1296,6 +1300,12 @@ public:
               }
             }
 
+            DEBUG_PRINT_ALL( // DEBUG: print new_z_i_index
+                for (int i = 0; i < new_z_i_index.size(); i++) {
+                  cout << "new_z_i_index[" << i << "]: " << new_z_i_index[i]
+                       << endl;
+                })
+
             int x = (int)data->array[env.num_layers - 1].size() - 1;
             current_z_top_index =
                 min(current_z_top_index,
@@ -1305,6 +1315,12 @@ public:
               new_z_i_index[i] =
                   min(new_z_i_index[i], (float)data->array[i].size() - 1);
             }
+
+            DEBUG_PRINT_ALL( // DEBUG: print new_z_i_index
+                for (int i = 0; i < new_z_i_index.size(); i++) {
+                  cout << "new_z_i_index[" << i << "]: " << new_z_i_index[i]
+                       << endl;
+                })
 
             for (int i = 0; i < new_z_i_index.size(); i++) {
               new_z_i_index[i] = max(new_z_i_index[i], (float)0.0);
@@ -1316,6 +1332,11 @@ public:
               new_z_i.push_back(data->array[i][new_z_i_index[i]].z);
             }
 
+            DEBUG_PRINT_ALL( // DEBUG: print new_z_i
+                for (int i = 0; i < new_z_i.size(); i++) {
+                  cout << "new_z_i[" << i << "]: " << new_z_i[i] << endl;
+                })
+
             vector<float> new_z_i_atTop;
 
             for (int i = 1; i < env.num_layers; i++) {
@@ -1324,6 +1345,13 @@ public:
                                               complementary_apexZ0, new_z_i[i],
                                               1, i + 1, env.num_layers));
             }
+
+            DEBUG_PRINT_ALL(
+                // DEBUG: print new_z_i_atTop
+                for (int i = 0; i < new_z_i_atTop.size(); i++) {
+                  cout << "new_z_i_atTop[" << i << "]: " << new_z_i_atTop[i]
+                       << endl;
+                })
 
             int layerWithSmallestShift = 0;
             float layerSMin = INT_MAX;
@@ -1337,12 +1365,18 @@ public:
 
             layerWithSmallestShift += 1;
 
-            for (int i = 0; i < env.num_layers - 1; i++) {
+            DEBUG_PRINT_ALL( // DEBUG: print layerSMin and
+                             // layerWithSmallestShift
+                cout << "layerSMin: " << layerSMin
+                     << " layerWithSmallestShift: " << layerWithSmallestShift
+                     << endl;)
+
+            DEBUG_PRINT_ALL(for (int i = 0; i < env.num_layers - 1; i++) {
               cout << i + 1 << " new_z_i_atTop: " << new_z_i_atTop[i]
                    << " shift_i_ztop: " << new_z_i_atTop[i] - previous_z_top_min
                    << " layerWithSmallestShift: " << layerWithSmallestShift
                    << endl;
-            }
+            })
 
             z_top_min = data->array[env.num_layers - 1][current_z_top_index].z;
             z_top_min = new_z_i_atTop[layerWithSmallestShift - 1];
@@ -1366,17 +1400,22 @@ public:
               z_top_min = new_z_i_atTop[env.num_layers - 2];
             }
 
-            cout << " new_def_z_top_min_diff: "
-                 << z_top_min -
-                        data->array[env.num_layers - 1][current_z_top_index].z
-                 << endl;
+            DEBUG_PRINT_ALL( // DEBUG: print z_top_min
+                cout << "z_top_min: " << z_top_min << endl;)
 
-            cout << " new_ztop_index: " << current_z_top_index
-                 << " new_z_i_index: " << new_z_i_index[0] << " "
-                 << new_z_i_index[1] << " " << new_z_i_index[2] << " "
-                 << new_z_i_index[3] << " " << new_z_i_index[4]
-                 << " new_z_top_min: " << z_top_min
-                 << " shift_ztop: " << z_top_min - previous_z_top_min << endl;
+            DEBUG_PRINT_ALL(
+                cout << " new_def_z_top_min_diff: "
+                     << z_top_min -
+                            data->array[env.num_layers - 1][current_z_top_index]
+                                .z
+                     << endl;
+
+                cout << " new_ztop_index: " << current_z_top_index
+                     << " new_z_i_index: " << new_z_i_index[0] << " "
+                     << new_z_i_index[1] << " " << new_z_i_index[2] << " "
+                     << new_z_i_index[3] << " " << new_z_i_index[4]
+                     << " new_z_top_min: " << z_top_min << " shift_ztop: "
+                     << z_top_min - previous_z_top_min << endl;)
 
             int nPatchesAtComplementary = patches.size();
 
@@ -1394,9 +1433,20 @@ public:
               cout << "deleted complementary: "
                    << patches[patches.size() - 1].d_corner[0] << " "
                    << patches[patches.size() - 1].d_corner[1] << endl;
+              /**
+               * TODO: resume here
+               */
 
               delete_patch(patches.size() - 1); // write delete patch
               n_patches -= 1;
+            }
+
+            cout << "num_patches: " << patches.size() << endl;
+            exit(0);
+
+            if (n_patches == 2) {
+              cout << "patch 2 exit" << endl;
+              exit(0);
             }
 
             makePatch_alignedToLine(complementary_apexZ0, z_top_min, ppl, true);
