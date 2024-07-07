@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" name="ParticleCoverHLS" top="system_top">
+<project xmlns="com.autoesl.autopilot.project" name="PartitionAcceleratorHLS" top="system_top">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
@@ -6,12 +6,13 @@
     </Simulation>
     <files xmlns="">
         <file name="../test/test_system.cpp" sc="0" tb="1" cflags=" -I../include -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="ParticleCoverHLS/src/types.cpp" sc="0" tb="false" cflags="-IC:/Projects/ParticleCoverHLS/include" csimflags="" blackbox="false"/>
-        <file name="ParticleCoverHLS/src/system.cpp" sc="0" tb="false" cflags="-IC:/Projects/ParticleCoverHLS/include" csimflags="" blackbox="false"/>
-        <file name="ParticleCoverHLS/src/patch_buffer.cpp" sc="0" tb="false" cflags="-IC:/Projects/ParticleCoverHLS/include" csimflags="-IC:/Projects/ParticleCoverHLS/include" blackbox="false"/>
-        <file name="ParticleCoverHLS/src/file_reader.cpp" sc="0" tb="false" cflags="-IC:/Projects/ParticleCoverHLS/include" csimflags="" blackbox="false"/>
+        <file name="PartitionAcceleratorHLS/src/types.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
+        <file name="PartitionAcceleratorHLS/src/system.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
+        <file name="PartitionAcceleratorHLS/src/patch_buffer.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="file_reader.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
+        <solution name="solution1" status="active"/>
         <solution name="solution1" status="active"/>
         <solution name="solution1" status="active"/>
     </solutions>
