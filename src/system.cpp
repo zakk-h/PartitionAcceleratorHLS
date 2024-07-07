@@ -551,15 +551,29 @@ int get_index_from_z(int layer, float_value_t z_value,
   float_value_t minVal = FLOAT_VALUE_T_MAX;
   int index = 0;
 
+  DEBUG_PRINT_ALL(
+      // print layer_data
+      for (int i = 0; i < num_points[layer]; i++) {
+        cout << "layer_data[" << i << "]: " << point_get_z(points[layer][i])
+             << endl;
+      })
+
 loop_find_minimum_z_values_from_layer_with_index:
   for (int i = 0; i < num_points[layer]; i++) {
-    if (std::abs((float)point_get_z(points[layer][i] - z_value)) <
+    if (std::abs((float)point_get_z(points[layer][i]) - (float)z_value) <
         std::abs((float)minVal)) {
-      minVal = (float_value_t)std::abs(
-          (float)point_get_z(points[layer][i] - z_value));
+      minVal = (float_value_t)std::abs((float)point_get_z(points[layer][i]) -
+                                       (float)z_value);
       index = i;
+
+      DEBUG_PRINT_ALL(cout << "updated: minVal: " << minVal
+                           << " index: " << index << endl;)
     }
   }
+
+  DEBUG_PRINT_ALL(cout << "index: " << index << endl;
+                  cout << "z_value: " << z_value << endl;
+                  cout << "minVal: " << minVal << endl;)
 
   return index;
 }
@@ -882,19 +896,18 @@ _shadowquilt_column_loop:
 
   loop_adjust_complementary_patch:
     while (cond_loop_adjust_complementary_patch) {
-      cout << endl;
-      if (num_patches > 2) {
+      DEBUG_PRINT_ALL(cout << endl; if (num_patches > 2) {
         // this part not tested yet
         cout << 'roginal c: ' << original_c << " "
              << c_corner[PREVIOUS_PATCH_INDEX][1]
              << " || original d: " << original_d << " "
              << d_corner[PREVIOUS_PATCH_INDEX][1] << endl;
-      }
+      })
 
-      cout << "complementary_a: " << complementary_a << " "
-           << a_corner[LATEST_PATCH_INDEX][1]
-           << " || complementary_b: " << complementary_b << " "
-           << b_corner[LATEST_PATCH_INDEX][1] << endl;
+      DEBUG_PRINT_ALL(cout << "complementary_a: " << complementary_a << " "
+                           << a_corner[LATEST_PATCH_INDEX][1]
+                           << " || complementary_b: " << complementary_b << " "
+                           << b_corner[LATEST_PATCH_INDEX][1] << endl;)
 
       current_z_top_index = get_index_from_z(
           NUM_LAYERS - 1, z_top_min, points, num_points, patch_buffer,

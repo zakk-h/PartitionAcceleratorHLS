@@ -806,14 +806,28 @@ public:
     double minVal = 1000000;
     int index = 0;
 
+    DEBUG_PRINT_ALL(
+        // print layer_data
+        for (int i = 0; i < layer_data.size(); i++) {
+          cout << "layer_data[" << i << "]: " << layer_data[i] << endl;
+        })
+
     for (int i = 0; i < layer_data.size(); i++) {
       if (abs(layer_data[i] - z_value) < abs(minVal)) {
         minVal = abs(layer_data[i] - z_value);
         index = i;
+
+        DEBUG_PRINT_ALL(cout << "updated: minVal: " << minVal
+                             << " index: " << index << endl;)
       }
     }
 
     if (alignment == "closest") {
+      DEBUG_PRINT_ALL(cout << "reached closest." << endl;
+                      cout << "index: " << index << endl;
+                      cout << "z_value: " << z_value << endl;
+                      cout << "minVal: " << minVal << endl;)
+
       return index;
     }
 
@@ -1215,17 +1229,20 @@ public:
                  (current_z_top_index <
                   (int)(data->array[env.num_layers - 1].size() - 1)) &&
                  !(repeat_patch) && !(repeat_original)) {
-            cout << endl;
-            if (patches.size() > 2) {
+
+            DEBUG_PRINT_ALL(if (patches.size() > 2) {
+              cout << endl;
               cout << "original c: " << original_c << " "
                    << patches[patches.size() - 2].c_corner[1]
                    << " || original d: " << original_d << " "
                    << patches[patches.size() - 2].d_corner[1] << endl;
-            }
-            cout << "complementary_a: " << complementary_a << " "
-                 << patches[patches.size() - 1].a_corner[1]
-                 << " || complementary_b: " << complementary_b << " "
-                 << patches[patches.size() - 1].b_corner[1] << endl;
+            })
+
+            DEBUG_PRINT_ALL(
+                cout << "complementary_a: " << complementary_a << " "
+                     << patches[patches.size() - 1].a_corner[1]
+                     << " || complementary_b: " << complementary_b << " "
+                     << patches[patches.size() - 1].b_corner[1] << endl;)
 
             // TODO: implement get_index_from_z
 
