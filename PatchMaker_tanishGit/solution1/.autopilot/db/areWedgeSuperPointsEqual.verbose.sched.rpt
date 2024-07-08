@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'areWedgeSuperPointsEqual'
 ================================================================
-* Date:           Mon Jul  1 18:53:15 2024
+* Date:           Sun Jul  7 14:42:04 2024
 
 * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
 * Project:        PatchMaker_tanishGit
@@ -212,7 +212,7 @@ The critical path consists of the following:
  <State 4>: 6.81ns
 The critical path consists of the following:
 	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277) [46]  (4.65 ns)
-	'add' operation ('sh', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:510) [53]  (0.735 ns)
+	'sub' operation ('sub_ln1311') [55]  (0.735 ns)
 	'select' operation ('ush') [57]  (0.299 ns)
 	'lshr' operation ('r.V') [60]  (0 ns)
 	'select' operation ('val') [65]  (0 ns)
@@ -221,7 +221,7 @@ The critical path consists of the following:
  <State 5>: 6.93ns
 The critical path consists of the following:
 	'sitodp' operation ('x', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\cmath:277) [70]  (4.65 ns)
-	'add' operation ('sh', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:510) [77]  (0.735 ns)
+	'sub' operation ('sub_ln1311_6') [79]  (0.735 ns)
 	'select' operation ('ush') [81]  (0.299 ns)
 	'shl' operation ('r.V') [85]  (0 ns)
 	'select' operation ('val') [89]  (0 ns)

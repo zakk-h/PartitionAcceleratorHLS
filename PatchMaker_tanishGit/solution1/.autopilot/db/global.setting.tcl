@@ -44,8 +44,8 @@ set SCTraceOption all
 set TargetInfo xcvu19p:-fsvb3824:-2-e
 set SourceFiles {sc {} c ../../patchMaker.cpp}
 set SourceFlags {sc {} c -IC:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/patchMakerHeader}
-set DirectiveFile C:/Users/rapiduser/Desktop/tanishGitHub/tanishPatchMakerHLS/PatchMaker_tanishGit/solution1/solution1.directive
-set TBFiles {verilog {../../tanishTestBench/wedgeData_v3_128.txt ../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} bc {../../tanishTestBench/wedgeData_v3_128.txt ../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} sc {../../tanishTestBench/wedgeData_v3_128.txt ../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} vhdl {../../tanishTestBench/wedgeData_v3_128.txt ../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} c {} cas {../../tanishTestBench/wedgeData_v3_128.txt ../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt}}
+set DirectiveFile C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/PatchMaker_tanishGit/solution1/solution1.directive
+set TBFiles {verilog {../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} bc {../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} sc {../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} vhdl {../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt} c {} cas {../../tanishTestBench/test_bench.cpp ../../tanishTestBench/cppOutputRef.txt ../../tanishTestBench/cppOutput.txt}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
@@ -53,7 +53,7 @@ set TBTops {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set TBInstNames {verilog {} bc {} sc {} vhdl {} c {} cas {}}
 set XDCFiles {}
 set ExtraGlobalOptions {"area_timing" 1 "clock_gate" 1 "impl_flow" map "power_gate" 0}
-set TBTVFileNotFound {}
+set TBTVFileNotFound ../../wedgeData_v3_128.txt
 set AppFile ../hls.app
 set ApsFile solution1.aps
 set AvePath ../..

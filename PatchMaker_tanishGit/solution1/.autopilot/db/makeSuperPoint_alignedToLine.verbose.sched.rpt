@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'makeSuperPoint_alignedToLine'
 ================================================================
-* Date:           Mon Jul  1 18:53:01 2024
+* Date:           Sun Jul  7 14:41:55 2024
 
 * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
 * Project:        PatchMaker_tanishGit
@@ -1011,7 +1011,7 @@ The critical path consists of the following:
 The critical path consists of the following:
 	'sub' operation ('sub_ln1311') [101]  (0.705 ns)
 	'select' operation ('ush') [103]  (0.303 ns)
-	'lshr' operation ('r.V') [106]  (0 ns)
+	'shl' operation ('r.V') [107]  (0 ns)
 	'select' operation ('val') [111]  (1.05 ns)
 	'sub' operation ('result.V') [112]  (1.15 ns)
 	'select' operation ('result.V', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) [113]  (0.411 ns)
@@ -1072,7 +1072,7 @@ The critical path consists of the following:
 The critical path consists of the following:
 	'add' operation ('sh', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:510) [190]  (0.735 ns)
 	'select' operation ('ush') [194]  (0.299 ns)
-	'shl' operation ('r.V') [198]  (0 ns)
+	'lshr' operation ('r.V') [197]  (0 ns)
 	'select' operation ('val') [202]  (1.13 ns)
 	'icmp' operation ('icmp_ln1163', patchMaker.cpp:1163) [203]  (1.06 ns)
 	'select' operation ('lbVal', patchMaker.cpp:1163) [206]  (0.411 ns)
@@ -1098,7 +1098,7 @@ The critical path consists of the following:
 The critical path consists of the following:
 	'phi' operation ('j', patchMaker.cpp:1250) with incoming values : ('sext_ln1250', patchMaker.cpp:1250) ('select_ln1250_2', patchMaker.cpp:1250) [278]  (0 ns)
 	'add' operation ('add_ln1250_2', patchMaker.cpp:1250) [289]  (1.15 ns)
-	'shl' operation ('shl_ln54_21', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [293]  (0 ns)
+	'shl' operation ('shl_ln54_22', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [294]  (0 ns)
 	'sub' operation ('sub_ln54_17', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [295]  (1.15 ns)
 	'select' operation ('select_ln1186_3', patchMaker.cpp:1186) [296]  (0 ns)
 	'add' operation ('add_ln54_7', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [312]  (1.15 ns)
@@ -1181,7 +1181,7 @@ The critical path consists of the following:
 The critical path consists of the following:
 	'phi' operation ('j', patchMaker.cpp:1197) with incoming values : ('sext_ln1197', patchMaker.cpp:1197) ('select_ln1197_2', patchMaker.cpp:1197) [529]  (0 ns)
 	'add' operation ('add_ln1197_1', patchMaker.cpp:1197) [540]  (1.15 ns)
-	'shl' operation ('shl_ln54_20', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [545]  (0 ns)
+	'shl' operation ('shl_ln54_19', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [544]  (0 ns)
 	'sub' operation ('sub_ln54_14', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [546]  (1.15 ns)
 	'select' operation ('select_ln1186_1', patchMaker.cpp:1186) [547]  (0 ns)
 	'add' operation ('add_ln54_4', C:/Xilinx/Vitis_HLS/2020.2/tps/mingw/6.2.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\6.2.0\include\c++\array:54) [563]  (1.15 ns)

@@ -186,10 +186,10 @@ set RtlHierarchyInfo {[
 					{"ID" : "138", "SubInstance" : "grp_makePatch_alignedToLine_fu_573", "Port" : "GDn_points"}]},
 			{"Name" : "patches_superpoints", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "183", "SubInstance" : "grp_areWedgeSuperPointsEqual_fu_619", "Port" : "wsp1_2"},
 					{"ID" : "3", "SubInstance" : "grp_makeThirdPatch_fu_509", "Port" : "patches_superpoints"},
 					{"ID" : "82", "SubInstance" : "grp_solveComplmentaryPatch_fu_538", "Port" : "patches_superpoints"},
-					{"ID" : "138", "SubInstance" : "grp_makePatch_alignedToLine_fu_573", "Port" : "patches_superpoints"}]},
+					{"ID" : "138", "SubInstance" : "grp_makePatch_alignedToLine_fu_573", "Port" : "patches_superpoints"},
+					{"ID" : "183", "SubInstance" : "grp_areWedgeSuperPointsEqual_fu_619", "Port" : "wsp1_2"}]},
 			{"Name" : "patches_parameters", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
 					{"ID" : "3", "SubInstance" : "grp_makeThirdPatch_fu_509", "Port" : "patches_parameters"},
@@ -205,8 +205,8 @@ set RtlHierarchyInfo {[
 				"SubConnect" : [
 					{"ID" : "3", "SubInstance" : "grp_makeThirdPatch_fu_509", "Port" : "radii"},
 					{"ID" : "82", "SubInstance" : "grp_solveComplmentaryPatch_fu_538", "Port" : "radii"},
-					{"ID" : "138", "SubInstance" : "grp_makePatch_alignedToLine_fu_573", "Port" : "radii"},
-					{"ID" : "174", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_602", "Port" : "radii"}]},
+					{"ID" : "174", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_602", "Port" : "radii"},
+					{"ID" : "138", "SubInstance" : "grp_makePatch_alignedToLine_fu_573", "Port" : "radii"}]},
 			{"Name" : "trapezoid_edges", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "3", "SubInstance" : "grp_makeThirdPatch_fu_509", "Port" : "trapezoid_edges"},
@@ -234,8 +234,8 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "n_patches", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "80", "SubInstance" : "grp_delete_patch_fu_506", "Port" : "n_patches"},
-					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "n_patches"}]},
+					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "n_patches"},
+					{"ID" : "80", "SubInstance" : "grp_delete_patch_fu_506", "Port" : "n_patches"}]},
 			{"Name" : "GDarray", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "GDarray"}]},
@@ -244,14 +244,14 @@ set RtlHierarchyInfo {[
 					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "GDn_points"}]},
 			{"Name" : "patches_superpoints", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "80", "SubInstance" : "grp_delete_patch_fu_506", "Port" : "patches_superpoints"},
 					{"ID" : "40", "SubInstance" : "grp_getShadows_fu_488", "Port" : "wp_superpoints_2"},
-					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "patches_superpoints"}]},
+					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "patches_superpoints"},
+					{"ID" : "80", "SubInstance" : "grp_delete_patch_fu_506", "Port" : "patches_superpoints"}]},
 			{"Name" : "patches_parameters", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "80", "SubInstance" : "grp_delete_patch_fu_506", "Port" : "patches_parameters"},
 					{"ID" : "40", "SubInstance" : "grp_getShadows_fu_488", "Port" : "wp_parameters_2"},
-					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "patches_parameters"}]},
+					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_463", "Port" : "patches_parameters"},
+					{"ID" : "80", "SubInstance" : "grp_delete_patch_fu_506", "Port" : "patches_parameters"}]},
 			{"Name" : "lastPatchIndex", "Type" : "None", "Direction" : "I"},
 			{"Name" : "z_top_min", "Type" : "None", "Direction" : "I"},
 			{"Name" : "z_top_max", "Type" : "None", "Direction" : "I"},
@@ -447,8 +447,8 @@ set RtlHierarchyInfo {[
 				"SubConnect" : [
 					{"ID" : "50", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_300", "Port" : "radii"},
 					{"ID" : "59", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_313", "Port" : "radii"},
-					{"ID" : "68", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_326", "Port" : "radii"},
-					{"ID" : "41", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_287", "Port" : "radii"}]}]},
+					{"ID" : "41", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_287", "Port" : "radii"},
+					{"ID" : "68", "SubInstance" : "grp_straightLineProjectorFromLayerIJtoK_fu_326", "Port" : "radii"}]}]},
 	{"ID" : "41", "Level" : "4", "Path" : "`AUTOTB_DUT_INST.grp_solveNextPatchPair_fu_205.grp_makeThirdPatch_fu_509.grp_getShadows_fu_488.grp_straightLineProjectorFromLayerIJtoK_fu_287", "Parent" : "40", "Child" : ["42", "43", "44", "45", "46", "47", "48", "49"],
 		"CDFG" : "straightLineProjectorFromLayerIJtoK",
 		"Protocol" : "ap_ctrl_hs",
@@ -600,8 +600,8 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "n_patches", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "n_patches"},
-					{"ID" : "125", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "n_patches"}]},
+					{"ID" : "125", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "n_patches"},
+					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "n_patches"}]},
 			{"Name" : "GDarray", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "GDarray"},
@@ -612,13 +612,13 @@ set RtlHierarchyInfo {[
 					{"ID" : "122", "SubInstance" : "grp_get_index_from_z_fu_797", "Port" : "GDn_points"}]},
 			{"Name" : "patches_superpoints", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_superpoints"},
 					{"ID" : "125", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "patches_superpoints"},
-					{"ID" : "127", "SubInstance" : "grp_areWedgeSuperPointsEqual_fu_839", "Port" : "wsp1_2"}]},
+					{"ID" : "127", "SubInstance" : "grp_areWedgeSuperPointsEqual_fu_839", "Port" : "wsp1_2"},
+					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_superpoints"}]},
 			{"Name" : "patches_parameters", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_parameters"},
-					{"ID" : "125", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "patches_parameters"}]},
+					{"ID" : "125", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "patches_parameters"},
+					{"ID" : "86", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_parameters"}]},
 			{"Name" : "ppl", "Type" : "None", "Direction" : "I"},
 			{"Name" : "nPatchesAtOriginal", "Type" : "None", "Direction" : "I"},
 			{"Name" : "previous_z_top_min_read", "Type" : "None", "Direction" : "I"},

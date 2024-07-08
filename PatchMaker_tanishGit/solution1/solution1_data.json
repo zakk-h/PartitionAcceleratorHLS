@@ -299,7 +299,15 @@
   },
   "HlsSolution": {
     "FlowTarget": "vivado",
-    "DirectiveTcl": ["set_directive_top makePatches_ShadowQuilt_fromEdges -name makePatches_ShadowQuilt_fromEdges"],
+    "ConfigTcl": [
+      "config_export -format=ip_catalog",
+      "config_export -output=C:\/Users\/rapiduser\/Desktop\/tanishGitHub\/tanishPatchMakerHLS\/makePatches_ShadowQuilt_fromEdges.zip",
+      "config_export -rtl=verilog"
+    ],
+    "DirectiveTcl": [
+      "set_directive_top makePatches_ShadowQuilt_fromEdges -name makePatches_ShadowQuilt_fromEdges",
+      "set_directive_top makePatches_ShadowQuilt_fromEdges -name makePatches_ShadowQuilt_fromEdges"
+    ],
     "ProfileOption": "0",
     "ProfileType": "none",
     "KernelName": "makePatches_ShadowQuilt_fromEdges"
@@ -428,7 +436,7 @@
     ],
     "DesignXml": ".autopilot\/db\/makePatches_ShadowQuilt_fromEdges.design.xml",
     "DebugDir": ".debug",
-    "ProtoInst": ["C:\/Users\/rapiduser\/Desktop\/tanishGitHub\/tanishPatchMakerHLS\/PatchMaker_tanishGit\/solution1\/.debug\/makePatches_ShadowQuilt_fromEdges.protoinst"]
+    "ProtoInst": ["C:\/Users\/zakkh\/Dark_Matter\/PartitionAcceleratorHLS\/PatchMaker_tanishGit\/solution1\/.debug\/makePatches_ShadowQuilt_fromEdges.protoinst"]
   },
   "SubcoreInfo": {
     "HasXpmMemory": false,
@@ -1943,7 +1951,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2024-07-01 18:55:06 -0400",
+    "Time": "2024-07-07 14:43:08 -0400",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

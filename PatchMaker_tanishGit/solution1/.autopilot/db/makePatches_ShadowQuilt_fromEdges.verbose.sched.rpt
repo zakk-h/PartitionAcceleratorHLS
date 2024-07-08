@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'makePatches_ShadowQuilt_fromEdges'
 ================================================================
-* Date:           Mon Jul  1 18:53:55 2024
+* Date:           Sun Jul  7 14:42:27 2024
 
 * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
 * Project:        PatchMaker_tanishGit
@@ -221,7 +221,7 @@ The critical path consists of the following:
 
  <State 6>: 6.22ns
 The critical path consists of the following:
-	'sub' operation ('sub_ln1311') [60]  (0.705 ns)
+	'add' operation ('sh', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:341) [58]  (0.705 ns)
 	'select' operation ('ush') [62]  (0.303 ns)
 	'shl' operation ('r.V') [66]  (0 ns)
 	'select' operation ('val') [70]  (1.05 ns)

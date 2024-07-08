@@ -234,8 +234,8 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "n_patches", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "n_patches"},
-					{"ID" : "43", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "n_patches"}]},
+					{"ID" : "43", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "n_patches"},
+					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "n_patches"}]},
 			{"Name" : "GDarray", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "GDarray"},
@@ -246,13 +246,13 @@ set RtlHierarchyInfo {[
 					{"ID" : "40", "SubInstance" : "grp_get_index_from_z_fu_797", "Port" : "GDn_points"}]},
 			{"Name" : "patches_superpoints", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_superpoints"},
 					{"ID" : "43", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "patches_superpoints"},
-					{"ID" : "45", "SubInstance" : "grp_areWedgeSuperPointsEqual_fu_839", "Port" : "wsp1_2"}]},
+					{"ID" : "45", "SubInstance" : "grp_areWedgeSuperPointsEqual_fu_839", "Port" : "wsp1_2"},
+					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_superpoints"}]},
 			{"Name" : "patches_parameters", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_parameters"},
-					{"ID" : "43", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "patches_parameters"}]},
+					{"ID" : "43", "SubInstance" : "grp_delete_patch_fu_811", "Port" : "patches_parameters"},
+					{"ID" : "4", "SubInstance" : "grp_makePatch_alignedToLine_fu_772", "Port" : "patches_parameters"}]},
 			{"Name" : "ppl", "Type" : "None", "Direction" : "I"},
 			{"Name" : "nPatchesAtOriginal", "Type" : "None", "Direction" : "I"},
 			{"Name" : "previous_z_top_min_read", "Type" : "None", "Direction" : "I"},

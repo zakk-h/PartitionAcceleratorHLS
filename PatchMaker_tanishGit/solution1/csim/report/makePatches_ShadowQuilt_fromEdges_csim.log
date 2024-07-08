@@ -1,8 +1,11 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Compiling ../../../../tanishTestBench/test_bench.cpp in debug mode
-   Compiling ../../../../patchMaker.cpp in debug mode
-   Generating csim.exe
-0Test passed !
-INFO: [SIM 1] CSim done with 0 errors.
+csim.mk:72: recipe for target 'obj/test_bench.o' failed
+../../../../tanishTestBench/test_bench.cpp:1:88: fatal error: \Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\patchMakerHeader.h: No such file or directory
+ #include "\Users\rapiduser\Desktop\tanishGitHub\tanishPatchMakerHLS\patchMakerHeader.h"
+                                                                                        ^
+compilation terminated.
+make: *** [obj/test_bench.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
 INFO: [SIM 3] *************** CSIM finish ***************

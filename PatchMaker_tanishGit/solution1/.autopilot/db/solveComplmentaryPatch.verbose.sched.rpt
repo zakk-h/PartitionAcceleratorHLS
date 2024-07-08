@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'solveComplmentaryPatch'
 ================================================================
-* Date:           Mon Jul  1 18:53:20 2024
+* Date:           Sun Jul  7 14:42:09 2024
 
 * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
 * Project:        PatchMaker_tanishGit
@@ -1110,9 +1110,9 @@ The critical path consists of the following:
 	'fcmp' operation ('tmp_3', patchMaker.cpp:894) [167]  (1.65 ns)
 	'and' operation ('and_ln894_1', patchMaker.cpp:894) [168]  (0.122 ns)
 	'select' operation ('x', patchMaker.cpp:894) [169]  (0.227 ns)
-	'sub' operation ('sub_ln1311') [179]  (0.705 ns)
+	'add' operation ('sh', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:341) [177]  (0.705 ns)
 	'select' operation ('ush') [181]  (0.303 ns)
-	'shl' operation ('r.V') [185]  (0 ns)
+	'lshr' operation ('r.V') [184]  (0 ns)
 	'select' operation ('val') [189]  (1.05 ns)
 	'sub' operation ('result.V') [190]  (0.88 ns)
 	'select' operation ('result.V', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) [191]  (0.227 ns)
@@ -1143,7 +1143,7 @@ The critical path consists of the following:
 	'fcmp' operation ('tmp_7', patchMaker.cpp:899) [215]  (1.65 ns)
 	'and' operation ('and_ln899', patchMaker.cpp:899) [216]  (0 ns)
 	'select' operation ('data.V', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:312) [217]  (0.227 ns)
-	'sub' operation ('sub_ln1311_2') [226]  (0.705 ns)
+	'add' operation ('sh', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/src/hls\utils/x_hls_utils.h:341) [224]  (0.705 ns)
 	'select' operation ('ush') [228]  (0.303 ns)
 	'lshr' operation ('r.V') [231]  (0 ns)
 	'select' operation ('val') [236]  (1.05 ns)

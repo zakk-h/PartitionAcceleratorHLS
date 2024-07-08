@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'straightLineProjectorFromLayerIJtoK'
 ================================================================
-* Date:           Mon Jul  1 18:53:04 2024
+* Date:           Sun Jul  7 14:41:57 2024
 
 * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
 * Project:        PatchMaker_tanishGit
@@ -270,7 +270,7 @@ The critical path consists of the following:
 The critical path consists of the following:
 	'sub' operation ('sub_ln1311') [53]  (0.705 ns)
 	'select' operation ('ush') [55]  (0.303 ns)
-	'shl' operation ('r.V') [59]  (0 ns)
+	'lshr' operation ('r.V') [58]  (0 ns)
 	'select' operation ('val') [63]  (1.05 ns)
 	'sub' operation ('result.V') [64]  (1.15 ns)
 	'select' operation ('result.V', r:/ci/prod/2020.2/rdi_builds/continuous/2020_11_18_3064766/src/shared/hls/clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:59) [65]  (0.411 ns)
