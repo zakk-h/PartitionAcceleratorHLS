@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="synth_1" LaunchPart="xcvu440-flga2892-1-i" LaunchTime="1720543446">
+  <File Type="PA-TCL" Name="makePatches_ShadowQuilt_fromEdges.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="makePatches_ShadowQuilt_fromEdges_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="makePatches_ShadowQuilt_fromEdges_reports.tcl"/>
+  <File Type="RDS-RDS" Name="makePatches_ShadowQuilt_fromEdges.vds"/>
+  <File Type="RDS-UTIL" Name="makePatches_ShadowQuilt_fromEdges_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="makePatches_ShadowQuilt_fromEdges_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="makePatches_ShadowQuilt_fromEdges.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="makePatches_ShadowQuilt_fromEdges_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="makePatches_ShadowQuilt_fromEdges_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_add_patch6.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_dcmp_0_no_dsp_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_fadd_1_full_dsp_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_fcmp_0_no_dsp_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_fdiv_4_no_dsp_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_fmul_0_max_dsp_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_sitodp_0_no_dsp_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_sitofp_0_no_dsp_32.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/ip/makePatches_ShadowQuilt_fromEdges_ap_sitofp_0_no_dsp_64.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_areWedgeSuperPointsEqual.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_dcmp_64ns_64ns_1_2_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_delete_patch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_fadd_32ns_32ns_32_3_full_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_fcmp_32ns_32ns_1_2_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_fdiv_32ns_32ns_32_6_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_fmul_32ns_32ns_32_2_max_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_getShadows.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_get_acceptanceCorners.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_get_index_from_z.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makePatch_alignedToLine.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makePatch_alignedToLine_NPpatches_parameters.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makePatch_alignedToLine_NPpatches_superpoints.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makePatch_alignedToLine_init_patch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makeSuperPoint_alignedToLine.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makeSuperPoint_alignedToLine_radii.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makeSuperPoint_alignedToLine_row_list.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makeSuperPoint_alignedToLine_trapezoid_edges.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_makeThirdPatch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mul_64ns_3ns_66_1_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mul_64ns_66ns_129_1_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mul_64ns_9ns_72_1_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mul_64s_64s_64_1_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mul_mul_15s_11ns_15_4_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mul_mul_5ns_11ns_15_4_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_mux_42_64_1_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_sitodp_64ns_64_2_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_sitofp_32ns_32_2_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_sitofp_32s_32_2_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_sitofp_64ns_32_2_no_dsp_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveComplmentaryPatch.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveComplmentaryPatch_current_z_i_index.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveComplmentaryPatch_new_z_i.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveComplmentaryPatch_new_z_i_index.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveNextPatchPair.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveNextPatchPair_temp.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_straightLineProjectorFromLayerIJtoK.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_straightLineProjectorFromLayerIJtoK_radii.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="makePatches_ShadowQuilt_fromEdges"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PPRDIR/../makePatches_ShadowQuilt_fromEdges/constraints/makePatches_ShadowQuilt_fromEdges_ooc.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+    <Step Id="synth_design"/>
+  </Strategy>
+</GenRun>
