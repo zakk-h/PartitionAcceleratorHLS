@@ -8,7 +8,7 @@
         <file name="../test/test_system.cpp" sc="0" tb="1" cflags=" -I../include -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
         <file name="PartitionAcceleratorHLS/src/types.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
         <file name="PartitionAcceleratorHLS/src/system.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
-        <file name="PartitionAcceleratorHLS/src/patch_buffer.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" blackbox="false"/>
+        <file name="PartitionAcceleratorHLS/src/patch_buffer.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
         <file name="file_reader.cpp" sc="0" tb="false" cflags="-IPartitionAcceleratorHLS/include -Wno-unknown-pragmas" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
