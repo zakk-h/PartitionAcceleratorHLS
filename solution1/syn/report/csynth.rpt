@@ -1,0 +1,60 @@
+
+
+================================================================
+== Synthesis Summary Report of 'system_top'
+================================================================
++ General Information: 
+    * Date:           Tue Jul  9 11:01:16 2024
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+    * Project:        PartitionAcceleratorHLS
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu11p-flga2577-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    |                                     Modules                                    |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |             |             |     |
+    |                                     & Loops                                    |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |      FF     |     LUT     | URAM|
+    +--------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+    |+ system_top                                                                    |  Timing|   4.82|        -|          -|         -|        -|     -|        no|  14 (~0%)|  34 (~0%)|  19995 (~0%)|   55711 (4%)|    -|
+    | + grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283                       |  Timing|   4.82|        -|          -|         -|        -|     -|        no|  12 (~0%)|  34 (~0%)|  19028 (~0%)|   55166 (4%)|    -|
+    |  + grp_alignedtoline_per_layer_loop3_fu_1250                                   |  Timing|   0.35|        -|          -|         -|        -|     -|        no|         -|  25 (~0%)|   3230 (~0%)|   17904 (1%)|    -|
+    |   + grp_p_find_boundaries_and_starting_index_and_value7_fu_922*                |  Timing|   0.35|        -|          -|         -|        -|     -|  dataflow|         -|   4 (~0%)|   2247 (~0%)|  10988 (~0%)|    -|
+    |    + grp_p_find_left_and_right_boundaries9_fu_90                               |  Timing|   0.35|        -|          -|         -|        -|     -|        no|         -|   2 (~0%)|   1116 (~0%)|   6634 (~0%)|    -|
+    |     o loop_find_left_and_right_boundaries                                      |      II|  -7.30|        -|          -|        16|        8|     -|       yes|         -|         -|            -|            -|    -|
+    |    + grp_p_find_starting_index_and_value8_fu_109                               |       -|  -0.00|        -|          -|         -|        -|     -|        no|         -|   2 (~0%)|    829 (~0%)|   4068 (~0%)|    -|
+    |     o loop_find_starting_index_and_value                                       |      II|  -7.30|        -|          -|         8|        3|     -|       yes|         -|         -|            -|            -|    -|
+    |    + call_ln342_p_find_boundaries_and_starting_index_and_value_entry25_fu_123  |       -|  -5.20|        0|      0.000|         -|        0|     -|        no|         -|         -|      2 (~0%)|     38 (~0%)|    -|
+    |  + grp_getParallelograms_fu_1285                                               |       -|  -0.33|      124|  1.503e+03|         -|      124|     -|        no|         -|         -|   6036 (~0%)|   7274 (~0%)|    -|
+    |   + grp_straightLineProjectorFromLayerIJtoK_fu_541                             |      II|  -0.63|       50|    605.996|         -|        1|     -|       yes|         -|         -|   4883 (~0%)|   3790 (~0%)|    -|
+    |   o loop_get_superpoint_min_z                                                  |       -|  -7.30|       16|    193.919|         2|        1|    16|       yes|         -|         -|            -|            -|    -|
+    |   o loop_get_superpoint_max_z                                                  |       -|  -7.30|       16|    193.919|         2|        1|    16|       yes|         -|         -|            -|            -|    -|
+    |   o loop_compute_parallelogram                                                 |      II|  -7.30|       86|  1.042e+03|        63|        8|     4|       yes|         -|         -|            -|            -|    -|
+    |  + grp_get_index_from_z_fu_1317                                                |  Timing|   4.82|        -|          -|         -|        -|     -|        no|         -|   2 (~0%)|   1007 (~0%)|   4809 (~0%)|    -|
+    |   o loop_find_minimum_z_values_from_layer_with_index                           |      II|  -7.30|        -|          -|         9|        2|     -|       yes|         -|         -|            -|            -|    -|
+    |  + grp_patch_buffer_add_patch2_fu_1330                                         |       -|  -3.60|       40|    484.797|         -|       40|     -|        no|         -|         -|     45 (~0%)|   2447 (~0%)|    -|
+    |  + grp_get_acceptanceCorners_fu_1341                                           |       -|  -4.95|       13|    157.559|         -|       13|     -|        no|         -|         -|    555 (~0%)|    967 (~0%)|    -|
+    |   o loop_calculate_min_max_element_of_corner_lists                             |       -|  -7.30|        4|     48.480|         2|        1|     4|       yes|         -|         -|            -|            -|    -|
+    |  o loop_write_patch_stream_layer_loop_write_patch_stream_superpoint            |       -|  -7.30|       80|    969.593|         2|        1|    80|       yes|         -|         -|            -|            -|    -|
+    |  o loop_get_superpoint_min_z                                                   |       -|  -7.30|       16|    193.919|         2|        1|    16|       yes|         -|         -|            -|            -|    -|
+    |  o loop_get_superpoint_min_z                                                   |       -|  -7.30|       16|    193.919|         2|        1|    16|       yes|         -|         -|            -|            -|    -|
+    |  o loop_write_patch_stream_layer_loop_write_patch_stream_superpoint            |       -|  -7.30|       80|    969.593|         2|        1|    80|       yes|         -|         -|            -|            -|    -|
+    |  o loop_adjust_complementary_patch                                             |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |   o loop_copy_z_values_to_current_z_array                                      |       -|  -7.30|        -|          -|         -|        -|     -|        no|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_952_1                                                           |       -|  -7.30|        5|     60.600|         2|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_967_2                                                           |       -|  -7.30|        5|     60.600|         2|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_974_3                                                           |       -|  -7.30|        5|     60.600|         2|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_987_4                                                           |       -|  -7.30|        9|    109.079|         6|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_997_5                                                           |       -|  -7.30|        8|     96.959|         5|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_1003_6                                                          |       -|  -7.30|        6|     72.719|         3|        1|     5|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_1013_7                                                          |       -|  -7.30|       54|    654.475|        52|        1|     4|       yes|         -|         -|            -|            -|    -|
+    |   o VITIS_LOOP_1027_8                                                          |       -|  -7.30|       12|    145.439|         9|        1|     4|       yes|         -|         -|            -|            -|    -|
+    | o Loop 1                                                                       |       -|  -7.30|        3|     36.360|         2|        1|     3|       yes|         -|         -|            -|            -|    -|
+    | o Loop 2                                                                       |       -|  -7.30|        3|     36.360|         2|        1|     3|       yes|         -|         -|            -|            -|    -|
+    | o Loop 3                                                                       |       -|  -7.30|        3|     36.360|         2|        1|     3|       yes|         -|         -|            -|            -|    -|
+    | o Loop 4                                                                       |       -|  -7.30|        3|     36.360|         1|        1|     3|       yes|         -|         -|            -|            -|    -|
+    +--------------------------------------------------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+-------------+-------------+-----+
+

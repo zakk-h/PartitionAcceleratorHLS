@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1720537258572">
+  <ports id="1" name="num_points" type="PortType" coreName="RAM" coreId="1735355503" bitwidth="32" iftype="IfTypeRegister" arraysize="5">
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="2" name="points" type="PortType" originalName="points" coreName="RAM" coreId="1735355503" bitwidth="128" iftype="IfTypeRegister" arraysize="2560">
+    <dataOutputObjs>call</dataOutputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="3" name="left_bound" type="PortType" originalName="left_bound.V" coreId="1836016431" bitwidth="32" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="4" name="right_bound" type="PortType" originalName="right_bound.V" coreId="1819242088" bitwidth="32" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="5" name="projectionToRow" type="PortType" coreId="791817776" bitwidth="32">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="6" name="start_index" type="PortType" originalName="start_index.V" coreId="1735355503" bitwidth="32" direction="DirOut">
+    <dataInputObjs>call</dataInputObjs>
+  </ports>
+  <ports id="7" name="start_value" type="PortType" originalName="start_value.V" coreId="1819242088" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="8" name="i" type="PortType" originalName="i" coreId="1735355503" bitwidth="3">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="12" name="lbVal_constprop" type="PortType" coreId="1735355503" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <ports id="13" name="rbVal_constprop" type="PortType" coreId="3174045600" bitwidth="32" direction="DirInOut">
+    <dataInputObjs>call</dataInputObjs>
+    <dataOutputObjs>call</dataOutputObjs>
+  </ports>
+  <edges id="37" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="40" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="47" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="48" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="49" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="50" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="51" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="54" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="55" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="56" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@ports.2"/>
+  <edges id="57" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@ports.3"/>
+  <edges id="58" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="61" source_obj="//@ports.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="62" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="63" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="64" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.5"/>
+  <edges id="65" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="66" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="67" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="68" source_obj="//@ports.8" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="69" source_obj="//@ports.9" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="214" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="215" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="216" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="217" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.6"/>
+  <edges id="218" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.7"/>
+  <edges id="-65" source_obj="//@regions.0/@basic_blocks.0/@node_objs.7" sink_obj="//@ports.6"/>
+  <edges id="-68" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@ports.8"/>
+  <edges id="-69" source_obj="//@regions.0/@basic_blocks.0/@node_objs.6" sink_obj="//@ports.9"/>
+  <regions anchor_node="-1" region_type="16" typeName="Dataflow" id="147" RegionName="_find_boundaries_and_starting_index_and_value7">
+    <basic_blocks id="34" name="_find_boundaries_and_starting_index_and_value7" type="BlockType">
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="i_read" lineNumber="342" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." coreId="1814455397" contextFuncName="p_find_boundaries_and_starting_index_and_value" bitwidth="3" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="342" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataInputObjs>i</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="projectionToRow_read" lineNumber="342" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." coreId="744306011" contextFuncName="p_find_boundaries_and_starting_index_and_value" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="342" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataInputObjs>projectionToRow</dataInputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="i_c7" lineNumber="342" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." rtlName="i_c7_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="p_find_boundaries_and_starting_index_and_value" bitwidth="3" opcode="alloca" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="342" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="i_c" lineNumber="342" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." rtlName="i_c_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="p_find_boundaries_and_starting_index_and_value" bitwidth="3" opcode="alloca" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="342" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="20" name="projectionToRow_c" lineNumber="349" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." rtlName="projectionToRow_c_U" coreName="FIFO_SRL" implIndex="srl" control="auto" opType="fifo" coreId="81" contextFuncName="p_find_boundaries_and_starting_index_and_value" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="349" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataOutputObjs>call</dataOutputObjs>
+        <dataOutputObjs>call</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="30" name="_ln342" lineNumber="342" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." rtlName="p_find_boundaries_and_starting_index_and_value_entry25_U0" coreId="1528834346" contextFuncName="p_find_boundaries_and_starting_index_and_value" opcode="call" m_display="0" m_delay="2.1" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="342" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>read</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <constName>p_find_boundaries_and_starting_index_and_value_entry25</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="_ln345" lineNumber="345" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." rtlName="p_find_left_and_right_boundaries9_U0" coreId="0" contextFuncName="p_find_boundaries_and_starting_index_and_value" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="345" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataInputObjs>num_points</dataInputObjs>
+        <dataInputObjs>points</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>lbVal_constprop</dataInputObjs>
+        <dataInputObjs>rbVal_constprop</dataInputObjs>
+        <dataOutputObjs>left_bound</dataOutputObjs>
+        <dataOutputObjs>right_bound</dataOutputObjs>
+        <dataOutputObjs>lbVal_constprop</dataOutputObjs>
+        <dataOutputObjs>rbVal_constprop</dataOutputObjs>
+        <constName>p_find_left_and_right_boundaries9</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="_ln349" lineNumber="349" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." rtlName="p_find_starting_index_and_value8_U0" coreId="539767347" contextFuncName="p_find_boundaries_and_starting_index_and_value" opcode="call" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="6.69" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="349" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+        <dataInputObjs>num_points</dataInputObjs>
+        <dataInputObjs>points</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataInputObjs>start_value</dataInputObjs>
+        <dataInputObjs>alloca</dataInputObjs>
+        <dataOutputObjs>start_index</dataOutputObjs>
+        <dataOutputObjs>start_value</dataOutputObjs>
+        <constName>p_find_starting_index_and_value8</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="33" name="_ln359" lineNumber="359" fileName="PartitionAcceleratorHLS/src/system.cpp" fileDirectory=".." coreId="694510703" contextFuncName="p_find_boundaries_and_starting_index_and_value" opcode="ret" nodeLabel="4.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="PartitionAcceleratorHLS/src/system.cpp" linenumber="359" fileDirectory="C:\Users\zakkh\Dark_Matter" functionName="_find_boundaries_and_starting_index_and_value"/>
+      </node_objs>
+      <fileValidLineNumbers fileName="PartitionAcceleratorHLS/src/system.cpp">
+        <validLinenumbers>342</validLinenumbers>
+        <validLinenumbers>349</validLinenumbers>
+        <validLinenumbers>345</validLinenumbers>
+        <validLinenumbers>359</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <regnodes realName="projectionToRow_c_reg_146">
+    <nodeIds>20</nodeIds>
+  </regnodes>
+  <regnodes realName="i_c_reg_140">
+    <nodeIds>19</nodeIds>
+  </regnodes>
+  <regnodes realName="i_c7_reg_134">
+    <nodeIds>18</nodeIds>
+  </regnodes>
+  <expressionNodes realName="projectionToRow_c_fu_74">
+    <nodeIds>20</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_c7_fu_66">
+    <nodeIds>18</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="i_c_fu_70">
+    <nodeIds>19</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="call_ln342_p_find_boundaries_and_starting_index_and_value_entry25_fu_123">
+    <nodeIds>30</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_p_find_left_and_right_boundaries9_fu_90">
+    <nodeIds>31</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_p_find_starting_index_and_value8_fu_109">
+    <nodeIds>32</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="projectionToRow_read_read_fu_84">
+    <nodeIds>17</nodeIds>
+  </ioNodes>
+  <ioNodes realName="i_read_read_fu_78">
+    <nodeIds>16</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="get_trapezoid_edgestrapezoid_edges" portID="100">
+    <nodeIds>31</nodeIds>
+  </memoryPorts>
+  <ioPorts name="i">
+    <contents name="read">
+      <nodeIds>16</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="lbVal_constprop">
+    <contents name="call">
+      <nodeIds>31</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="left_bound">
+    <contents name="call">
+      <nodeIds>31</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="projectionToRow">
+    <contents name="read">
+      <nodeIds>17</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="rbVal_constprop">
+    <contents name="call">
+      <nodeIds>31</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="right_bound">
+    <contents name="call">
+      <nodeIds>31</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="start_index">
+    <contents name="call">
+      <nodeIds>32</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="start_value">
+    <contents name="call">
+      <nodeIds>32</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="16" stage="1" latency="1"/>
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="31" stage="2" latency="2"/>
+    </states>
+    <states id="3">
+      <operations id="31" stage="1" latency="2"/>
+    </states>
+    <states id="4">
+      <operations id="32" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="14" stage="1" latency="1"/>
+      <operations id="15" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="2"/>
+      <operations id="33" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="p_find_boundaries_and_starting_index_and_value7" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="-1" mMaxLatency="-1" mIsDfPipe="true">
+      <basicBlocks>34</basicBlocks>
+      <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.0/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.1/@pins.0/@inst //@CFGRegionsRoot/@cfgRegions.0/@mDfPipe/@processe_list.2/@pins.0/@inst">
+        <processe_list name="p_find_boundaries_and_starting_index_and_value_entry25_U0" ssdmobj_id="30">
+          <pins>
+            <port name="projectionToRow" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_63" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_boundaries_and_starting_index_and_value_entry25_U0" ssdmobj_id="30" object_id="_72"/>
+          </pins>
+          <pins>
+            <port name="i" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_66" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_boundaries_and_starting_index_and_value_entry25_U0" ssdmobj_id="30" object_id="_72"/>
+          </pins>
+        </processe_list>
+        <processe_list name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31">
+          <pins>
+            <port name="num_points" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_59" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </pins>
+          <pins>
+            <port name="points" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_60" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </pins>
+          <pins>
+            <port name="left_bound" dir="DirOut" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_61" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </pins>
+          <pins>
+            <port name="right_bound" dir="DirOut" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_62" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </pins>
+          <pins>
+            <port name="lbVal_constprop" dir="DirInOut" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_67" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </pins>
+          <pins>
+            <port name="rbVal_constprop" dir="DirInOut" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_68" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </pins>
+        </processe_list>
+        <processe_list name="p_find_starting_index_and_value8_U0" ssdmobj_id="32">
+          <pins>
+            <port name="num_points" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_59" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_starting_index_and_value8_U0" ssdmobj_id="32" object_id="_92"/>
+          </pins>
+          <pins>
+            <port name="points" type="MEMType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_60" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_starting_index_and_value8_U0" ssdmobj_id="32" object_id="_92"/>
+          </pins>
+          <pins>
+            <port name="start_index" dir="DirOut" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_64" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_starting_index_and_value8_U0" ssdmobj_id="32" object_id="_92"/>
+          </pins>
+          <pins>
+            <port name="start_value" dir="DirInOut" type="SIOType" need_hs="true" top_port_object_id="" top_port_object_id_reference="_65" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_starting_index_and_value8_U0" ssdmobj_id="32" object_id="_92"/>
+          </pins>
+        </processe_list>
+        <channel_list depth="2" bitwidth="32" suggested_type="2" suggested_depth="2" name="projectionToRow_c" ssdmobj_id="20">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_boundaries_and_starting_index_and_value_entry25_U0" ssdmobj_id="30" object_id="_72"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_starting_index_and_value8_U0" ssdmobj_id="32" object_id="_92"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="3" suggested_type="2" suggested_depth="2" name="i_c" ssdmobj_id="19">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_boundaries_and_starting_index_and_value_entry25_U0" ssdmobj_id="30" object_id="_72"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_left_and_right_boundaries9_U0" ssdmobj_id="31" object_id="_78"/>
+          </sink>
+        </channel_list>
+        <channel_list depth="2" bitwidth="3" suggested_type="2" suggested_depth="2" name="i_c7" ssdmobj_id="18">
+          <source>
+            <port name="in" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_boundaries_and_starting_index_and_value_entry25_U0" ssdmobj_id="30" object_id="_72"/>
+          </source>
+          <sink>
+            <port name="out" dir="DirOut" type="SIOType" top_port_object_id="" top_port_object_id_reference="" chan_object_id="" chan_object_id_reference=""/>
+            <inst name="p_find_starting_index_and_value8_U0" ssdmobj_id="32" object_id="_92"/>
+          </sink>
+        </channel_list>
+      </mDfPipe>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

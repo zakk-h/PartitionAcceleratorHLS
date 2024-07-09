@@ -1,0 +1,313 @@
+
+
+================================================================
+== Vitis HLS Report for 'system_top'
+================================================================
+* Date:           Tue Jul  9 11:00:51 2024
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        PartitionAcceleratorHLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcvu11p-flga2577-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+-----------+------------+
+    |  Clock |  Target  | Estimated | Uncertainty|
+    +--------+----------+-----------+------------+
+    |ap_clk  |  10.00 ns|  12.120 ns|     2.70 ns|
+    +--------+----------+-----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |        3|        3|         2|          1|          1|     3|       yes|
+        |- Loop 2  |        3|        3|         2|          1|          1|     3|       yes|
+        |- Loop 3  |        3|        3|         2|          1|          1|     3|       yes|
+        |- Loop 4  |        3|        3|         1|          1|          1|     3|       yes|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+  * Pipeline-2: initiation interval (II) = 1, depth = 2
+  * Pipeline-3: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 4
+  Pipeline-0 : II = 1, D = 2, States = { 2 3 }
+  Pipeline-1 : II = 1, D = 2, States = { 5 6 }
+  Pipeline-2 : II = 1, D = 2, States = { 8 9 }
+  Pipeline-3 : II = 1, D = 1, States = { 11 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 5 
+5 --> 7 6 
+6 --> 5 
+7 --> 8 
+8 --> 10 9 
+9 --> 8 
+10 --> 11 
+11 --> 12 11 
+12 --> 13 
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.46>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_7"   --->   Operation 14 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i128 %points, void @empty_16, i32 0, i32 0, void @empty_15, i32 4294967295, i32 0, void @empty_15, void @empty_15, void @empty_15, i32 0, i32 0, i32 0, i32 0, void @empty_15, void @empty_15"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i128 %points"   --->   Operation 16 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %num_points, void @empty_16, i32 0, i32 0, void @empty_15, i32 4294967295, i32 0, void @empty_15, void @empty_15, void @empty_15, i32 0, i32 0, i32 0, i32 0, void @empty_15, void @empty_15"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %num_points"   --->   Operation 18 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %patch_stream_V, void @empty_18, i32 0, i32 0, void @empty_15, i32 0, i32 0, void @empty_15, void @empty_15, void @empty_15, i32 0, i32 0, i32 0, i32 0, void @empty_15, void @empty_15"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i96 %patch_stream_V"   --->   Operation 20 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%patch_buffer = alloca i64 1"   --->   Operation 21 'alloca' 'patch_buffer' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%pSlope = alloca i64 1"   --->   Operation 22 'alloca' 'pSlope' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%shadow_bottomL_jR = alloca i64 1"   --->   Operation 23 'alloca' 'shadow_bottomL_jR' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%shadow_bottomR_jR = alloca i64 1"   --->   Operation 24 'alloca' 'shadow_bottomR_jR' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%shadow_bottomL_jL = alloca i64 1"   --->   Operation 25 'alloca' 'shadow_bottomL_jL' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%shadow_bottomR_jL = alloca i64 1"   --->   Operation 26 'alloca' 'shadow_bottomR_jL' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%z1_min = alloca i64 1"   --->   Operation 27 'alloca' 'z1_min' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%z1_max = alloca i64 1"   --->   Operation 28 'alloca' 'z1_max' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%a_corner_0 = alloca i64 1"   --->   Operation 29 'alloca' 'a_corner_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%a_corner_1 = alloca i64 1"   --->   Operation 30 'alloca' 'a_corner_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%b_corner_0 = alloca i64 1"   --->   Operation 31 'alloca' 'b_corner_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%b_corner_1 = alloca i64 1"   --->   Operation 32 'alloca' 'b_corner_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%c_corner_0 = alloca i64 1"   --->   Operation 33 'alloca' 'c_corner_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%c_corner_1 = alloca i64 1"   --->   Operation 34 'alloca' 'c_corner_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%d_corner_0 = alloca i64 1"   --->   Operation 35 'alloca' 'd_corner_0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%d_corner_1 = alloca i64 1"   --->   Operation 36 'alloca' 'd_corner_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%squareAcceptance = alloca i64 1" [PartitionAcceleratorHLS/src/system.cpp:1175]   --->   Operation 37 'alloca' 'squareAcceptance' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%flatTop = alloca i64 1" [PartitionAcceleratorHLS/src/system.cpp:1176]   --->   Operation 38 'alloca' 'flatTop' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%flatBottom = alloca i64 1" [PartitionAcceleratorHLS/src/system.cpp:1177]   --->   Operation 39 'alloca' 'flatBottom' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%triangleAcceptance = alloca i64 1" [PartitionAcceleratorHLS/src/system.cpp:1178]   --->   Operation 40 'alloca' 'triangleAcceptance' <Predicate = true> <Delay = 0.00> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%store_ln1156 = store i2 0, i2 %latest_patch_index_constprop" [PartitionAcceleratorHLS/src/system.cpp:1156]   --->   Operation 41 'store' 'store_ln1156' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%store_ln1157 = store i32 0, i32 %num_patches_constprop" [PartitionAcceleratorHLS/src/system.cpp:1157]   --->   Operation 42 'store' 'store_ln1157' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.46ns)   --->   "%br_ln1175 = br void %load-store-loop79" [PartitionAcceleratorHLS/src/system.cpp:1175]   --->   Operation 43 'br' 'br_ln1175' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 0.73>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%loop_index80 = phi i2 0, void %_ZNK13ap_fixed_baseILi32ELi12ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEcvfEv.exit.i, i2 %empty, void %load-store-loop79.split"   --->   Operation 44 'phi' 'loop_index80' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.62ns)   --->   "%empty = add i2 %loop_index80, i2 1"   --->   Operation 45 'add' 'empty' <Predicate = true> <Delay = 0.62> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 46 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.39ns)   --->   "%exitcond834 = icmp_eq  i2 %loop_index80, i2 3"   --->   Operation 47 'icmp' 'exitcond834' <Predicate = true> <Delay = 0.39> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%empty_55 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 48 'speclooptripcount' 'empty_55' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond834, void %load-store-loop79.split, void %load-store-loop76.preheader"   --->   Operation 49 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%loop_index80_cast = zext i2 %loop_index80"   --->   Operation 50 'zext' 'loop_index80_cast' <Predicate = (!exitcond834)> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_addr = getelementptr i1 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance, i64 0, i64 %loop_index80_cast"   --->   Operation 51 'getelementptr' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_addr' <Predicate = (!exitcond834)> <Delay = 0.00>
+ST_2 : Operation 52 [2/2] (0.73ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load = load i2 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_addr"   --->   Operation 52 'load' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load' <Predicate = (!exitcond834)> <Delay = 0.73> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 1> <Depth = 3> <ROM>
+
+State 3 <SV = 2> <Delay = 1.46>
+ST_3 : Operation 53 [1/2] (0.73ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load = load i2 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_addr"   --->   Operation 53 'load' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load' <Predicate = (!exitcond834)> <Delay = 0.73> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 1> <Depth = 3> <ROM>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%squareAcceptance_addr = getelementptr i1 %squareAcceptance, i64 0, i64 %loop_index80_cast"   --->   Operation 54 'getelementptr' 'squareAcceptance_addr' <Predicate = (!exitcond834)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.73ns)   --->   "%store_ln0 = store i1 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load, i2 %squareAcceptance_addr"   --->   Operation 55 'store' 'store_ln0' <Predicate = (!exitcond834)> <Delay = 0.73> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop79"   --->   Operation 56 'br' 'br_ln0' <Predicate = (!exitcond834)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 0.46>
+ST_4 : Operation 57 [1/1] (0.46ns)   --->   "%br_ln0 = br void %load-store-loop76"   --->   Operation 57 'br' 'br_ln0' <Predicate = true> <Delay = 0.46>
+
+State 5 <SV = 3> <Delay = 0.73>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%loop_index77 = phi i2 %empty_56, void %load-store-loop76.split, i2 0, void %load-store-loop76.preheader"   --->   Operation 58 'phi' 'loop_index77' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (0.62ns)   --->   "%empty_56 = add i2 %loop_index77, i2 1"   --->   Operation 59 'add' 'empty_56' <Predicate = true> <Delay = 0.62> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 60 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (0.39ns)   --->   "%exitcond823 = icmp_eq  i2 %loop_index77, i2 3"   --->   Operation 61 'icmp' 'exitcond823' <Predicate = true> <Delay = 0.39> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%empty_57 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 62 'speclooptripcount' 'empty_57' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond823, void %load-store-loop76.split, void %load-store-loop.preheader"   --->   Operation 63 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%loop_index77_cast = zext i2 %loop_index77"   --->   Operation 64 'zext' 'loop_index77_cast' <Predicate = (!exitcond823)> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_addr = getelementptr i1 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop, i64 0, i64 %loop_index77_cast"   --->   Operation 65 'getelementptr' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_addr' <Predicate = (!exitcond823)> <Delay = 0.00>
+ST_5 : Operation 66 [2/2] (0.73ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load = load i2 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_addr"   --->   Operation 66 'load' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load' <Predicate = (!exitcond823)> <Delay = 0.73> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 1> <Depth = 3> <ROM>
+
+State 6 <SV = 4> <Delay = 1.46>
+ST_6 : Operation 67 [1/2] (0.73ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load = load i2 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_addr"   --->   Operation 67 'load' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load' <Predicate = (!exitcond823)> <Delay = 0.73> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 1> <Depth = 3> <ROM>
+ST_6 : Operation 68 [1/1] (0.00ns)   --->   "%flatTop_addr = getelementptr i1 %flatTop, i64 0, i64 %loop_index77_cast"   --->   Operation 68 'getelementptr' 'flatTop_addr' <Predicate = (!exitcond823)> <Delay = 0.00>
+ST_6 : Operation 69 [1/1] (0.73ns)   --->   "%store_ln0 = store i1 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load, i2 %flatTop_addr"   --->   Operation 69 'store' 'store_ln0' <Predicate = (!exitcond823)> <Delay = 0.73> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop76"   --->   Operation 70 'br' 'br_ln0' <Predicate = (!exitcond823)> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 0.46>
+ST_7 : Operation 71 [1/1] (0.46ns)   --->   "%br_ln0 = br void %load-store-loop"   --->   Operation 71 'br' 'br_ln0' <Predicate = true> <Delay = 0.46>
+
+State 8 <SV = 5> <Delay = 0.73>
+ST_8 : Operation 72 [1/1] (0.00ns)   --->   "%loop_index = phi i2 %empty_58, void %load-store-loop.split, i2 0, void %load-store-loop.preheader"   --->   Operation 72 'phi' 'loop_index' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 73 [1/1] (0.62ns)   --->   "%empty_58 = add i2 %loop_index, i2 1"   --->   Operation 73 'add' 'empty_58' <Predicate = true> <Delay = 0.62> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 74 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 74 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 75 [1/1] (0.39ns)   --->   "%exitcond812 = icmp_eq  i2 %loop_index, i2 3"   --->   Operation 75 'icmp' 'exitcond812' <Predicate = true> <Delay = 0.39> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 76 [1/1] (0.00ns)   --->   "%empty_59 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 76 'speclooptripcount' 'empty_59' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 77 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond812, void %load-store-loop.split, void %memset.loop.preheader"   --->   Operation 77 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 78 [1/1] (0.00ns)   --->   "%loop_index_cast = zext i2 %loop_index"   --->   Operation 78 'zext' 'loop_index_cast' <Predicate = (!exitcond812)> <Delay = 0.00>
+ST_8 : Operation 79 [1/1] (0.00ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_addr = getelementptr i1 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom, i64 0, i64 %loop_index_cast"   --->   Operation 79 'getelementptr' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_addr' <Predicate = (!exitcond812)> <Delay = 0.00>
+ST_8 : Operation 80 [2/2] (0.73ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load = load i2 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_addr"   --->   Operation 80 'load' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load' <Predicate = (!exitcond812)> <Delay = 0.73> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 1> <Depth = 3> <ROM>
+
+State 9 <SV = 6> <Delay = 1.46>
+ST_9 : Operation 81 [1/2] (0.73ns)   --->   "%system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load = load i2 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_addr"   --->   Operation 81 'load' 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load' <Predicate = (!exitcond812)> <Delay = 0.73> <CoreInst = "ROM">   --->   Core 101 'ROM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 1> <Depth = 3> <ROM>
+ST_9 : Operation 82 [1/1] (0.00ns)   --->   "%flatBottom_addr = getelementptr i1 %flatBottom, i64 0, i64 %loop_index_cast"   --->   Operation 82 'getelementptr' 'flatBottom_addr' <Predicate = (!exitcond812)> <Delay = 0.00>
+ST_9 : Operation 83 [1/1] (0.73ns)   --->   "%store_ln0 = store i1 %system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load, i2 %flatBottom_addr"   --->   Operation 83 'store' 'store_ln0' <Predicate = (!exitcond812)> <Delay = 0.73> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_9 : Operation 84 [1/1] (0.00ns)   --->   "%br_ln0 = br void %load-store-loop"   --->   Operation 84 'br' 'br_ln0' <Predicate = (!exitcond812)> <Delay = 0.00>
+
+State 10 <SV = 6> <Delay = 0.46>
+ST_10 : Operation 85 [1/1] (0.46ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 85 'br' 'br_ln0' <Predicate = true> <Delay = 0.46>
+
+State 11 <SV = 7> <Delay = 1.12>
+ST_11 : Operation 86 [1/1] (0.00ns)   --->   "%empty_60 = phi i2 %empty_61, void %memset.loop.split, i2 0, void %memset.loop.preheader"   --->   Operation 86 'phi' 'empty_60' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 87 [1/1] (0.62ns)   --->   "%empty_61 = add i2 %empty_60, i2 1"   --->   Operation 87 'add' 'empty_61' <Predicate = true> <Delay = 0.62> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.62> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 88 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 88 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 89 [1/1] (0.39ns)   --->   "%exitcond1 = icmp_eq  i2 %empty_60, i2 3"   --->   Operation 89 'icmp' 'exitcond1' <Predicate = true> <Delay = 0.39> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.39> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 90 [1/1] (0.00ns)   --->   "%empty_62 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 3, i64 3, i64 3"   --->   Operation 90 'speclooptripcount' 'empty_62' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 91 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %exitcond1, void %memset.loop.split, void %split"   --->   Operation 91 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 92 [1/1] (0.00ns)   --->   "%p_cast = zext i2 %empty_60"   --->   Operation 92 'zext' 'p_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_11 : Operation 93 [1/1] (0.00ns)   --->   "%triangleAcceptance_addr = getelementptr i1 %triangleAcceptance, i64 0, i64 %p_cast"   --->   Operation 93 'getelementptr' 'triangleAcceptance_addr' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_11 : Operation 94 [1/1] (0.73ns)   --->   "%store_ln0 = store i1 0, i2 %triangleAcceptance_addr"   --->   Operation 94 'store' 'store_ln0' <Predicate = (!exitcond1)> <Delay = 0.73> <CoreInst = "RAM">   --->   Core 83 'RAM' <Latency = 1> <II = 1> <Delay = 0.73> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 3> <RAM>
+ST_11 : Operation 95 [1/1] (0.00ns)   --->   "%br_ln0 = br void %memset.loop"   --->   Operation 95 'br' 'br_ln0' <Predicate = (!exitcond1)> <Delay = 0.00>
+
+State 12 <SV = 8> <Delay = 0.00>
+ST_12 : Operation 96 [2/2] (0.00ns)   --->   "%call_ln1136 = call void @_shadowquilt_main_loop_make_verticle_strip, i128 %points, i32 %num_points, i96 %patch_stream_V, i32 %patch_buffer, i32 %pSlope, i32 %shadow_bottomL_jR, i32 %shadow_bottomR_jR, i32 %shadow_bottomL_jL, i32 %shadow_bottomR_jL, i26 %z1_min, i26 %z1_max, i26 %a_corner_0, i32 %a_corner_1, i26 %b_corner_0, i32 %b_corner_1, i26 %c_corner_0, i32 %c_corner_1, i26 %d_corner_0, i32 %d_corner_1, i1 %squareAcceptance, i1 %flatTop, i1 %flatBottom, i1 %triangleAcceptance, i32 %get_radiiradii, i32 %lbVal_constprop, i32 %rbVal_constprop, i32 %get_trapezoid_edgestrapezoid_edges, i2 %latest_patch_index_constprop, i32 %num_patches_constprop, i32 %get_parallelogram_slopesparallelogram_slopes" [PartitionAcceleratorHLS/src/system.cpp:1136]   --->   Operation 96 'call' 'call_ln1136' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 13 <SV = 9> <Delay = 0.00>
+ST_13 : Operation 97 [1/2] (0.00ns)   --->   "%call_ln1136 = call void @_shadowquilt_main_loop_make_verticle_strip, i128 %points, i32 %num_points, i96 %patch_stream_V, i32 %patch_buffer, i32 %pSlope, i32 %shadow_bottomL_jR, i32 %shadow_bottomR_jR, i32 %shadow_bottomL_jL, i32 %shadow_bottomR_jL, i26 %z1_min, i26 %z1_max, i26 %a_corner_0, i32 %a_corner_1, i26 %b_corner_0, i32 %b_corner_1, i26 %c_corner_0, i32 %c_corner_1, i26 %d_corner_0, i32 %d_corner_1, i1 %squareAcceptance, i1 %flatTop, i1 %flatBottom, i1 %triangleAcceptance, i32 %get_radiiradii, i32 %lbVal_constprop, i32 %rbVal_constprop, i32 %get_trapezoid_edgestrapezoid_edges, i2 %latest_patch_index_constprop, i32 %num_patches_constprop, i32 %get_parallelogram_slopesparallelogram_slopes" [PartitionAcceleratorHLS/src/system.cpp:1136]   --->   Operation 97 'call' 'call_ln1136' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_13 : Operation 98 [1/1] (0.00ns)   --->   "%ret_ln1194 = ret" [PartitionAcceleratorHLS/src/system.cpp:1194]   --->   Operation 98 'ret' 'ret_ln1194' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 0.46ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop_index80') with incoming values : ('empty') [52]  (0.46 ns)
+
+ <State 2>: 0.73ns
+The critical path consists of the following:
+	'phi' operation ('loop_index80') with incoming values : ('empty') [52]  (0 ns)
+	'getelementptr' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_addr') [60]  (0 ns)
+	'load' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load') on array 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance' [61]  (0.73 ns)
+
+ <State 3>: 1.46ns
+The critical path consists of the following:
+	'load' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load') on array 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance' [61]  (0.73 ns)
+	'store' operation ('store_ln0') of variable 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_load' on array 'squareAcceptance', PartitionAcceleratorHLS/src/system.cpp:1175 [63]  (0.73 ns)
+
+ <State 4>: 0.46ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop_index77') with incoming values : ('empty_56') [68]  (0.46 ns)
+
+ <State 5>: 0.73ns
+The critical path consists of the following:
+	'phi' operation ('loop_index77') with incoming values : ('empty_56') [68]  (0 ns)
+	'getelementptr' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_addr') [76]  (0 ns)
+	'load' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load') on array 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop' [77]  (0.73 ns)
+
+ <State 6>: 1.46ns
+The critical path consists of the following:
+	'load' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load') on array 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop' [77]  (0.73 ns)
+	'store' operation ('store_ln0') of variable 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatTop_load' on array 'flatTop', PartitionAcceleratorHLS/src/system.cpp:1176 [79]  (0.73 ns)
+
+ <State 7>: 0.46ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('loop_index') with incoming values : ('empty_58') [84]  (0.46 ns)
+
+ <State 8>: 0.73ns
+The critical path consists of the following:
+	'phi' operation ('loop_index') with incoming values : ('empty_58') [84]  (0 ns)
+	'getelementptr' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_addr') [92]  (0 ns)
+	'load' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load') on array 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom' [93]  (0.73 ns)
+
+ <State 9>: 1.46ns
+The critical path consists of the following:
+	'load' operation ('system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load') on array 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom' [93]  (0.73 ns)
+	'store' operation ('store_ln0') of variable 'system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_flatBottom_load' on array 'flatBottom', PartitionAcceleratorHLS/src/system.cpp:1177 [95]  (0.73 ns)
+
+ <State 10>: 0.46ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('empty_60') with incoming values : ('empty_61') [100]  (0.46 ns)
+
+ <State 11>: 1.13ns
+The critical path consists of the following:
+	'phi' operation ('empty_60') with incoming values : ('empty_61') [100]  (0 ns)
+	'getelementptr' operation ('triangleAcceptance_addr') [108]  (0 ns)
+	'store' operation ('store_ln0') of constant 0 on array 'triangleAcceptance', PartitionAcceleratorHLS/src/system.cpp:1178 [109]  (0.73 ns)
+	blocking operation 0.399 ns on control path)
+
+ <State 12>: 0ns
+The critical path consists of the following:
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

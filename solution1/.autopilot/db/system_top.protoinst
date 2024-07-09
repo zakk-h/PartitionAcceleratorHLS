@@ -1,0 +1,133 @@
+{
+	"version": "1.0",
+	"modules": {
+		"system_top": {
+			"proto_instances": {
+				"/AESL_inst_system_top_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_alignedtoline_per_layer_loop3_fu_1250_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/p_find_boundaries_and_starting_index_and_value_entry25_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/p_find_left_and_right_boundaries9_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/p_find_starting_index_and_value8_U0_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_CONTINUE": { "actual": "ap_continue"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_getParallelograms_fu_1285_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/grp_straightLineProjectorFromLayerIJtoK_fu_541_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/grp_get_acceptanceCorners_fu_1341_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/grp_get_index_from_z_fu_1317_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				},
+				"grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/grp_patch_buffer_add_patch2_fu_1330_activity": {
+					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+					"ports": {
+						"AP_CLK": { "actual": "ap_clk"},
+						"AP_DONE": { "actual": "ap_done"},
+						"AP_READY": { "actual": "ap_ready"},
+						"AP_RESET": { "actual": "ap_rst"},
+						"AP_START": { "actual": "ap_start"}
+					}
+				}
+			}
+		}
+	}
+}

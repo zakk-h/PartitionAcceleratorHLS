@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="system_top.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_system_top_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="HLS Process Summary Group">
+      <obj_property name="label">HLS Process Summary</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top//AESL_inst_system_top_activity">
+         <obj_property name="label">AESL_inst_system_top_activity</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="UseFullPath">true</obj_property>
+         <obj_property name="ElementShortName">AESL_inst_system_top_activity</obj_property>
+         <obj_property name="ObjectShortName">AESL_inst_system_top_activity</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+         <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">turquoise</obj_property>
+         <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+         <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top//AESL_inst_system_top_activity.dataflowTxWaveData.Cycles</obj_property>
+         <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top//AESL_inst_system_top_activity.dataflowTxWaveData.OutStanding</obj_property>
+         <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top//AESL_inst_system_top_activity.dataflowTxTooltipData</obj_property>
+         <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity">
+            <obj_property name="label">grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_alignedtoline_per_layer_loop3_fu_1250_activity">
+               <obj_property name="label">grp_alignedtoline_per_layer_loop3_fu_1250_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_alignedtoline_per_layer_loop3_fu_1250_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_alignedtoline_per_layer_loop3_fu_1250_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_alignedtoline_per_layer_loop3_fu_1250_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_alignedtoline_per_layer_loop3_fu_1250_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_alignedtoline_per_layer_loop3_fu_1250_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity">
+                  <obj_property name="label">grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity.dataflowTxTooltipData</obj_property>
+                  <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/p_find_boundaries_and_starting_index_and_value_entry25_U0_activity">
+                     <obj_property name="label">p_find_boundaries_and_starting_index_and_value_entry25_U0_activity</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <obj_property name="UseFullPath">true</obj_property>
+                     <obj_property name="ElementShortName">p_find_boundaries_and_starting_index_and_value_entry25_U0_activity</obj_property>
+                     <obj_property name="ObjectShortName">p_find_boundaries_and_starting_index_and_value_entry25_U0_activity</obj_property>
+                     <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                     <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                     <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                     <obj_property name="UseCustomSignalColor">true</obj_property>
+                     <obj_property name="CustomSignalColor">turquoise</obj_property>
+                     <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                     <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/p_find_boundaries_and_starting_index_and_value_entry25_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+                     <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/p_find_boundaries_and_starting_index_and_value_entry25_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+                     <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/p_find_boundaries_and_starting_index_and_value_entry25_U0_activity.dataflowTxTooltipData</obj_property>
+                  </wvobject>
+                  <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/p_find_left_and_right_boundaries9_U0_activity">
+                     <obj_property name="label">p_find_left_and_right_boundaries9_U0_activity</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <obj_property name="UseFullPath">true</obj_property>
+                     <obj_property name="ElementShortName">p_find_left_and_right_boundaries9_U0_activity</obj_property>
+                     <obj_property name="ObjectShortName">p_find_left_and_right_boundaries9_U0_activity</obj_property>
+                     <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                     <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                     <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                     <obj_property name="UseCustomSignalColor">true</obj_property>
+                     <obj_property name="CustomSignalColor">turquoise</obj_property>
+                     <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                     <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/p_find_left_and_right_boundaries9_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+                     <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/p_find_left_and_right_boundaries9_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+                     <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/p_find_left_and_right_boundaries9_U0_activity.dataflowTxTooltipData</obj_property>
+                  </wvobject>
+                  <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/p_find_starting_index_and_value8_U0_activity">
+                     <obj_property name="label">p_find_starting_index_and_value8_U0_activity</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <obj_property name="UseFullPath">true</obj_property>
+                     <obj_property name="ElementShortName">p_find_starting_index_and_value8_U0_activity</obj_property>
+                     <obj_property name="ObjectShortName">p_find_starting_index_and_value8_U0_activity</obj_property>
+                     <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                     <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                     <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                     <obj_property name="UseCustomSignalColor">true</obj_property>
+                     <obj_property name="CustomSignalColor">turquoise</obj_property>
+                     <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                     <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/p_find_starting_index_and_value8_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+                     <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/p_find_starting_index_and_value8_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+                     <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/p_find_starting_index_and_value8_U0_activity.dataflowTxTooltipData</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_getParallelograms_fu_1285_activity">
+               <obj_property name="label">grp_getParallelograms_fu_1285_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_getParallelograms_fu_1285_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_getParallelograms_fu_1285_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_getParallelograms_fu_1285_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_getParallelograms_fu_1285_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_getParallelograms_fu_1285_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/grp_straightLineProjectorFromLayerIJtoK_fu_541_activity">
+                  <obj_property name="label">grp_straightLineProjectorFromLayerIJtoK_fu_541_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_straightLineProjectorFromLayerIJtoK_fu_541_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_straightLineProjectorFromLayerIJtoK_fu_541_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/grp_straightLineProjectorFromLayerIJtoK_fu_541_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/grp_straightLineProjectorFromLayerIJtoK_fu_541_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/grp_straightLineProjectorFromLayerIJtoK_fu_541_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/grp_get_index_from_z_fu_1317_activity">
+               <obj_property name="label">grp_get_index_from_z_fu_1317_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_get_index_from_z_fu_1317_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_get_index_from_z_fu_1317_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/grp_get_index_from_z_fu_1317_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/grp_get_index_from_z_fu_1317_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/grp_get_index_from_z_fu_1317_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/grp_patch_buffer_add_patch2_fu_1330_activity">
+               <obj_property name="label">grp_patch_buffer_add_patch2_fu_1330_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_patch_buffer_add_patch2_fu_1330_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_patch_buffer_add_patch2_fu_1330_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/grp_patch_buffer_add_patch2_fu_1330_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/grp_patch_buffer_add_patch2_fu_1330_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/grp_patch_buffer_add_patch2_fu_1330_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/grp_get_acceptanceCorners_fu_1341_activity">
+               <obj_property name="label">grp_get_acceptanceCorners_fu_1341_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">grp_get_acceptanceCorners_fu_1341_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_get_acceptanceCorners_fu_1341_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/grp_get_acceptanceCorners_fu_1341_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/grp_get_acceptanceCorners_fu_1341_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/grp_get_acceptanceCorners_fu_1341_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top//AESL_inst_system_top_activity">
+      <obj_property name="ElementShortName">AESL_inst_system_top_activity</obj_property>
+      <obj_property name="ObjectShortName">AESL_inst_system_top_activity</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="AESL_inst_system_top_group">
+      <obj_property name="label">AESL_inst_system_top</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity">
+         <obj_property name="ElementShortName">grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="AESL_inst_system_top_Handshake_group">
+         <obj_property name="label">Block-level handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_group">
+         <obj_property name="label">grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_alignedtoline_per_layer_loop3_fu_1250_activity">
+            <obj_property name="ElementShortName">grp_alignedtoline_per_layer_loop3_fu_1250_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_alignedtoline_per_layer_loop3_fu_1250_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_getParallelograms_fu_1285_activity">
+            <obj_property name="ElementShortName">grp_getParallelograms_fu_1285_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_getParallelograms_fu_1285_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/grp_get_index_from_z_fu_1317_activity">
+            <obj_property name="ElementShortName">grp_get_index_from_z_fu_1317_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_get_index_from_z_fu_1317_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/grp_patch_buffer_add_patch2_fu_1330_activity">
+            <obj_property name="ElementShortName">grp_patch_buffer_add_patch2_fu_1330_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_patch_buffer_add_patch2_fu_1330_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/grp_get_acceptanceCorners_fu_1341_activity">
+            <obj_property name="ElementShortName">grp_get_acceptanceCorners_fu_1341_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_get_acceptanceCorners_fu_1341_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_alignedtoline_per_layer_loop3_fu_1250_group">
+            <obj_property name="label">grp_alignedtoline_per_layer_loop3_fu_1250</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity">
+               <obj_property name="ElementShortName">grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_p_find_boundaries_and_starting_index_and_value7_fu_922_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_alignedtoline_per_layer_loop3_fu_1250_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_p_find_boundaries_and_starting_index_and_value7_fu_922_group">
+               <obj_property name="label">grp_p_find_boundaries_and_starting_index_and_value7_fu_922</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/p_find_boundaries_and_starting_index_and_value_entry25_U0_activity">
+                  <obj_property name="ElementShortName">p_find_boundaries_and_starting_index_and_value_entry25_U0_activity</obj_property>
+                  <obj_property name="ObjectShortName">p_find_boundaries_and_starting_index_and_value_entry25_U0_activity</obj_property>
+               </wvobject>
+               <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/p_find_left_and_right_boundaries9_U0_activity">
+                  <obj_property name="ElementShortName">p_find_left_and_right_boundaries9_U0_activity</obj_property>
+                  <obj_property name="ObjectShortName">p_find_left_and_right_boundaries9_U0_activity</obj_property>
+               </wvobject>
+               <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/p_find_starting_index_and_value8_U0_activity">
+                  <obj_property name="ElementShortName">p_find_starting_index_and_value8_U0_activity</obj_property>
+                  <obj_property name="ObjectShortName">p_find_starting_index_and_value8_U0_activity</obj_property>
+               </wvobject>
+               <wvobject type="group" fp_name="grp_p_find_boundaries_and_starting_index_and_value7_fu_922_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="p_find_boundaries_and_starting_index_and_value_entry25_U0_group">
+                  <obj_property name="label">p_find_boundaries_and_starting_index_and_value_entry25_U0</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="group" fp_name="p_find_boundaries_and_starting_index_and_value_entry25_U0_Input_group">
+                     <obj_property name="label">Input Channels</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="group" fp_name="p_find_boundaries_and_starting_index_and_value_entry25_U0_Handshake_group">
+                     <obj_property name="label">Block-level handshake</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/ap_start">
+                        <obj_property name="ElementShortName">ap_start</obj_property>
+                        <obj_property name="ObjectShortName">ap_start</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/ap_ready">
+                        <obj_property name="ElementShortName">ap_ready</obj_property>
+                        <obj_property name="ObjectShortName">ap_ready</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/ap_done">
+                        <obj_property name="ElementShortName">ap_done</obj_property>
+                        <obj_property name="ObjectShortName">ap_done</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/ap_continue">
+                        <obj_property name="ElementShortName">ap_continue</obj_property>
+                        <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     </wvobject>
+                  </wvobject>
+                  <wvobject type="group" fp_name="p_find_boundaries_and_starting_index_and_value_entry25_U0_Output_group">
+                     <obj_property name="label">Output Channels</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <wvobject type="group" fp_name="projectionToRow_out_group">
+                        <obj_property name="label">projectionToRow_out(projectionToRow_c_U, FIFO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/projectionToRow_out_blk_n">
+                           <obj_property name="ElementShortName">projectionToRow_out_blk_n</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_out_blk_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/projectionToRow_out_din">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/projectionToRow_out_full_n">
+                           <obj_property name="ElementShortName">projectionToRow_out_full_n</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_out_full_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/projectionToRow_out_write">
+                           <obj_property name="ElementShortName">projectionToRow_out_write</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_out_write</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="i_out_group">
+                        <obj_property name="label">i_out(i_c_U, FIFO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out_blk_n">
+                           <obj_property name="ElementShortName">i_out_blk_n</obj_property>
+                           <obj_property name="ObjectShortName">i_out_blk_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out_din">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out_full_n">
+                           <obj_property name="ElementShortName">i_out_full_n</obj_property>
+                           <obj_property name="ObjectShortName">i_out_full_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out_write">
+                           <obj_property name="ElementShortName">i_out_write</obj_property>
+                           <obj_property name="ObjectShortName">i_out_write</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="i_out1_group">
+                        <obj_property name="label">i_out1(i_c7_U, FIFO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out1_blk_n">
+                           <obj_property name="ElementShortName">i_out1_blk_n</obj_property>
+                           <obj_property name="ObjectShortName">i_out1_blk_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out1_din">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out1_full_n">
+                           <obj_property name="ElementShortName">i_out1_full_n</obj_property>
+                           <obj_property name="ObjectShortName">i_out1_full_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_boundaries_and_starting_index_and_value_entry25_U0/i_out1_write">
+                           <obj_property name="ElementShortName">i_out1_write</obj_property>
+                           <obj_property name="ObjectShortName">i_out1_write</obj_property>
+                        </wvobject>
+                     </wvobject>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="p_find_left_and_right_boundaries9_U0_group">
+                  <obj_property name="label">p_find_left_and_right_boundaries9_U0</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="group" fp_name="p_find_left_and_right_boundaries9_U0_Input_group">
+                     <obj_property name="label">Input Channels</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <wvobject type="group" fp_name="num_points_group">
+                        <obj_property name="label">num_points(PIPO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/num_points_address0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/num_points_q0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/num_points_ce0">
+                           <obj_property name="ElementShortName">num_points_ce0</obj_property>
+                           <obj_property name="ObjectShortName">num_points_ce0</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_ready">
+                           <obj_property name="ElementShortName">ap_ready</obj_property>
+                           <obj_property name="ObjectShortName">ap_ready</obj_property>
+                           <obj_property name="label">ap_ready(t_read)</obj_property>
+                           <obj_property name="DisplayName">label</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="points_group">
+                        <obj_property name="label">points(PIPO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/points_address0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/points_q0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/points_ce0">
+                           <obj_property name="ElementShortName">points_ce0</obj_property>
+                           <obj_property name="ObjectShortName">points_ce0</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_ready">
+                           <obj_property name="ElementShortName">ap_ready</obj_property>
+                           <obj_property name="ObjectShortName">ap_ready</obj_property>
+                           <obj_property name="label">ap_ready(t_read)</obj_property>
+                           <obj_property name="DisplayName">label</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="i_group">
+                        <obj_property name="label">i(i_c_U, FIFO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/i_blk_n">
+                           <obj_property name="ElementShortName">i_blk_n</obj_property>
+                           <obj_property name="ObjectShortName">i_blk_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/i_dout">
+                           <obj_property name="ElementShortName">i_dout[2:0]</obj_property>
+                           <obj_property name="ObjectShortName">i_dout[2:0]</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/i_empty_n">
+                           <obj_property name="ElementShortName">i_empty_n</obj_property>
+                           <obj_property name="ObjectShortName">i_empty_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/i_read">
+                           <obj_property name="ElementShortName">i_read</obj_property>
+                           <obj_property name="ObjectShortName">i_read</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="get_trapezoid_edgestrapezoid_edges_group">
+                        <obj_property name="label">get_trapezoid_edgestrapezoid_edges(PIPO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/get_trapezoid_edgestrapezoid_edges_address0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/get_trapezoid_edgestrapezoid_edges_q0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/get_trapezoid_edgestrapezoid_edges_ce0">
+                           <obj_property name="ElementShortName">get_trapezoid_edgestrapezoid_edges_ce0</obj_property>
+                           <obj_property name="ObjectShortName">get_trapezoid_edgestrapezoid_edges_ce0</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_ready">
+                           <obj_property name="ElementShortName">ap_ready</obj_property>
+                           <obj_property name="ObjectShortName">ap_ready</obj_property>
+                           <obj_property name="label">ap_ready(t_read)</obj_property>
+                           <obj_property name="DisplayName">label</obj_property>
+                        </wvobject>
+                     </wvobject>
+                  </wvobject>
+                  <wvobject type="group" fp_name="p_find_left_and_right_boundaries9_U0_Handshake_group">
+                     <obj_property name="label">Block-level handshake</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_start">
+                        <obj_property name="ElementShortName">ap_start</obj_property>
+                        <obj_property name="ObjectShortName">ap_start</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_ready">
+                        <obj_property name="ElementShortName">ap_ready</obj_property>
+                        <obj_property name="ObjectShortName">ap_ready</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_done">
+                        <obj_property name="ElementShortName">ap_done</obj_property>
+                        <obj_property name="ObjectShortName">ap_done</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_left_and_right_boundaries9_U0/ap_continue">
+                        <obj_property name="ElementShortName">ap_continue</obj_property>
+                        <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     </wvobject>
+                  </wvobject>
+                  <wvobject type="group" fp_name="p_find_left_and_right_boundaries9_U0_Output_group">
+                     <obj_property name="label">Output Channels</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="p_find_starting_index_and_value8_U0_group">
+                  <obj_property name="label">p_find_starting_index_and_value8_U0</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="group" fp_name="p_find_starting_index_and_value8_U0_Input_group">
+                     <obj_property name="label">Input Channels</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <wvobject type="group" fp_name="num_points_group">
+                        <obj_property name="label">num_points(PIPO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/num_points_address0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/num_points_q0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/num_points_ce0">
+                           <obj_property name="ElementShortName">num_points_ce0</obj_property>
+                           <obj_property name="ObjectShortName">num_points_ce0</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/ap_ready">
+                           <obj_property name="ElementShortName">ap_ready</obj_property>
+                           <obj_property name="ObjectShortName">ap_ready</obj_property>
+                           <obj_property name="label">ap_ready(t_read)</obj_property>
+                           <obj_property name="DisplayName">label</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="points_group">
+                        <obj_property name="label">points(PIPO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/points_address0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/points_q0">
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/points_ce0">
+                           <obj_property name="ElementShortName">points_ce0</obj_property>
+                           <obj_property name="ObjectShortName">points_ce0</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/ap_ready">
+                           <obj_property name="ElementShortName">ap_ready</obj_property>
+                           <obj_property name="ObjectShortName">ap_ready</obj_property>
+                           <obj_property name="label">ap_ready(t_read)</obj_property>
+                           <obj_property name="DisplayName">label</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="projectionToRow_group">
+                        <obj_property name="label">projectionToRow(projectionToRow_c_U, FIFO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/projectionToRow_blk_n">
+                           <obj_property name="ElementShortName">projectionToRow_blk_n</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_blk_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/projectionToRow_dout">
+                           <obj_property name="ElementShortName">projectionToRow_dout[31:0]</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_dout[31:0]</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/projectionToRow_empty_n">
+                           <obj_property name="ElementShortName">projectionToRow_empty_n</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_empty_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/projectionToRow_read">
+                           <obj_property name="ElementShortName">projectionToRow_read</obj_property>
+                           <obj_property name="ObjectShortName">projectionToRow_read</obj_property>
+                        </wvobject>
+                     </wvobject>
+                     <wvobject type="group" fp_name="i_group">
+                        <obj_property name="label">i(i_c7_U, FIFO)</obj_property>
+                        <obj_property name="DisplayName">label</obj_property>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/i_blk_n">
+                           <obj_property name="ElementShortName">i_blk_n</obj_property>
+                           <obj_property name="ObjectShortName">i_blk_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/i_dout">
+                           <obj_property name="ElementShortName">i_dout[2:0]</obj_property>
+                           <obj_property name="ObjectShortName">i_dout[2:0]</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/i_empty_n">
+                           <obj_property name="ElementShortName">i_empty_n</obj_property>
+                           <obj_property name="ObjectShortName">i_empty_n</obj_property>
+                        </wvobject>
+                        <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/i_read">
+                           <obj_property name="ElementShortName">i_read</obj_property>
+                           <obj_property name="ObjectShortName">i_read</obj_property>
+                        </wvobject>
+                     </wvobject>
+                  </wvobject>
+                  <wvobject type="group" fp_name="p_find_starting_index_and_value8_U0_Handshake_group">
+                     <obj_property name="label">Block-level handshake</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/ap_start">
+                        <obj_property name="ElementShortName">ap_start</obj_property>
+                        <obj_property name="ObjectShortName">ap_start</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/ap_ready">
+                        <obj_property name="ElementShortName">ap_ready</obj_property>
+                        <obj_property name="ObjectShortName">ap_ready</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/ap_done">
+                        <obj_property name="ElementShortName">ap_done</obj_property>
+                        <obj_property name="ObjectShortName">ap_done</obj_property>
+                     </wvobject>
+                     <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_alignedtoline_per_layer_loop3_fu_1250/grp_p_find_boundaries_and_starting_index_and_value7_fu_922/p_find_starting_index_and_value8_U0/ap_continue">
+                        <obj_property name="ElementShortName">ap_continue</obj_property>
+                        <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     </wvobject>
+                  </wvobject>
+                  <wvobject type="group" fp_name="p_find_starting_index_and_value8_U0_Output_group">
+                     <obj_property name="label">Output Channels</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_getParallelograms_fu_1285_group">
+            <obj_property name="label">grp_getParallelograms_fu_1285</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/grp_straightLineProjectorFromLayerIJtoK_fu_541_activity">
+               <obj_property name="ElementShortName">grp_straightLineProjectorFromLayerIJtoK_fu_541_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_straightLineProjectorFromLayerIJtoK_fu_541_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_getParallelograms_fu_1285_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_straightLineProjectorFromLayerIJtoK_fu_541_group">
+               <obj_property name="label">grp_straightLineProjectorFromLayerIJtoK_fu_541</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_straightLineProjectorFromLayerIJtoK_fu_541_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_getParallelograms_fu_1285/grp_straightLineProjectorFromLayerIJtoK_fu_541/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_get_index_from_z_fu_1317_group">
+            <obj_property name="label">grp_get_index_from_z_fu_1317</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_get_index_from_z_fu_1317_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_index_from_z_fu_1317/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_patch_buffer_add_patch2_fu_1330_group">
+            <obj_property name="label">grp_patch_buffer_add_patch2_fu_1330</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_patch_buffer_add_patch2_fu_1330_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_patch_buffer_add_patch2_fu_1330/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_get_acceptanceCorners_fu_1341_group">
+            <obj_property name="label">grp_get_acceptanceCorners_fu_1341</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="grp_get_acceptanceCorners_fu_1341_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_system_top_top/AESL_inst_system_top/grp_p_shadowquilt_main_loop_make_verticle_strip_fu_283/grp_get_acceptanceCorners_fu_1341/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>
