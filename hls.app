@@ -15,6 +15,7 @@
         <solution name="solution1" status="active"/>
         <solution name="solution1" status="active"/>
         <solution name="solution1" status="active"/>
+        <solution name="solution1" status="active"/>
     </solutions>
 </project>
 
