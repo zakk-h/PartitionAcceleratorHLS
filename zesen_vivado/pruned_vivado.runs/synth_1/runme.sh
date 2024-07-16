@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/pruned_vivado/pruned_vivado.runs/synth_1'
+HD_PWD='C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_vivado/pruned_vivado.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/pruned_vivado/pruned_vivado.runs/synth_1/system_top.tcl"
+  variable script "C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_vivado/pruned_vivado.runs/synth_1/system_top.tcl"
   variable category "vivado_synth"
 }
 
@@ -76,11 +76,11 @@ create_project -in_memory -part xcvu440-flga2892-1-i
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/pruned_vivado/pruned_vivado.cache/wt [current_project]
-set_property parent.project_path C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/pruned_vivado/pruned_vivado.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_vivado/pruned_vivado.cache/wt [current_project]
+set_property parent.project_path C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_vivado/pruned_vivado.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/pruned_vivado/pruned_vivado.cache/ip [current_project]
+set_property ip_output_repo c:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_vivado/pruned_vivado.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }

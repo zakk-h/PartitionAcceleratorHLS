@@ -14,12 +14,13 @@ Command: synth_design -top system_top -part xcvu440-flga2892-1-i
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xcvu440'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu440'
+INFO: [Common 17-86] Your Synthesis license expires in 25 day(s)
 INFO: [Device 21-403] Loading part xcvu440-flga2892-1-i
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2852
+INFO: [Synth 8-7075] Helper process launched with PID 29228
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1762.719 ; gain = 254.477
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:03 . Memory (MB): peak = 1762.148 ; gain = 254.957
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/export/hdl/verilog/system_top.v:12]
 	Parameter ap_ST_fsm_state1 bound to: 3'b001 
@@ -274,11 +275,11 @@ ERROR: [Synth 8-6156] failed synthesizing module 'system_top_alignedtoline_per_l
 ERROR: [Synth 8-6156] failed synthesizing module 'system_top_makePatches_ShadowQuilt_fromEdges' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/export/hdl/verilog/system_top_makePatches_ShadowQuilt_fromEdges.v:10]
 ERROR: [Synth 8-6156] failed synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/export/hdl/verilog/system_top.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1820.852 ; gain = 312.609
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1820.934 ; gain = 313.742
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
-53 Infos, 12 Warnings, 0 Critical Warnings and 9 Errors encountered.
+54 Infos, 12 Warnings, 0 Critical Warnings and 9 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Tue Jul  9 12:42:55 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 14 15:27:58 2024...

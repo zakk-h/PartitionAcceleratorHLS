@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Tue Jul  9 12:44:09 2024
-# Process ID: 12420
+# Start of session at: Sun Jul 14 15:15:55 2024
+# Process ID: 27456
 # Current directory: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_vivado/tanish_vivado.runs/synth_1
 # Command line: vivado.exe -log makePatches_ShadowQuilt_fromEdges.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source makePatches_ShadowQuilt_fromEdges.tcl
 # Log file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_vivado/tanish_vivado.runs/synth_1/makePatches_ShadowQuilt_fromEdges.vds
@@ -14,12 +14,13 @@ Command: synth_design -top makePatches_ShadowQuilt_fromEdges -part xcvu440-flga2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xcvu440'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu440'
+INFO: [Common 17-86] Your Synthesis license expires in 25 day(s)
 INFO: [Device 21-403] Loading part xcvu440-flga2892-1-i
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20372
+INFO: [Synth 8-7075] Helper process launched with PID 15836
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1764.055 ; gain = 255.582
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1762.434 ; gain = 255.141
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'makePatches_ShadowQuilt_fromEdges' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges.v:12]
 	Parameter ap_ST_fsm_state1 bound to: 8'b00000001 
@@ -429,11 +430,11 @@ ERROR: [Synth 8-6156] failed synthesizing module 'makePatches_ShadowQuilt_fromEd
 ERROR: [Synth 8-6156] failed synthesizing module 'makePatches_ShadowQuilt_fromEdges_solveNextPatchPair' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges_solveNextPatchPair.v:10]
 ERROR: [Synth 8-6156] failed synthesizing module 'makePatches_ShadowQuilt_fromEdges' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/makePatches_ShadowQuilt_fromEdges/hdl/verilog/makePatches_ShadowQuilt_fromEdges.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1828.699 ; gain = 320.227
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1827.328 ; gain = 320.035
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 0 Warnings, 0 Critical Warnings and 9 Errors encountered.
+45 Infos, 0 Warnings, 0 Critical Warnings and 9 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Tue Jul  9 12:44:26 2024...
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 14 15:16:12 2024...
