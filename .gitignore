@@ -1,0 +1,8 @@
+*.zip
+
+trackfinder_vivado/
+rtl_trackfinder/
+export/
+makePatches_ShadowQuilt_fromEdges/
+zesen_vivado/
+tanish_vivado/
