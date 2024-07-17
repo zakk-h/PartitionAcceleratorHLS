@@ -2,3 +2,12 @@ build/
 .vscode/
 tmp/
 .cache/
+export/
+makePatches_ShadowQuilt_fromEdges/
+tanish_vivado/
+zesen_vivado/
+trackfinder_vivado/
+rtl_trackfinder/
+rtl_trackfinder.zip
+makePatches_ShadowQuilt_fromEdges.zip
+export.zip
