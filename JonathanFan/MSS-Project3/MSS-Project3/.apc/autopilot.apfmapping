@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Generalized_MSS.cpp" path="C:\Users\rapiduser\Desktop\CodeHere\JonathanBranch\test-project\MSS-Project3\src\Generalized_MSS.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

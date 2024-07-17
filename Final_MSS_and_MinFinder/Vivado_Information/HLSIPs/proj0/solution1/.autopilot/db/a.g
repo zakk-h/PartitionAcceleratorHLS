@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/ss567/MUSER/HLSIPs/proj0/solution1/.autopilot/db/a.g.bc ${1+"$@"}

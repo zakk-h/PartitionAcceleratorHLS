@@ -1,0 +1,105 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'rapiduser' on host 'rapid-1511' (Windows NT_amd64 version 6.2) on Tue Nov 30 20:32:51 -0500 2021
+INFO: [HLS 200-10] In directory 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MinFinder-Project4'
+Sourcing Tcl script 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MinFinder-Project4/MinFinder-Project4/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project MinFinder-Project4 
+INFO: [HLS 200-10] Opening project 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MinFinder-Project4/MinFinder-Project4'.
+INFO: [HLS 200-1510] Running: set_top minfinder 
+INFO: [HLS 200-1510] Running: add_files src/MinFinderFinal.cpp 
+INFO: [HLS 200-10] Adding design file 'src/MinFinderFinal.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MinFinder-Project4/MinFinder-Project4/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 1ns.
+INFO: [HLS 200-10] Setting target device to 'xcvu35p-fsvh2892-3-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu35p-fsvh2892-3-e 
+INFO: [HLS 200-1510] Running: create_clock -period 1 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name minfinder minfinder 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.059 seconds; current allocated memory: 481.625 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/MinFinderFinal.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2.16 seconds; current allocated memory: 872.706 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'exchange(int*, int, int)' into 'minLoop(int*, int, int)' (src/MinFinderFinal.cpp:16:4)
+INFO: [HLS 214-131] Inlining function 'minLoop(int*, int, int)' into 'minfinder(int*)' (src/MinFinderFinal.cpp:28:3)
+INFO: [HLS 214-131] Inlining function 'minLoop(int*, int, int)' into 'minfinder(int*)' (src/MinFinderFinal.cpp:34:3)
+INFO: [HLS 214-131] Inlining function 'minLoop(int*, int, int)' into 'minfinder(int*)' (src/MinFinderFinal.cpp:31:3)
+INFO: [HLS 214-248] complete partitioned array 'arra' on dimension 1 (src/MinFinderFinal.cpp:22:75)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 7.407 seconds; current allocated memory: 94.789 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 94.790 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 96.184 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.127 seconds; current allocated memory: 95.313 MB.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'minfinder' (src/MinFinderFinal.cpp:7:14).
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_14_1' (src/MinFinderFinal.cpp:14) in function 'minfinder' completely with a factor of 4.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.424 seconds; current allocated memory: 115.535 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.283 seconds; current allocated memory: 107.707 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'minfinder' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'minfinder' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'minfinder'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 4, Final II = 4, Depth = 4, function 'minfinder'
+WARNING: [HLS 200-871] Estimated clock period (0.881ns) exceeds the target (target clock period: 1ns, clock uncertainty: 0.27ns, effective delay budget: 0.73ns).
+Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'minfinder' consists of the following:	'icmp' operation ('icmp_ln15_5', src/MinFinderFinal.cpp:15) [91]  (0.668 ns)
+	'select' operation ('select_ln15_1', src/MinFinderFinal.cpp:15) [94]  (0.213 ns)
+	wire write on port 'array_2' (src/MinFinderFinal.cpp:7) [99]  (0 ns)
+
+Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.154 seconds; current allocated memory: 108.016 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.198 seconds; current allocated memory: 108.399 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'minfinder' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_0' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_1' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_2' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_3' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_4' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_5' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_6' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_7' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'minfinder/array_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'minfinder' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'minfinder/array_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'minfinder'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.333 seconds; current allocated memory: 108.859 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 3.321 seconds; current allocated memory: 116.898 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for minfinder.
+INFO: [VLOG 209-307] Generating Verilog RTL for minfinder.
+INFO: [HLS 200-789] **** Estimated Fmax: 1135.07 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 3 seconds. Elapsed time: 15.014 seconds; current allocated memory: 117.196 MB.
+INFO: [HLS 200-112] Total CPU user time: 9 seconds. Total CPU system time: 7 seconds. Total elapsed time: 19.79 seconds; peak allocated memory: 872.706 MB.

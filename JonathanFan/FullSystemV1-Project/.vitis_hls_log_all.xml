@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-1016] The critical path in module 'Loop_VITIS_LOOP_738_1_proc' consists of the following:&#x9;'call' operation ('call_ret', FullSystemV1-Project/src/FullSystemV1.cpp:740) to 'laplacianCalculator' [2176]  (1.04 ns)&#xD;&#xA;&#xA;&#xD;&#xA;Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1016.html" projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T14:00:35.948-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-871] Estimated clock period (1.03741ns) exceeds the target (target clock period: 1ns, clock uncertainty: 0.14ns, effective delay budget: 0.86ns).&#xD;&#xA;Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-871.html" projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T14:00:35.901-0400" type="Warning"/>
+        <logs message="WARNING: [HLS 200-1015] Estimated delay Estimated delay (1.04ns)  of 'call' operation ('call_ret', FullSystemV1-Project/src/FullSystemV1.cpp:740) to 'laplacianCalculator' exceeds the target cycle time (target cycle time: 1ns, clock uncertainty: 0.14ns, effective cycle time: 0.86ns).&#xD;&#xA;&#xA;&#xD;&#xA;Resolution: For help on HLS 200-1015 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=200-1015.html" projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T14:00:05.541-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'Block_for.end_proc' to 'Block_for_end_proc'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:52.141-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'allNodeProcessors&lt;3ul>' to 'allNodeProcessors_3ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.688-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'nodeProcessor&lt;3ul>' to 'nodeProcessor_3ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.641-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'nodeMSSEngine&lt;3ul, 8ul>' to 'nodeMSSEngine_3ul_8ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.594-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'MSS&lt;3ul>' to 'MSS_3ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.531-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'nodeMinFinderEngine&lt;3ul, 8ul>' to 'nodeMinFinderEngine_3ul_8ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.453-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'MinFinderPipelined&lt;3ul, 8ul, 2ul>' to 'MinFinderPipelined_3ul_8ul_2ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.406-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'MinFinderPipelined&lt;3ul, 8ul, 1ul>' to 'MinFinderPipelined_3ul_8ul_1ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.360-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'MinFinderPipelined&lt;3ul, 8ul, 0ul>' to 'MinFinderPipelined_3ul_8ul_0ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.328-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'buildPrunedMatrices&lt;8ul>' to 'buildPrunedMatrices_8ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.203-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'killPrunedNodes&lt;8ul>' to 'killPrunedNodes_8ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.141-0400" type="Warning"/>
+        <logs message="WARNING: [SYN 201-103] Legalizing function name 'buildOnePrunedMatrix&lt;8ul>' to 'buildOnePrunedMatrix_8ul_s'." projectName="FullSystemV1-Project" solutionName="solution1" date="2022-07-08T13:47:51.110-0400" type="Warning"/>
+      </synLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

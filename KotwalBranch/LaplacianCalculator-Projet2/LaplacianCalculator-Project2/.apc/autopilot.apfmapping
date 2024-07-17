@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Laplacian_no_mult.cpp" path="C:\Users\rapiduser\Desktop\CodeHere\JonathanBranch\test-project\LaplacianCalculator-Projet2\src\Laplacian_no_mult.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

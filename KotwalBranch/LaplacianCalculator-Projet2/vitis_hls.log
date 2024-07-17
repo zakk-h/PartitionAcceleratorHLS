@@ -1,0 +1,237 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'rapiduser' on host 'rapid-1511' (Windows NT_amd64 version 6.2) on Tue Nov 23 14:49:00 -0500 2021
+INFO: [HLS 200-10] In directory 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/LaplacianCalculator-Projet2'
+Sourcing Tcl script 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/LaplacianCalculator-Projet2/LaplacianCalculator-Project2/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project LaplacianCalculator-Project2 
+INFO: [HLS 200-10] Opening project 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/LaplacianCalculator-Projet2/LaplacianCalculator-Project2'.
+INFO: [HLS 200-1510] Running: set_top LaplacianCalc 
+INFO: [HLS 200-1510] Running: add_files src/Laplacian_no_mult.cpp 
+INFO: [HLS 200-10] Adding design file 'src/Laplacian_no_mult.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/LaplacianCalculator-Projet2/LaplacianCalculator-Project2/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 2ns.
+INFO: [HLS 200-10] Setting target device to 'xcvu35p-fsvh2892-3-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu35p-fsvh2892-3-e 
+INFO: [HLS 200-1510] Running: create_clock -period 2 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name LaplacianCalc LaplacianCalc 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.089 seconds; current allocated memory: 481.626 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/Laplacian_no_mult.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 2 seconds. Elapsed time: 12.443 seconds; current allocated memory: 93.136 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base<12, true>(ap_int_base<12, true> const&)' into 'ap_int_base<12, true>::RType<12, true>::plus operator+<12, true, 12, true>(ap_int_base<12, true> const&, ap_int_base<12, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1346:339)
+INFO: [HLS 214-131] Inlining function 'ap_int<13>::ap_int<13, true>(ap_int_base<13, true> const&)' into 'ap_int_base<12, true>::RType<12, true>::plus operator+<12, true, 12, true>(ap_int_base<12, true> const&, ap_int_base<12, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1346:551)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::ap_int_base<12, true>(ap_int_base<12, true> const&)' into 'ap_int_base<12, true>::RType<12, true>::plus operator+<12, true, 12, true>(ap_int_base<12, true> const&, ap_int_base<12, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1346:427)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<17, true>::ap_int_base<13, true>(ap_int_base<13, true> const&)' into 'ap_int_base<13, true>::RType<16, true>::minus operator-<13, true, 16, true>(ap_int_base<13, true> const&, ap_int_base<16, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<17>::ap_int<17, true>(ap_int_base<17, true> const&)' into 'ap_int_base<13, true>::RType<16, true>::minus operator-<13, true, 16, true>(ap_int_base<13, true> const&, ap_int_base<16, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<17, true>::ap_int_base<16, true>(ap_int_base<16, true> const&)' into 'ap_int_base<13, true>::RType<16, true>::minus operator-<13, true, 16, true>(ap_int_base<13, true> const&, ap_int_base<16, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1347:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::ap_int_base(short)' into 'ap_int_base<13, true>::RType<($_0)16, true>::minus operator-<13, true>(ap_int_base<13, true> const&, short)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1459:1565)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::RType<16, true>::minus operator-<13, true, 16, true>(ap_int_base<13, true> const&, ap_int_base<16, true> const&)' into 'ap_int_base<13, true>::RType<($_0)16, true>::minus operator-<13, true>(ap_int_base<13, true> const&, short)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1459:1563)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::RType<12, true>::plus operator+<12, true, 12, true>(ap_int_base<12, true> const&, ap_int_base<12, true> const&)' into 'singleNodeLaplacians(ap_int<12>*, ap_int<12>*, ap_int<20> (*) [4], ap_int<20> (*) [4], short)' (src/Laplacian_no_mult.cpp:24:28)
+INFO: [HLS 214-131] Inlining function 'ap_int<20>::ap_int(int)' into 'singleNodeLaplacians(ap_int<12>*, ap_int<12>*, ap_int<20> (*) [4], ap_int<20> (*) [4], short)' (src/Laplacian_no_mult.cpp:34:25)
+INFO: [HLS 214-131] Inlining function 'ap_int<20>::ap_int(int)' into 'singleNodeLaplacians(ap_int<12>*, ap_int<12>*, ap_int<20> (*) [4], ap_int<20> (*) [4], short)' (src/Laplacian_no_mult.cpp:28:24)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<13, true>::RType<($_0)16, true>::minus operator-<13, true>(ap_int_base<13, true> const&, short)' into 'singleNodeLaplacians(ap_int<12>*, ap_int<12>*, ap_int<20> (*) [4], ap_int<20> (*) [4], short)' (src/Laplacian_no_mult.cpp:24:36)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<17, true>::operator long long() const' into 'singleNodeLaplacians(ap_int<12>*, ap_int<12>*, ap_int<20> (*) [4], ap_int<20> (*) [4], short)' (src/Laplacian_no_mult.cpp:24:22)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<21, true>::ap_int_base<20, true>(ap_int_base<20, true> const&)' into 'ap_int_base<20, true>::RType<20, true>::plus operator+<20, true, 20, true>(ap_int_base<20, true> const&, ap_int_base<20, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1346:339)
+INFO: [HLS 214-131] Inlining function 'ap_int<21>::ap_int<21, true>(ap_int_base<21, true> const&)' into 'ap_int_base<20, true>::RType<20, true>::plus operator+<20, true, 20, true>(ap_int_base<20, true> const&, ap_int_base<20, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1346:551)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<21, true>::ap_int_base<20, true>(ap_int_base<20, true> const&)' into 'ap_int_base<20, true>::RType<20, true>::plus operator+<20, true, 20, true>(ap_int_base<20, true> const&, ap_int_base<20, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1346:427)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::operator long long() const' into 'LaplacianCalc(ap_int<12> const (*) [4], ap_int<12> const (*) [4], ap_int<12> const (*) [4], int, int, int, int, int*)' (src/Laplacian_no_mult.cpp:66:116)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<21, true>::operator long long() const' into 'LaplacianCalc(ap_int<12> const (*) [4], ap_int<12> const (*) [4], ap_int<12> const (*) [4], int, int, int, int, int*)' (src/Laplacian_no_mult.cpp:85:9)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<20, true>::RType<20, true>::plus operator+<20, true, 20, true>(ap_int_base<20, true> const&, ap_int_base<20, true> const&)' into 'LaplacianCalc(ap_int<12> const (*) [4], ap_int<12> const (*) [4], ap_int<12> const (*) [4], int, int, int, int, int*)' (src/Laplacian_no_mult.cpp:85:38)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::operator long long() const' into 'LaplacianCalc(ap_int<12> const (*) [4], ap_int<12> const (*) [4], ap_int<12> const (*) [4], int, int, int, int, int*)' (src/Laplacian_no_mult.cpp:75:116)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>::operator long long() const' into 'LaplacianCalc(ap_int<12> const (*) [4], ap_int<12> const (*) [4], ap_int<12> const (*) [4], int, int, int, int, int*)' (src/Laplacian_no_mult.cpp:80:116)
+INFO: [HLS 214-186] Unrolling loop 'allLaplacians_label4' (src/Laplacian_no_mult.cpp:78:23) in function 'LaplacianCalc' completely with a factor of 4 (src/Laplacian_no_mult.cpp:78:23)
+INFO: [HLS 214-186] Unrolling loop 'allLaplacians_label3' (src/Laplacian_no_mult.cpp:73:23) in function 'LaplacianCalc' completely with a factor of 4 (src/Laplacian_no_mult.cpp:73:23)
+INFO: [HLS 214-186] Unrolling loop 'allLaplacians_label2' (src/Laplacian_no_mult.cpp:64:23) in function 'LaplacianCalc' completely with a factor of 4 (src/Laplacian_no_mult.cpp:64:23)
+INFO: [HLS 214-186] Unrolling loop 'singleNodeLaplacians_label0' (src/Laplacian_no_mult.cpp:18:30) in function 'singleNodeLaplacians' completely with a factor of 4 (src/Laplacian_no_mult.cpp:18:30)
+INFO: [HLS 214-186] Unrolling loop 'singleNodeLaplacians_label1' (src/Laplacian_no_mult.cpp:22:31) in function 'singleNodeLaplacians' completely with a factor of 4 (src/Laplacian_no_mult.cpp:22:31)
+INFO: [HLS 214-186] Unrolling loop 'singleNodeLaplacians_label1' (src/Laplacian_no_mult.cpp:22:31) in function 'singleNodeLaplacians' completely with a factor of 4 (src/Laplacian_no_mult.cpp:22:31)
+INFO: [HLS 214-186] Unrolling loop 'singleNodeLaplacians_label1' (src/Laplacian_no_mult.cpp:22:31) in function 'singleNodeLaplacians' completely with a factor of 4 (src/Laplacian_no_mult.cpp:22:31)
+INFO: [HLS 214-186] Unrolling loop 'singleNodeLaplacians_label1' (src/Laplacian_no_mult.cpp:22:31) in function 'singleNodeLaplacians' completely with a factor of 4 (src/Laplacian_no_mult.cpp:22:31)
+INFO: [HLS 214-178] Inlining function 'std::abs(long long)' into 'singleNodeLaplacians(ap_int<12>*, ap_int<12>*, ap_int<20> (*) [4], ap_int<20> (*) [4], short)' (src/Laplacian_no_mult.cpp:15:0)
+INFO: [HLS 214-248] complete partitioned array 'c1coord' on dimension 1 (src/Laplacian_no_mult.cpp:46:2)
+INFO: [HLS 214-248] complete partitioned array 'c1coord' on dimension 2 (src/Laplacian_no_mult.cpp:47:9)
+INFO: [HLS 214-248] complete partitioned array 'c2coord' on dimension 1 (src/Laplacian_no_mult.cpp:48:9)
+INFO: [HLS 214-248] complete partitioned array 'c2coord' on dimension 2 (src/Laplacian_no_mult.cpp:49:9)
+INFO: [HLS 214-248] complete partitioned array 'c3coord' on dimension 1 (src/Laplacian_no_mult.cpp:50:9)
+INFO: [HLS 214-248] complete partitioned array 'c3coord' on dimension 2 (src/Laplacian_no_mult.cpp:51:9)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 8.355 seconds; current allocated memory: 94.578 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.032 seconds; current allocated memory: 94.579 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.294 seconds; current allocated memory: 99.017 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.617 seconds; current allocated memory: 103.176 MB.
+WARNING: [HLS 200-1476] Applying partition directive (src/Laplacian_no_mult.cpp:52:9) and reshape directive (src/Laplacian_no_mult.cpp:55:9) on the same variable 'laplaciansIO.V' (src/Laplacian_no_mult.cpp:45) may lead to unexpected synthesis behaviors.\
+
+WARNING: [HLS 200-1476] Applying partition directive (src/Laplacian_no_mult.cpp:57:9) and reshape directive (src/Laplacian_no_mult.cpp:60:9) on the same variable 'laplaciansIO_T.V' (src/Laplacian_no_mult.cpp:46) may lead to unexpected synthesis behaviors.\
+
+INFO: [XFORM 203-131] Reshaping array 'laplaciansIO.V' (src/Laplacian_no_mult.cpp:45) in dimension 3 completely.
+INFO: [XFORM 203-131] Reshaping array 'laplaciansIO_T.V' (src/Laplacian_no_mult.cpp:46) in dimension 3 completely.
+INFO: [XFORM 203-131] Reshaping array 'laplaciansIO.V' (src/Laplacian_no_mult.cpp:45) in dimension 4 completely.
+INFO: [XFORM 203-131] Reshaping array 'laplaciansIO_T.V' (src/Laplacian_no_mult.cpp:46) in dimension 4 completely.
+INFO: [XFORM 203-101] Partitioning array 'laplaciansIO.V' (src/Laplacian_no_mult.cpp:45) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'laplaciansIO_T.V' (src/Laplacian_no_mult.cpp:46) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'laplaciansIO.V' (src/Laplacian_no_mult.cpp:45) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'laplaciansIO_T.V' (src/Laplacian_no_mult.cpp:46) in dimension 2 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 2.83 seconds; current allocated memory: 129.052 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.301 seconds; current allocated memory: 134.597 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'LaplacianCalc' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'singleNodeLaplacians' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.327 seconds; current allocated memory: 135.352 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.415 seconds; current allocated memory: 135.990 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LaplacianCalc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.788 seconds; current allocated memory: 136.476 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 1.748 seconds; current allocated memory: 137.493 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'singleNodeLaplacians' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'singleNodeLaplacians'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 0 seconds. Elapsed time: 4.785 seconds; current allocated memory: 138.727 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LaplacianCalc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1coord_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2coord_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3coord_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/c4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'LaplacianCalc/ans' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'LaplacianCalc' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_3_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_3_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c1coord_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_0_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_0_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_0_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_0_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c2coord_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_0_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_0_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_0_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_0_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_1_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_1_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_1_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'LaplacianCalc/c3coord_1_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-104] Estimated max fanout for 'LaplacianCalc' is 7680 from HDL expression: (1'b1 == ap_CS_fsm_state2)
+INFO: [RTGEN 206-100] Generating core module 'mux_124_320_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LaplacianCalc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 2 seconds. CPU system time: 2 seconds. Elapsed time: 3.41 seconds; current allocated memory: 142.431 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 8 seconds. CPU system time: 2 seconds. Elapsed time: 9.93 seconds; current allocated memory: 154.199 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for LaplacianCalc.
+INFO: [VLOG 209-307] Generating Verilog RTL for LaplacianCalc.
+INFO: [HLS 200-789] **** Estimated Fmax: 684.93 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 26 seconds. CPU system time: 6 seconds. Elapsed time: 48.377 seconds; current allocated memory: 154.860 MB.
+INFO: [HLS 200-112] Total CPU user time: 28 seconds. Total CPU system time: 10 seconds. Total elapsed time: 52.504 seconds; peak allocated memory: 481.626 MB.

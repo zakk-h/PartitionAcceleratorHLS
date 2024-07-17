@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="DummyGlobalCommunication.cpp" path="C:\Users\bkunj\test-project\GlobalCommunicationMethod\DummyGlobalCommunication.cpp"/>
+    <originFiles name="DummyGlobalCommunication.cpp" path="C:\Users\bkunj\test-project\GlobalCommunicationMethod\PruneGlobalMatrix\src\DummyGlobalCommunication.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="DummyGlobalCommunication_Test.cpp" path="C:\Users\bkunj\test-project\GlobalCommunicationMethod\PruneGlobalMatrix\src\DummyGlobalCommunication_Test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

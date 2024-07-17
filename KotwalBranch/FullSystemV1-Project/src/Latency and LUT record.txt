@@ -1,0 +1,7 @@
+No Paragma : L:217 LUT:2512
+Unroll 367 : L:199 LUT:3605
+Ur 367&369 : L:143 LUT:1444 *Ur = Uroll
+
+
+Oct. 31
+Partision the MM array in the main function. Because violation in line 367 suggest that MM does not have enough access ports. And this will resolve by partisioning

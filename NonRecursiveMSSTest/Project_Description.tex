@@ -1,0 +1,66 @@
+
+\documentclass[11pt]{article}
+
+\makeatother
+%AMS-TeX packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{amsfonts}
+\usepackage[all,cmtip]{xy}%Commutative Diagrams
+\usepackage[pdftex]{graphicx}
+\usepackage{float}
+%geometry (sets margin) and other useful packages
+\usepackage[margin=1in]{geometry}
+\usepackage{sidecap}
+\usepackage{wrapfig}
+\usepackage{verbatim}
+\usepackage{mathrsfs}
+
+\usepackage{marvosym}
+\usepackage{graphicx,ctable,booktabs}
+\usepackage{setspace}
+\usepackage{xlop}
+
+\usepackage{import}
+\usepackage{siunitx}
+\usepackage{placeins}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+%
+%Fancy-header package to modify header/page numbering 
+%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%\addtolength{\headwidth}{\marginparsep} %these change header-rule width
+%\addtolength{\headwidth}{\margin par width}
+\chead{}
+\rhead{\thepage}
+\lfoot{Section \thesection}
+\cfoot{}
+\rfoot{\footnotesize Project Description}
+\renewcommand{\headrulewidth}{.3pt}
+\renewcommand{\footrulewidth}{.3pt}
+\setlength\voffset{-0.25in}
+\setlength\textheight{648pt}
+\singlespacing
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+
+\begin{document}
+
+\tableofcontents
+\section{Project Overview}
+\subsection{Project subpoint}
+
+\end{document}
+
+

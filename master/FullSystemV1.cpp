@@ -1,0 +1,1716 @@
+// Edit history: 02/01/2023 AHK. Debugged killLaplacianValue from -1 to 999999
+
+// C++ imports
+#include <stdio.h>
+#include <iostream>
+#include <stdint.h>
+#include <assert.h>
+#include <fstream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <math.h>
+#include <time.h>
+#include <bitset>
+#include <chrono>
+#include <random>
+
+// Vitis imports
+// #include "ap_int.h"
+// #include hls_stream.h
+// #include hls_vector.h
+
+// Namespaces
+using namespace std;
+
+// Import math keywords
+#define _USE_MATH_DEFINES
+
+// Global Constants
+#define totalLayers 5 // Each layer corresponds to the set of hits detected by a single sensor
+#define middleLayers 3
+#define anchorLayer 1
+#define adjacentLayers 2 // Each middle layer has 2 adjacent layers
+#define numberOfNodes 16 // Each node corresponds to a "hit" picked up by a sensor; we assume that each layer has 16 hits for the sake of this project
+#define adjacentNodes 16 // Each middle layer node has 16 adjacent nodes above and below
+#define highestPower 4 // log_2(numberOfNodes)
+#define coordinateParticle1 0
+#define coordinateParticle2 3
+#define acceptLink true 
+#define rejectLink false
+#define upLink 0
+#define downLink 1
+#define aboveLayerIndex 0
+#define belowLayerIndex 1
+#define killLaplacianValue 999999
+#define indexTYPE short  // data type for array indices
+//#define structTYPE ap_int<24> // data type for coded structure, laplacian + upLink + downLink
+//#define structType bitset<24> 
+#define structTYPE int
+#define laplacianTYPE int // data type for laplacian and node (hit) coordinates
+#define xyCoordinateType short
+// #define spacepointTYPE ap_int<32> // data type for 2D spacepoint coordinates (packed)
+//#define spacepointTYPE bitset<32>
+#define spacepointTYPE unsigned int // data type for 2D spacepoint coordinates, separate X and Y
+#define nWeightedCoordinates 5 // each coordinate has 3 weighted versions for laplacian calculation and 2 for slope calculation
+#define eventPipelineStages 7 // number of events in pipeline
+#define numberOfDirections 2 // rows and columns for upward layer and downward layer
+#define nPixelDimensions 2 // for 2D pixels, X and Y coordinates of hit
+#define nMetrics 2 // number of track quality metrics
+#define rowDirection 0
+#define columnDirection 1
+#define combinedNodeProcessor false
+#define inlineModules true
+#define printDebug false
+/*
+	Returns a random integer between min and max
+	@param min The lower bound (inclusive) for the random integer
+	@param max The upper bound (inclusive) for the random integer
+	@return the random integer
+*/
+int random(int min, int max) {
+   static bool first = true;
+   const bool frozenRandom = false;
+   auto now = std::chrono::system_clock::now();
+
+	// Get the time since the epoch (in milliseconds)
+    auto duration_since_epoch = std::chrono::duration_cast<std::chrono::milliseconds>(now.time_since_epoch());
+
+    // Get the number of milliseconds as an integer value
+    int64_t milliseconds = duration_since_epoch.count();
+
+   if (first) {  
+	  if (frozenRandom) srand(16); // 14,15, 16
+	  else srand(milliseconds); //seeding for the first time only!
+      first = false;
+   }
+   return min + rand() % (( max + 1 ) - min);
+}
+
+float randomFloat(float min, float max) {
+   return min + (float(rand())/float(RAND_MAX))*(max - min);
+}
+
+int getIndex(vector<short> v, short K) {
+    auto it = find(v.begin(), v.end(), K);
+	int returnValue;
+  
+    // If element was found
+    if (it != v.end()) {
+      
+        // calculating the index
+        // of K
+        returnValue = it - v.begin();
+    }
+    else {
+        // If the element is not
+        // present in the vector
+        returnValue = -1;
+    }
+
+	return returnValue;
+}
+
+vector<short> getRandomHits(int min, int max) {
+
+	vector<short> randomsHitsVector;
+
+	while (randomsHitsVector.size() < numberOfNodes) {
+		short hit = random(min, max);
+		if (getIndex(randomsHitsVector, hit) == -1) {
+			randomsHitsVector.push_back(hit);
+		}
+	}
+
+	return randomsHitsVector;
+}
+
+vector<short> getRandomHitsFloat(float min, float max) {
+
+	vector<short> randomsHitsVector;
+
+	while (randomsHitsVector.size() < numberOfNodes) {
+	  short hit = (short)(round(randomFloat(min, max)));
+		if (getIndex(randomsHitsVector, hit) == -1) {
+			randomsHitsVector.push_back(hit);
+		}
+	}
+
+	return randomsHitsVector;
+}
+
+// wait for NMI appeal to come in 
+// find papers that are 1. less flashy and 2. have projects similar to ours (e.g. unsupervised)
+// can also look for backup journals
+
+// find a way to do author search of papers that have been published in NMI and see if they 
+// happen to be from Duke
+
+// focus on the fact that this model DOESNT use deep learning and the advantages that that gives
+// 
+
+/*
+	Generate test coordinate inputs based on several possible collision outcomes
+	@param layerRadii[totalLayers] The radius of each sensor in centimeters
+	@param theta[numberOfNodes] The angle in radians of each hit (only used with outcome param option 0)
+	@param numberOfNodes The number of fragments resulting from a particle collision
+	@param numberOfCollisionsPerTime The number of collisions every bunch crossing which occurs every 25 ns
+	@param pixelWidth The micron width of each pixel in one dimension
+	@param numberOfSections The number of sections that the sensor is split into (x sections --> x - 1 vertical planes perpendicar to the z axis)
+	@param outcome Calibrates generateCoordinates for a particular collision outcome: 0 for one curved path, 1 for two curved paths, 2 for no curved paths 
+    @param curveRadius The radius of curvature corresponding to the equation p = 0.3 Br
+*/
+
+void generateCoordinates(float layerRadii[totalLayers], short numberOfCollisionsPerTime, short numberOfSections, short outcome, float curveRadius,
+		short phicoordinates[totalLayers][numberOfNodes], short zcoordinates[totalLayers][numberOfNodes], float momentum) {
+    
+	// make z exactly the same as theta, but make curveradius extremely large so it barely curves.
+	const double pixelWidth = 50.0/10000.0; // in cm, numerator in microns
+	const double pixelWidthForSmearingPhi = 1.0/10000.0; // in cm, numerator in microns
+	const double pixelWidthForSmearingZ = 2.0/10000.0; // in cm, numerator in microns 
+	
+    short flat = random(-9,10);
+    short sign; 
+    if (flat > 0) sign = 1;
+    else sign = -1;
+
+	const int AnchorLayer = 1; // AnchorLayer is the layer which contains pixels of width pixelWidth
+	const double scalingFactor = layerRadii[AnchorLayer]/pixelWidth;
+	const float pieSliceWidth = 100.0;
+	cout << scalingFactor;
+	cout << "\n"; 
+	cout << pixelWidth;
+	cout << "\n";
+	short randomPhi1;
+	float randomZ1;
+	float randomLambda1; // cot(polar angle) 
+	float lambda;
+	short curvedLine2;
+	short curvedLinePhi;
+	short curvedLineZ;
+
+	const double luminousRegionZ = 30.0; // length in cm of luminous region of beam
+	const double zSliceWidth = 40.0; // width of z slice in cm for layer[0]; TODO: could make this array of different numbers for z width per layer
+	// double fragmentsDensityLayer = fragmentsPerPart/circumferenceLayer; // fragments per centimeter
+	double pixelDensity = 1.0/pixelWidth; // 1 is 1 cm, pixelDensity is in pixels/centimeter
+	double lambdaRange = (zSliceWidth/layerRadii[4]);
+	double curvatureMax = 1.0/(2.0*curveRadius);
+	double curvature = sign*randomFloat(0.0, curvatureMax);
+	const float radiationLengthPerLayer = 0.04; // 4% radiation length
+	float ptKickAngular = (13.6/1000.0)*sqrt(radiationLengthPerLayer)/momentum; // 13.6 MeV => GeV
+	
+	//cout << "pixelDensity: " << pixelDensity << " scalingFactor: " << scalingFactor << "\n";
+
+	vector<short> randomHitsVectorPhi;
+	vector<short> randomHitsVectorZ;
+
+	regenerate:
+	double rPhiSmearMS = 0;
+	double zSmearMS = 0;
+	for (short layer = 0; layer < totalLayers; layer++) { 
+		// short numberOfFragmentsPerTime = numberOfNodes*numberOfCollisionsPerTime;
+		// short fragmentsPerPart = (short) numberOfFragmentsPerTime/numberOfSections;
+		double circumferenceLayer = 2.0*layerRadii[layer]*M_PI/pieSliceWidth; // divided by pieSliceWidth to return a slice
+		// double averageNumberOfPixelsPerParticle = pixelDensity/fragmentsDensityLayer; // e.g. every 10th pixel has a particle
+		float maxNumPixelsLayerPhi = pixelDensity*circumferenceLayer/(layerRadii[layer]/layerRadii[AnchorLayer]); //TODO: why is this making our phi values so small?
+		float maxNumPixelsLayerZ = pixelDensity*zSliceWidth; // don't worry about layer depence now
+
+		// maxNumPixelsLayerPhi = pixelDensity*circumferenceLayer/(layerRadii[layer]/layerRadii[AnchorLayer])
+		//						= (layerRadii[AnchorLayer]/pixelwidth) * 2*M_PI/pieSliceWidth
+		// 						= scaling_factor * angularWidthOfPieSlice
+		// 						= number of pixels in a pie slice in layer[0]
+		// scaling_factor =  layerradii[0]/pixelwidth
+
+		// we generate hits just using maxNumPixelsLayerPhi which is in terms of phi, a dimensionless quantity
+		// then in the visualizer, to get the physical coordinate values, we divide by scaling_factor to 
+		// convert back to phi and then multiply by layerRadii[layer] to visualize x and y
+
+
+		// maxNumPixelsLayerZ = pixelDensity*zSliceWidth
+		//					  =  zSliceWidth / pixelWidth 	which is a pixel count
+		// scaling_factor =  layerradii[0]/pixelwidth
+		// dividing out by scaling_factor in the visualizer, we get (zSliceWidth/pixelWidth) * (pixelWidth / layerRadii[AnchorLayer])				
+		//  = zslicewidth  / layerradii[0]; this ratio is dimensionless, it is the cot of the polar angle
+
+		if (layer == 0) {
+			randomPhi1 = randomFloat(-maxNumPixelsLayerPhi/2.0, maxNumPixelsLayerPhi/2.0); 
+			randomZ1 = randomFloat(-luminousRegionZ/2.0, luminousRegionZ/2.0);
+			randomLambda1 = randomFloat(-lambdaRange/2.0, lambdaRange/2.0);
+			lambda = randomLambda1;
+
+   			curvedLine2 = random((short)(-maxNumPixelsLayerPhi/2.0), (short)(maxNumPixelsLayerPhi/2.0)); 
+		}
+		double gaussianRandomPhi = 2.0 * (randomFloat(-0.5,0.5) + randomFloat(-0.5,0.5) + randomFloat(-0.5,0.5)); // implement multiple scattering in phi
+		gaussianRandomPhi *= ptKickAngular;
+		if (layer == 0) {
+		  gaussianRandomPhi *= layerRadii[layer];
+		} else {
+		  gaussianRandomPhi *= (layerRadii[layer] - layerRadii[layer-1]);
+		}
+		rPhiSmearMS += gaussianRandomPhi;
+
+		double gaussianRandomZ = 2.0 * (randomFloat(-0.5,0.5) + randomFloat(-0.5,0.5) + randomFloat(-0.5,0.5)); // try flat random instead of gaussian
+		gaussianRandomZ *= ptKickAngular;
+		if (layer == 0) {
+		  gaussianRandomZ *= layerRadii[layer];
+		} else {
+		  gaussianRandomZ *= (layerRadii[layer] - layerRadii[layer-1]);
+		}
+		zSmearMS += gaussianRandomZ;
+
+		//cout << "RandomLambda: " << randomLambda1 << "\n";
+		
+        // Calculate angle at which a fragment travelling along radius of curvature curveRadius intersects layer
+        double curveTheta = asin(layerRadii[layer]*curvature);
+	double curveThetaSmear = curveTheta + randomFloat(-pixelWidthForSmearingPhi/(2.0*layerRadii[layer]), pixelWidthForSmearingPhi/(2.0*layerRadii[layer]));
+		//cout << "curveThetaSmear - curveTheta: " << curveThetaSmear - curveTheta << "\n";
+	double curveZ = randomLambda1*curveTheta/curvature + randomFloat(-pixelWidthForSmearingZ/2.0, pixelWidthForSmearingZ/2.0); 
+		// implement multiple scattering
+		curveThetaSmear += rPhiSmearMS / layerRadii[layer];
+		curveZ += zSmearMS;
+
+		if (outcome == 0) {
+            // Calculate the pixel index at which a fragment travelling along radius of curvature curveRadius intersects layer
+			// cout << "unrounded: " << curveTheta*scalingFactor << "\n";
+			// cout << "rounded: " << (short)(curveTheta*scalingFactor) << "\n";
+
+		  phicoordinates[layer][coordinateParticle1] = (short)(round(randomPhi1 + curveThetaSmear*scalingFactor)); 
+		  zcoordinates[layer][coordinateParticle1] = (short)(round((randomZ1 + curveZ)*pixelDensity)); 
+			//cout << "curveZ: " << curveZ << "\n";
+			//cout << "curveZ*pixelDensity: " << curveZ*pixelDensity << "\n";
+			//cout << "zcoordinates[layer][coordinateParticle1]: " << zcoordinates[layer][coordinateParticle1] << "\n";
+		} else if (outcome == 1) {
+            phicoordinates[layer][coordinateParticle1] = randomPhi1 + sign*(int)(10000/25)*((double)curveRadius - abs(((double)curveRadius)*cos(curveTheta)));  
+            curvedLinePhi = phicoordinates[layer][coordinateParticle1];
+			phicoordinates[layer][coordinateParticle2] = curvedLine2 - sign*(int)(10000/25)*((double)curveRadius - abs(((double)curveRadius)*cos(curveTheta)));
+            curvedLine2 = phicoordinates[layer][coordinateParticle2];
+		} 
+
+		randomHitsVectorPhi = getRandomHitsFloat(-maxNumPixelsLayerPhi/2.0,maxNumPixelsLayerPhi/2.0);
+		int overLapIndex = getIndex(randomHitsVectorPhi, phicoordinates[layer][coordinateParticle1]);
+		if (overLapIndex != -1) {
+			randomHitsVectorPhi.erase(randomHitsVectorPhi.begin() + overLapIndex);
+		}
+
+		randomHitsVectorZ = getRandomHitsFloat(-maxNumPixelsLayerZ/2.0,maxNumPixelsLayerZ/2.0);
+		overLapIndex = getIndex(randomHitsVectorZ, zcoordinates[layer][coordinateParticle1]);
+		if (overLapIndex != -1) {
+			randomHitsVectorZ.erase(randomHitsVectorZ.begin() + overLapIndex);
+		}
+
+		const int startOfRandomHits = 1; // set to 0 for no track embedding; set to 1 for track embedding
+
+		for (short fragmentIndex = startOfRandomHits; fragmentIndex < numberOfNodes; fragmentIndex++) {
+			// hit corresponds to pixel index; previously multiplied by pixelWidth to get and store physical distance in 1 dimension; can multiply*10000 is to go from cm to microns
+			//short hit = random((short)(-maxNumPixelsLayer/2), (short)(maxNumPixelsLayer/2))/(layerRadii[layer]/layerRadii[AnchorLayer]); 
+			phicoordinates[layer][fragmentIndex] = randomHitsVectorPhi[fragmentIndex-startOfRandomHits];
+			zcoordinates[layer][fragmentIndex] = randomHitsVectorZ[fragmentIndex-startOfRandomHits];
+		}
+
+        // Sort each coordinate in layer spatially by index
+		//short n = sizeof(phicoordinates[layer]) / sizeof(phicoordinates[layer][0]);
+		//sort(phicoordinates[layer], phicoordinates[layer] + n);
+	}
+
+	bool outofbounds = false;
+
+	for (short layer = 0; layer < totalLayers; layer++) { 
+		// for checking that the track coordinates are contained within the slice
+
+		short phicoordinatesCopy [numberOfNodes - 1];
+		short zcoordinatesCopy [numberOfNodes - 1];
+
+		for (short fragmentIndex = 0; fragmentIndex < numberOfNodes - 1; fragmentIndex++) {
+			phicoordinatesCopy[fragmentIndex] = phicoordinates[layer][fragmentIndex + 1];
+			zcoordinatesCopy[fragmentIndex] = zcoordinates[layer][fragmentIndex + 1];
+		}
+
+		sort(phicoordinatesCopy, phicoordinatesCopy + numberOfNodes - 1);
+		sort(zcoordinatesCopy, zcoordinatesCopy + numberOfNodes - 1);
+
+
+		if (phicoordinates[layer][0] < phicoordinatesCopy[0] || phicoordinates[layer][0] > phicoordinatesCopy[numberOfNodes - 2]) {
+			outofbounds = true;
+		}
+
+		if (zcoordinates[layer][0] < zcoordinatesCopy[0] || zcoordinates[layer][0] > zcoordinatesCopy[numberOfNodes - 2]) {
+			outofbounds = true;
+		}
+
+	}
+
+	if (outofbounds) {
+		goto regenerate;
+	}
+
+	ofstream CurvedFile;
+	// r phi is position --> divide by pixel width to 
+
+    CurvedFile.open ("Curved.txt");
+
+	for (short layer = 0; layer < totalLayers; layer++) { 
+		curvedLinePhi = phicoordinates[layer][coordinateParticle1];
+		curvedLineZ = zcoordinates[layer][coordinateParticle1];
+		CurvedFile <<  curvedLinePhi << ", " << curvedLineZ << "\n";
+	}
+
+    CurvedFile.close();
+
+	ofstream GeneratorFile;
+	GeneratorFile.open("Generator.txt", std::ios::app);
+	GeneratorFile << curvature << ", " << lambda << "\n";
+
+
+	for (short layer = 0; layer < totalLayers; layer++) { 
+		// randomize coordinate positions
+
+		short hit = random(0, numberOfNodes - 1);
+#if printDebug == true
+		if (layer == 2) {
+			cout << "hit: " << hit << endl;
+		}
+#endif
+		short temp = phicoordinates[layer][hit];
+		phicoordinates[layer][hit] = phicoordinates[layer][0];
+		phicoordinates[layer][0] = temp;
+
+		temp = zcoordinates[layer][hit];
+		zcoordinates[layer][hit] = zcoordinates[layer][0];
+		zcoordinates[layer][0] = temp;
+
+	}
+
+	
+	return;
+}
+/*
+	Encodes (aboveNodeIndex, belowNodeIndex, Laplacian) as an integer 
+	@param aboveNodeIndex The index corresponding to a node in the layer above a particular node
+	@param belowNodeIndex The index corresponding to a node in the layer below a particular node
+	@param Laplacian The Laplacian value for the path represented by this particular triplet
+	@return An integer that stores the aboveNodeIndex, belowNodeIndex, and Laplacian values corresponding to a middleLayer node as fixed bit widths 
+*/
+structTYPE tripletEncode(indexTYPE aboveNodeIndex, indexTYPE belowNodeIndex, laplacianTYPE Laplacian){
+	//uncomment #pragma HLS INLINE
+    return  (((structTYPE) Laplacian )<<8) | ((structTYPE) aboveNodeIndex)  | (((structTYPE) belowNodeIndex)<<4);
+}
+/*
+	Returns the Laplacian value given the bit encoded triplet
+	@param triplet An integer that stores the aboveNodeIndex, belowNodeIndex, and Laplacian value corresponding to a middleLayer node
+*/
+laplacianTYPE decodeLaplacian(structTYPE triplet){
+    //uncomment #pragma HLS INLINE
+    return (laplacianTYPE) triplet>>8;
+}
+/*
+	Returns the aboveNodeIndex value given the bit encoded triplet
+	@param triplet An integer that stores the aboveNodeIndex, belowNodeIndex, and Laplacian value corresponding to a middleLayer node
+*/
+indexTYPE decodeAboveNodeIndex(structTYPE triplet){
+    //uncomment #pragma HLS INLINE
+    return  (indexTYPE) (triplet & 0xF);
+}
+/*
+	Returns the belowNodeIndex value given the bit encoded triplet
+	@param triplet An integer that stores the aboveNodeIndex, belowNodeIndex, and Laplacian value corresponding to a middleLayer node
+*/
+indexTYPE decodeBelowNodeIndex(structTYPE triplet){
+    //uncomment #pragma HLS INLINE
+    return  (indexTYPE) ((triplet & 0xF0)>>4);
+}
+xyCoordinateType decodeXcoordinate(spacepointTYPE packedCoordinates){
+    //uncomment #pragma HLS INLINE
+    return  (xyCoordinateType) (((packedCoordinates & 0xFFFF0000)>>16) & 0x0000FFFF);
+}
+xyCoordinateType decodeYcoordinate(spacepointTYPE packedCoordinates){
+    //uncomment #pragma HLS INLINE
+    return  (xyCoordinateType) (packedCoordinates & 0x0000FFFF);
+}
+/*
+	Calculates the Laplacian values for all of the triplets associated with a single node and stores each bit encoded triplet
+	in triplet[numberOfNodes][numberOfNodes]
+	@param aboveNodeList The list of nodes in the layer above the current node
+	@param belowNodeList The list of nodes in the layer below the current node
+	@param nodeTriplets A sub-matrix of tripletMatrix corresponding to a single node that stores all of the triplets
+						associated with that node
+	@param nodeTripletsTranspose A sub-matrix of tripletMatrixTranspose corresponding to a single node that stores all of the triplets
+						associated with that node
+	@param laplacianWeights The first value is w_(ijk,l) number that weights the Laplacians in the trackTrigger.pdf paper, and the second value is the value corresponding to a + c - laplacianWeights[1]b in the discrete Laplacian calculation
+	@param inputNode The coordinates of the node that we are generating the triplets for
+*/
+void makeAdder(spacepointTYPE thisNode, spacepointTYPE inputNode, laplacianTYPE (& halfLaplacian)[nPixelDimensions]){
+//uncomment #pragma HLS INLINE
+		halfLaplacian[0] = decodeXcoordinate(thisNode) + decodeXcoordinate(inputNode);
+		//cout << "decodeXcoordinate(thisNode): " << decodeXcoordinate(thisNode) << "   decodeXcoordinate(inputNode): " << decodeXcoordinate(inputNode)/-2 << "\n";
+		halfLaplacian[1] = decodeYcoordinate(thisNode) + decodeYcoordinate(inputNode);
+		//cout << "decodeYcoordinate(thisNode): " << decodeYcoordinate(thisNode) << "   decodeYcoordinate(inputNode): " << decodeYcoordinate(inputNode)/-2 << "\n";
+//		halfLaplacian[0] = thisNode[0] + inputNode[0];	halfLaplacian[1] = thisNode[1] + inputNode[1];
+
+return;
+}
+void makeHalfLaplacian(spacepointTYPE nodeList[adjacentNodes], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions]){
+//uncomment #pragma HLS INLINE OFF
+makeHalfLaplacianLoop: for (indexTYPE nodeIndex=0; nodeIndex<adjacentNodes; nodeIndex++) {
+	         	       //uncomment #pragma HLS UNROLL
+                          halfLaplacian[nodeIndex][0] = decodeXcoordinate(nodeList[nodeIndex]) + inputNode[0];
+                          halfLaplacian[nodeIndex][1] = decodeYcoordinate(nodeList[nodeIndex]) + inputNode[1];
+//                          halfLaplacian[nodeIndex][0] = nodeList[nodeIndex][0] + inputNode[0];  halfLaplacian[nodeIndex][1] = nodeList[nodeIndex][1] + inputNode[1];
+
+					   }
+return;
+}
+void makeAbs(laplacianTYPE laplacian[adjacentNodes][nPixelDimensions],  laplacianTYPE (& absLaplacian) [adjacentNodes]) {
+//uncomment #pragma HLS INLINE
+makeAbsLoop: for (indexTYPE nodeIndex=0; nodeIndex<adjacentNodes; nodeIndex++) {
+			 //uncomment #pragma HLS UNROLL
+            	absLaplacian[nodeIndex] = std::abs(laplacian[nodeIndex][0]) + std::abs(laplacian[nodeIndex][1]);
+//    if (laplacian[nodeIndex] < 0) absLaplacian[nodeIndex] = -laplacian[nodeIndex]; else absLaplacian[nodeIndex] = laplacian[nodeIndex];
+             }
+return;
+}
+void singleNodeLaplacianCalculator(spacepointTYPE aboveNodeList[adjacentNodes], spacepointTYPE belowNodeList[adjacentNodes], spacepointTYPE inputNode, structTYPE (&nodeTriplets)[adjacentNodes][adjacentNodes]) {
+	//uncomment #pragma HLS INLINE OFF
+	laplacianTYPE halfLaplacian[adjacentNodes][nPixelDimensions];
+    //uncomment #pragma HLS array_partition variable=halfLaplacian complete dim=0
+	laplacianTYPE laplacian[adjacentNodes][nPixelDimensions];
+    //uncomment #pragma HLS array_partition variable=laplacian complete dim=0
+	laplacianTYPE absLaplacian[adjacentNodes][adjacentNodes];
+    //uncomment #pragma HLS array_partition variable=absLaplacian complete dim=0
+
+SNLCaboveNodeLoop: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
+				   //uncomment #pragma HLS PIPELINE
+					  makeAdder(aboveNodeList[aboveNodeIndex], inputNode, halfLaplacian[aboveNodeIndex]);
+                      makeHalfLaplacian(belowNodeList, halfLaplacian[aboveNodeIndex], laplacian);
+                      makeAbs(laplacian, absLaplacian[aboveNodeIndex]);
+			       }
+SNLCaboveLoopEncode: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
+				   //uncomment #pragma HLS UNROLL
+SNLCbelowLoopEncode:  for (indexTYPE belowNodeIndex=0; belowNodeIndex<adjacentNodes; belowNodeIndex++) {
+						  //uncomment #pragma HLS UNROLL
+     				      nodeTriplets[aboveNodeIndex][belowNodeIndex] = tripletEncode(aboveNodeIndex, belowNodeIndex, absLaplacian[aboveNodeIndex][belowNodeIndex]); // Bit encode the node indices and Laplacian into a structTYPE that represents the triplet, Store the triplet in the corresponding array position
+						  //cout << "decoded laplacian: " << decodeLaplacian(nodeTriplets[aboveNodeIndex][belowNodeIndex]) << " actual laplacian: " << absLaplacian[aboveNodeIndex][belowNodeIndex] << " aboveNodeIndex: " << decodeAboveNodeIndex(nodeTriplets[aboveNodeIndex][belowNodeIndex]) << " belowNodeIndex: " << decodeBelowNodeIndex(nodeTriplets[aboveNodeIndex][belowNodeIndex]) << "\n";
+						
+						  //cout << "absolute value of laplacian: " << absLaplacian[aboveNodeIndex][belowNodeIndex] << " aboveNode " << decodeXcoordinate(aboveNodeList[aboveNodeIndex]) << " aboveNodeIndex: " <<  aboveNodeIndex << " " << " inputNode: " << decodeXcoordinate(inputNode)/-2 << " belowNode " << decodeXcoordinate(belowNodeList[belowNodeIndex]) << "  belowNodeIndex: " << belowNodeIndex << "\n";
+
+			          }
+			       }
+    return;
+}
+template<std::size_t weightsToUnpack>
+void decodeCoordinates(spacepointTYPE coordinatesIn[totalLayers][nWeightedCoordinates][numberOfNodes], laplacianTYPE (& coordinatesOut)[totalLayers][weightsToUnpack][numberOfNodes][nPixelDimensions]) {
+//uncomment #pragma HLS INLINE OFF
+dCLayerLoop: for (indexTYPE layer=0; layer<totalLayers; layer++) {
+	         //uncomment #pragma HLS UNROLL
+dCweightLoop:		for (indexTYPE weightIndex=0; weightIndex<weightsToUnpack; weightIndex++) {
+					//uncomment #pragma HLS UNROLL
+dCNodeLoop:	   			 for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+						 //uncomment #pragma HLS UNROLL
+							coordinatesOut[layer][weightIndex][nodeIndex][0] = decodeXcoordinate(coordinatesIn[layer][weightIndex][nodeIndex]);
+							coordinatesOut[layer][weightIndex][nodeIndex][1] = decodeYcoordinate(coordinatesIn[layer][weightIndex][nodeIndex]);
+#if printDebug == true
+							cout << "layer: " << layer << " weightIndex: " << weightIndex << " nodeIndex: " << nodeIndex << " " << coordinatesIn[layer][weightIndex][nodeIndex] << "\n";
+#endif
+						 } // end nodeLoop
+                    } // end weightLoop
+	         } // end layerLoop
+}
+
+void laplacianCalculator(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][numberOfNodes], structTYPE (&tripletMatrix)[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes]) {
+//uncomment #pragma HLS INLINE OFF
+	// Loop through only the middle layers because the uppermost and lowermost layers are not associated with triplets
+LaplacianLayerLoop: for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+                	//uncomment #pragma HLS UNROLL
+LaplacianNodeLoop:	    for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	       				//uncomment #pragma HLS UNROLL
+								//cout << "middle layer: " << middleLayer << " middle layer node index: " << nodeIndex << "\n"; 
+							   singleNodeLaplacianCalculator(coordinates[middleLayer+2][2], coordinates[middleLayer][0], coordinates[middleLayer+1][1][nodeIndex],
+									   	   	   	   	   	   	 tripletMatrix[middleLayer][nodeIndex]);
+        	     		} // end nodeLoop
+                    } // end layerLoop
+}
+void compareAndExchange(structTYPE a[], indexTYPE i, indexTYPE j, bool upOrDown) {
+   //uncomment #pragma HLS INLINE
+   // true is down sort
+   if (upOrDown == false) {
+	   // i and j (which are indices) get swapped
+	   indexTYPE t = i;
+	   i = j;
+	   j = t;
+   } 
+if(decodeLaplacian(a[i]) > decodeLaplacian(a[j])) {
+//   if (a[i] > a[j]) {
+        structTYPE t = a[i];
+    	a[i] = a[j];
+    	a[j] = t;
+    }
+}
+void compareAndExchangeFS(laplacianTYPE a[], indexTYPE i, indexTYPE j, bool upOrDown) {
+   //uncomment #pragma HLS INLINE
+   // true is down sort
+   if (upOrDown == false) {
+	   // i and j (which are indices) get swapped
+	   indexTYPE t = i;
+	   i = j;
+	   j = t;
+   }
+//   if(decodeLaplacian(a[i]) > decodeLaplacian(a[j])) {
+   if (a[i] > a[j]) {
+        laplacianTYPE t = a[i];
+    	a[i] = a[j];
+    	a[j] = t;
+    }
+}
+void compareAndMinimize(structTYPE a[], indexTYPE i, indexTYPE j) {
+   //uncomment #pragma HLS INLINE
+	if(decodeLaplacian(a[i]) > decodeLaplacian(a[j])) 
+	//if (a[i] > a[j]) 
+	a[i] = a[j];
+}
+void compareAndMinimizePipeline(structTYPE a[], indexTYPE i, indexTYPE j, structTYPE aOut[]) {
+   //uncomment #pragma HLS INLINE
+	if(decodeLaplacian(a[i]) > decodeLaplacian(a[j])) 
+	//   if (a[i] > a[j])
+		aOut[i] = a[j];
+	else 
+		aOut[i] = a[i];
+}
+
+//Bitonic sort from existing codes
+template<std::size_t power>
+void elementLoop(structTYPE a[], indexTYPE j, indexTYPE mask) {
+    //uncomment #pragma HLS INLINE
+
+    LOOP_OVER_ELEMENTS: for (indexTYPE i=0; i<(1<<power); i++) {
+		//uncomment #pragma HLS unroll
+    	indexTYPE ij=i^j;
+        if (ij >i) {
+        	compareAndExchange(a, i, ij, (i&mask)==0);
+        }
+    }
+}
+//Bitonic sort from existing codes
+template<std::size_t power>
+void elementLoopFS(laplacianTYPE a[], indexTYPE j, indexTYPE mask) {
+    //uncomment #pragmaHLS INLINE
+
+    LOOP_OVER_ELEMENTS: for (indexTYPE i=0; i<(1<<power); i++) {
+		//uncomment #pragmaHLS unroll
+    	indexTYPE ij=i^j;
+        if (ij >i) {
+        	compareAndExchangeFS(a, i, ij, (i&mask)==0);
+        }
+    }
+}
+template<std::size_t powerLength, indexTYPE j, indexTYPE mask>
+void elementLoopPipeline(structTYPE a[powerLength], structTYPE (&arrayOut)[powerLength]) {
+    //uncomment #pragma HLS INLINE OFF
+
+    LOOP_OVER_ELEMENTS: for (indexTYPE i=0; i<powerLength; i++) {
+		//uncomment #pragma HLS unroll
+    	indexTYPE ij=i^j;
+        if (ij >i) {
+        	compareAndExchange(a, i, ij, (i&mask)==0);
+        }
+    }
+    copyElementLoop: for (indexTYPE i=0; i<powerLength; i++) {
+		//uncomment #pragma HLS unroll
+    	arrayOut[i] = a[i];
+    }
+}
+/*
+	Modifies an array of length pow(2, power) such that the smallest value of the array is put in its 0th index
+	@param array[(int)pow(2, power)] The array to be sorted
+	@param power The power of two that determines how many elements are the the array
+*/
+template<std::size_t power>
+structTYPE MinFinder(structTYPE array[]){
+//uncomment #pragma HLS INLINE OFF
+// //uncomment #pragma HLS PIPELINE II=4   this increases total FF from 4.1M to 5.1M with no benefits in LUT or timing, so do not do this
+//uncomment #pragma HLS ARRAY_PARTITION variable=array complete
+		const indexTYPE length = 1<<power;		// length is 2^power. This is the length of array
+	    if (power >= 1) {
+mfLoop22:   for (indexTYPE j=0; j<length; j+= 2){
+				//uncomment #pragma HLS unroll
+            	compareAndMinimize(array, j, j+1);
+        	}
+	    }
+	    if (power >= 2) {
+mfLoop44:   for (indexTYPE j=0; j<length; j+= 4){
+				//uncomment #pragma HLS unroll
+            	compareAndMinimize(array, j, j+2);
+        	}
+	    }
+	    if (power >= 3) {
+mfLoop88:   for (indexTYPE j=0; j<length; j+= 8){
+				//uncomment #pragma HLS unroll
+            	compareAndMinimize(array, j, j+4);
+        	}
+	    }
+	    if (power == 4) {
+mfLoop1616:  for (indexTYPE j=0; j<length; j+= 16){
+				//uncomment #pragma HLS unroll
+            	compareAndMinimize(array, j, j+8);
+        	}
+
+	    }
+        return (structTYPE) array[0];
+}
+template<std::size_t powerLength, std::size_t stage>
+void MinFinderPipelineStage(structTYPE array[powerLength], structTYPE (& arrayOut)[powerLength]){
+//uncomment #pragma HLS INLINE OFF
+
+// //uncomment #pragma HLS PIPELINE II=4   this increases total FF from 4.1M to 5.1M with no benefits in LUT or timing, so do not do this
+//uncomment #pragma HLS ARRAY_PARTITION variable=array complete
+	const indexTYPE increment = 1<<stage; // stage 0 is eg. 16->8, stage 1 is 8->4 etc when power=4
+	const indexTYPE incrementDouble = increment<<1;
+mfPLoop:   for (indexTYPE j=0; j<powerLength; j+= incrementDouble ){
+				//uncomment #pragma HLS unroll
+            	compareAndMinimize(array, j, j+increment);
+        	}
+mfPLoop1:   for (indexTYPE j=0; j<powerLength; j+= incrementDouble ){
+				//uncomment #pragma HLS unroll
+            	arrayOut[j] = array[j];
+        	}
+}
+/*
+	Given an array of length pow(2, power), put the pow(2, power)/2 greatest elements in the last pow(2, power)/2 slots
+	in the array
+	@param array[(int)pow(2, power)] The array to be sorted
+	@param power The power of two that determines how many elements are the the array
+*/
+template<std::size_t power, std::size_t powerLength>
+void MSS(structTYPE work_array[powerLength]) {
+//uncomment #pragma HLS INLINE OFF
+
+	//uncomment #pragma HLS PIPELINE II=10
+    //uncomment #pragma HLS ARRAY_PARTITION variable=work_array complete
+    
+    if (power >= 2) {
+        LOOP2: for (indexTYPE j=1; j>0; j=j>>1) {
+            elementLoop<power>(work_array,j,2);
+        }
+    } 
+    if (power >= 3) {
+        LOOP4: for (indexTYPE j=2; j>0; j=j>>1) {
+            elementLoop<power>(work_array,j,4);
+        }
+    } 
+    if (power >= 4) {
+        LOOP8: for (indexTYPE j=4; j>0; j=j>>1) {
+            elementLoop<power>(work_array,j,8);
+        }
+    }
+    elementLoop<power-1>(work_array, 1<<(power-1), 0);
+return;
+}
+template<std::size_t power, std::size_t powerLength>
+void fullSort(laplacianTYPE work_array[powerLength]) {
+//uncomment #pragma HLS INLINE OFF
+
+	//uncomment #pragma HLS PIPELINE II=10
+    //uncomment #pragma HLS ARRAY_PARTITION variable=work_array complete
+
+    const std::size_t halfPowerLength = 1<<(power-1);
+    const std::size_t quarterPowerLength = 1<<(power-2);
+
+    if (power >= 2) {
+        LOOP2: for (indexTYPE j=1; j>0; j=j>>1) {
+            elementLoopFS<power>(work_array,j,2);
+        }
+    }
+    if (power >= 3) {
+        LOOP4: for (indexTYPE j=2; j>0; j=j>>1) {
+            elementLoopFS<power>(work_array,j,4);
+        }
+    }
+    if (power >= 4) {
+        LOOP8: for (indexTYPE j=4; j>0; j=j>>1) {
+            elementLoopFS<power>(work_array,j,8);
+        }
+    }
+    elementLoopFS<power-1>(work_array, halfPowerLength, 0);
+
+    if (power > 1) {
+        LOOP8FS: for (indexTYPE j=quarterPowerLength; j>0; j=j>>1) {
+            elementLoopFS<power>(work_array,j,0);
+        }
+    }
+return;
+}
+template<std::size_t power, std::size_t powerLength>
+void MSSPipelined(structTYPE arrayIn[powerLength], structTYPE (&arrayOut)[powerLength]) {
+//uncomment #pragma HLS INLINE
+
+//	//uncomment #pragma HLS PIPELINE II=10
+    //uncomment #pragma HLS ARRAY_PARTITION variable=arrayIn complete
+
+	const std::size_t tempArrayLength = 1 + (power-1)*power/2;
+	structTYPE tempArray[tempArrayLength][powerLength];
+ 	//uncomment #pragma HLS ARRAY_PARTITION variable=tempArray complete dim=0
+
+mssCopy: for (indexTYPE j=0; j<powerLength; j++){
+			//uncomment #pragma HLS unroll
+           	tempArray[0][j] = arrayIn[j];
+     	 }
+
+    if (power >= 2) {
+        elementLoopPipeline<powerLength,1,2>(tempArray[0],tempArray[1]);
+    }
+    if (power >= 3) {
+    	elementLoopPipeline<powerLength,2,4>(tempArray[1],tempArray[2]);
+    	elementLoopPipeline<powerLength,1,4>(tempArray[2],tempArray[3]);
+    }
+    if (power >= 4) {
+    	elementLoopPipeline<powerLength,4,8>(tempArray[3],tempArray[4]);
+    	elementLoopPipeline<powerLength,2,8>(tempArray[4],tempArray[5]);
+    	elementLoopPipeline<powerLength,1,8>(tempArray[5],tempArray[6]);
+    }
+    elementLoopPipeline<powerLength,powerLength/2,0>(tempArray[tempArrayLength-1],arrayOut);
+return;
+}
+/*
+	Sets link corresponding to a single triplet's upLink to acceptLink in allNodesGoodLinks
+	@param tripletMatrixMaximum A triplet with a Laplacian value smaller than the first half of triplets in laplacianMinimums after it is sorted by MSS
+    @param nodeIndex The index of the node in the layer that the triplet corresponds to
+*/
+void updateUpLink(structTYPE tripletMatrixMinimum, bool (& nodeLinks)[numberOfNodes],  indexTYPE & bestIndex) {
+	indexTYPE aboveNodeIndex = decodeAboveNodeIndex(tripletMatrixMinimum);
+	//indexTYPE belowNodeIndex = decodeBelowNodeIndex(tripletMatrixMinimum);
+	//indexTYPE belowNodeIndex = decodeBelowNodeIndex(tripletMatrixMinimum);
+	nodeLinks[aboveNodeIndex] = acceptLink;
+	bestIndex = aboveNodeIndex;
+	//bestIndex = belowNodeIndex;
+	//cout << "bestIndex: " << bestIndex << "\n";
+}
+
+/*
+	Sets link corresponding to a single triplet's downLink to acceptLink in allNodesGoodLinks
+	@param tripletMatrixMaximum A triplet with a Laplacian value smaller than the first half of triplets in laplacianMinimumsTranspose after it is sorted by MSS
+    @param nodeIndex The index of the node in the layer that the triplet corresponds to
+*/
+void updateDownLink(structTYPE tripletMatrixMinimumTranspose, bool (& nodeLinks)[numberOfNodes], indexTYPE & bestIndex) {
+	indexTYPE belowNodeIndex = decodeBelowNodeIndex(tripletMatrixMinimumTranspose);
+	nodeLinks[belowNodeIndex] = acceptLink;
+	bestIndex = belowNodeIndex;
+}
+/*
+	Given the allNodesGoodLinks global data structure, run the consensus algorithm between up links and down links:
+		Between two nodes there is an up link and down link. Set the value of both links to the AND of the two links
+	@Param allNodeGoodLinks The global data structure that encodes the "accepted links" (most likely path taken by a particle fragment between hits)
+*/
+void pruneGlobalMatrix(bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes], bool (& tempMM)[middleLayers][numberOfNodes][numberOfNodes]){
+//uncomment #pragma HLS INLINE OFF
+    // compare middlelayer 0 and 1, then 1 and 2
+pruneGMlayer: for (indexTYPE middleLayer=0; middleLayer<middleLayers-1; middleLayer++) {
+				//uncomment #pragma HLS unroll
+pruneGMnode:	for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+					//uncomment #pragma HLS unroll
+pruneGMcorr:		for (indexTYPE correspondingNodeIndex=0; correspondingNodeIndex<numberOfNodes; correspondingNodeIndex++) {
+						//uncomment #pragma HLS unroll
+						tempMM[middleLayer][nodeIndex][correspondingNodeIndex] = allNodesGoodLinks[middleLayer+1][correspondingNodeIndex][belowLayerIndex][nodeIndex] && allNodesGoodLinks[middleLayer][nodeIndex][aboveLayerIndex][correspondingNodeIndex];
+					}
+				}
+			  }
+}
+void updateGlobalMatrix(bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes], bool tempMM[middleLayers][numberOfNodes][numberOfNodes]){
+//uncomment #pragma HLS INLINE OFF
+updateGMlayer: for (indexTYPE middleLayer=0; middleLayer<middleLayers-1; middleLayer++) {
+				//uncomment #pragma HLS unroll
+updateGMnode:	for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+					//uncomment #pragma HLS unroll
+updateGMcorr:		for (indexTYPE correspondingNodeIndex=0; correspondingNodeIndex<numberOfNodes; correspondingNodeIndex++) {
+						//uncomment #pragma HLS unroll
+						allNodesGoodLinks[middleLayer][nodeIndex][aboveLayerIndex][correspondingNodeIndex] = tempMM[middleLayer][nodeIndex][correspondingNodeIndex];
+						allNodesGoodLinks[middleLayer+1][correspondingNodeIndex][belowLayerIndex][nodeIndex] = tempMM[middleLayer][nodeIndex][correspondingNodeIndex];
+					}
+				}
+			  }
+}
+void consensusProtocol(bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes]){
+//uncomment #pragma HLS INLINE
+	  bool tempMM[middleLayers][numberOfNodes][numberOfNodes];
+      //uncomment #pragma HLS array_partition variable=tempMM complete dim=0
+	  pruneGlobalMatrix(allNodesGoodLinks,tempMM);
+	  updateGlobalMatrix(allNodesGoodLinks,tempMM);
+}
+void initializeNodeGlobalMatrix(bool (& nodeGoodLinks)[adjacentLayers][numberOfNodes]){
+//uncomment #pragma HLS INLINE OFF
+initMMcorrNode: for (indexTYPE correspondingNodeIndex=0; correspondingNodeIndex<numberOfNodes; correspondingNodeIndex++) {
+						//uncomment #pragma HLS unroll
+	                    nodeGoodLinks[aboveLayerIndex][correspondingNodeIndex] = rejectLink;
+	                    nodeGoodLinks[belowLayerIndex][correspondingNodeIndex] = rejectLink;
+                }
+}
+void buildNodeTripletsforPruning(bool nodeGoodLinks[adjacentLayers][numberOfNodes], bool (& nodeBadTriplets)[numberOfNodes][numberOfNodes]){
+//uncomment #pragma HLS INLINE OFF
+	// Iterate through nodeGoodLinks, if the link is accept, save this decision
+buildTripletsNodesAbove: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<numberOfNodes; aboveNodeIndex++) {
+				         //uncomment #pragma HLS unroll
+buildTripletsNodesBelow:     for (indexTYPE belowNodeIndex=0; belowNodeIndex<numberOfNodes; belowNodeIndex++) {
+						   	 //uncomment #pragma HLS unroll
+								nodeBadTriplets[aboveNodeIndex][belowNodeIndex] = !(nodeGoodLinks[belowLayerIndex][belowNodeIndex] == acceptLink && nodeGoodLinks[aboveLayerIndex][aboveNodeIndex] == acceptLink);
+								// cout << "AboveNodeIndex: " << aboveNodeIndex << " BelowNodeIndex: " << belowNodeIndex << " node good links above: " << nodeGoodLinks[aboveLayerIndex][aboveNodeIndex] << " node good links below: " << nodeGoodLinks[belowLayerIndex][belowNodeIndex] << " nodeBadTriplets: " << nodeBadTriplets[aboveNodeIndex][belowNodeIndex] << "\n";
+						     }
+					     }
+}
+template<std::size_t powerLength>
+void buildOnePrunedMatrix(
+		indexTYPE thisNodeBestIndices[adjacentLayers][numberOfNodes],
+		bool thisNodeBadTriplet[numberOfNodes][numberOfNodes],
+		structTYPE tM[adjacentNodes][adjacentNodes],
+		structTYPE (&tMP)[powerLength][powerLength],
+		bool (&thisNodeBadTripletPruned)[powerLength][powerLength]){
+//uncomment #pragma HLS INLINE OFF
+buildTMPnodesAbove: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<powerLength; aboveNodeIndex++) {
+//                        //uncomment #pragma HLS unroll
+						indexTYPE originalAbove = thisNodeBestIndices[aboveLayerIndex][aboveNodeIndex];
+buildTMPnodesBelow:     for (indexTYPE belowNodeIndex=0; belowNodeIndex<powerLength; belowNodeIndex++) {
+//							//uncomment #pragma HLS unroll
+							indexTYPE originalBelow = thisNodeBestIndices[belowLayerIndex][belowNodeIndex]; 
+							tMP[aboveNodeIndex][belowNodeIndex] = tM[originalAbove][originalBelow];
+							thisNodeBadTripletPruned[aboveNodeIndex][belowNodeIndex] = thisNodeBadTriplet[originalAbove][originalBelow]; 
+							// cout << "tMP laplacian " << decodeLaplacian(tMP[aboveNodeIndex][belowNodeIndex]) << " tMP aboveNode: " << decodeAboveNodeIndex(tMP[aboveNodeIndex][belowNodeIndex]) << " tMP belowNode: " << decodeBelowNodeIndex(tMP[aboveNodeIndex][belowNodeIndex]) << "  thisNodeBadTripletPruned bool: " << thisNodeBadTripletPruned[aboveNodeIndex][belowNodeIndex] << "\n";
+                        }
+					}
+}
+template<std::size_t powerLength>
+void killPrunedNodes(structTYPE (&tMP)[powerLength][powerLength], bool thisNodeBadTripletPruned[powerLength][powerLength]){
+//uncomment #pragma HLS INLINE OFF
+killTMPnodesAbove: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<powerLength; aboveNodeIndex++) {
+                        //uncomment #pragma HLS unroll
+killTMPnodesBelow:     for (indexTYPE belowNodeIndex=0; belowNodeIndex<powerLength; belowNodeIndex++) {
+							//uncomment #pragma HLS unroll
+							if (thisNodeBadTripletPruned[aboveNodeIndex][belowNodeIndex]) {
+								tMP[aboveNodeIndex][belowNodeIndex] = tripletEncode(aboveNodeIndex, belowNodeIndex, killLaplacianValue);
+								//cout << "tMP laplacian " << decodeLaplacian(tMP[aboveNodeIndex][belowNodeIndex]) << " tMP aboveNode: " << decodeAboveNodeIndex(tMP[aboveNodeIndex][belowNodeIndex]) << " tMP belowNode: " << decodeBelowNodeIndex(tMP[aboveNodeIndex][belowNodeIndex]) << "  thisNodeBadTripletPruned bool: " << thisNodeBadTripletPruned[aboveNodeIndex][belowNodeIndex] << "\n";
+							}
+							//cout << "decoded laplacian: " << decodeLaplacian(tMP[aboveNodeIndex][belowNodeIndex]) << " aboveNodeIndex: " << decodeAboveNodeIndex(tMP[aboveNodeIndex][belowNodeIndex]) << " belowNodeIndex: " << decodeBelowNodeIndex(tMP[aboveNodeIndex][belowNodeIndex]) << "\n";
+                        }
+						//cout << "END OF BELOWNODEINDEX LOOP" << "\n";
+					}
+					//cout << "END OF ABOVENODEINDEX LOOP" << "\n";
+}
+template<std::size_t powerLength>
+void buildPrunedMatrices(bool nodeGoodLinks[adjacentLayers][numberOfNodes],indexTYPE bestIndices[adjacentLayers][numberOfNodes],
+		structTYPE tM[adjacentNodes][adjacentNodes],structTYPE (&tMP)[powerLength][powerLength]){
+//uncomment #pragma HLS INLINE
+		bool nodeBadTriplet[numberOfNodes][numberOfNodes];
+		//uncomment #pragma HLS ARRAY_RESHAPE variable=nodeBadTriplet dim=0 complete
+		bool nodeBadTripletPruned[powerLength][powerLength];
+		//uncomment #pragma HLS array_partition variable=nodeBadTripletPruned complete dim=0
+	// Iterate through nodeGoodLinks, if the link is accept, insert the corresponding triplet from tripletMatrix into tripletMatrixPruned
+		buildNodeTripletsforPruning(nodeGoodLinks, nodeBadTriplet);
+		buildOnePrunedMatrix<powerLength>(bestIndices,nodeBadTriplet,tM,tMP,nodeBadTripletPruned);
+		killPrunedNodes<powerLength>(tMP,nodeBadTripletPruned);
+
+		//cout << "absolute value of laplacian: " << decodeLaplacian(tMP[aboveNodeIndex][belowNodeIndex]) << " aboveNode " << decodeXcoordinate(aboveNodeList[aboveNodeIndex]) << " aboveNodeIndex: " <<  aboveNodeIndex << " " << " inputNode: " << decodeXcoordinate(inputNode)/-2 << " belowNode " << decodeXcoordinate(belowNodeList[belowNodeIndex]) << "  belowNodeIndex: " << belowNodeIndex << "\n";
+
+}
+template<std::size_t power, std::size_t powerLength>
+void nodeMinFinderEngine(structTYPE TMr[powerLength][powerLength], structTYPE (& laplacianMinimumsOfNode)[numberOfDirections][powerLength]) {
+//uncomment #pragma HLS INLINE
+//	structTYPE TM[powerLength][powerLength];
+// 	//uncomment #pragma HLS ARRAY_PARTITION variable=TM complete dim=0
+//	structTYPE TMT[powerLength][powerLength];
+// 	//uncomment #pragma HLS ARRAY_PARTITION variable=TMT complete dim=0
+	structTYPE TMslice[powerLength];
+ 	//uncomment #pragma HLS ARRAY_PARTITION variable=TMslice complete dim=0
+	structTYPE TMTslice[powerLength];
+ 	//uncomment #pragma HLS ARRAY_PARTITION variable=TMTslice complete dim=0
+	structTYPE TMintermed[power][powerLength];
+ 	//uncomment #pragma HLS ARRAY_PARTITION variable=TMintermed complete dim=0
+	structTYPE TMTintermed[power][powerLength];
+ 	//uncomment #pragma HLS ARRAY_PARTITION variable=TMTintermed complete dim=0
+/*
+// make transpose of TM
+transposeTMnodesAbove: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<powerLength; aboveNodeIndex++) {
+                           //uncomment #pragma HLS unroll
+transposeTMnodesBelow:     for (indexTYPE belowNodeIndex=0; belowNodeIndex<powerLength; belowNodeIndex++) {
+    							//uncomment #pragma HLS unroll
+								TM[aboveNodeIndex][belowNodeIndex] = TMr[aboveNodeIndex][belowNodeIndex];
+								TMT[belowNodeIndex][aboveNodeIndex] = TMr[aboveNodeIndex][belowNodeIndex];
+                           }
+    			       }
+// Store the triplets with the smallest Laplacian values per adjacent node to nodeIndex in laplacianMinimums (above nodes)
+// or laplacianMinimumsTranspose (below nodes). laplacianMinimums is an array of size 2^power, which corresponds to the greatest
+// possible number of triplets that were accepted the last time updateUpLink and updateDownLink were run
+
+runMinFinders:	for (indexTYPE adjacentNodeIndex=0; adjacentNodeIndex<powerLength; adjacentNodeIndex++) {
+					//uncomment #pragma HLS unroll
+					laplacianMinimumsOfNode[adjacentNodeIndex] = MinFinder<power>(TM[adjacentNodeIndex]);
+    				laplacianMinimumsOfNodeTranspose[adjacentNodeIndex] = MinFinder<power>(TMT[adjacentNodeIndex]);
+				}
+*/
+runMinFinders:	for (indexTYPE adjacentNodeIndex=0; adjacentNodeIndex<powerLength; adjacentNodeIndex++) {
+					//uncomment #pragma HLS pipeline
+
+makeTMslice:        for (indexTYPE nodeIndex=0; nodeIndex<powerLength; nodeIndex++) {
+	    				//uncomment #pragma HLS unroll
+						TMslice[nodeIndex] = TMr[adjacentNodeIndex][nodeIndex];
+						// cout << "TMslice[nodeIndex]: " << decodeLaplacian(TMslice[nodeIndex]) << "\n";
+						TMTslice[nodeIndex] = TMr[nodeIndex][adjacentNodeIndex];
+                    }
+					
+					MinFinderPipelineStage<powerLength,0>(TMslice,TMintermed[0]);
+					MinFinderPipelineStage<powerLength,0>(TMTslice,TMTintermed[0]);
+				    if (power >= 2) {
+				    	MinFinderPipelineStage<powerLength,1>(TMintermed[0],TMintermed[1]);
+				    	MinFinderPipelineStage<powerLength,1>(TMTintermed[0],TMTintermed[1]);
+				    }
+				    if (power >= 3) {
+				    	MinFinderPipelineStage<powerLength,2>(TMintermed[1],TMintermed[2]);
+				    	MinFinderPipelineStage<powerLength,2>(TMTintermed[1],TMTintermed[2]);
+				    }
+				    if (power == 4) {
+				    	MinFinderPipelineStage<powerLength,3>(TMintermed[2],TMintermed[3]);
+				    	MinFinderPipelineStage<powerLength,3>(TMTintermed[2],TMTintermed[3]);
+				    }
+					laplacianMinimumsOfNode[rowDirection][adjacentNodeIndex] = TMintermed[power-1][0];
+					// cout << "laplacianMinimumsOfNode[rowDirection][adjacentNodeIndex]: " << decodeLaplacian(laplacianMinimumsOfNode[rowDirection][adjacentNodeIndex]) << " " << "\n";
+					laplacianMinimumsOfNode[columnDirection][adjacentNodeIndex] = TMTintermed[power-1][0];
+				}
+}
+template<std::size_t power, std::size_t powerLength>
+void nodeMSSEngine(structTYPE laplacianMinimumsOfNode[numberOfDirections][powerLength],
+		bool (& nodeLinks)[adjacentLayers][numberOfNodes], indexTYPE (& bestIndices)[adjacentLayers][numberOfNodes]) {
+//uncomment #pragma HLS INLINE OFF
+		structTYPE laplacianMinimumsOutput[numberOfDirections][powerLength];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOutput complete dim=0
+		structTYPE lapMinSlice[powerLength];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=lapMinSlice complete dim=0
+		structTYPE lapMinSorted[powerLength];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=lapMinSorted complete dim=0
+
+		const std::size_t tempArrayLength = (power-1)*power/2;
+		structTYPE tempArray[tempArrayLength][powerLength];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=tempArray complete dim=0
+
+
+//				MSS<power,powerLength>(laplacianMinimumsOfNode[rowDirection]);
+//				MSS<power,powerLength>(laplacianMinimumsOfNode[columnDirection]);
+runMSS:	for (indexTYPE direction=0; direction<numberOfDirections; direction++) {
+				//uncomment #pragma HLS pipeline
+makeLapMinSlice:        for (indexTYPE nodeIndex=0; nodeIndex<powerLength; nodeIndex++) {
+		    				//uncomment #pragma HLS unroll
+							lapMinSlice[nodeIndex] = laplacianMinimumsOfNode[direction][nodeIndex];
+							//cout << "lapMinSlice[nodeIndex]: " << decodeLaplacian(lapMinSlice[nodeIndex]) << "\n";
+	                    }
+
+						MSSPipelined<power,powerLength>(lapMinSlice,lapMinSorted);
+
+saveLapMinSorted:       for (indexTYPE nodeIndex=0; nodeIndex<powerLength; nodeIndex++) {
+		    				//uncomment #pragma HLS unroll
+							laplacianMinimumsOutput[direction][nodeIndex] = lapMinSorted[nodeIndex];
+							//cout << "lapMinSorted[nodeIndex]: " << decodeLaplacian(lapMinSorted[nodeIndex]) << "\n";
+	                    }
+
+		}
+				// Set allNodesGoodLinks to all rejectLinks. Since we already stored all possible triplets corresponding to acceptLinks in tripletMatrixPruned, we no longer need to keep the record in allNodesGoodLinks.
+				// Refreshing allNodesGoodLinks allows us to further decrease the possible triplet solutions and update allNodesGoodLinks with updateLink again with a fewer number of triplets, then repeat the process until
+				// there is at most one triplet per node.
+			   initializeNodeGlobalMatrix(nodeLinks);
+
+			// Accept the links corresponding to the smallest half of the triplets stored in the Minimums lists
+updateLinks:	for (indexTYPE largestTripletIndex=0; largestTripletIndex < (1<<(power-1)); largestTripletIndex++) {
+// unrolling this loop increases LUT from 85K to 97K for nodeMSSEngine, and only saves 3 cycles at 1.5 ns, so we do not unroll
+					//cout << "largestTripletIndex: " << largestTripletIndex << "\n";
+					//cout << "laplacianMinimumsOutput[rowDirection][largestTripletIndex]: " << decodeLaplacian(laplacianMinimumsOutput[rowDirection][largestTripletIndex]) << "  aboveIndex: " << decodeAboveNodeIndex(laplacianMinimumsOutput[rowDirection][largestTripletIndex]) << "  belowIndex: " << decodeBelowNodeIndex(laplacianMinimumsOutput[rowDirection][largestTripletIndex]) << "\n";
+
+					updateUpLink(laplacianMinimumsOutput[rowDirection][largestTripletIndex], nodeLinks[aboveLayerIndex], bestIndices[aboveLayerIndex][largestTripletIndex]);
+					updateDownLink(laplacianMinimumsOutput[columnDirection][largestTripletIndex], nodeLinks[belowLayerIndex], bestIndices[belowLayerIndex][largestTripletIndex]);
+
+					//cout << "laplacianMinimumsOutput row: " << decodeLaplacian(laplacianMinimumsOutput[rowDirection][largestTripletIndex]) << "     laplacianMinimumsOutput column: " << decodeLaplacian(laplacianMinimumsOutput[columnDirection][largestTripletIndex]) << " " << "aboveNodeIndex row: " << decodeAboveNodeIndex(laplacianMinimumsOutput[rowDirection][largestTripletIndex]) << "     belowNodeIndex row: " << decodeBelowNodeIndex(laplacianMinimumsOutput[rowDirection][largestTripletIndex]) << "     aboveNodeIndex column: " << decodeAboveNodeIndex(laplacianMinimumsOutput[columnDirection][largestTripletIndex]) << "     belowNodeIndex column: " << decodeBelowNodeIndex(laplacianMinimumsOutput[columnDirection][largestTripletIndex]) << "\n";
+					//cout << "bestIndices[aboveLayerIndex][largestTripletIndex] " << bestIndices[aboveLayerIndex][largestTripletIndex] << " bestIndices[belowLayerIndex][largestTripletIndex] " << bestIndices[belowLayerIndex][largestTripletIndex] << "\n";
+                }
+
+				
+}
+template<std::size_t power>
+void nodeProcessor(bool nodeGoodLinks[adjacentLayers][numberOfNodes], indexTYPE bestIndices[adjacentLayers][numberOfNodes], structTYPE tM[adjacentNodes][adjacentNodes]) {
+//uncomment #pragma HLS INLINE OFF
+	const std::size_t localPowerLength = 1<<power;
+
+    // MinFinder and MSS modify the array passed in. To create tripletMatrixPruned in the power loop, we must maintain the index correspondence between tripletMatrix and allNodesGoodLinks. Therefore, MinFinder
+	// and MSS must modify copies of tripletMatrix rather than tripletMatrix itself
+	structTYPE tripletMatrixPruned[localPowerLength][localPowerLength];
+    //uncomment #pragma HLS ARRAY_PARTITION variable=tripletMatrixPruned complete dim=0
+	structTYPE laplacianMinimumsOfNode[localPowerLength];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOfNode complete dim=0
+	structTYPE laplacianMinimumsOfNodeTranspose[localPowerLength];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOfNodeTranspose complete dim=0
+
+        if (power != highestPower) {
+						buildPrunedMatrices<localPowerLength>(nodeGoodLinks,bestIndices,tM,tripletMatrixPruned);
+        } else {
+laplacianAboveNodeCopy: 	for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
+								//uncomment #pragma HLS UNROLL
+laplacianBelowNodeCopy:  		for (indexTYPE belowNodeIndex=0; belowNodeIndex<adjacentNodes; belowNodeIndex++) {
+									//uncomment #pragma HLS UNROLL
+	 	 	 	 	 	 	 	 	tripletMatrixPruned[aboveNodeIndex][belowNodeIndex] = tM[aboveNodeIndex][belowNodeIndex];
+								}
+							}
+	   }
+
+	   nodeMinFinderEngine<power,localPowerLength>(tripletMatrixPruned,laplacianMinimumsOfNode,laplacianMinimumsOfNodeTranspose);
+	   nodeMSSEngine<power,localPowerLength>(laplacianMinimumsOfNode,laplacianMinimumsOfNodeTranspose,nodeGoodLinks,bestIndices);
+}
+void copyTripletMatrix(structTYPE tripletMatrixIn[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes], structTYPE (&tripletMatrixOut)[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes]) {
+//uncomment #pragma HLS INLINE OFF
+	// Loop through only the middle layers because the uppermost and lowermost layers are not associated with triplets
+cTMLayerLoop: for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+                	//uncomment #pragma HLS UNROLL
+cTMNodeLoop:	    for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	       				//uncomment #pragma HLS UNROLL
+cTMAboveNodeLoop: 		for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
+							//uncomment #pragma HLS UNROLL
+cTMBelowNodeLoop:  			for (indexTYPE belowNodeIndex=0; belowNodeIndex<adjacentNodes; belowNodeIndex++) {
+									//uncomment #pragma HLS UNROLL
+		 	 	 	 	 	 	 	tripletMatrixOut[middleLayer][nodeIndex][aboveNodeIndex][belowNodeIndex] = tripletMatrixIn[middleLayer][nodeIndex][aboveNodeIndex][belowNodeIndex];
+							}
+						}
+        	     	} // end nodeLoop
+              } // end layerLoop
+}
+void copyCoordinates(spacepointTYPE coordinatesIn[totalLayers][nWeightedCoordinates][numberOfNodes], spacepointTYPE (& coordinatesOut)[totalLayers][nWeightedCoordinates][numberOfNodes]) {
+//uncomment #pragma HLS INLINE OFF
+cCLayerLoop: for (indexTYPE layer=0; layer<totalLayers; layer++) {
+	         //uncomment #pragma HLS UNROLL
+cCweightLoop:		for (indexTYPE weightIndex=0; weightIndex<nWeightedCoordinates; weightIndex++) {
+					//uncomment #pragma HLS UNROLL
+cCNodeLoop:	   			 for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+						 //uncomment #pragma HLS UNROLL
+							coordinatesOut[layer][weightIndex][nodeIndex] = coordinatesIn[layer][weightIndex][nodeIndex];
+						 } // end nodeLoop
+                    } // end weightLoop
+	         } // end layerLoop
+}
+template<std::size_t power>
+void allNodeProcessors(bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+                	   indexTYPE bestIndices[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+					   structTYPE tripletMatrix[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes]
+					   ) {
+//uncomment #pragma HLS INLINE OFF
+aNPlayerLoop: for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+	      	  //uncomment #pragma HLS unroll
+aNPnodeLoop:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment #pragma HLS UNROLL
+						nodeProcessor<power>(allNodesGoodLinks[middleLayer][nodeIndex],bestIndices[middleLayer][nodeIndex],tripletMatrix[middleLayer][nodeIndex]);
+			      } // end nodeLoop
+              } // end layerLoop
+	     consensusProtocol(allNodesGoodLinks);
+}
+
+template<std::size_t power, std::size_t powerLength>
+void allNodeMSS(structTYPE laplacianMinimumsOfNode[middleLayers][numberOfNodes][numberOfDirections][powerLength],
+				bool (& allNodesGoodLinks)[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+                indexTYPE (& bestIndices)[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes]
+					   ) {
+//uncomment #pragma HLS INLINE OFF
+aNMSSlayerLoop: for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+	      	  //uncomment #pragma HLS unroll
+aNMSSnodeLoop:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment #pragma HLS UNROLL
+						nodeMSSEngine<power,powerLength>(laplacianMinimumsOfNode[middleLayer][nodeIndex],
+								allNodesGoodLinks[middleLayer][nodeIndex],bestIndices[middleLayer][nodeIndex]);
+			      } // end nodeLoop
+              } // end layerLoop
+	     consensusProtocol(allNodesGoodLinks);
+	     //	     consensusProtocol(allNodesGoodLinks);
+}
+
+template<std::size_t power, std::size_t localPowerLength>
+void nodeMinFinder(bool nodeGoodLinks[adjacentLayers][numberOfNodes], indexTYPE bestIndices[adjacentLayers][numberOfNodes], structTYPE tM[adjacentNodes][adjacentNodes],
+	structTYPE (& laplacianMinimumsOfNode)[numberOfDirections][localPowerLength]) {
+	//uncomment #pragma HLS INLINE OFF
+
+    // MinFinder and MSS modify the array passed in. To create tripletMatrixPruned in the power loop, we must maintain the index correspondence between tripletMatrix and allNodesGoodLinks. Therefore, MinFinder
+	// and MSS must modify copies of tripletMatrix rather than tripletMatrix itself
+	structTYPE tripletMatrixPruned[localPowerLength][localPowerLength];
+    //uncomment #pragma HLS ARRAY_PARTITION variable=tripletMatrixPruned complete dim=0
+
+        if (power != highestPower) {
+						buildPrunedMatrices<localPowerLength>(nodeGoodLinks,bestIndices,tM,tripletMatrixPruned);
+        } else {
+nMFlaplacianAboveNodeCopy: 	for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
+								//uncomment #pragma HLS UNROLL
+nMFlaplacianBelowNodeCopy:  		for (indexTYPE belowNodeIndex=0; belowNodeIndex<adjacentNodes; belowNodeIndex++) {
+									//uncomment #pragma HLS UNROLL
+	 	 	 	 	 	 	 	 	tripletMatrixPruned[aboveNodeIndex][belowNodeIndex] = tM[aboveNodeIndex][belowNodeIndex];
+								}
+							}
+	   }
+	   nodeMinFinderEngine<power,localPowerLength>(tripletMatrixPruned,laplacianMinimumsOfNode);
+}
+
+template<std::size_t power, std::size_t powerLength>
+void allNodeMinFindersV2(bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+                	   indexTYPE bestIndices[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+					   structTYPE tripletMatrix[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes],
+					   structTYPE (& laplacianMinimumsOfNode)[middleLayers][numberOfNodes][numberOfDirections][powerLength]) {
+//uncomment #pragma HLS INLINE OFF
+
+aNMF2layerLoop: for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+	      	  //uncomment #pragma HLS unroll
+aNMF2nodeLoop:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment #pragma HLS UNROLL
+				  	//cout << "Middle layer " << middleLayer << " node " << nodeIndex << "\n";
+						nodeMinFinder<power,powerLength>(allNodesGoodLinks[middleLayer][nodeIndex],bestIndices[middleLayer][nodeIndex], tripletMatrix[middleLayer][nodeIndex],
+								laplacianMinimumsOfNode[middleLayer][nodeIndex]);
+			      } // end nodeLoop
+              } // end layerLoop
+}
+
+template<std::size_t power, std::size_t powerLength>
+void allNodeMinFinders(structTYPE tripletMatrixPruned[middleLayers][numberOfNodes][powerLength][powerLength],
+					   structTYPE (& laplacianMinimumsOfNode)[middleLayers][numberOfNodes][powerLength],
+					   structTYPE (& laplacianMinimumsOfNodeTranspose)[middleLayers][numberOfNodes][powerLength]) {
+//uncomment #pragma HLS INLINE OFF
+	structTYPE tripletMatrixLocal[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes];
+ 	//uncomment #pragma HLS ARRAY_PARTITION variable=tripletMatrixLocal dim=0 complete
+
+aNMFlayerLoop: for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+	      	  //uncomment #pragma HLS unroll
+aNMFnodeLoop:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment #pragma HLS UNROLL
+
+	                 if (power == highestPower) {
+TMPHPAboveNodeCopy: 	for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
+					        //uncomment #pragma HLS UNROLL
+TMPHPlowNodeCopy:  		   for (indexTYPE belowNodeIndex=0; belowNodeIndex<adjacentNodes; belowNodeIndex++) {
+						       //uncomment #pragma HLS UNROLL
+		 	 	 	 			   tripletMatrixLocal[middleLayer][nodeIndex][aboveNodeIndex][belowNodeIndex] = tripletMatrixPruned[middleLayer][nodeIndex][aboveNodeIndex][belowNodeIndex];
+						   }
+					    }
+						nodeMinFinderEngine<power,powerLength>(tripletMatrixLocal[middleLayer][nodeIndex],
+								laplacianMinimumsOfNode[middleLayer][nodeIndex],
+								laplacianMinimumsOfNodeTranspose[middleLayer][nodeIndex]);
+	                 } else {
+	                	nodeMinFinderEngine<power,powerLength>(tripletMatrixPruned[middleLayer][nodeIndex],
+                    			laplacianMinimumsOfNode[middleLayer][nodeIndex],
+								laplacianMinimumsOfNodeTranspose[middleLayer][nodeIndex]);
+	                 }
+			      } // end nodeLoop
+              } // end layerLoop
+}
+
+void findAllTracks(bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+                	   indexTYPE bestIndices[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes],
+      			       indexTYPE track[numberOfNodes][totalLayers], bool trackCandidate[numberOfNodes]) {
+//uncomment#pragma HLS INLINE OFF
+
+fATnodeLoop:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment#pragma HLS UNROLL
+						track[nodeIndex][3] = bestIndices[anchorLayer][nodeIndex][aboveLayerIndex][0];
+						track[nodeIndex][1] = bestIndices[anchorLayer][nodeIndex][belowLayerIndex][0];
+						track[nodeIndex][2] = nodeIndex;
+						track[nodeIndex][4] = bestIndices[anchorLayer+1][track[nodeIndex][3]][aboveLayerIndex][0];
+						track[nodeIndex][0] = bestIndices[anchorLayer-1][track[nodeIndex][1]][belowLayerIndex][0];
+
+						trackCandidate[nodeIndex] = (allNodesGoodLinks[anchorLayer][nodeIndex][aboveLayerIndex][track[nodeIndex][3]] &&
+													 allNodesGoodLinks[anchorLayer][nodeIndex][belowLayerIndex][track[nodeIndex][1]] &&
+							                         allNodesGoodLinks[anchorLayer+1][track[nodeIndex][3]][aboveLayerIndex][track[nodeIndex][4]] &&
+													 allNodesGoodLinks[anchorLayer-1][track[nodeIndex][1]][belowLayerIndex][track[nodeIndex][0]]);
+			      } // end nodeLoop
+}
+void makeTrackCrookedness(laplacianTYPE localCoord[totalLayers][nWeightedCoordinates][nPixelDimensions], laplacianTYPE (& crookedness)[nMetrics+1][nPixelDimensions]) {
+//uncomment #pragma HLS INLINE OFF
+    laplacianTYPE oneTrackMetric[nMetrics][nPixelDimensions][middleLayers+1];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=oneTrackMetric dim=0 complete
+
+mTCdimLoop:	for (indexTYPE dir=0; dir<nPixelDimensions; dir++) {
+			//uncomment #pragma HLS UNROLL
+				// following four are laplacians
+				  oneTrackMetric[0][dir][anchorLayer+2] = 0;
+mTClaplacianLoop: for (indexTYPE ml=0; ml<middleLayers; ml++) {
+     			  //uncomment #pragma HLS UNROLL
+					oneTrackMetric[0][dir][ml] = localCoord[ml+2][2][dir] + localCoord[ml][0][dir] + localCoord[ml+1][1][dir];
+#if printDebug == true
+					// print localcoord
+					// std::cout << "localCoord " << ml << " " << localCoord[ml+2][2][dir] << " " << localCoord[ml][0][dir] << " " << localCoord[ml+1][1][dir] << std::endl;
+					// cout << "ml " << ml << " " << oneTrackMetric[0][dir][ml] << endl;
+#endif
+			      }
+				  fullSort<2,4>(oneTrackMetric[0][dir]);
+       			  crookedness[0][dir] = oneTrackMetric[0][dir][middleLayers] - oneTrackMetric[0][dir][0]; // this is positive by construction of MSS
+
+       			// following four are slopes
+mTCslopeLoop:   for (indexTYPE ml=0; ml<middleLayers+1; ml++) {
+       	        //uncomment #pragma HLS UNROLL
+       		     	oneTrackMetric[1][dir][ml] = localCoord[ml+1][3][dir] + localCoord[ml][4][dir];
+#if printDebug == true
+					// print localcoord
+					std::cout << "ml " << ml << " oneTrackMetric[1][dir][ml] " << oneTrackMetric[1][dir][ml] << " localCoord " << localCoord[ml+1][3][dir] << " " << localCoord[ml][4][dir] << std::endl;
+#endif
+       		    }
+       			fullSort<2,4>(oneTrackMetric[1][dir]);
+       			crookedness[1][dir] = oneTrackMetric[1][dir][middleLayers] - oneTrackMetric[1][dir][0]; // this is positive by construction of MSS
+#if printDebug == true
+				cout << "crookedness[1][dir] " << crookedness[1][dir] << " oneTrackMetric[1][dir][middleLayers] " << oneTrackMetric[1][dir][middleLayers]  << " oneTrackMetric[1][dir][0] " << oneTrackMetric[1][dir][0] << "\n";
+#endif
+       			// following two store the median of slopes, serving as measurements of phiPrime = pT and zPrime = cotTheta
+       			crookedness[2][dir] = oneTrackMetric[1][dir][1] + oneTrackMetric[1][dir][2]; // median is the average of the two central value, we do not divide by 2 to save on hardware, since both measurements have scale factors anyway
+            }
+}
+void makeLocalCoord(laplacianTYPE decodedCoordinates[totalLayers][nWeightedCoordinates][numberOfNodes][nPixelDimensions],
+		indexTYPE track[numberOfNodes][totalLayers],
+		laplacianTYPE (& localCoord)[numberOfNodes][totalLayers][nWeightedCoordinates][nPixelDimensions]){
+//uncomment #pragma HLS INLINE OFF
+fBTnodeLoop1:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) { // extract coordinates indexed by node in anchorLayer
+	    		  //uncomment #pragma HLS UNROLL
+getWeightedCoordLayerLoop:	for (indexTYPE layer=0; layer<totalLayers; layer++) {
+	                        //uncomment #pragma HLS UNROLL
+getWeightedCoordLoop:			 for (indexTYPE weightIndex=0; weightIndex<nWeightedCoordinates; weightIndex++) {
+								 //uncomment #pragma HLS UNROLL
+										localCoord[nodeIndex][layer][weightIndex][0] = decodedCoordinates[layer][weightIndex][track[nodeIndex][layer]][0];
+										localCoord[nodeIndex][layer][weightIndex][1] = decodedCoordinates[layer][weightIndex][track[nodeIndex][layer]][1];
+#if printDebug == true
+										cout << "localCoord " << nodeIndex << " " << layer << " " << weightIndex << " " << localCoord[nodeIndex][layer][weightIndex][0] << " " << localCoord[nodeIndex][layer][weightIndex][1] << endl;
+#endif
+								 }
+							}
+			      } // end nodeLoop1
+}
+indexTYPE findBestTrack(indexTYPE track[numberOfNodes][totalLayers], bool trackCandidate[numberOfNodes],
+            	   spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][numberOfNodes], laplacianTYPE (& trackParameters)[nMetrics+1][nPixelDimensions]){
+//uncomment #pragma HLS INLINE OFF
+        structTYPE trackCrookedness[nMetrics][nPixelDimensions][numberOfNodes];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=trackCrookedness dim=0 complete
+        laplacianTYPE crookedness[numberOfNodes][nMetrics+1][nPixelDimensions];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=crookedness dim=0 complete
+        laplacianTYPE localCoord[numberOfNodes][totalLayers][nWeightedCoordinates][nPixelDimensions];
+    	//uncomment #pragma HLS ARRAY_PARTITION variable=localCoord dim=0 complete
+        laplacianTYPE decodedCoordinates[totalLayers][nWeightedCoordinates][numberOfNodes][nPixelDimensions];
+    	//uncomment #pragma HLS ARRAY_PARTITION variable=decodedCoordinates dim=0 complete
+
+        decodeCoordinates<nWeightedCoordinates>(coordinates, decodedCoordinates);
+        makeLocalCoord(decodedCoordinates, track, localCoord);
+
+fBTnodeLoop2:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) { // compute crookedness for all tracks, one per node
+	    		  //uncomment #pragma HLS UNROLL
+						makeTrackCrookedness(localCoord[nodeIndex],crookedness[nodeIndex]);
+			      } // end nodeLoop2
+
+fBTnodeLoop3:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment #pragma HLS UNROLL
+#if printDebug == true
+				  cout << crookedness[nodeIndex][0][0] << " " << crookedness[nodeIndex][0][1] << " " << crookedness[nodeIndex][1][0] << " " << crookedness[nodeIndex][1][1] << endl;
+#endif
+                        if (!trackCandidate[nodeIndex]) { // remove non-existent tracks
+                        	crookedness[nodeIndex][0][0] = killLaplacianValue;
+                        	crookedness[nodeIndex][0][1] = killLaplacianValue;
+                        	crookedness[nodeIndex][1][0] = killLaplacianValue;
+                        	crookedness[nodeIndex][1][1] = killLaplacianValue;
+                        }
+			      } // end nodeLoop3
+
+fBTnodeLoop4:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) { // save crookedness for all tracks, existent and non-existent
+	    		  //uncomment #pragma HLS UNROLL
+                   	trackCrookedness[0][0][nodeIndex] = tripletEncode(0,nodeIndex,crookedness[nodeIndex][0][0]);
+                   	trackCrookedness[0][1][nodeIndex] = tripletEncode(0,nodeIndex,crookedness[nodeIndex][0][1]);
+                   	trackCrookedness[1][0][nodeIndex] = tripletEncode(0,nodeIndex,crookedness[nodeIndex][1][0]);
+                   	trackCrookedness[1][1][nodeIndex] = tripletEncode(0,nodeIndex,crookedness[nodeIndex][1][1]);
+					// print all trackcrookedness in one line
+#if printDebug == true
+					// print the below line but using hex values
+					cout << bitset<32>(trackCrookedness[0][0][nodeIndex]) << " " << bitset<32>(trackCrookedness[0][1][nodeIndex]) << " " << bitset<32>(trackCrookedness[1][0][nodeIndex]) << " " << bitset<32>(trackCrookedness[1][1][nodeIndex]) << endl;
+
+#endif
+			      } // end nodeLoop4
+
+				  MinFinder<4>(trackCrookedness[0][0]); // find best track in phi dimension for laplacian metric
+				  MinFinder<4>(trackCrookedness[0][1]); // find best track in z dimension for laplacian metric
+				  MinFinder<4>(trackCrookedness[1][0]); // find best track in phi dimension for slope metric
+				  MinFinder<4>(trackCrookedness[1][1]); // find best track in z dimension for slope metric
+				  indexTYPE bestTrackXLaplacian = decodeBelowNodeIndex(trackCrookedness[0][0][0]);
+				  indexTYPE bestTrackYLaplacian = decodeBelowNodeIndex(trackCrookedness[0][1][0]);
+				  indexTYPE bestTrackXSlope = decodeBelowNodeIndex(trackCrookedness[1][0][0]);
+				  indexTYPE bestTrackYSlope = decodeBelowNodeIndex(trackCrookedness[1][1][0]);
+				  indexTYPE bestTrack = -1;
+				  if (bestTrackXLaplacian == bestTrackYLaplacian && bestTrackXSlope == bestTrackYSlope && bestTrackXLaplacian == bestTrackXSlope) bestTrack = bestTrackYLaplacian; // best track is coincidence of both dimensions
+
+fBTnodeLoop5:	  for (indexTYPE metric=0; metric<=nMetrics; metric++) { // save crookedness metrics and parameter value for each dimension
+	    		  //uncomment #pragma HLS UNROLL
+#if printDebug == true
+				  		cout << "trackParameters[" << metric << "][0] = " << crookedness[bestTrack][metric][0] << " ";
+						cout << "trackParameters[" << metric << "][1] = " << crookedness[bestTrack][metric][1] << " ";
+#endif
+						if (bestTrack > -1) {
+							trackParameters[metric][0] = crookedness[bestTrack][metric][0]; // save phiPrime = curvature and its crookedness metrics
+							trackParameters[metric][1] = crookedness[bestTrack][metric][1]; // save zPrime = cotTheta and its crookedness metrics
+						} else {
+							trackParameters[metric][0] = 10000;
+							trackParameters[metric][1] = 10000;
+						}
+						
+				  }
+#if printDebug == true
+				  cout << "bestTrack in findBestTracks = " << bestTrack << endl;
+#endif
+
+return (indexTYPE) bestTrack;
+}
+void removeGhostTracks(indexTYPE bestTrack, indexTYPE track[numberOfNodes][totalLayers], bool allNodesGoodLinks[middleLayers][numberOfNodes][adjacentLayers][numberOfNodes]){
+//uncomment #pragma HLS INLINE OFF
+        structTYPE trackCrookedness[nPixelDimensions][numberOfNodes];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=trackCrookedness dim=0 complete
+        laplacianTYPE crookedness[numberOfNodes][nPixelDimensions];
+		//uncomment #pragma HLS ARRAY_PARTITION variable=crookedness dim=0 complete
+#if printDebug == true
+		cout << "bestTrack in removeGhostTracks =  " << bestTrack << endl;
+#endif
+
+rGTnodeClean:	  for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) { // remove all tracks at anchorLayer
+				  //uncomment #pragma HLS UNROLL
+	 				  allNodesGoodLinks[anchorLayer][nodeIndex][aboveLayerIndex][track[nodeIndex][3]] = rejectLink;
+   					  allNodesGoodLinks[anchorLayer][nodeIndex][belowLayerIndex][track[nodeIndex][1]] = rejectLink;
+				  }
+				  allNodesGoodLinks[anchorLayer][bestTrack][aboveLayerIndex][track[bestTrack][3]] = acceptLink; // recover best track at anchorLayer
+				  allNodesGoodLinks[anchorLayer][bestTrack][belowLayerIndex][track[bestTrack][1]] = acceptLink;
+				  consensusProtocol(allNodesGoodLinks); // remove all links of rejected tracks
+}
+
+
+/*
+	fullSystem: Determines the most likely paths taken by particle fragments resulting from a collision in the Large Hadron Collider
+	@param nodeCoordinates A totalLayers x numberOfNodes Matrix that contains the physical coordinate points for each hit. Each coordinate has 5 weighted copies to account for the distances between layers (3 copies for second derivative and 2 for first derivative)
+	@param ans Necessary for Vivado synthesis
+*/
+//TODO: Move the testing part (generateCoordinates and *maybe also* main) into the test bench; check C logic testing within VITIS
+void fullSystem(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][numberOfNodes], bool fullSystemReturnCode) {
+	//uncomment #pragma HLS DATAFLOW
+
+	//uncomment #pragma HLS ARRAY_PARTITION variable=coordinates complete dim=0
+
+	// tripletMatrix contains the set of all possible triplets per node
+	structTYPE tripletMatrix[eventPipelineStages][middleLayers][numberOfNodes][adjacentNodes][adjacentNodes];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=tripletMatrix dim=1 complete
+	//uncomment #pragma HLS ARRAY_PARTITION variable=tripletMatrix dim=2 complete
+	//uncomment #pragma HLS ARRAY_PARTITION variable=tripletMatrix dim=3 complete
+	//uncomment #pragma HLS ARRAY_RESHAPE variable=tripletMatrix dim=4 complete
+	//uncomment #pragma HLS ARRAY_RESHAPE variable=tripletMatrix dim=5 complete
+	// allNodesGoodLinks is the global data structure that encodes the "accepted links" (most likely path taken by particle fragment between hits). Initialize allNodeGoodLinks so all links are reject links
+	bool allNodesGoodLinks[highestPower][middleLayers][numberOfNodes][adjacentLayers][numberOfNodes];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=allNodesGoodLinks complete dim=0
+    // we save the best indices for each node's links up and down, coming out of nodeMSSEngine
+    indexTYPE bestIndices[highestPower][middleLayers][numberOfNodes][adjacentLayers][numberOfNodes];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=bestIndices complete dim=0
+
+	// track contains linked lists of all tracks at anchorLayer
+    indexTYPE track[numberOfNodes][totalLayers];
+    //uncomment #pragma HLS ARRAY_PARTITION variable=track dim=0 complete
+    // trackCandidate tells which track has complete linked list
+    bool trackCandidate[numberOfNodes];
+    //uncomment #pragma HLS ARRAY_PARTITION variable=trackCandidate dim=0 complete
+    laplacianTYPE trackParameters[nMetrics+1][nPixelDimensions]; // contain best track's curvature and cotTheta, and the corresponding crookedness metrics
+	//uncomment #pragma HLS ARRAY_PARTITION variable=trackParameters dim=0 complete
+    spacepointTYPE coordinatesPipeline[eventPipelineStages+1][totalLayers][nWeightedCoordinates][numberOfNodes];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=coordinatesPipeline dim=0 complete
+
+
+#if combinedNodeProcessor == false
+
+    const std::size_t highestPowerLength = 1<<highestPower;
+    const std::size_t NHPowerLength = 1<<(highestPower-1);
+    const std::size_t NNHPowerLength = 1<<(highestPower-2);
+    const std::size_t NNNHPowerLength = 1<<(highestPower-3);
+
+    structTYPE laplacianMinimumsOfNodeHP[middleLayers][numberOfNodes][numberOfDirections][highestPowerLength];
+    //uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOfNodeHP complete dim=0
+
+    structTYPE laplacianMinimumsOfNodeNHP[middleLayers][numberOfNodes][numberOfDirections][NHPowerLength];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOfNodeNHP complete dim=0
+
+    structTYPE laplacianMinimumsOfNodeNNHP[middleLayers][numberOfNodes][numberOfDirections][NNHPowerLength];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOfNodeNNHP complete dim=0
+
+    structTYPE laplacianMinimumsOfNodeNNNHP[middleLayers][numberOfNodes][numberOfDirections][NNNHPowerLength];
+	//uncomment #pragma HLS ARRAY_PARTITION variable=laplacianMinimumsOfNodeNNNHP complete dim=0
+
+#endif
+
+    laplacianCalculator(coordinates, tripletMatrix[0]);
+//    allNodeProcessors<highestPower>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+
+#if combinedNodeProcessor == false
+
+//    allNodeMinFinders<highestPower,highestPowerLength>(tripletMatrix[0], laplacianMinimumsOfNodeHP, laplacianMinimumsOfNodeTransposeHP);
+    // copyTripletMatrix(tripletMatrix[0],tripletMatrix[1]);
+
+	allNodeMinFindersV2<highestPower,highestPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], laplacianMinimumsOfNodeHP);
+	// copyTripletMatrix(tripletMatrix[1],tripletMatrix[2]);
+	// need to print out tripletmatrix and laplacianminimumsofnodehp before and after minfinder
+
+	allNodeMSS<highestPower,highestPowerLength>(laplacianMinimumsOfNodeHP, allNodesGoodLinks[0], bestIndices[0]);
+
+	for (indexTYPE middleLayer=0; middleLayer<middleLayers; middleLayer++) {
+	      	  //uncomment #pragma HLS unroll
+		for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+	    		  //uncomment #pragma HLS UNROLL
+			for (indexTYPE aboveOrBelowLayerIndex=0; aboveOrBelowLayerIndex < numberOfDirections; aboveOrBelowLayerIndex++) {
+				for (indexTYPE adjacentNodeIndex=0; adjacentNodeIndex<highestPowerLength; adjacentNodeIndex++) {
+					// column and row direction should be independently sorted with smallest value at the front
+					//cout<< "middleLayer: " << middleLayer << "  nodeIndex: " << nodeIndex <<"  aboveOrBelowLayerIndex: " << aboveOrBelowLayerIndex << "  adjacentNodeIndex: " << adjacentNodeIndex << "  laplacianMinimimumsOfNodeHP[middleLayers][numberOfNodes][numberOfDirections][highestPowerLength]: " << decodeLaplacian(laplacianMinimumsOfNodeHP[middleLayer][nodeIndex][aboveOrBelowLayerIndex][adjacentNodeIndex]) << "\n";
+				}
+			}
+		} // end nodeLoop
+    } // end layerLoop
+	//cout << "BREAK" << "\n";
+
+
+	copyCoordinates(coordinates, coordinatesPipeline[7]);
+    // copyTripletMatrix(tripletMatrix[2],tripletMatrix[3]);
+	allNodeMinFindersV2<highestPower-1,NHPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], laplacianMinimumsOfNodeNHP);
+    // copyTripletMatrix(tripletMatrix[3],tripletMatrix[4]);
+	allNodeMSS<highestPower-1,NHPowerLength>(laplacianMinimumsOfNodeNHP, allNodesGoodLinks[1], bestIndices[1]);
+    // copyTripletMatrix(tripletMatrix[4],tripletMatrix[5]);
+	allNodeMinFindersV2<highestPower-2,NNHPowerLength>(allNodesGoodLinks[1], bestIndices[1], tripletMatrix[0], laplacianMinimumsOfNodeNNHP);
+    // copyTripletMatrix(tripletMatrix[5],tripletMatrix[6]);
+	allNodeMSS<highestPower-2,NNHPowerLength>(laplacianMinimumsOfNodeNNHP, allNodesGoodLinks[2], bestIndices[2]);
+	allNodeMinFindersV2<highestPower-3,NNNHPowerLength>(allNodesGoodLinks[2], bestIndices[2], tripletMatrix[0], laplacianMinimumsOfNodeNNNHP);
+	allNodeMSS<highestPower-3,NNNHPowerLength>(laplacianMinimumsOfNodeNNNHP, allNodesGoodLinks[3], bestIndices[3]);
+
+	findAllTracks(allNodesGoodLinks[3],bestIndices[3],track,trackCandidate);
+	indexTYPE bestTrack = findBestTrack(track, trackCandidate, coordinatesPipeline[7], trackParameters);
+	removeGhostTracks(bestTrack,track,allNodesGoodLinks[3]);
+
+
+	// Print final allNodesGoodLinks matrix
+
+	// TODO: can try to make movie out of this; starting from the set of all links, each processing stage cleans up 
+	// links deterministically. 
+	const int powerToDebug = 3;
+    cout << "{" << "\n";
+	for(indexTYPE layer=0; layer<middleLayers; layer++) {
+        cout << "layer" << layer+1 << " {" << "\n";
+		for(indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+            cout << "node" << nodeIndex+1 << " {";
+			for(indexTYPE correspondingNodeIndex=0; correspondingNodeIndex<numberOfNodes; correspondingNodeIndex++) {
+                cout << allNodesGoodLinks[powerToDebug][layer][nodeIndex][aboveLayerIndex][correspondingNodeIndex] << allNodesGoodLinks[powerToDebug][layer][nodeIndex][belowLayerIndex][correspondingNodeIndex] << " ";
+				//cout << bestIndices[powerToDebug][layer][nodeIndex][aboveLayerIndex][correspondingNodeIndex] << bestIndices[powerToDebug][layer][nodeIndex][belowLayerIndex][correspondingNodeIndex] << " ";
+			}
+            cout << "}" << "\n";
+		}
+        cout << "} " << "\n";
+	}
+    cout << "}" << "\n";
+
+	ofstream trackParametersFile;
+	trackParametersFile.open ("trackParametersFile.txt", std::ios::app);
+
+	for (indexTYPE metric=0; metric<=nMetrics; metric++) { // save crookedness metrics and parameter value for each dimension
+	//uncomment #pragma HLS UNROLL
+		trackParametersFile << "trackParameters[" << metric << "][0] = " << trackParameters[metric][0] << "\n";
+		trackParametersFile << "trackParameters[" << metric << "][1] = " << trackParameters[metric][1] << "\n";
+	}
+
+	trackParametersFile.close();
+
+#elif combinedNodeProcessor == true
+
+	allNodeProcessors<highestPower>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+	allNodeProcessors<highestPower-1>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+    allNodeProcessors<highestPower-2>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+    allNodeProcessors<highestPower-3>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+
+#endif
+	
+	// Variable input ensures synthesis is performed for all nodes
+	fullSystemReturnCode = allNodesGoodLinks[highestPower-1][middleLayers-1][numberOfNodes-1][adjacentLayers-1][numberOfNodes-1];
+//	*fullSystemReturnCode = allNodesGoodLinks[middleLayers-1][numberOfNodes-1][adjacentLayers-1][numberOfNodes-1];
+
+
+	return;
+}
+
+int main() {
+	
+    float layerRadii[totalLayers] = {5.0, 10.0, 15.0, 20.0, 25.0}; // in centimeters
+    //short fragmentsPerCollision = 16; 
+    short numberOfCollisionsPerTime = 1;
+    short numberOfSections = 1;
+	short outcome = 0;
+	float momentum = 10.0; // GeV
+	float magnetic_field = 2.0; // Tesla
+	float curveRadius = 100.0*momentum/(0.3*magnetic_field); //100.0 to convert from meters to centimeters
+
+	// momentum --> curvative --> cr --> take arcsin to get phi
+    
+//uncomment #pragma HLS DATAFLOW
+    bool fullSystemReturnCode;
+#if numberOfNodes == 4
+    laplacianTYPE coordinates[totalLayers][numberOfNodes] =
+    		{1, 19, 27, 34,
+    		 3, 13, 23, 33,
+			 7, 17, 37, 47,
+			 3, 13, 23, 33,
+			 7, 17, 37, 47};
+#elif numberOfNodes == 8
+    laplacianTYPE coordinates[totalLayers][numberOfNodes] =
+			{1, 19, 27, 34, 99, 120, 140, 160,
+			3, 13, 17, 45, 54, 63, 73, 83,
+			29, 39, 49, 59, 89, 99, 109, 119,
+			19, 29, 39, 49, 59, 89, 99, 109,
+			4, 14, 24, 44, 54, 119, 129, 199};
+#elif numberOfNodes == 16
+// want to define pair of laplacianTYPEs 
+    short phicoordinates[totalLayers][numberOfNodes] = {
+			1, 19, 27, 34, 99, 120, 140, 160, 202, 220, 228, 235, 300, 321, 341, 361, 
+			3, 13, 17, 45, 54, 63, 73, 83, 113, 117, 145, 154, 163, 173, 183, 280,
+			29, 39, 49, 59, 89, 99, 109, 119, 129, 139, 149, 159, 189, 199, 209, 219, 
+			19, 29, 39, 49, 59, 89, 99, 109, 119, 129, 139, 149, 159, 189, 199, 309, 
+			4, 14, 24, 44, 54, 119, 129, 199, 204, 214, 224, 244, 254, 319, 329, 399
+	};
+
+	short zcoordinates[totalLayers][numberOfNodes] = {
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+			1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+	};
+
+#else
+    laplacianTYPE coordinates[totalLayers][numberOfNodes] = {0};
+#endif
+    spacepointTYPE weightedCoordinates[totalLayers][nWeightedCoordinates][numberOfNodes];
+    short xCoordinate, yCoordinate;
+
+generateCoordinates(layerRadii, numberOfCollisionsPerTime, numberOfSections, outcome, curveRadius, phicoordinates, zcoordinates, momentum);
+
+
+for (indexTYPE layer = 0; layer < totalLayers; layer++) {
+        cout << "{";
+        for (indexTYPE hit = 0; hit < numberOfNodes; hit++) {
+			if (hit != numberOfNodes - 1) {
+				cout << phicoordinates[layer][hit] <<  ", ";
+			}
+			 else {
+				cout << phicoordinates[layer][hit] ;
+			}
+
+        }
+        cout << "} \n";
+    }
+    cout << "\n";
+	cout << "\n";
+
+	for (indexTYPE layer = 0; layer < totalLayers; layer++) {
+        cout << "{";
+        for (indexTYPE hit = 0; hit < numberOfNodes; hit++) {
+			if (hit != numberOfNodes - 1) {
+				cout << zcoordinates[layer][hit] << ", ";
+			}
+			 else {
+				cout << zcoordinates[layer][hit];
+			}
+
+        }
+        cout << "} \n";
+    }
+    cout << "\n";
+	cout << "\n";
+
+
+	// copy coordinates into weighted arrays. This part of code is for testing, presumably not synthesized
+makeWeightedCoordLayerLoop:	for (indexTYPE layer=0; layer<totalLayers; layer++) {
+makeWeightedCoordWeightLoop:		for (indexTYPE weightIndex=0; weightIndex<nWeightedCoordinates; weightIndex++) {
+makeWeightedCoordNodeLoop:			for (indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+				xCoordinate = phicoordinates[layer][nodeIndex];
+				if (weightIndex == 1) {
+					xCoordinate += phicoordinates[layer][nodeIndex]; // double it because central node is subtracted twice in Laplacian calculation
+					xCoordinate = -xCoordinate; // negate it so we can use adder later
+				}
+				yCoordinate = zcoordinates[layer][nodeIndex];
+				if (weightIndex == 1) {
+					yCoordinate += zcoordinates[layer][nodeIndex]; // double it because central node is subtracted twice in Laplacian calculation
+					yCoordinate = -yCoordinate; // negate it so we can use adder later
+				}
+				if (weightIndex == 4) {
+					yCoordinate = -yCoordinate; // negate it so we can use adder later in the slope calculation
+					xCoordinate = -xCoordinate;
+				}
+				weightedCoordinates[layer][weightIndex][nodeIndex] = ( ( (spacepointTYPE) xCoordinate )<<16) | ( ((spacepointTYPE) yCoordinate) & 0x0000FFFF);
+				//cout << "weighted coordinates: " << bitset<32>(weightedCoordinates[layer][weightIndex][nodeIndex]) << " xCoordinate: " << bitset<32>(((spacepointTYPE) xCoordinate) << 16) << " yCoordinate: " << bitset<16>(yCoordinate) << "\n";
+//				weightedCoordinates[layer][weightIndex][nodeIndex][0] = xCoordinate;				weightedCoordinates[layer][weightIndex][nodeIndex][1] = yCoordinate;
+			} // end nodeLoop
+		} // end weightLoop
+	} // end layerLoop
+
+    
+	fullSystem(weightedCoordinates,fullSystemReturnCode);
+
+/*
+
+	for (indexTYPE layer = totalLayers - 1; layer >= 0; layer--) {
+        cout << "{";
+        for (indexTYPE hit = 0; hit < numberOfNodes; hit++) {
+			if (hit != numberOfNodes - 1) {
+				cout << phicoordinates[layer][hit] <<  ", ";
+			}
+			 else {
+				cout << phicoordinates[layer][hit] ;
+			}
+
+        }
+        cout << "} \n";
+    }
+    cout << "\n";
+	cout << "\n";
+
+	for (indexTYPE layer = totalLayers - 1; layer >= 0; layer--) {
+        cout << "{";
+        for (indexTYPE hit = 0; hit < numberOfNodes; hit++) {
+			if (hit != numberOfNodes - 1) {
+				cout << zcoordinates[layer][hit] << ", ";
+			}
+			 else {
+				cout << zcoordinates[layer][hit];
+			}
+
+        }
+        cout << "} \n";
+    }
+    cout << "\n";
+	cout << "\n";
+
+*/
+
+/*
+
+	ofstream MMFile;
+	MMFile.open ("MM.txt");
+    for (indexTYPE layer = 0; layer < totalLayers; layer++) {
+        MMFile << "{";
+        for (indexTYPE hit = 0; hit < numberOfNodes; hit++) {
+			if (hit != numberOfNodes - 1) {
+				MMFile << coordinates[layer][hit] << ", ";
+			} else {
+				MMFile << coordinates[layer][hit];
+			}
+
+        }
+        MMFile << "} \n";
+    }
+    MMFile << "\n";
+
+	MMFile << "MM" << "\n";
+    MMFile << "{" << "\n";
+	for(indexTYPE layer=0; layer<middleLayers; layer++) {
+        MMFile << "layer" << layer+1 << " {" << "\n";
+		for(indexTYPE nodeIndex=0; nodeIndex<numberOfNodes; nodeIndex++) {
+            MMFile << "node" << nodeIndex+1 << " {";
+			for(indexTYPE correspondingNodeIndex=0; correspondingNodeIndex<numberOfNodes; correspondingNodeIndex++) {
+				// indexTYPE aboveLayerIndex = 0;
+				// indexTYPE belowLayerIndex = 1;
+                MMFile << allNodesGoodLinks[layer][nodeIndex][aboveLayerIndex][correspondingNodeIndex] << allNodesGoodLinks[layer][nodeIndex][belowLayerIndex][correspondingNodeIndex] << " ";
+			}
+            MMFile << "}" << "\n";
+		}
+        MMFile << "}" << "\n";
+	}
+    MMFile << "}" << "\n" << "\n";
+	MMFile.close();
+*/
+    return 0;
+}

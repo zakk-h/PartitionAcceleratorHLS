@@ -1,0 +1,45 @@
+Discussion on 19 December 2020
+------------------------------
+
+We discussed various options for implementing the data structure as well as the scan engine and 
+the difference engine. At the end of the discussion the following action items emerged.
+
+1) We need to think of an efficient data structure. We can visualize the data as a 2D matrix of
+laplacian values. The row of the matrix is indexed by j, which is the key identifying the link to 
+the point in the next layer. The column of the matrix is indexed by k, the key corresponding to the 
+point in the previous layer. For each (j,k) pair there is a corresponding laplacian value. Thus
+the laplacian(j,k) can be thought of as a matrix. Equivalently, the list of triplets (j,k,laplacian) 
+contains the same information. The j and k indices range from 1...16 each. The range of the laplacian
+values is randomly distributed between 1...1000. Whatever this data structure is, the 256 laplacian 
+values will be calculated by the difference engine. We did not discuss the architecture of the 
+difference engine. Jed is thinking about the optimal data structure. Cullen is looking into the 
+architecture of the difference engine (which calculates the derivatives). 
+
+2) We discussed two options for processing the above data.
+
+2a) Option 1 is the baseline option. In this option, the sort engine and the scan engine are two 
+separate engines. The sort engine sorts the list of 256 triplets (j,k,laplacian) by increasing value
+of the laplacian. The scan engine runs through this sorted list and outputs (i) a list of j values 
+ranked in order of first appearance (ii) a list of k values ranked in order of first appearance. Next,
+the worst half of the j list and the worst half of the k list is dropped. 
+
+    One way to build the scan engine is to linearly run though the sorted triplet list, which is an
+ O(N) operation. Each j value is checked against a hash table to see if its a repeat. If not a repeat,
+ its added to the list and the hash table is set to "repeat=true for key=j". The time for the hash 
+ table access is expected to be O(1). Therefore the total time for the scan engine should be O(N). 
+ Alex will work on implementing this baseline scan engine. 
+
+2b) Naman suggested the option of a balanced binary tree, whose time is O(N log N). At first glance
+    this seems worse than the linear scan + hash table design which is O(N). However, the binary 
+    balanced tree may replace the need for a separate sort engine. If the time and resource of the
+    sort engine is eliminated, then a combined sort+scan engine based on building a balanced binary
+    tree to perform both the sort and scan functions may be better. Naman will investigate this 
+    option. 
+
+3) Near the end of the meeting we realized that it is a waste of time and resource to sort and 
+   scan with a granularity of individual triplets and keys, when we plan to ultimately drop the worse
+   half of the key list. It would be more efficient to combine triplets into sets such that there are 
+   always 4 sets. In the first sort cycle, each set will contain 64 triplets. In the next cycle, each
+   set will contain about 32 triplets, and the next cycle the sets will contain about 16 triplets 
+   and so on. Carlos and Jed will investigate data structures based on sets. 
+ 

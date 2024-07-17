@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="MinFinderFinal.cpp" path="C:\Users\rapiduser\Desktop\CodeHere\JonathanBranch\test-project\MinFinder-Project4\src\MinFinderFinal.cpp"/>
+  </source>
+  <testbench/>
+</autopilotfilemapping:AutoPilotFileMapping>

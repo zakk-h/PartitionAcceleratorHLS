@@ -1,0 +1,110 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'rapiduser' on host 'rapid-1511' (Windows NT_amd64 version 6.2) on Fri Dec 17 15:46:53 -0500 2021
+INFO: [HLS 200-10] In directory 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MSS-Project3'
+Sourcing Tcl script 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MSS-Project3/MSS-Project3/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project MSS-Project3 
+INFO: [HLS 200-10] Opening project 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MSS-Project3/MSS-Project3'.
+INFO: [HLS 200-1510] Running: set_top MSStest 
+INFO: [HLS 200-1510] Running: add_files src/Generalized_MSS.cpp 
+INFO: [HLS 200-10] Adding design file 'src/Generalized_MSS.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/rapiduser/Desktop/CodeHere/JonathanBranch/test-project/MSS-Project3/MSS-Project3/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 1ns.
+INFO: [HLS 200-10] Setting target device to 'xcvu19p-fsvb3824-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcvu19p-fsvb3824-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 1 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name MSStest MSStest 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.056 seconds; current allocated memory: 481.608 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/Generalized_MSS.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2 seconds. CPU system time: 2 seconds. Elapsed time: 11.053 seconds; current allocated memory: 93.147 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'bool ap_int_base<20, true>::operator><20, true>(ap_int_base<20, true> const&) const' into 'void compareAndExchange<ap_int<20>, int>(ap_int<20>*, int, int, bool)' (src/Generalized_MSS.cpp:21:12)
+INFO: [HLS 214-131] Inlining function 'void compareAndExchange<ap_int<20>, int>(ap_int<20>*, int, int, bool)' into 'void elementLoop<ap_int<20>, int, int>(ap_int<20>*, int, int, int const&)' (src/Generalized_MSS.cpp:49:10)
+INFO: [HLS 214-131] Inlining function 'void elementLoop<ap_int<20>, int, int>(ap_int<20>*, int, int, int const&)' into 'MSS(ap_int<20>*, int)' (src/Generalized_MSS.cpp:74:14)
+INFO: [HLS 214-131] Inlining function 'void elementLoop<ap_int<20>, int, int>(ap_int<20>*, int, int, int const&)' into 'MSS(ap_int<20>*, int)' (src/Generalized_MSS.cpp:88:6)
+INFO: [HLS 214-131] Inlining function 'void elementLoop<ap_int<20>, int, int>(ap_int<20>*, int, int, int const&)' into 'MSS(ap_int<20>*, int)' (src/Generalized_MSS.cpp:84:14)
+INFO: [HLS 214-131] Inlining function 'void elementLoop<ap_int<20>, int, int>(ap_int<20>*, int, int, int const&)' into 'MSS(ap_int<20>*, int)' (src/Generalized_MSS.cpp:79:14)
+INFO: [HLS 214-248] complete partitioned array 'work_arra' on dimension 1 (src/Generalized_MSS.cpp:93:82)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.847 seconds; current allocated memory: 93.689 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 93.689 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.273 seconds; current allocated memory: 99.205 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.284 seconds; current allocated memory: 98.197 MB.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'MSS' (src/Generalized_MSS.cpp:15:11).
+INFO: [HLS 200-489] Unrolling loop 'LOOP2' (src/Generalized_MSS.cpp:41) in function 'MSS' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'LOOP_OVER_ELEMENTS' (src/Generalized_MSS.cpp:44) in function 'MSS' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'LOOP4' (src/Generalized_MSS.cpp:41) in function 'MSS' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'LOOP8' (src/Generalized_MSS.cpp:41) in function 'MSS' completely with a factor of 3.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.039 seconds; current allocated memory: 120.410 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.331 seconds; current allocated memory: 123.665 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'MSStest' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MSS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'MSS'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 10, Final II = 10, Depth = 14, function 'MSS'
+WARNING: [HLS 200-871] Estimated clock period (0.913ns) exceeds the target (target clock period: 1ns, clock uncertainty: 0.27ns, effective delay budget: 0.73ns).
+Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'MSS' consists of the following:	wire read on port 'p_read1' [32]  (0 ns)
+	'icmp' operation ('icmp_ln886') [34]  (0.913 ns)
+
+Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.467 seconds; current allocated memory: 124.472 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.736 seconds; current allocated memory: 125.349 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MSStest' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.066 seconds; current allocated memory: 125.558 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.472 seconds; current allocated memory: 125.915 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MSS' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MSS'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.008 seconds; current allocated memory: 128.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MSStest' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_0' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_1' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_2' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_3' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_4' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_5' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_6' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_7' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_8' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_9' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_10' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_11' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_12' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_13' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_14' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MSStest/work_array_15' to 'ap_ovld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'MSStest' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MSStest'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 3 seconds. CPU system time: 2 seconds. Elapsed time: 4.122 seconds; current allocated memory: 132.697 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 3 seconds. CPU system time: 1 seconds. Elapsed time: 4.314 seconds; current allocated memory: 141.807 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for MSStest.
+INFO: [VLOG 209-307] Generating Verilog RTL for MSStest.
+INFO: [HLS 200-789] **** Estimated Fmax: 1095.29 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 14 seconds. CPU system time: 5 seconds. Elapsed time: 32.677 seconds; current allocated memory: 142.327 MB.
+INFO: [HLS 200-112] Total CPU user time: 16 seconds. Total CPU system time: 9 seconds. Total elapsed time: 37.011 seconds; peak allocated memory: 481.608 MB.

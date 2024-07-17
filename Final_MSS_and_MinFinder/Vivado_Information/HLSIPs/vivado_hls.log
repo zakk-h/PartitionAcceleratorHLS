@@ -1,0 +1,67 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /opt/vivado-2019/Vivado/2019.1/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/opt/vivado-2019/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'ss567' on host 'atl009.phy.duke.edu' (Linux_x86_64 version 3.10.0-957.10.1.el7.x86_64) on Tue Nov 10 23:55:46 EST 2020
+INFO: [HLS 200-10] On os "CentOS Linux release 7.7.1908 (Core)"
+INFO: [HLS 200-10] In directory '/home/ss567/MUSER/HLSIPs'
+Sourcing Tcl script 'run_simple_algo.tcl'
+INFO: [HLS 200-10] Opening and resetting project '/home/ss567/MUSER/HLSIPs/proj0'.
+INFO: [HLS 200-10] Adding design file 'src/simple_algo.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'simple_algo_test.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'simple_algo_ref.cpp' to the project
+INFO: [HLS 200-10] Opening and resetting solution '/home/ss567/MUSER/HLSIPs/proj0/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xc7vx690t-ffg1927-2'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../simple_algo_ref.cpp in debug mode
+   Compiling ../../../../simple_algo_test.cpp in debug mode
+   Compiling ../../../../src/simple_algo.cpp in debug mode
+   Generating csim.exe
+test = 1 2 3 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/simple_algo.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1820 ; free virtual = 35677
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1821 ; free virtual = 35677
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1818 ; free virtual = 35675
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1817 ; free virtual = 35674
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1799 ; free virtual = 35656
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1798 ; free virtual = 35655
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'simple_algo_hw' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'simple_algo_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 21.16 seconds; current allocated memory: 103.696 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 103.769 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'simple_algo_hw' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'simple_algo_hw/inA_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'simple_algo_hw/inB_V' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'simple_algo_hw/outA_V' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'simple_algo_hw' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'simple_algo_hw'.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 103.883 MB.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 930.621 ; gain = 132.125 ; free physical = 1798 ; free virtual = 35655
+INFO: [VHDL 208-304] Generating VHDL RTL for simple_algo_hw.
+INFO: [VLOG 209-307] Generating Verilog RTL for simple_algo_hw.
+INFO: [HLS 200-112] Total elapsed time: 21.86 seconds; peak allocated memory: 103.883 MB.
+INFO: [Common 17-206] Exiting vivado_hls at Tue Nov 10 23:56:08 2020...

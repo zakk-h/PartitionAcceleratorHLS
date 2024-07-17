@@ -1,0 +1,4 @@
+#!/bin/sh
+lli=${LLVMINTERP-lli}
+exec $lli \
+    /home/kotwal/GlobalCorrelator/pulsar_devkit/simple_examples/HLSIPs/proj0/solution1_BitonicSortOptimizedInline/.autopilot/db/a.g.bc ${1+"$@"}

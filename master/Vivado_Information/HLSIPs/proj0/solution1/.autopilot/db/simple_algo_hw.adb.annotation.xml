@@ -1,0 +1,3 @@
+<annotationInfo>
+<item  id="10" filename="src/simple_algo.cpp" linenumber="10" name="add_ln68" contextFuncName="simple_algo_hw" moduleName="simple_algo_hw" rtlName="outA_V" latency="0" BRAM="-1" DSP="-1" FF="0" LUT="39" fileDirectory="/home/ss567/MUSER/HLSIPs"><\/item>
+</annotationInfo>
