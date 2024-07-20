@@ -76,6 +76,19 @@ void singleNodeLaplacianCalculator(laplacianTYPE aboveNodeList[adjacentNodes][nP
 
 void laplacianCalculator(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][numberOfNodes], structTYPE (& tripletMatrix)[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes]);
 
+void makeAdder(spacepointTYPE thisNode, spacepointTYPE inputNode, laplacianTYPE (& halfLaplacian)[nPixelDimensions]);
+void makeAdder(laplacianTYPE thisNode[nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[nPixelDimensions]);
+
+#if useDSPbyDecoding == false
+void makeHalfLaplacian(spacepointTYPE nodeList[adjacentNodes], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions]);
+#elif useDSPbyDecoding == true
+void makeHalfLaplacian(laplacianTYPE nodeList[adjacentNodes][nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions]);
+#endif
+
+void makeAbs(laplacianTYPE laplacian[adjacentNodes][nPixelDimensions], laplacianTYPE (& absLaplacian)[adjacentNodes]);
+
+structTYPE tripletEncode(indexTYPE aboveNodeIndex, indexTYPE belowNodeIndex, laplacianTYPE Laplacian);
+
 // Function definitions
 laplacianTYPE decodeXcoordinate(spacepointTYPE packedCoordinates) {
     return (laplacianTYPE) (((packedCoordinates & 0xFFFF0000) >> 16) & 0x0000FFFF);
@@ -85,20 +98,48 @@ laplacianTYPE decodeYcoordinate(spacepointTYPE packedCoordinates) {
     return (laplacianTYPE) (packedCoordinates & 0x0000FFFF);
 }
 
-template<std::size_t weightsToUnpack>
-void decodeCoordinates(spacepointTYPE coordinatesIn[totalLayers][nWeightedCoordinates][numberOfNodes], laplacianTYPE (& coordinatesOut)[totalLayers][weightsToUnpack][numberOfNodes][nPixelDimensions]) {
+#if useDSPbyDecoding == false
+void makeAdder(spacepointTYPE thisNode, spacepointTYPE inputNode, laplacianTYPE (& halfLaplacian)[nPixelDimensions]){
+    #pragma HLS INLINE
+    halfLaplacian[0] = decodeXcoordinate(thisNode) + decodeXcoordinate(inputNode);
+    halfLaplacian[1] = decodeYcoordinate(thisNode) + decodeYcoordinate(inputNode);
+    return;
+}
+#elif useDSPbyDecoding == true
+void makeAdder(laplacianTYPE thisNode[nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[nPixelDimensions]){
+    #pragma HLS INLINE
+    halfLaplacian[0] = thisNode[0] + inputNode[0];
+    halfLaplacian[1] = thisNode[1] + inputNode[1];
+    return;
+}
+#endif
+
+#if useDSPbyDecoding == false
+void makeHalfLaplacian(spacepointTYPE nodeList[adjacentNodes], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions]) {
+#elif useDSPbyDecoding == true
+void makeHalfLaplacian(laplacianTYPE nodeList[adjacentNodes][nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions]) {
+#endif
     #pragma HLS INLINE OFF
-    dCLayerLoop: for (indexTYPE layer = 0; layer < totalLayers; layer++) {
+    makeHalfLaplacianLoop: for (indexTYPE nodeIndex = 0; nodeIndex < adjacentNodes; nodeIndex++) {
         #pragma HLS UNROLL
-        dCweightLoop: for (indexTYPE weightIndex = 0; weightIndex < weightsToUnpack; weightIndex++) {
-            #pragma HLS UNROLL
-            dCNodeLoop: for (indexTYPE nodeIndex = 0; nodeIndex < numberOfNodes; nodeIndex++) {
-                #pragma HLS UNROLL
-                coordinatesOut[layer][weightIndex][nodeIndex][0] = decodeXcoordinate(coordinatesIn[layer][weightIndex][nodeIndex]);
-                coordinatesOut[layer][weightIndex][nodeIndex][1] = decodeYcoordinate(coordinatesIn[layer][weightIndex][nodeIndex]);
-            } // end nodeLoop
-        } // end weightLoop
-    } // end layerLoop
+        #if useDSPbyDecoding == false
+            halfLaplacian[nodeIndex][0] = decodeXcoordinate(nodeList[nodeIndex]) + inputNode[0];
+            halfLaplacian[nodeIndex][1] = decodeYcoordinate(nodeList[nodeIndex]) + inputNode[1];
+        #elif useDSPbyDecoding == true
+            halfLaplacian[nodeIndex][0] = nodeList[nodeIndex][0] + inputNode[0];
+            halfLaplacian[nodeIndex][1] = nodeList[nodeIndex][1] + inputNode[1];
+        #endif
+    }
+    return;
+}
+
+void makeAbs(laplacianTYPE laplacian[adjacentNodes][nPixelDimensions], laplacianTYPE (& absLaplacian)[adjacentNodes]) {
+    #pragma HLS INLINE
+    makeAbsLoop: for (indexTYPE nodeIndex = 0; nodeIndex < adjacentNodes; nodeIndex++) {
+        #pragma HLS UNROLL
+        absLaplacian[nodeIndex] = std::abs(laplacian[nodeIndex][0]) + std::abs(laplacian[nodeIndex][1]);
+    }
+    return;
 }
 
 #if useDSPbyDecoding == false
@@ -130,6 +171,27 @@ void singleNodeLaplacianCalculator(laplacianTYPE aboveNodeList[adjacentNodes][nP
     return;
 }
 
+structTYPE tripletEncode(indexTYPE aboveNodeIndex, indexTYPE belowNodeIndex, laplacianTYPE Laplacian){
+    #pragma HLS INLINE
+    return (((structTYPE)Laplacian) << 8) | ((structTYPE)aboveNodeIndex) | (((structTYPE)belowNodeIndex) << 4);
+}
+
+template<std::size_t weightsToUnpack>
+void decodeCoordinates(spacepointTYPE coordinatesIn[totalLayers][nWeightedCoordinates][numberOfNodes], laplacianTYPE (& coordinatesOut)[totalLayers][weightsToUnpack][numberOfNodes][nPixelDimensions]) {
+    #pragma HLS INLINE OFF
+    dCLayerLoop: for (indexTYPE layer = 0; layer < totalLayers; layer++) {
+        #pragma HLS UNROLL
+        dCweightLoop: for (indexTYPE weightIndex = 0; weightIndex < weightsToUnpack; weightIndex++) {
+            #pragma HLS UNROLL
+            dCNodeLoop: for (indexTYPE nodeIndex = 0; nodeIndex < numberOfNodes; nodeIndex++) {
+                #pragma HLS UNROLL
+                coordinatesOut[layer][weightIndex][nodeIndex][0] = decodeXcoordinate(coordinatesIn[layer][weightIndex][nodeIndex]);
+                coordinatesOut[layer][weightIndex][nodeIndex][1] = decodeYcoordinate(coordinatesIn[layer][weightIndex][nodeIndex]);
+            } // end nodeLoop
+        } // end weightLoop
+    } // end layerLoop
+}
+
 void laplacianCalculator(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][numberOfNodes], structTYPE (& tripletMatrix)[middleLayers][numberOfNodes][adjacentNodes][adjacentNodes]) {
     #pragma HLS INLINE OFF
     #if useDSPbyDecoding == true
@@ -149,79 +211,4 @@ void laplacianCalculator(spacepointTYPE coordinates[totalLayers][nWeightedCoordi
             #endif
         } // end nodeLoop
     } // end layerLoop
-}
-
-#if useDSPbyDecoding == false
-void makeAdder(spacepointTYPE thisNode, spacepointTYPE inputNode, laplacianTYPE (& halfLaplacian)[nPixelDimensions]){
-#pragma HLS INLINE
-		halfLaplacian[0] = decodeXcoordinate(thisNode) + decodeXcoordinate(inputNode);
-		halfLaplacian[1] = decodeYcoordinate(thisNode) + decodeYcoordinate(inputNode);
-return;
-}
-#elif useDSPbyDecoding == true
-void makeAdder(laplacianTYPE thisNode[nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[nPixelDimensions]){
-#pragma HLS INLINE
-		halfLaplacian[0] = thisNode[0] + inputNode[0];
-		halfLaplacian[1] = thisNode[1] + inputNode[1];
-return;
-}
-#endif
-
-#if useDSPbyDecoding == false
-void makeHalfLaplacian(spacepointTYPE nodeList[adjacentNodes], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions])
-#elif useDSPbyDecoding == true
-void makeHalfLaplacian(laplacianTYPE nodeList[adjacentNodes][nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], laplacianTYPE (& halfLaplacian)[adjacentNodes][nPixelDimensions])
-#endif
-{
-#pragma HLS INLINE OFF
-makeHalfLaplacianLoop: for (indexTYPE nodeIndex=0; nodeIndex<adjacentNodes; nodeIndex++) {
-	         	       #pragma HLS UNROLL
-#if useDSPbyDecoding == false
-                          halfLaplacian[nodeIndex][0] = decodeXcoordinate(nodeList[nodeIndex]) + inputNode[0];  halfLaplacian[nodeIndex][1] = decodeYcoordinate(nodeList[nodeIndex]) + inputNode[1];
-#elif useDSPbyDecoding == true
-                          halfLaplacian[nodeIndex][0] = nodeList[nodeIndex][0] + inputNode[0]; halfLaplacian[nodeIndex][1] = nodeList[nodeIndex][1] + inputNode[1];
-#endif
-					   }
-return;
-}
-void makeAbs(laplacianTYPE laplacian[adjacentNodes][nPixelDimensions],  laplacianTYPE (& absLaplacian) [adjacentNodes]) {
-#pragma HLS INLINE
-makeAbsLoop: for (indexTYPE nodeIndex=0; nodeIndex<adjacentNodes; nodeIndex++) {
-			 #pragma HLS UNROLL
-            	absLaplacian[nodeIndex] = std::abs(laplacian[nodeIndex][0]) + std::abs(laplacian[nodeIndex][1]);
-             }
-return;
-}
-#if useDSPbyDecoding == false
-void singleNodeLaplacianCalculator(spacepointTYPE aboveNodeList[adjacentNodes], spacepointTYPE belowNodeList[adjacentNodes], spacepointTYPE inputNode, structTYPE (&nodeTriplets)[adjacentNodes][adjacentNodes]) {
-#elif useDSPbyDecoding == true
-void singleNodeLaplacianCalculator(laplacianTYPE aboveNodeList[adjacentNodes][nPixelDimensions], laplacianTYPE belowNodeList[adjacentNodes][nPixelDimensions], laplacianTYPE inputNode[nPixelDimensions], structTYPE (&nodeTriplets)[adjacentNodes][adjacentNodes]) {
-#endif
-	#pragma HLS INLINE OFF
-	laplacianTYPE halfLaplacian[adjacentNodes][nPixelDimensions];
-    #pragma HLS array_partition variable=halfLaplacian complete dim=0
-	laplacianTYPE laplacian[adjacentNodes][nPixelDimensions];
-    #pragma HLS array_partition variable=laplacian complete dim=0
-	laplacianTYPE absLaplacian[adjacentNodes][adjacentNodes];
-    #pragma HLS array_partition variable=absLaplacian complete dim=0
-
-SNLCaboveNodeLoop: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
-				   #pragma HLS PIPELINE
-     				 makeAdder(aboveNodeList[aboveNodeIndex], inputNode, halfLaplacian[aboveNodeIndex]);
-                     makeHalfLaplacian(belowNodeList, halfLaplacian[aboveNodeIndex], laplacian);
-                     makeAbs(laplacian, absLaplacian[aboveNodeIndex]);
-			       }
-SNLCaboveLoopEncode: for (indexTYPE aboveNodeIndex=0; aboveNodeIndex<adjacentNodes; aboveNodeIndex++) {
-				   #pragma HLS UNROLL
-SNLCbelowLoopEncode:  for (indexTYPE belowNodeIndex=0; belowNodeIndex<adjacentNodes; belowNodeIndex++) {
-						  #pragma HLS UNROLL
-     				      nodeTriplets[aboveNodeIndex][belowNodeIndex] = tripletEncode(aboveNodeIndex, belowNodeIndex, absLaplacian[aboveNodeIndex][belowNodeIndex]); // Bit encode the node indices and Laplacian into a structTYPE that represents the triplet, Store the triplet in the corresponding array position
-			          }
-			       }
-    return;
-}
-
-structTYPE tripletEncode(indexTYPE aboveNodeIndex, indexTYPE belowNodeIndex, laplacianTYPE Laplacian){
-	#pragma HLS INLINE
-    return  (((structTYPE) Laplacian )<<8) | ((structTYPE) aboveNodeIndex)  | (((structTYPE) belowNodeIndex)<<4);
 }
