@@ -1,0 +1,28 @@
+
+
+================================================================
+== Synthesis Summary Report of 'laplacianCalculator'
+================================================================
++ General Information: 
+    * Date:           Fri Jul 19 16:47:52 2024
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+    * Project:        SimplifiedTrackFinder
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: virtexuplus
+    * Target device:  xcvu11p-flga2577-1-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +--------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+-------------+------------+-----+
+    |                   Modules                  | Issue|       | Latency |  Latency  | Iteration|         | Trip |          |      |    |             |            |     |
+    |                   & Loops                  | Type | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM | DSP|      FF     |     LUT    | URAM|
+    +--------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+-------------+------------+-----+
+    |+ laplacianCalculator                       |     -|  -3.05|     7128|  7.128e+04|         -|     7129|     -|        no|     -|   -|   29433 (1%)|  22314 (1%)|    -|
+    | + grp_singleNodeLaplacianCalculator_fu_62  |     -|  -3.05|      145|  1.450e+03|         -|      145|     -|        no|     -|   -|  10893 (~0%)|  16389 (1%)|    -|
+    |  + call_ret_makeHalfLaplacian_fu_4610      |    II|  -5.33|        0|      0.000|         -|        1|     -|       yes|     -|   -|            -|  1545 (~0%)|    -|
+    |  o SNLCaboveNodeLoop                       |     -|  -7.30|       16|    160.000|         2|        1|    16|       yes|     -|   -|            -|           -|    -|
+    | + grp_decodeCoordinates_3ul_s_fu_155       |     -|  -6.00|       72|    720.000|         -|       72|     -|        no|     -|   -|   9225 (~0%)|  3592 (~0%)|    -|
+    +--------------------------------------------+------+-------+---------+-----------+----------+---------+------+----------+------+----+-------------+------------+-----+
+

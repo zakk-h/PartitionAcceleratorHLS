@@ -1,0 +1,50 @@
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'zakkh' on host 'zakk_laptop' (Windows NT_amd64 version 6.2) on Fri Jul 19 20:04:00 -0400 2024
+INFO: [HLS 200-10] In directory 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis'
+Sourcing Tcl script 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: open_project SimplifiedTrackFinder 
+INFO: [HLS 200-10] Opening project 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder'.
+INFO: [HLS 200-1510] Running: set_top laplacianCalculator 
+INFO: [HLS 200-1510] Running: add_files ../simplified.cpp 
+INFO: [HLS 200-10] Adding design file '../simplified.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcvu11p-flga2577-1-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name laplacianCalculator laplacianCalculator 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog -output C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+bad lexical cast: source type value could not be interpreted as target
+    while executing
+"rdi::set_property core_revision 2407192004 {component component_1}"
+    invoked from within
+"set_property core_revision $Revision $core"
+    (file "run_ippack.tcl" line 854)
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 19 20:04:10 2024...
+ERROR: [IMPL 213-28] Failed to generate IP.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 7.994 seconds; current allocated memory: 199.429 MB.
+command 'ap_source' returned error code
+    while executing
+"source C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder/solution1/export.tcl"
+    invoked from within
+"hls::main C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder/solution1/export.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
