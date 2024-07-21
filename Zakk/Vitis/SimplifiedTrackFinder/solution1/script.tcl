@@ -9,7 +9,7 @@ add_files ../simplified.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xcvu11p-flga2577-1-e}
 create_clock -period 10 -name default
-config_export -format ip_catalog -rtl verilog
+config_export -format ip_catalog -output C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip -rtl verilog
 source "./SimplifiedTrackFinder/solution1/directives.tcl"
 #csim_design
 csynth_design

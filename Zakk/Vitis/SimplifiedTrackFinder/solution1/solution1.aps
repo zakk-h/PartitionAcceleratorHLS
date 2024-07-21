@@ -6,7 +6,7 @@
         <DownStreamTool name=""/>
     </downStreamTool>
     <config>
-        <config_export format="ip_catalog" rtl="verilog" output="C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip"/>
+        <config_export format="ip_catalog" output="C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip" rtl="verilog"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
