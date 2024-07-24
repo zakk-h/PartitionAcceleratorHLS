@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1157-1" LaunchTime="1721571127">
+<GenRun Id="synth_1" LaunchPart="xc7vx485tffg1157-1" LaunchTime="1721765990">
   <File Type="PA-TCL" Name="laplacianCalculator.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="laplacianCalculator_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="laplacianCalculator_reports.tcl"/>
   <File Type="RDS-RDS" Name="laplacianCalculator.vds"/>
   <File Type="RDS-UTIL" Name="laplacianCalculator_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="laplacianCalculator_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="laplacianCalculator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="laplacianCalculator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="laplacianCalculator_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/../Laplacian Calculator RTL/hdl/verilog/laplacianCalculator_decodeCoordinates_3ul_s.v">
@@ -53,6 +50,14 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="laplacianCalculator"/>
@@ -79,9 +84,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

@@ -1,37 +1,1283 @@
 INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
-INFO: [HLS 200-10] For user 'zakkh' on host 'zakk_laptop' (Windows NT_amd64 version 6.2) on Mon Jul 20 09:22:43 -0400 2020
+INFO: [HLS 200-10] For user 'zakkh' on host 'zakk_laptop' (Windows NT_amd64 version 6.2) on Tue Jul 23 19:13:03 -0400 2024
 INFO: [HLS 200-10] In directory 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis'
-Sourcing Tcl script 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder/solution1/export.tcl'
-INFO: [HLS 200-1510] Running: open_project SimplifiedTrackFinder 
-INFO: [HLS 200-10] Opening project 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder'.
-INFO: [HLS 200-1510] Running: set_top laplacianCalculator 
+Sourcing Tcl script 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/MediumTrackFinder/solution1/csynth.tcl'
+INFO: [HLS 200-1510] Running: open_project MediumTrackFinder 
+INFO: [HLS 200-10] Opening project 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/MediumTrackFinder'.
+INFO: [HLS 200-1510] Running: set_top fullSystem 
 INFO: [HLS 200-1510] Running: add_files ../simplified.cpp 
 INFO: [HLS 200-10] Adding design file '../simplified.cpp' to the project
 INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
-INFO: [HLS 200-10] Opening solution 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/SimplifiedTrackFinder/solution1'.
+INFO: [HLS 200-10] Opening solution 'C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/Vitis/MediumTrackFinder/solution1'.
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] Setting target device to 'xcvu11p-flga2577-1-e'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
-INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
-INFO: [HLS 200-1464] Running solution command: config_export -output=C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip
-INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 INFO: [HLS 200-1510] Running: set_part xcvu11p-flga2577-1-e 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
-INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip -rtl verilog 
-INFO: [HLS 200-1510] Running: set_directive_top -name laplacianCalculator laplacianCalculator 
-INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog -output C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip 
-INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
-
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-
-source run_ippack.tcl -notrace
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 20 09:22:57 2020...
-INFO: [HLS 200-802] Generated output file C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/Zakk/laplacianCalculator.zip
-INFO: [HLS 200-111] Finished Command export_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 12.714 seconds; current allocated memory: 199.509 MB.
+INFO: [HLS 200-1510] Running: set_directive_top -name fullSystem fullSystem 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 191.434 MB.
+INFO: [HLS 200-10] Analyzing design file '../simplified.cpp' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: ../simplified.cpp:1206:2
+Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-114.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: ../simplified.cpp:1256:1
+Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-114.html
+WARNING: [HLS 200-471] Dataflow form checks found 2 issue(s) in file ../simplified.cpp
+Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-471.html
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.351 seconds; current allocated memory: 192.792 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<32, true>::RType<32, false>::logic operator&<32, true, 32, false>(ap_int_base<32, true> const&, ap_int_base<32, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:341)
+INFO: [HLS 214-131] Inlining function 'ap_int<33>::ap_int<33, true>(ap_int_base<33, true> const&)' into 'ap_int_base<32, true>::RType<32, false>::logic operator&<32, true, 32, false>(ap_int_base<32, true> const&, ap_int_base<32, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::ap_int_base<32, false>(ap_int_base<32, false> const&)' into 'ap_int_base<32, true>::RType<32, false>::logic operator&<32, true, 32, false>(ap_int_base<32, true> const&, ap_int_base<32, false> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>::ap_int_base(unsigned int)' into 'ap_int_base<32, true>::RType<($_0)32, false>::logic operator&<32, true>(ap_int_base<32, true> const&, unsigned int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1462:3229)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<32, false>::logic operator&<32, true, 32, false>(ap_int_base<32, true> const&, ap_int_base<32, false> const&)' into 'ap_int_base<32, true>::RType<($_0)32, false>::logic operator&<32, true>(ap_int_base<32, true> const&, unsigned int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1462:3227)
+INFO: [HLS 214-131] Inlining function 'ap_int<33>::ap_int<33, true>(ap_int_base<33, true> const&)' into 'ap_int_base<33, true>::RType<33, true>::arg1 operator>><33, true>(ap_int_base<33, true> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1497:650)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::ap_int_base<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<33, true>::RType<32, true>::logic operator&<33, true, 32, true>(ap_int_base<33, true> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:430)
+INFO: [HLS 214-131] Inlining function 'ap_int<33>::ap_int<33, true>(ap_int_base<33, true> const&)' into 'ap_int_base<33, true>::RType<32, true>::logic operator&<33, true, 32, true>(ap_int_base<33, true> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<33, true>::RType<($_0)32, true>::logic operator&<33, true>(ap_int_base<33, true> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3098)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::RType<32, true>::logic operator&<33, true, 32, true>(ap_int_base<33, true> const&, ap_int_base<32, true> const&)' into 'ap_int_base<33, true>::RType<($_0)32, true>::logic operator&<33, true>(ap_int_base<33, true> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3096)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<($_0)32, false>::logic operator&<32, true>(ap_int_base<32, true> const&, unsigned int)' into 'decodeXcoordinate(ap_int<32>)' (../simplified.cpp:174:37)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::operator long long() const' into 'decodeXcoordinate(ap_int<32>)' (../simplified.cpp:174:15)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::RType<($_0)32, true>::logic operator&<33, true>(ap_int_base<33, true> const&, int)' into 'decodeXcoordinate(ap_int<32>)' (../simplified.cpp:174:56)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<33, true>::RType<33, true>::arg1 operator>><33, true>(ap_int_base<33, true> const&, int)' into 'decodeXcoordinate(ap_int<32>)' (../simplified.cpp:174:50)
+INFO: [HLS 214-131] Inlining function 'ap_int<32>::ap_int<32, true>(ap_int_base<32, true> const&)' into 'ap_int_base<32, true>::RType<32, true>::logic operator&<32, true, 32, true>(ap_int_base<32, true> const&, ap_int_base<32, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1348:555)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::ap_int_base(int)' into 'ap_int_base<32, true>::RType<($_0)32, true>::logic operator&<32, true>(ap_int_base<32, true> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3098)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<32, true>::logic operator&<32, true, 32, true>(ap_int_base<32, true> const&, ap_int_base<32, true> const&)' into 'ap_int_base<32, true>::RType<($_0)32, true>::logic operator&<32, true>(ap_int_base<32, true> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1461:3096)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::RType<($_0)32, true>::logic operator&<32, true>(ap_int_base<32, true> const&, int)' into 'decodeYcoordinate(ap_int<32>)' (../simplified.cpp:178:34)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, true>::operator long long() const' into 'decodeYcoordinate(ap_int<32>)' (../simplified.cpp:178:15)
+INFO: [HLS 214-131] Inlining function 'decodeXcoordinate(ap_int<32>)' into 'void decodeCoordinates<3ul>(ap_int<32> (*) [5][16], int (&) [5][3ul][16][2])' (../simplified.cpp:270:53)
+INFO: [HLS 214-131] Inlining function 'decodeYcoordinate(ap_int<32>)' into 'void decodeCoordinates<3ul>(ap_int<32> (*) [5][16], int (&) [5][3ul][16][2])' (../simplified.cpp:271:59)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int<16, true>(ap_int_base<16, true> const&)' into 'ap_int_base<16, true>::RType<16, true>::arg1 operator<<<16, true>(ap_int_base<16, true> const&, int)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1497:323)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int<16, true>(ap_int_base<16, true> const&)' into 'ap_int_base<16, true>::RType<16, true>::logic operator|<16, true, 16, true>(ap_int_base<16, true> const&, ap_int_base<16, true> const&)' (C:/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot\ap_int_base.h:1349:555)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int(int)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:11)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::RType<16, true>::logic operator|<16, true, 16, true>(ap_int_base<16, true> const&, ap_int_base<16, true> const&)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:72)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::RType<16, true>::arg1 operator<<<16, true>(ap_int_base<16, true> const&, int)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:104)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int(unsigned char)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:76)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::RType<16, true>::logic operator|<16, true, 16, true>(ap_int_base<16, true> const&, ap_int_base<16, true> const&)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:40)
+INFO: [HLS 214-131] Inlining function 'ap_int<16>::ap_int(unsigned char)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:43)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, true>::RType<16, true>::arg1 operator<<<16, true>(ap_int_base<16, true> const&, int)' into 'tripletEncode(unsigned char, unsigned char, int)' (../simplified.cpp:146:35)
+INFO: [HLS 214-131] Inlining function 'makeAdder(int*, int*, int (&) [2])' into 'singleNodeLaplacianCalculator(int (*) [2], int (*) [2], int*, ap_int<16> (&) [16][16])' (../simplified.cpp:248:2)
+INFO: [HLS 214-131] Inlining function 'tripletEncode(unsigned char, unsigned char, int)' into 'singleNodeLaplacianCalculator(int (*) [2], int (*) [2], int*, ap_int<16> (&) [16][16])' (../simplified.cpp:256:49)
+INFO: [HLS 214-131] Inlining function 'makeAbs(int (*) [2], int (&) [16])' into 'singleNodeLaplacianCalculator(int (*) [2], int (*) [2], int*, ap_int<16> (&) [16][16])' (../simplified.cpp:250:22)
+INFO: [HLS 214-186] Unrolling loop 'makeHalfLaplacianLoop' (../simplified.cpp:215:24) in function 'makeHalfLaplacian' completely with a factor of 16 (../simplified.cpp:215:24)
+INFO: [HLS 214-186] Unrolling loop 'SNLCaboveLoopEncode' (../simplified.cpp:252:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:252:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'SNLCbelowLoopEncode' (../simplified.cpp:254:22) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:254:22)
+INFO: [HLS 214-186] Unrolling loop 'makeAbsLoop' (../simplified.cpp:227:14) in function 'singleNodeLaplacianCalculator' completely with a factor of 16 (../simplified.cpp:227:14)
+INFO: [HLS 214-186] Unrolling loop 'LaplacianLayerLoop' (../simplified.cpp:284:21) in function 'laplacianCalculator' completely with a factor of 3 (../simplified.cpp:284:21)
+INFO: [HLS 214-186] Unrolling loop 'LaplacianNodeLoop' (../simplified.cpp:286:20) in function 'laplacianCalculator' completely with a factor of 16 (../simplified.cpp:286:20)
+INFO: [HLS 214-186] Unrolling loop 'LaplacianNodeLoop' (../simplified.cpp:286:20) in function 'laplacianCalculator' completely with a factor of 16 (../simplified.cpp:286:20)
+INFO: [HLS 214-186] Unrolling loop 'LaplacianNodeLoop' (../simplified.cpp:286:20) in function 'laplacianCalculator' completely with a factor of 16 (../simplified.cpp:286:20)
+INFO: [HLS 214-186] Unrolling loop 'dCLayerLoop' (../simplified.cpp:264:14) in function 'decodeCoordinates<3ul>' completely with a factor of 5 (../simplified.cpp:264:14)
+INFO: [HLS 214-186] Unrolling loop 'dCweightLoop' (../simplified.cpp:266:15) in function 'decodeCoordinates<3ul>' completely with a factor of 3 (../simplified.cpp:266:15)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCweightLoop' (../simplified.cpp:266:15) in function 'decodeCoordinates<3ul>' completely with a factor of 3 (../simplified.cpp:266:15)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCweightLoop' (../simplified.cpp:266:15) in function 'decodeCoordinates<3ul>' completely with a factor of 3 (../simplified.cpp:266:15)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCweightLoop' (../simplified.cpp:266:15) in function 'decodeCoordinates<3ul>' completely with a factor of 3 (../simplified.cpp:266:15)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCweightLoop' (../simplified.cpp:266:15) in function 'decodeCoordinates<3ul>' completely with a factor of 3 (../simplified.cpp:266:15)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-186] Unrolling loop 'dCNodeLoop' (../simplified.cpp:268:13) in function 'decodeCoordinates<3ul>' completely with a factor of 16 (../simplified.cpp:268:13)
+INFO: [HLS 214-248] complete partitioned array 'coordinates' on all dimensions  (../simplified.cpp:1078:126)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 617.977 seconds; current allocated memory: 208.619 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 208.620 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 1.975 seconds; current allocated memory: 217.951 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 6.29 seconds; current allocated memory: 225.445 MB.
+WARNING: [HLS 200-1476] Applying partition directive (../simplified.cpp:1083:2) and reshape directive (../simplified.cpp:1086:9) on the same variable 'tripletMatrix.V' (../simplified.cpp:1083) may lead to unexpected synthesis behaviors.\
+
+INFO: [XFORM 203-131] Reshaping array 'tripletMatrix.V' (../simplified.cpp:1083) in dimension 4 completely.
+INFO: [XFORM 203-131] Reshaping array 'tripletMatrix.V' (../simplified.cpp:1083) in dimension 5 completely.
+INFO: [XFORM 203-101] Partitioning array 'decodedCoordinates' (../simplified.cpp:279) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'halfLaplacian' (../simplified.cpp:239) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'laplacian' (../simplified.cpp:241) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'absLaplacian' (../simplified.cpp:243) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'tripletMatrix.V' (../simplified.cpp:1083) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'allNodesGoodLinks' (../simplified.cpp:1090) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'trackParameters' (../simplified.cpp:1102) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'decodedCoordinates' (../simplified.cpp:279) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'halfLaplacian' (../simplified.cpp:239) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'laplacian' (../simplified.cpp:241) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'absLaplacian' (../simplified.cpp:243) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'tripletMatrix.V' (../simplified.cpp:1083) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'allNodesGoodLinks' (../simplified.cpp:1090) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'trackParameters' (../simplified.cpp:1102) in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'decodedCoordinates' (../simplified.cpp:279) in dimension 3 completely.
+INFO: [XFORM 203-101] Partitioning array 'tripletMatrix.V' (../simplified.cpp:1083) in dimension 3 completely.
+INFO: [XFORM 203-101] Partitioning array 'allNodesGoodLinks' (../simplified.cpp:1090) in dimension 3 completely.
+INFO: [XFORM 203-101] Partitioning array 'decodedCoordinates' (../simplified.cpp:279) in dimension 4 completely.
+INFO: [XFORM 203-101] Partitioning array 'allNodesGoodLinks' (../simplified.cpp:1090) in dimension 4 completely.
+INFO: [XFORM 203-101] Partitioning array 'allNodesGoodLinks' (../simplified.cpp:1090) in dimension 5 completely.
+WARNING: [HLS 200-786] Detected dataflow-on-top in function  'fullSystem' (../simplified.cpp:1083:2)  with default interface mode 'ap_ctrl_hs'. Overlapped execution of successive kernel calls will not happen unless interface mode 'ap_ctrl_chain' is used (or 'ap_ctrl_none' for a purely data-driven design).
+Resolution: For help on HLS 200-786 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-786.html
+INFO: [XFORM 203-712] Applying dataflow to function 'fullSystem' (../simplified.cpp:1078:2), detected/extracted 3 process function(s): 
+	 'fullSystem.entry45'
+	 'laplacianCalculator'
+	 'Block_.split6668_proc'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 20 seconds. CPU system time: 0 seconds. Elapsed time: 47.904 seconds; current allocated memory: 265.005 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 5 seconds. CPU system time: 0 seconds. Elapsed time: 7.175 seconds; current allocated memory: 306.300 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'fullSystem' ...
+WARNING: [SYN 201-103] Legalizing function name 'fullSystem.entry3' to 'fullSystem_entry3'.
+WARNING: [SYN 201-103] Legalizing function name 'fullSystem.entry45' to 'fullSystem_entry45'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_.split6668_proc' to 'Block_split6668_proc'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fullSystem_entry3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.325 seconds; current allocated memory: 308.384 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 310.280 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fullSystem_entry45' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.436 seconds; current allocated memory: 311.437 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.301 seconds; current allocated memory: 314.808 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_split6668_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.304 seconds; current allocated memory: 314.895 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 314.926 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fullSystem' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.427 seconds; current allocated memory: 317.053 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.5 seconds; current allocated memory: 323.454 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fullSystem_entry3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fullSystem_entry3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.684 seconds; current allocated memory: 325.862 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fullSystem_entry45' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fullSystem_entry45'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.542 seconds; current allocated memory: 335.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_split6668_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_split6668_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.851 seconds; current allocated memory: 340.759 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fullSystem' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_0_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_1_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_2_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_3_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_0_4_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_0_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_1_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_2_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_3_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_1_4_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_0_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_1_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_2_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_3_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_2_4_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_0_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_1_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_2_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_3_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_3_4_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_0_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_1_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_2_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_3_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/coordinates_4_4_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'fullSystem/fullSystemReturnCode' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'fullSystem' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_1_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_2_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_3_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_0_4_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_2_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_3_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_1_4_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_3_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_2_4_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_0_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_3_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_3_4_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_0_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_1_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_3_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_2' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_3' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_4' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_5' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_6' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_7' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_8' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_9' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_10' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_11' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_12' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_13' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_14' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'fullSystem/coordinates_4_4_15' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fullSystem'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 4 seconds. CPU system time: 1 seconds. Elapsed time: 25.11 seconds; current allocated memory: 348.007 MB.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_0_c1_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_1_c2_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_2_c3_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_3_c4_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_4_c5_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_5_c6_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_6_c7_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_7_c8_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_8_c9_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_9_c10_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_10_c11_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_11_c12_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_12_c13_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_13_c14_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_14_c15_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_0_0_15_c16_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_0_c17_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_1_c18_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_2_c19_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_3_c20_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_4_c21_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_5_c22_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_6_c23_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_7_c24_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_8_c25_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_9_c26_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_10_c27_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_11_c28_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_12_c29_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_13_c30_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_14_c31_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_0_15_c32_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_0_c33_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_1_c34_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_2_c35_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_3_c36_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_4_c37_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_5_c38_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_6_c39_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_7_c40_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_8_c41_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_9_c42_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_10_c43_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_11_c44_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_12_c45_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_13_c46_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_14_c47_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_1_1_15_c48_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_0_c49_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_1_c50_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_2_c51_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_3_c52_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_4_c53_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_5_c54_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_6_c55_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_7_c56_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_8_c57_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_9_c58_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_10_c59_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_11_c60_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_12_c61_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_13_c62_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_14_c63_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_0_15_c64_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_0_c65_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_1_c66_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_2_c67_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_3_c68_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_4_c69_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_5_c70_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_6_c71_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_7_c72_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_8_c73_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_9_c74_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_10_c75_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_11_c76_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_12_c77_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_13_c78_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_14_c79_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_1_15_c80_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_0_c81_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_1_c82_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_2_c83_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_3_c84_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_4_c85_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_5_c86_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_6_c87_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_7_c88_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_8_c89_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_9_c90_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_10_c91_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_11_c92_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_12_c93_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_13_c94_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_14_c95_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_2_2_15_c96_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_0_c97_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_1_c98_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_2_c99_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_3_c100_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_4_c101_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_5_c102_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_6_c103_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_7_c104_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_8_c105_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_9_c106_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_10_c107_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_11_c108_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_12_c109_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_13_c110_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_14_c111_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_1_15_c112_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_0_c113_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_1_c114_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_2_c115_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_3_c116_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_4_c117_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_5_c118_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_6_c119_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_7_c120_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_8_c121_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_9_c122_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_10_c123_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_11_c124_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_12_c125_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_13_c126_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_14_c127_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_3_2_15_c128_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_0_c129_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_1_c130_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_2_c131_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_3_c132_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_4_c133_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_5_c134_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_6_c135_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_7_c136_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_8_c137_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_9_c138_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_10_c139_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_11_c140_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_12_c141_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_13_c142_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_14_c143_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'coordinates_4_2_15_c144_U(fullSystem_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fullSystem_entry45_U0_U(fullSystem_start_for_fullSystem_entry45_U0)' using Shift Registers.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 13 seconds. CPU system time: 1 seconds. Elapsed time: 25.078 seconds; current allocated memory: 375.874 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for fullSystem.
+INFO: [VLOG 209-307] Generating Verilog RTL for fullSystem.
+INFO: [HLS 200-789] **** Estimated Fmax: 261.10 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 55 seconds. CPU system time: 3 seconds. Elapsed time: 747.782 seconds; current allocated memory: 383.592 MB.
+INFO: [HLS 200-112] Total CPU user time: 57 seconds. Total CPU system time: 3 seconds. Total elapsed time: 750.666 seconds; peak allocated memory: 375.874 MB.

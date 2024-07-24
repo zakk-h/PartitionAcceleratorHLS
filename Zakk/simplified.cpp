@@ -1143,11 +1143,12 @@ void fullSystem(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][nu
 
 // //   allNodeMinFinders<highestPower,highestPowerLength>(tripletMatrix[0], laplacianMinimumsOfNodeHP, laplacianMinimumsOfNodeTransposeHP);
 
-	copyCoordinates(coordinates,coordinatesPipeline[0]);
-	allNodeMinFindersV2<highestPower,highestPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], tripletMatrix[1], laplacianMinimumsOfNodeHP);
+	//copyCoordinates(coordinates,coordinatesPipeline[0]);
+	//allNodeMinFindersV2<highestPower,highestPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], tripletMatrix[1], laplacianMinimumsOfNodeHP);
 
-	copyCoordinates(coordinatesPipeline[0],coordinatesPipeline[1]);
-	allNodeMSS<highestPower,highestPowerLength>(laplacianMinimumsOfNodeHP, allNodesGoodLinks[0], bestIndices[0]);
+	//copyCoordinates(coordinatesPipeline[0],coordinatesPipeline[1]);
+	//allNodeMSS<highestPower,highestPowerLength>(laplacianMinimumsOfNodeHP, allNodesGoodLinks[0], bestIndices[0]);
+    /*
     copyTripletMatrix(tripletMatrix[1],tripletMatrix[2]);
 
 	copyCoordinates(coordinatesPipeline[1],coordinatesPipeline[2]);
@@ -1169,18 +1170,19 @@ void fullSystem(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][nu
 
 	copyCoordinates(coordinatesPipeline[6],coordinatesPipeline[7]);
 	allNodeMSS<highestPower-3,NNNHPowerLength>(laplacianMinimumsOfNodeNNNHP, allNodesGoodLinks[3], bestIndices[3]);
+    */
 
 #if totalLayers == defaultLayersQC
-	findAllTracks(allNodesGoodLinks[3],bestIndices[3],track,trackCandidate);
-	indexTYPE bestTrack = findBestTrack(track, trackCandidate, coordinatesPipeline[7], trackParameters);
-	removeGhostTracks(bestTrack,track,allNodesGoodLinks[3]);
+	//findAllTracks(allNodesGoodLinks[3],bestIndices[3],track,trackCandidate);
+	//indexTYPE bestTrack = findBestTrack(track, trackCandidate, coordinatesPipeline[7], trackParameters);
+	//removeGhostTracks(bestTrack,track,allNodesGoodLinks[3]);
 #endif
 
 #elif combinedNodeProcessor == true
-	allNodeProcessors<highestPower>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
-	allNodeProcessors<highestPower-1>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
-    allNodeProcessors<highestPower-2>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
-    allNodeProcessors<highestPower-3>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+	//allNodeProcessors<highestPower>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+	//allNodeProcessors<highestPower-1>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+    //allNodeProcessors<highestPower-2>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
+    //allNodeProcessors<highestPower-3>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0]);
 #endif
 
 	// Print final allNodesGoodLinks matrix
