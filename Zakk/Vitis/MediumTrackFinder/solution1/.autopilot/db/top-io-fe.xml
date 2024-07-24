@@ -241,162 +241,162 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="48" access_type="" src_name="coordinates_0_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="48" access_type="r" src_name="coordinates_0_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="49" access_type="" src_name="coordinates_0_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="49" access_type="r" src_name="coordinates_0_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="50" access_type="" src_name="coordinates_0_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="50" access_type="r" src_name="coordinates_0_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="51" access_type="" src_name="coordinates_0_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="51" access_type="r" src_name="coordinates_0_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="52" access_type="" src_name="coordinates_0_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="52" access_type="r" src_name="coordinates_0_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="53" access_type="" src_name="coordinates_0_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="53" access_type="r" src_name="coordinates_0_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="54" access_type="" src_name="coordinates_0_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="54" access_type="r" src_name="coordinates_0_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="55" access_type="" src_name="coordinates_0_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="55" access_type="r" src_name="coordinates_0_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="56" access_type="" src_name="coordinates_0_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="56" access_type="r" src_name="coordinates_0_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="57" access_type="" src_name="coordinates_0_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="57" access_type="r" src_name="coordinates_0_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="58" access_type="" src_name="coordinates_0_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="58" access_type="r" src_name="coordinates_0_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="59" access_type="" src_name="coordinates_0_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="59" access_type="r" src_name="coordinates_0_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="60" access_type="" src_name="coordinates_0_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="60" access_type="r" src_name="coordinates_0_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="61" access_type="" src_name="coordinates_0_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="61" access_type="r" src_name="coordinates_0_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="62" access_type="" src_name="coordinates_0_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="62" access_type="r" src_name="coordinates_0_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="63" access_type="" src_name="coordinates_0_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="63" access_type="r" src_name="coordinates_0_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_3_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="64" access_type="" src_name="coordinates_0_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="64" access_type="r" src_name="coordinates_0_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="65" access_type="" src_name="coordinates_0_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="65" access_type="r" src_name="coordinates_0_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="66" access_type="" src_name="coordinates_0_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="66" access_type="r" src_name="coordinates_0_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="67" access_type="" src_name="coordinates_0_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="67" access_type="r" src_name="coordinates_0_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="68" access_type="" src_name="coordinates_0_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="68" access_type="r" src_name="coordinates_0_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="69" access_type="" src_name="coordinates_0_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="69" access_type="r" src_name="coordinates_0_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="70" access_type="" src_name="coordinates_0_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="70" access_type="r" src_name="coordinates_0_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="71" access_type="" src_name="coordinates_0_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="71" access_type="r" src_name="coordinates_0_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="72" access_type="" src_name="coordinates_0_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="72" access_type="r" src_name="coordinates_0_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="73" access_type="" src_name="coordinates_0_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="73" access_type="r" src_name="coordinates_0_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="74" access_type="" src_name="coordinates_0_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="74" access_type="r" src_name="coordinates_0_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="75" access_type="" src_name="coordinates_0_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="75" access_type="r" src_name="coordinates_0_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="76" access_type="" src_name="coordinates_0_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="76" access_type="r" src_name="coordinates_0_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="77" access_type="" src_name="coordinates_0_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="77" access_type="r" src_name="coordinates_0_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="78" access_type="" src_name="coordinates_0_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="78" access_type="r" src_name="coordinates_0_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="79" access_type="" src_name="coordinates_0_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="79" access_type="r" src_name="coordinates_0_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_0_4_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
@@ -641,162 +641,162 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="128" access_type="" src_name="coordinates_1_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="128" access_type="r" src_name="coordinates_1_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="129" access_type="" src_name="coordinates_1_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="129" access_type="r" src_name="coordinates_1_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="130" access_type="" src_name="coordinates_1_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="130" access_type="r" src_name="coordinates_1_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="131" access_type="" src_name="coordinates_1_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="131" access_type="r" src_name="coordinates_1_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="132" access_type="" src_name="coordinates_1_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="132" access_type="r" src_name="coordinates_1_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="133" access_type="" src_name="coordinates_1_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="133" access_type="r" src_name="coordinates_1_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="134" access_type="" src_name="coordinates_1_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="134" access_type="r" src_name="coordinates_1_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="135" access_type="" src_name="coordinates_1_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="135" access_type="r" src_name="coordinates_1_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="136" access_type="" src_name="coordinates_1_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="136" access_type="r" src_name="coordinates_1_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="137" access_type="" src_name="coordinates_1_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="137" access_type="r" src_name="coordinates_1_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="138" access_type="" src_name="coordinates_1_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="138" access_type="r" src_name="coordinates_1_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="139" access_type="" src_name="coordinates_1_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="139" access_type="r" src_name="coordinates_1_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="140" access_type="" src_name="coordinates_1_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="140" access_type="r" src_name="coordinates_1_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="141" access_type="" src_name="coordinates_1_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="141" access_type="r" src_name="coordinates_1_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="142" access_type="" src_name="coordinates_1_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="142" access_type="r" src_name="coordinates_1_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="143" access_type="" src_name="coordinates_1_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="143" access_type="r" src_name="coordinates_1_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_3_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="144" access_type="" src_name="coordinates_1_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="144" access_type="r" src_name="coordinates_1_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="145" access_type="" src_name="coordinates_1_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="145" access_type="r" src_name="coordinates_1_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="146" access_type="" src_name="coordinates_1_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="146" access_type="r" src_name="coordinates_1_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="147" access_type="" src_name="coordinates_1_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="147" access_type="r" src_name="coordinates_1_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="148" access_type="" src_name="coordinates_1_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="148" access_type="r" src_name="coordinates_1_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="149" access_type="" src_name="coordinates_1_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="149" access_type="r" src_name="coordinates_1_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="150" access_type="" src_name="coordinates_1_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="150" access_type="r" src_name="coordinates_1_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="151" access_type="" src_name="coordinates_1_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="151" access_type="r" src_name="coordinates_1_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="152" access_type="" src_name="coordinates_1_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="152" access_type="r" src_name="coordinates_1_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="153" access_type="" src_name="coordinates_1_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="153" access_type="r" src_name="coordinates_1_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="154" access_type="" src_name="coordinates_1_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="154" access_type="r" src_name="coordinates_1_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="155" access_type="" src_name="coordinates_1_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="155" access_type="r" src_name="coordinates_1_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="156" access_type="" src_name="coordinates_1_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="156" access_type="r" src_name="coordinates_1_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="157" access_type="" src_name="coordinates_1_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="157" access_type="r" src_name="coordinates_1_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="158" access_type="" src_name="coordinates_1_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="158" access_type="r" src_name="coordinates_1_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="159" access_type="" src_name="coordinates_1_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="159" access_type="r" src_name="coordinates_1_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_1_4_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
@@ -1041,162 +1041,162 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="208" access_type="" src_name="coordinates_2_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="208" access_type="r" src_name="coordinates_2_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="209" access_type="" src_name="coordinates_2_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="209" access_type="r" src_name="coordinates_2_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="210" access_type="" src_name="coordinates_2_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="210" access_type="r" src_name="coordinates_2_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="211" access_type="" src_name="coordinates_2_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="211" access_type="r" src_name="coordinates_2_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="212" access_type="" src_name="coordinates_2_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="212" access_type="r" src_name="coordinates_2_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="213" access_type="" src_name="coordinates_2_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="213" access_type="r" src_name="coordinates_2_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="214" access_type="" src_name="coordinates_2_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="214" access_type="r" src_name="coordinates_2_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="215" access_type="" src_name="coordinates_2_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="215" access_type="r" src_name="coordinates_2_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="216" access_type="" src_name="coordinates_2_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="216" access_type="r" src_name="coordinates_2_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="217" access_type="" src_name="coordinates_2_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="217" access_type="r" src_name="coordinates_2_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="218" access_type="" src_name="coordinates_2_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="218" access_type="r" src_name="coordinates_2_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="219" access_type="" src_name="coordinates_2_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="219" access_type="r" src_name="coordinates_2_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="220" access_type="" src_name="coordinates_2_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="220" access_type="r" src_name="coordinates_2_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="221" access_type="" src_name="coordinates_2_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="221" access_type="r" src_name="coordinates_2_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="222" access_type="" src_name="coordinates_2_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="222" access_type="r" src_name="coordinates_2_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="223" access_type="" src_name="coordinates_2_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="223" access_type="r" src_name="coordinates_2_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_3_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="224" access_type="" src_name="coordinates_2_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="224" access_type="r" src_name="coordinates_2_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="225" access_type="" src_name="coordinates_2_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="225" access_type="r" src_name="coordinates_2_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="226" access_type="" src_name="coordinates_2_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="226" access_type="r" src_name="coordinates_2_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="227" access_type="" src_name="coordinates_2_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="227" access_type="r" src_name="coordinates_2_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="228" access_type="" src_name="coordinates_2_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="228" access_type="r" src_name="coordinates_2_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="229" access_type="" src_name="coordinates_2_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="229" access_type="r" src_name="coordinates_2_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="230" access_type="" src_name="coordinates_2_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="230" access_type="r" src_name="coordinates_2_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="231" access_type="" src_name="coordinates_2_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="231" access_type="r" src_name="coordinates_2_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="232" access_type="" src_name="coordinates_2_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="232" access_type="r" src_name="coordinates_2_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="233" access_type="" src_name="coordinates_2_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="233" access_type="r" src_name="coordinates_2_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="234" access_type="" src_name="coordinates_2_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="234" access_type="r" src_name="coordinates_2_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="235" access_type="" src_name="coordinates_2_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="235" access_type="r" src_name="coordinates_2_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="236" access_type="" src_name="coordinates_2_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="236" access_type="r" src_name="coordinates_2_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="237" access_type="" src_name="coordinates_2_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="237" access_type="r" src_name="coordinates_2_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="238" access_type="" src_name="coordinates_2_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="238" access_type="r" src_name="coordinates_2_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="239" access_type="" src_name="coordinates_2_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="239" access_type="r" src_name="coordinates_2_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_2_4_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
@@ -1441,162 +1441,162 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="288" access_type="" src_name="coordinates_3_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="288" access_type="r" src_name="coordinates_3_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="289" access_type="" src_name="coordinates_3_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="289" access_type="r" src_name="coordinates_3_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="290" access_type="" src_name="coordinates_3_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="290" access_type="r" src_name="coordinates_3_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="291" access_type="" src_name="coordinates_3_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="291" access_type="r" src_name="coordinates_3_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="292" access_type="" src_name="coordinates_3_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="292" access_type="r" src_name="coordinates_3_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="293" access_type="" src_name="coordinates_3_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="293" access_type="r" src_name="coordinates_3_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="294" access_type="" src_name="coordinates_3_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="294" access_type="r" src_name="coordinates_3_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="295" access_type="" src_name="coordinates_3_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="295" access_type="r" src_name="coordinates_3_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="296" access_type="" src_name="coordinates_3_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="296" access_type="r" src_name="coordinates_3_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="297" access_type="" src_name="coordinates_3_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="297" access_type="r" src_name="coordinates_3_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="298" access_type="" src_name="coordinates_3_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="298" access_type="r" src_name="coordinates_3_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="299" access_type="" src_name="coordinates_3_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="299" access_type="r" src_name="coordinates_3_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="300" access_type="" src_name="coordinates_3_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="300" access_type="r" src_name="coordinates_3_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="301" access_type="" src_name="coordinates_3_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="301" access_type="r" src_name="coordinates_3_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="302" access_type="" src_name="coordinates_3_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="302" access_type="r" src_name="coordinates_3_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="303" access_type="" src_name="coordinates_3_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="303" access_type="r" src_name="coordinates_3_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_3_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="304" access_type="" src_name="coordinates_3_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="304" access_type="r" src_name="coordinates_3_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="305" access_type="" src_name="coordinates_3_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="305" access_type="r" src_name="coordinates_3_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="306" access_type="" src_name="coordinates_3_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="306" access_type="r" src_name="coordinates_3_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="307" access_type="" src_name="coordinates_3_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="307" access_type="r" src_name="coordinates_3_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="308" access_type="" src_name="coordinates_3_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="308" access_type="r" src_name="coordinates_3_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="309" access_type="" src_name="coordinates_3_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="309" access_type="r" src_name="coordinates_3_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="310" access_type="" src_name="coordinates_3_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="310" access_type="r" src_name="coordinates_3_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="311" access_type="" src_name="coordinates_3_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="311" access_type="r" src_name="coordinates_3_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="312" access_type="" src_name="coordinates_3_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="312" access_type="r" src_name="coordinates_3_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="313" access_type="" src_name="coordinates_3_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="313" access_type="r" src_name="coordinates_3_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="314" access_type="" src_name="coordinates_3_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="314" access_type="r" src_name="coordinates_3_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="315" access_type="" src_name="coordinates_3_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="315" access_type="r" src_name="coordinates_3_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="316" access_type="" src_name="coordinates_3_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="316" access_type="r" src_name="coordinates_3_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="317" access_type="" src_name="coordinates_3_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="317" access_type="r" src_name="coordinates_3_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="318" access_type="" src_name="coordinates_3_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="318" access_type="r" src_name="coordinates_3_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="319" access_type="" src_name="coordinates_3_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="319" access_type="r" src_name="coordinates_3_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_3_4_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
@@ -1841,162 +1841,162 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="368" access_type="" src_name="coordinates_4_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="368" access_type="r" src_name="coordinates_4_3_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="369" access_type="" src_name="coordinates_4_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="369" access_type="r" src_name="coordinates_4_3_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="370" access_type="" src_name="coordinates_4_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="370" access_type="r" src_name="coordinates_4_3_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="371" access_type="" src_name="coordinates_4_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="371" access_type="r" src_name="coordinates_4_3_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="372" access_type="" src_name="coordinates_4_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="372" access_type="r" src_name="coordinates_4_3_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="373" access_type="" src_name="coordinates_4_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="373" access_type="r" src_name="coordinates_4_3_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="374" access_type="" src_name="coordinates_4_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="374" access_type="r" src_name="coordinates_4_3_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="375" access_type="" src_name="coordinates_4_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="375" access_type="r" src_name="coordinates_4_3_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="376" access_type="" src_name="coordinates_4_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="376" access_type="r" src_name="coordinates_4_3_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="377" access_type="" src_name="coordinates_4_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="377" access_type="r" src_name="coordinates_4_3_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="378" access_type="" src_name="coordinates_4_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="378" access_type="r" src_name="coordinates_4_3_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="379" access_type="" src_name="coordinates_4_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="379" access_type="r" src_name="coordinates_4_3_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="380" access_type="" src_name="coordinates_4_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="380" access_type="r" src_name="coordinates_4_3_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="381" access_type="" src_name="coordinates_4_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="381" access_type="r" src_name="coordinates_4_3_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="382" access_type="" src_name="coordinates_4_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="382" access_type="r" src_name="coordinates_4_3_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="383" access_type="" src_name="coordinates_4_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="383" access_type="r" src_name="coordinates_4_3_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_3_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="384" access_type="" src_name="coordinates_4_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="384" access_type="r" src_name="coordinates_4_4_0" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_0" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="385" access_type="" src_name="coordinates_4_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="385" access_type="r" src_name="coordinates_4_4_1" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_1" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="386" access_type="" src_name="coordinates_4_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="386" access_type="r" src_name="coordinates_4_4_2" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_2" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="387" access_type="" src_name="coordinates_4_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="387" access_type="r" src_name="coordinates_4_4_3" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="388" access_type="" src_name="coordinates_4_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="388" access_type="r" src_name="coordinates_4_4_4" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_4" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="389" access_type="" src_name="coordinates_4_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="389" access_type="r" src_name="coordinates_4_4_5" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_5" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="390" access_type="" src_name="coordinates_4_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="390" access_type="r" src_name="coordinates_4_4_6" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_6" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="391" access_type="" src_name="coordinates_4_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="391" access_type="r" src_name="coordinates_4_4_7" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_7" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="392" access_type="" src_name="coordinates_4_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="392" access_type="r" src_name="coordinates_4_4_8" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_8" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="393" access_type="" src_name="coordinates_4_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="393" access_type="r" src_name="coordinates_4_4_9" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_9" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="394" access_type="" src_name="coordinates_4_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="394" access_type="r" src_name="coordinates_4_4_10" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_10" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="395" access_type="" src_name="coordinates_4_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="395" access_type="r" src_name="coordinates_4_4_11" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_11" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="396" access_type="" src_name="coordinates_4_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="396" access_type="r" src_name="coordinates_4_4_12" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_12" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="397" access_type="" src_name="coordinates_4_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="397" access_type="r" src_name="coordinates_4_4_13" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_13" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="398" access_type="" src_name="coordinates_4_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="398" access_type="r" src_name="coordinates_4_4_14" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_14" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="399" access_type="" src_name="coordinates_4_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="399" access_type="r" src_name="coordinates_4_4_15" src_type="ap_int&lt;32&gt;*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="coordinates_4_4_15" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>

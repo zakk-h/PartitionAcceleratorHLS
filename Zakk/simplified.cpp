@@ -1143,8 +1143,8 @@ void fullSystem(spacepointTYPE coordinates[totalLayers][nWeightedCoordinates][nu
 
 // //   allNodeMinFinders<highestPower,highestPowerLength>(tripletMatrix[0], laplacianMinimumsOfNodeHP, laplacianMinimumsOfNodeTransposeHP);
 
-	//copyCoordinates(coordinates,coordinatesPipeline[0]);
-	//allNodeMinFindersV2<highestPower,highestPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], tripletMatrix[1], laplacianMinimumsOfNodeHP);
+	copyCoordinates(coordinates,coordinatesPipeline[0]);
+	allNodeMinFindersV2<highestPower,highestPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], tripletMatrix[1], laplacianMinimumsOfNodeHP);
 
 	//copyCoordinates(coordinatesPipeline[0],coordinatesPipeline[1]);
 	//allNodeMSS<highestPower,highestPowerLength>(laplacianMinimumsOfNodeHP, allNodesGoodLinks[0], bestIndices[0]);

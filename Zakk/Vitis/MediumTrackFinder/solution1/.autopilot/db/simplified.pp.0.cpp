@@ -47579,6 +47579,15 @@ __attribute__((sdx_kernel("fullSystem", 0))) void fullSystem(ap_int<32> coordina
 
 
  laplacianCalculator(coordinates, tripletMatrix[0]);
+
+
+
+
+
+
+
+ copyCoordinates(coordinates,coordinatesPipeline[0]);
+ allNodeMinFindersV2<4,highestPowerLength>(allNodesGoodLinks[0], bestIndices[0], tripletMatrix[0], tripletMatrix[1], laplacianMinimumsOfNodeHP);
 # 1206 "../simplified.cpp"
  *fullSystemReturnCode = allNodesGoodLinks[4 -1][3 -1][16 -1][2 -1][16 -1] && (trackParameters[2][0]>1 && trackParameters[2][1]>1);
 
