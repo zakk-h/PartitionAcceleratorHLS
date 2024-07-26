@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Thu Jul 25 20:52:51 2024
-# Process ID: 4516
+# Start of session at: Thu Jul 25 21:07:45 2024
+# Process ID: 18364
 # Current directory: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.runs/synth_1
 # Command line: vivado.exe -log system_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_top.tcl
 # Log file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.runs/synth_1/system_top.vds
@@ -17,11 +17,11 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z030
 INFO: [Device 21-403] Loading part xc7z030sbg485-3
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 13744
+INFO: [Synth 8-7075] Helper process launched with PID 20672
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1185.695 ; gain = 58.973
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1184.988 ; gain = 40.137
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:12]
+INFO: [Synth 8-6157] synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:12]
 	Parameter ap_ST_fsm_state1 bound to: 12'b000000000001 
 	Parameter ap_ST_fsm_pp0_stage0 bound to: 12'b000000000010 
 	Parameter ap_ST_fsm_state4 bound to: 12'b000000000100 
@@ -34,112 +34,112 @@ INFO: [Synth 8-6157] synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matte
 	Parameter ap_ST_fsm_state14 bound to: 12'b001000000000 
 	Parameter ap_ST_fsm_state15 bound to: 12'b010000000000 
 	Parameter ap_ST_fsm_state16 bound to: 12'b100000000000 
-INFO: [Synth 8-6157] synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:39]
 	Parameter DataWidth bound to: 1 - type: integer 
 	Parameter AddressRange bound to: 3 - type: integer 
 	Parameter AddressWidth bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:6]
 	Parameter DWIDTH bound to: 1 - type: integer 
 	Parameter AWIDTH bound to: 2 - type: integer 
 	Parameter MEM_SIZE bound to: 3 - type: integer 
-CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:21]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:21]
 
 Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
 	1: Unable to determine number of words or word size in RAM. 
 	2: No valid read/write found for RAM. 
 RAM dissolved into registers
-INFO: [Synth 8-6155] done synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb_rom' (1#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb' (2#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:39]
-INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_V.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb_rom' (1#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb' (2#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_patch_buffer_is_embkb.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_V.v:52]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 240 - type: integer 
 	Parameter AddressWidth bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 8 - type: integer 
 	Parameter MEM_SIZE bound to: 240 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_V_ram' (3#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_V' (4#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_V.v:52]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:498]
-INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_is_empty' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_is_empty.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_V_ram' (3#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_V' (4#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_V.v:52]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:498]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_is_empty' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_is_empty.v:35]
 	Parameter DataWidth bound to: 1 - type: integer 
 	Parameter AddressRange bound to: 3 - type: integer 
 	Parameter AddressWidth bound to: 2 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_is_empty.v:55]
-INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_is_empty_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_is_empty.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_is_empty.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_is_empty_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_is_empty.v:6]
 	Parameter DWIDTH bound to: 1 - type: integer 
 	Parameter AWIDTH bound to: 2 - type: integer 
 	Parameter MEM_SIZE bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_is_empty_ram' (5#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_is_empty.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_is_empty' (6#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_is_empty.v:35]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:511]
-INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_V.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_is_empty_ram' (5#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_is_empty.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_is_empty' (6#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_patch_buffer_is_empty.v:35]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:511]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_pSlope_V.v:35]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 15 - type: integer 
 	Parameter AddressWidth bound to: 4 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_V.v:55]
-INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_V.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_pSlope_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_pSlope_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 4 - type: integer 
 	Parameter MEM_SIZE bound to: 15 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_V_ram' (7#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_V' (8#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_V.v:35]
-INFO: [Synth 8-6157] synthesizing module 'system_top_shadow_bottomL_jR_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_V.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_V_ram' (7#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_pSlope_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_V' (8#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_pSlope_V.v:35]
+INFO: [Synth 8-6157] synthesizing module 'system_top_shadow_bottomL_jR_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_shadow_bottomL_jR_V.v:48]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 15 - type: integer 
 	Parameter AddressWidth bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_shadow_bottomL_jR_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_shadow_bottomL_jR_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_shadow_bottomL_jR_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 4 - type: integer 
 	Parameter MEM_SIZE bound to: 15 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_shadow_bottomL_jR_V_ram' (9#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_shadow_bottomL_jR_V' (10#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_V.v:48]
-INFO: [Synth 8-6157] synthesizing module 'system_top_z1_min_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_V.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_shadow_bottomL_jR_V_ram' (9#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_shadow_bottomL_jR_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_shadow_bottomL_jR_V' (10#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_shadow_bottomL_jR_V.v:48]
+INFO: [Synth 8-6157] synthesizing module 'system_top_z1_min_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_z1_min_V.v:37]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 15 - type: integer 
 	Parameter AddressWidth bound to: 4 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_z1_min_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_z1_min_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_z1_min_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 4 - type: integer 
 	Parameter MEM_SIZE bound to: 15 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_z1_min_V_ram' (11#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_z1_min_V' (12#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_V.v:37]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:620]
-INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_0_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_0_V.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_z1_min_V_ram' (11#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_z1_min_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_z1_min_V' (12#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_z1_min_V.v:37]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:620]
+INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_0_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_0_V.v:35]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 3 - type: integer 
 	Parameter AddressWidth bound to: 2 - type: integer 
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_0_V.v:55]
-INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_0_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_0_V.v:6]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_0_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_0_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_0_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 2 - type: integer 
 	Parameter MEM_SIZE bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_0_V_ram' (13#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_0_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_0_V' (14#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_0_V.v:35]
-INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_1_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_1_V.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_0_V_ram' (13#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_0_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_0_V' (14#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_0_V.v:35]
+INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_1_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_1_V.v:37]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 3 - type: integer 
 	Parameter AddressWidth bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_1_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_1_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_a_corner_1_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_1_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 2 - type: integer 
 	Parameter MEM_SIZE bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_1_V_ram' (15#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_1_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_1_V' (16#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_a_corner_1_V.v:37]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:647]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:702]
-INFO: [Synth 8-6157] synthesizing module 'system_top_squareAcceptance' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_squareAcceptance.v:37]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_1_V_ram' (15#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_1_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_a_corner_1_V' (16#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_a_corner_1_V.v:37]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:647]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:702]
+INFO: [Synth 8-6157] synthesizing module 'system_top_squareAcceptance' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_squareAcceptance.v:37]
 	Parameter DataWidth bound to: 1 - type: integer 
 	Parameter AddressRange bound to: 3 - type: integer 
 	Parameter AddressWidth bound to: 2 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_squareAcceptance_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_squareAcceptance.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_squareAcceptance_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_squareAcceptance.v:6]
 	Parameter DWIDTH bound to: 1 - type: integer 
 	Parameter AWIDTH bound to: 2 - type: integer 
 	Parameter MEM_SIZE bound to: 3 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_squareAcceptance_ram' (17#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_squareAcceptance.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_squareAcceptance' (18#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_squareAcceptance.v:37]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:799]
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_squareAcceptance_ram' (17#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_squareAcceptance.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_squareAcceptance' (18#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_squareAcceptance.v:37]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:799]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip.v:10]
 	Parameter ap_ST_fsm_state1 bound to: 607'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 
 	Parameter ap_ST_fsm_state2 bound to: 607'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010 
 	Parameter ap_ST_fsm_state3 bound to: 607'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100 
@@ -747,27 +747,27 @@ INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_mak
 	Parameter ap_ST_fsm_state673 bound to: 607'b0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter ap_ST_fsm_state674 bound to: 607'b0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
 	Parameter ap_ST_fsm_state675 bound to: 607'b1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:37]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:37]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 5 - type: integer 
 	Parameter AddressWidth bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 3 - type: integer 
 	Parameter MEM_SIZE bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V_ram' (19#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V' (20#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:37]
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V_ram' (19#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V' (20#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_current_z_i_index_V.v:37]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:52]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 5 - type: integer 
 	Parameter AddressWidth bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 3 - type: integer 
 	Parameter MEM_SIZE bound to: 5 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V_ram' (21#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V' (22#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:52]
-INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V_ram' (21#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V' (22#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_index_V.v:52]
+INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_makePatch_alignedToLine.v:10]
 	Parameter ap_ST_fsm_state1 bound to: 14'b00000000000001 
 	Parameter ap_ST_fsm_state2 bound to: 14'b00000000000010 
 	Parameter ap_ST_fsm_state3 bound to: 14'b00000000000100 
@@ -782,17 +782,17 @@ INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine' [C
 	Parameter ap_ST_fsm_state12 bound to: 14'b00100000000000 
 	Parameter ap_ST_fsm_pp0_stage0 bound to: 14'b01000000000000 
 	Parameter ap_ST_fsm_state15 bound to: 14'b10000000000000 
-INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:52]
+INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:52]
 	Parameter DataWidth bound to: 96 - type: integer 
 	Parameter AddressRange bound to: 80 - type: integer 
 	Parameter AddressWidth bound to: 7 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:6]
 	Parameter DWIDTH bound to: 96 - type: integer 
 	Parameter AWIDTH bound to: 7 - type: integer 
 	Parameter MEM_SIZE bound to: 80 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_ram' (23#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V' (24#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:52]
-INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop8' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_ram' (23#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V' (24#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_makePatch_alignedToLine_init_patch_V.v:52]
+INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop8' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8.v:10]
 	Parameter ap_ST_fsm_state1 bound to: 45'b000000000000000000000000000000000000000000001 
 	Parameter ap_ST_fsm_state2 bound to: 45'b000000000000000000000000000000000000000000010 
 	Parameter ap_ST_fsm_state3 bound to: 45'b000000000000000000000000000000000000000000100 
@@ -838,27 +838,27 @@ INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loo
 	Parameter ap_ST_fsm_state43 bound to: 45'b001000000000000000000000000000000000000000000 
 	Parameter ap_ST_fsm_state44 bound to: 45'b010000000000000000000000000000000000000000000 
 	Parameter ap_ST_fsm_state45 bound to: 45'b100000000000000000000000000000000000000000000 
-INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:39]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 5 - type: integer 
 	Parameter AddressWidth bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 3 - type: integer 
 	Parameter MEM_SIZE bound to: 5 - type: integer 
-CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_alignedtoline_per_layer_loop8_get_radiiradii_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:21]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_alignedtoline_per_layer_loop8_get_radiiradii_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:21]
 
 Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
 	1: Unable to determine number of words or word size in RAM. 
 	2: No valid read/write found for RAM. 
 RAM dissolved into registers
-INFO: [Synth 8-6155] done synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii_rom' (25#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii' (26#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:39]
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value9' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value9.v:10]
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value_entry65' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value_entry65.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii_rom' (25#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_alignedtoline_per_layer_loop8_get_radiiradii' (26#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8_get_radiiradii.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value9' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_boundaries_and_starting_index_and_value9.v:10]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value_entry65' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_boundaries_and_starting_index_and_value_entry65.v:10]
 	Parameter ap_ST_fsm_state1 bound to: 1'b1 
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value_entry65' (27#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value_entry65.v:10]
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries11' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value_entry65' (27#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_boundaries_and_starting_index_and_value_entry65.v:10]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries11' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11.v:10]
 	Parameter ap_ST_fsm_state1 bound to: 15'b000000000000001 
 	Parameter ap_ST_fsm_state2 bound to: 15'b000000000000010 
 	Parameter ap_ST_fsm_pp0_stage0 bound to: 15'b000000000000100 
@@ -874,30 +874,30 @@ INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_bound
 	Parameter ap_ST_fsm_pp0_stage10 bound to: 15'b001000000000000 
 	Parameter ap_ST_fsm_pp0_stage11 bound to: 15'b010000000000000 
 	Parameter ap_ST_fsm_state25 bound to: 15'b100000000000000 
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:39]
 	Parameter DataWidth bound to: 32 - type: integer 
 	Parameter AddressRange bound to: 5 - type: integer 
 	Parameter AddressWidth bound to: 3 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:6]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:6]
 	Parameter DWIDTH bound to: 32 - type: integer 
 	Parameter AWIDTH bound to: 3 - type: integer 
 	Parameter MEM_SIZE bound to: 5 - type: integer 
-CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:21]
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:21]
 
 Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
 	1: Unable to determine number of words or word size in RAM. 
 	2: No valid read/write found for RAM. 
 RAM dissolved into registers
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges_rom' (28#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges' (29#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:39]
-INFO: [Synth 8-6157] synthesizing module 'system_top_faddfsub_32ns_32ns_32_4_full_dsp_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_faddfsub_32ns_32ns_32_4_full_dsp_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges_rom' (28#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges' (29#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11_get_trapezoid_edgestrapezoid_edges.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_faddfsub_32ns_32ns_32_4_full_dsp_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_faddfsub_32ns_32ns_32_4_full_dsp_1.v:8]
 	Parameter ID bound to: 1 - type: integer 
 	Parameter NUM_STAGE bound to: 4 - type: integer 
 	Parameter din0_WIDTH bound to: 32 - type: integer 
 	Parameter din1_WIDTH bound to: 32 - type: integer 
 	Parameter dout_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'system_top_ap_faddfsub_2_full_dsp_32' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/ip/system_top_ap_faddfsub_2_full_dsp_32.v:60]
-ERROR: [Synth 8-439] module 'floating_point_v7_1_11' not found [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/ip/system_top_ap_faddfsub_2_full_dsp_32.v:178]
+INFO: [Synth 8-6157] synthesizing module 'system_top_ap_faddfsub_2_full_dsp_32' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/ip/system_top_ap_faddfsub_2_full_dsp_32.v:60]
+ERROR: [Synth 8-439] module 'floating_point_v7_1_11' not found [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/ip/system_top_ap_faddfsub_2_full_dsp_32.v:178]
 	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
 	Parameter C_PART bound to: xc7z030sbg485-3 - type: string 
 	Parameter C_HAS_ADD bound to: 32'sb00000000000000000000000000000001 
@@ -975,20 +975,20 @@ ERROR: [Synth 8-439] module 'floating_point_v7_1_11' not found [C:/Users/zakkh/D
 	Parameter C_RESULT_TDATA_WIDTH bound to: 32'sb00000000000000000000000000100000 
 	Parameter C_RESULT_TUSER_WIDTH bound to: 32'sb00000000000000000000000000000001 
 	Parameter C_FIXED_DATA_UNSIGNED bound to: 32'sb00000000000000000000000000000000 
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_ap_faddfsub_2_full_dsp_32' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/ip/system_top_ap_faddfsub_2_full_dsp_32.v:60]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_faddfsub_32ns_32ns_32_4_full_dsp_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_faddfsub_32ns_32ns_32_4_full_dsp_1.v:8]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_find_left_and_right_boundaries11' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries11.v:10]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value9' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value9.v:10]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_alignedtoline_per_layer_loop8' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop8.v:10]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_makePatch_alignedToLine' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine.v:10]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip.v:10]
-ERROR: [Synth 8-6156] failed synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:12]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_ap_faddfsub_2_full_dsp_32' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/ip/system_top_ap_faddfsub_2_full_dsp_32.v:60]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_faddfsub_32ns_32ns_32_4_full_dsp_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_faddfsub_32ns_32ns_32_4_full_dsp_1.v:8]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_find_left_and_right_boundaries11' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_left_and_right_boundaries11.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value9' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_find_boundaries_and_starting_index_and_value9.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_alignedtoline_per_layer_loop8' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_alignedtoline_per_layer_loop8.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_makePatch_alignedToLine' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_makePatch_alignedToLine.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v2_vivado/zesen_v2_vivado.srcs/sources_1/imports/verilog/system_top.v:12]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:04 . Memory (MB): peak = 1256.891 ; gain = 130.168
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1256.320 ; gain = 111.469
 ---------------------------------------------------------------------------------
 RTL Elaboration failed
 INFO: [Common 17-83] Releasing license: Synthesis
 72 Infos, 9 Warnings, 3 Critical Warnings and 10 Errors encountered.
 synth_design failed
 ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
-INFO: [Common 17-206] Exiting Vivado at Thu Jul 25 20:53:07 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu Jul 25 21:07:57 2024...
