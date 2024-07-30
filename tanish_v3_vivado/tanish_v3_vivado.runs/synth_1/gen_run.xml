@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xcvu19p-fsvb3824-1-e" LaunchTime="1722352029" LaunchWriteIncrSynthDcp="true">
+<GenRun Id="synth_1" LaunchPart="xcvu19p-fsvb3824-1-e" LaunchTime="1722357351" LaunchWriteIncrSynthDcp="true">
   <File Type="PA-TCL" Name="MPSQ.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="MPSQ_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="MPSQ_reports.tcl"/>
@@ -742,14 +742,16 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
-      <Desc>Vivado Synthesis Defaults</Desc>
+    <StratHandle Name="Flow_PerfOptimized_high" Flow="Vivado Synthesis 2020">
+      <Desc>Higher performance designs, resource sharing is turned off, the global fanout guide is set to a lower number, FSM extraction forced to one-hot, LUT combining is disabled, equivalent registers are preserved, SRL are inferred  with a larger threshold</Desc>
     </StratHandle>
     <Step Id="synth_design">
-      <Option Id="GatedClockConversion">1</Option>
-      <Option Id="Directive">7</Option>
-      <Option Id="ReTiming">1</Option>
+      <Option Id="KeepEquivalentRegisters">1</Option>
       <Option Id="ResourceSharing">2</Option>
+      <Option Id="ShregMinSize">5</Option>
+      <Option Id="FsmExtraction">1</Option>
+      <Option Id="NoCombineLuts">1</Option>
+      <Option Id="Directive">7</Option>
     </Step>
   </Strategy>
 </GenRun>

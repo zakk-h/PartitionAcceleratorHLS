@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Tue Jul 30 11:40:44 2024
+| Date             : Tue Jul 30 16:49:33 2024
 | Host             : Zakk_Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file MPSQ_power_routed.rpt -pb MPSQ_power_summary_routed.pb -rpx MPSQ_power_routed.rpx
 | Design           : MPSQ
@@ -30,11 +30,11 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 6.560        |
+| Total On-Chip Power (W)  | 6.601        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.724        |
-| Device Static (W)        | 5.836        |
+| Dynamic (W)              | 0.764        |
+| Device Static (W)        | 5.837        |
 | Effective TJA (C/W)      | 0.4          |
 | Max Ambient (C)          | 97.1         |
 | Junction Temperature (C) | 27.9         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.191 |        3 |       --- |             --- |
-| CLB Logic                |     0.091 |    40682 |       --- |             --- |
-|   LUT as Logic           |     0.062 |    15940 |   4085760 |            0.39 |
-|   LUT as Distributed RAM |     0.016 |      748 |    956160 |            0.08 |
-|   Register               |     0.006 |    18313 |   8171520 |            0.22 |
-|   CARRY8                 |     0.006 |     1181 |    510720 |            0.23 |
-|   LUT as Shift Register  |     0.002 |      162 |    956160 |            0.02 |
-|   Others                 |     0.000 |      257 |       --- |             --- |
+| Clocks                   |     0.217 |        3 |       --- |             --- |
+| CLB Logic                |     0.090 |    44854 |       --- |             --- |
+|   LUT as Logic           |     0.062 |    17881 |   4085760 |            0.44 |
+|   LUT as Distributed RAM |     0.015 |      748 |    956160 |            0.08 |
+|   Register               |     0.007 |    21491 |   8171520 |            0.26 |
+|   CARRY8                 |     0.005 |     1181 |    510720 |            0.23 |
+|   LUT as Shift Register  |    <0.001 |       19 |    956160 |           <0.01 |
+|   Others                 |     0.000 |      253 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |      310 |   4085760 |           <0.01 |
-| Signals                  |     0.137 |    33529 |       --- |             --- |
+| Signals                  |     0.122 |    36637 |       --- |             --- |
 | Block RAM                |     0.075 |       19 |      2160 |            0.88 |
-| DSPs                     |     0.048 |       83 |      3840 |            2.16 |
-| I/O                      |     0.182 |      245 |      1760 |           13.92 |
-| Static Power             |     5.836 |          |           |                 |
-| Total                    |     6.560 |          |           |                 |
+| DSPs                     |     0.050 |       83 |      3840 |            2.16 |
+| I/O                      |     0.211 |      245 |      1760 |           13.92 |
+| Static Power             |     5.837 |          |           |                 |
+| Total                    |     6.601 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,14 +76,14 @@ Table of Contents
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source     | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +------------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint     |       0.850 |     3.377 |       0.624 |      2.753 |       NA    | Unspecified | NA         |
-| Vccint_io  |       0.850 |     0.289 |       0.008 |      0.281 |       NA    | Unspecified | NA         |
+| Vccint     |       0.850 |     3.391 |       0.637 |      2.754 |       NA    | Unspecified | NA         |
+| Vccint_io  |       0.850 |     0.291 |       0.010 |      0.281 |       NA    | Unspecified | NA         |
 | Vccbram    |       0.850 |     0.029 |       0.014 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux     |       1.800 |     1.554 |       0.000 |      1.554 |       NA    | Unspecified | NA         |
-| Vccaux_io  |       1.800 |     0.248 |       0.032 |      0.216 |       NA    | Unspecified | NA         |
+| Vccaux_io  |       1.800 |     0.251 |       0.035 |      0.216 |       NA    | Unspecified | NA         |
 | Vcco33     |       3.300 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco25     |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vcco18     |       1.800 |     0.066 |       0.065 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18     |       1.800 |     0.077 |       0.077 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15     |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135    |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12     |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -148,24 +148,24 @@ Table of Contents
 +-------------------------------------------------------+-----------+
 | Name                                                  | Power (W) |
 +-------------------------------------------------------+-----------+
-| MPSQ                                                  |     0.724 |
-|   GDarrayDecoded_V_U                                  |     0.034 |
-|     MPSQ_GDarrayDecoded_V_ram_U                       |     0.034 |
-|   grp_initializeArrays_fu_354                         |     0.005 |
-|   grp_solveNextColumn_fu_336                          |     0.447 |
-|     grp_solveNextPatchPair_fu_190                     |     0.440 |
+| MPSQ                                                  |     0.764 |
+|   GDarrayDecoded_V_U                                  |     0.033 |
+|     MPSQ_GDarrayDecoded_V_ram_U                       |     0.033 |
+|   grp_initializeArrays_fu_354                         |     0.004 |
+|   grp_solveNextColumn_fu_336                          |     0.460 |
+|     grp_solveNextPatchPair_fu_190                     |     0.453 |
 |       grp_areWedgeSuperPointsEqual_fu_600             |     0.003 |
-|       grp_getSolveNextPatchPairWhileCondition_fu_582  |     0.002 |
-|       grp_makePatch_alignedToLine_fu_541              |     0.096 |
-|       grp_makeThirdPatch_fu_481                       |     0.169 |
-|       grp_solveComplmentaryPatch_fu_508               |     0.133 |
-|       grp_straightLineProjectorFromLayerIJtoK_fu_1464 |     0.013 |
+|       grp_getSolveNextPatchPairWhileCondition_fu_582  |     0.003 |
+|       grp_makePatch_alignedToLine_fu_541              |     0.102 |
+|       grp_makeThirdPatch_fu_481                       |     0.176 |
+|       grp_solveComplmentaryPatch_fu_508               |     0.138 |
+|       grp_straightLineProjectorFromLayerIJtoK_fu_1464 |     0.008 |
 |       grp_straightLineProjectorFromLayerIJtoK_fu_568  |     0.005 |
-|       mul_33s_64s_64_5_1_U125                         |     0.009 |
+|       mul_33s_64s_64_5_1_U125                         |     0.008 |
 |     grp_straightLineProjectorFromLayerIJtoK_fu_218    |     0.002 |
 |       mul_35ns_33s_64_3_1_U4                          |     0.002 |
-|   patches_parameters_V_U                              |     0.013 |
-|     MPSQ_patches_parameters_V_ram_U                   |     0.013 |
+|   patches_parameters_V_U                              |     0.012 |
+|     MPSQ_patches_parameters_V_ram_U                   |     0.012 |
 |   patches_superpoints_V_U                             |     0.020 |
 |     MPSQ_patches_superpoints_V_ram_U                  |     0.020 |
 +-------------------------------------------------------+-----------+
