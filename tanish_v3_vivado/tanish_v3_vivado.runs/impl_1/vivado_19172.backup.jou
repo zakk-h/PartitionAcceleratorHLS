@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Jul 28 19:54:16 2024
+# Process ID: 19172
+# Current directory: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/impl_1
+# Command line: vivado.exe -log MPSQ.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source MPSQ.tcl -notrace
+# Log file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/impl_1/MPSQ.vdi
+# Journal file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source MPSQ.tcl -notrace
