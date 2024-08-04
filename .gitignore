@@ -1,4 +1,5 @@
 *.zip
+tanish_v3_vivado/tanish_v3_vivado.sim/sim_1/impl/timing/xsim/MPSQ_time_impl.sdf
 
 trackfinder_vivado/
 rtl_trackfinder/

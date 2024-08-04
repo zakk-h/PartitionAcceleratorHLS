@@ -122,29 +122,17 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param power.BramSDPPropagationFix 1
   set_param chipscope.maxJobs 4
-OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xcvu19p-fsvb3824-1-e
-  set_property design_mode GateLvl [current_fileset]
-  set_param project.singleFileAddWarning.threshold 0
-OPTRACE "create in-memory project" END { }
-OPTRACE "set parameters" START { }
+  set_param power.enableUnconnectedCarry8PinPower 1
+  set_param power.enableCarry8RouteBelPower 1
+  set_param power.enableLutRouteBelPower 1
+  reset_param project.defaultXPMLibraries 
+  open_checkpoint C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/impl_1/MPSQ.dcp
   set_property webtalk.parent_dir C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.cache/wt [current_project]
   set_property parent.project_path C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.xpr [current_project]
   set_property ip_output_repo C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-OPTRACE "set parameters" END { }
-OPTRACE "add files" START { }
-  add_files -quiet C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/synth_1/MPSQ.dcp
-OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.srcs/constrs_1/imports/constraints/MPSQ_ooc.xdc
-OPTRACE "read constraints: implementation" END { }
-OPTRACE "add files" END { }
-OPTRACE "link_design" START { }
-  link_design -top MPSQ -part xcvu19p-fsvb3824-1-e
-OPTRACE "link_design" END { }
-OPTRACE "gray box cells" START { }
-OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }

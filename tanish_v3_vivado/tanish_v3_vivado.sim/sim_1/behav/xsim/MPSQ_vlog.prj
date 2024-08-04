@@ -1,0 +1,47 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_GDarrayDecoded_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_add_patch9.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_areWedgeSuperPointsEqual.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_delete_patch.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_encodeCoordinates.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_getParallelograms.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_getShadows.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_getSolveNextColumnWhileConditional.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_getSolveNextPatchPairWhileCondition.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_get_acceptanceCorners.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_get_index_from_z.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_initializeArrays.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mSP_findLRBounds.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mSP_findLRBounds_trapezoid_edges_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mSP_findStartIndex.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makePatch_alignedToLine.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makePatch_alignedToLine_NPpatches_superpoints_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makePatch_alignedToLine_init_patch_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makeSuperPoint_alignedToLine11.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makeSuperPoint_alignedToLine11_row_list_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_makeThirdPatch.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mul_33s_64s_64_5_1.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mul_35ns_33s_64_3_1.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mul_35ns_33s_68_3_1.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mul_4s_4s_8_1_1.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_mux_42_32_1_1.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_patches_parameters_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_patches_superpoints_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_solveComplmentaryPatch.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_solveComplmentaryPatch_current_z_i_index.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_solveComplmentaryPatch_new_z_i_V.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_solveComplmentaryPatch_new_z_i_index.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_solveNextColumn.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_solveNextPatchPair.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_straightLineProjectorFromLayerIJtoK.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_straightLineProjectorFromLayerIJtoK_radiiDivisionList.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ_wedgePatch_init.v" \
+"../../../../tanish_v3_vivado.srcs/sources_1/imports/hdl/verilog/MPSQ.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
