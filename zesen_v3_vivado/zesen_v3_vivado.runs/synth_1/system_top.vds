@@ -1,0 +1,683 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Aug  4 15:04:44 2024
+# Process ID: 20272
+# Current directory: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.runs/synth_1
+# Command line: vivado.exe -log system_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_top.tcl
+# Log file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.runs/synth_1/system_top.vds
+# Journal file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source system_top.tcl -notrace
+Command: synth_design -top system_top -part xcvu19p-fsvb3824-1-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcvu19p'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcvu19p'
+INFO: [Common 17-86] Your Synthesis license expires in 4 day(s)
+INFO: [Device 21-403] Loading part xcvu19p-fsvb3824-1-e
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 19784
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 2101.297 ; gain = 245.367
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:12]
+	Parameter ap_ST_fsm_state1 bound to: 14'b00000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 14'b00000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 14'b00000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 14'b00000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 14'b00000000010000 
+	Parameter ap_ST_fsm_pp2_stage0 bound to: 14'b00000000100000 
+	Parameter ap_ST_fsm_state8 bound to: 14'b00000001000000 
+	Parameter ap_ST_fsm_pp3_stage0 bound to: 14'b00000010000000 
+	Parameter ap_ST_fsm_state11 bound to: 14'b00000100000000 
+	Parameter ap_ST_fsm_pp4_stage0 bound to: 14'b00001000000000 
+	Parameter ap_ST_fsm_state14 bound to: 14'b00010000000000 
+	Parameter ap_ST_fsm_state15 bound to: 14'b00100000000000 
+	Parameter ap_ST_fsm_state16 bound to: 14'b01000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 14'b10000000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance.v:39]
+	Parameter DataWidth bound to: 1 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance.v:6]
+	Parameter DWIDTH bound to: 1 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance.v:21]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance_rom' (1#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance' (2#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_system_top_ap_uint_96_512_unsigned_int_stream_ap_uint_96_0_squareAcceptance.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_0_0_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_0_0_V.v:37]
+	Parameter DataWidth bound to: 96 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_0_0_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_0_0_V.v:6]
+	Parameter DWIDTH bound to: 96 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_0_0_V_ram' (3#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_0_0_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_0_0_V' (4#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_0_0_V.v:37]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_valid' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_valid.v:37]
+	Parameter DataWidth bound to: 1 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_valid_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_valid.v:6]
+	Parameter DWIDTH bound to: 1 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_valid_ram' (5#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_valid.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_valid' (6#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_valid.v:37]
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_order' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_order.v:52]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_patch_buffer_order_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_order.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_order_ram' (7#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_order.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_patch_buffer_order' (8#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_patch_buffer_order.v:52]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2096]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_0_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_0_V.v:35]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_0_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_0_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_0_V.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_0_V_ram' (9#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_0_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_0_V' (10#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_0_V.v:35]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2109]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_1_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_1_V.v:35]
+	Parameter DataWidth bound to: 21 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_1_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_1_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_1_V.v:6]
+	Parameter DWIDTH bound to: 21 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_1_V_ram' (11#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_1_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_1_V' (12#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_1_V.v:35]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2122]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_2_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_2_V.v:35]
+	Parameter DataWidth bound to: 23 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_2_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_2_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_2_V.v:6]
+	Parameter DWIDTH bound to: 23 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_2_V_ram' (13#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_2_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_2_V' (14#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_2_V.v:35]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2135]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_3_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_3_V.v:35]
+	Parameter DataWidth bound to: 31 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_3_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_pSlope_3_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_3_V.v:6]
+	Parameter DWIDTH bound to: 31 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_3_V_ram' (15#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_3_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_pSlope_3_V' (16#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_pSlope_3_V.v:35]
+INFO: [Synth 8-6157] synthesizing module 'system_top_shadow_bottomL_jR_0_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_0_V.v:37]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_shadow_bottomL_jR_0_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_0_V.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_shadow_bottomL_jR_0_V_ram' (17#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_0_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_shadow_bottomL_jR_0_V' (18#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_shadow_bottomL_jR_0_V.v:37]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2386]
+INFO: [Synth 8-6157] synthesizing module 'system_top_z1_min_1_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_1_V.v:35]
+	Parameter DataWidth bound to: 26 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_1_V.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_z1_min_1_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_1_V.v:6]
+	Parameter DWIDTH bound to: 26 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_z1_min_1_V_ram' (19#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_1_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_z1_min_1_V' (20#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_z1_min_1_V.v:35]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2399]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2412]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2439]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2452]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2465]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2478]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2505]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2560]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:2657]
+INFO: [Synth 8-6157] synthesizing module 'system_top_flatTop' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_flatTop.v:35]
+	Parameter DataWidth bound to: 1 - type: integer 
+	Parameter AddressRange bound to: 3 - type: integer 
+	Parameter AddressWidth bound to: 2 - type: integer 
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_flatTop.v:55]
+INFO: [Synth 8-6157] synthesizing module 'system_top_flatTop_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_flatTop.v:6]
+	Parameter DWIDTH bound to: 1 - type: integer 
+	Parameter AWIDTH bound to: 2 - type: integer 
+	Parameter MEM_SIZE bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_flatTop_ram' (21#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_flatTop.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_flatTop' (22#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_flatTop.v:35]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000 
+	Parameter ap_ST_fsm_state20 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000 
+	Parameter ap_ST_fsm_state21 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000 
+	Parameter ap_ST_fsm_state22 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000 
+	Parameter ap_ST_fsm_state23 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000 
+	Parameter ap_ST_fsm_state24 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000 
+	Parameter ap_ST_fsm_state25 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000 
+	Parameter ap_ST_fsm_state26 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000 
+	Parameter ap_ST_fsm_state32 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000 
+	Parameter ap_ST_fsm_state33 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000 
+	Parameter ap_ST_fsm_state34 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state35 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state36 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state37 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state38 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state39 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state40 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state41 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state42 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state43 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state44 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state45 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state46 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state47 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state48 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state49 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state50 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state51 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state52 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state53 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state54 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state55 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state56 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state57 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state58 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state59 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state60 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state61 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state62 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state63 bound to: 124'b0000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state64 bound to: 124'b0000000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state65 bound to: 124'b0000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state66 bound to: 124'b0000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state67 bound to: 124'b0000000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state68 bound to: 124'b0000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state69 bound to: 124'b0000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state70 bound to: 124'b0000000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state71 bound to: 124'b0000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state72 bound to: 124'b0000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state73 bound to: 124'b0000000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state74 bound to: 124'b0000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state75 bound to: 124'b0000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state76 bound to: 124'b0000000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state77 bound to: 124'b0000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state78 bound to: 124'b0000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state79 bound to: 124'b0000000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state80 bound to: 124'b0000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state81 bound to: 124'b0000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state82 bound to: 124'b0000000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state83 bound to: 124'b0000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state84 bound to: 124'b0000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state85 bound to: 124'b0000000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state86 bound to: 124'b0000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state87 bound to: 124'b0000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state88 bound to: 124'b0000000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state89 bound to: 124'b0000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state90 bound to: 124'b0000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state91 bound to: 124'b0000000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state92 bound to: 124'b0000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state93 bound to: 124'b0000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state94 bound to: 124'b0000000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state95 bound to: 124'b0000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state96 bound to: 124'b0000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state97 bound to: 124'b0000000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state98 bound to: 124'b0000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state99 bound to: 124'b0000000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state100 bound to: 124'b0000000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state101 bound to: 124'b0000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state102 bound to: 124'b0000000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state103 bound to: 124'b0000000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state104 bound to: 124'b0000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state105 bound to: 124'b0000000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state106 bound to: 124'b0000000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state107 bound to: 124'b0000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state108 bound to: 124'b0000000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state109 bound to: 124'b0000000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state110 bound to: 124'b0000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state111 bound to: 124'b0000000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state112 bound to: 124'b0000000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state113 bound to: 124'b0000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state114 bound to: 124'b0000000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state115 bound to: 124'b0000000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state116 bound to: 124'b0000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state117 bound to: 124'b0000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state118 bound to: 124'b0000001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state119 bound to: 124'b0000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state120 bound to: 124'b0000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state121 bound to: 124'b0001000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state122 bound to: 124'b0010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state123 bound to: 124'b0100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state124 bound to: 124'b1000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0.v:48]
+	Parameter DataWidth bound to: 96 - type: integer 
+	Parameter AddressRange bound to: 5 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0.v:6]
+	Parameter DWIDTH bound to: 96 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0_ram' (23#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0' (24#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_init_patch_V_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V.v:50]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 5 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V_ram' (25#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V' (26#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip_new_z_i_atTop_V.v:50]
+INFO: [Synth 8-6157] synthesizing module 'system_top_getParallelograms' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_getParallelograms.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 10'b0000000001 
+	Parameter ap_ST_fsm_state2 bound to: 10'b0000000010 
+	Parameter ap_ST_fsm_state3 bound to: 10'b0000000100 
+	Parameter ap_ST_fsm_state4 bound to: 10'b0000001000 
+	Parameter ap_ST_fsm_state5 bound to: 10'b0000010000 
+	Parameter ap_ST_fsm_state6 bound to: 10'b0000100000 
+	Parameter ap_ST_fsm_state7 bound to: 10'b0001000000 
+	Parameter ap_ST_fsm_state8 bound to: 10'b0010000000 
+	Parameter ap_ST_fsm_state9 bound to: 10'b0100000000 
+	Parameter ap_ST_fsm_state10 bound to: 10'b1000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_straightLineProjectorFromLayerIJtoK' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 54'b000000000000000000000000000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 54'b000000000000000000000000000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 54'b000000000000000000000000000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 54'b000000000000000000000000000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 54'b000000000000000000000000000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 54'b000000000000000000000000000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 54'b000000000000000000000000000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 54'b000000000000000000000000000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 54'b000000000000000000000000000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 54'b000000000000000000000000000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 54'b000000000000000000000000000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 54'b000000000000000000000000000000000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 54'b000000000000000000000000000000000000000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 54'b000000000000000000000000000000000000000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 54'b000000000000000000000000000000000000000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 54'b000000000000000000000000000000000000001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 54'b000000000000000000000000000000000000010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 54'b000000000000000000000000000000000000100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 54'b000000000000000000000000000000000001000000000000000000 
+	Parameter ap_ST_fsm_state20 bound to: 54'b000000000000000000000000000000000010000000000000000000 
+	Parameter ap_ST_fsm_state21 bound to: 54'b000000000000000000000000000000000100000000000000000000 
+	Parameter ap_ST_fsm_state22 bound to: 54'b000000000000000000000000000000001000000000000000000000 
+	Parameter ap_ST_fsm_state23 bound to: 54'b000000000000000000000000000000010000000000000000000000 
+	Parameter ap_ST_fsm_state24 bound to: 54'b000000000000000000000000000000100000000000000000000000 
+	Parameter ap_ST_fsm_state25 bound to: 54'b000000000000000000000000000001000000000000000000000000 
+	Parameter ap_ST_fsm_state26 bound to: 54'b000000000000000000000000000010000000000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 54'b000000000000000000000000000100000000000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 54'b000000000000000000000000001000000000000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 54'b000000000000000000000000010000000000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 54'b000000000000000000000000100000000000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 54'b000000000000000000000001000000000000000000000000000000 
+	Parameter ap_ST_fsm_state32 bound to: 54'b000000000000000000000010000000000000000000000000000000 
+	Parameter ap_ST_fsm_state33 bound to: 54'b000000000000000000000100000000000000000000000000000000 
+	Parameter ap_ST_fsm_state34 bound to: 54'b000000000000000000001000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state35 bound to: 54'b000000000000000000010000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state36 bound to: 54'b000000000000000000100000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state37 bound to: 54'b000000000000000001000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state38 bound to: 54'b000000000000000010000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state39 bound to: 54'b000000000000000100000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state40 bound to: 54'b000000000000001000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state41 bound to: 54'b000000000000010000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state42 bound to: 54'b000000000000100000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state43 bound to: 54'b000000000001000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state44 bound to: 54'b000000000010000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state45 bound to: 54'b000000000100000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state46 bound to: 54'b000000001000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state47 bound to: 54'b000000010000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state48 bound to: 54'b000000100000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state49 bound to: 54'b000001000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state50 bound to: 54'b000010000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state51 bound to: 54'b000100000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state52 bound to: 54'b001000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state53 bound to: 54'b010000000000000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state54 bound to: 54'b100000000000000000000000000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii.v:52]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 5 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 5 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii.v:24]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii_rom' (27#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii' (28#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK_get_radiiradii.v:52]
+INFO: [Synth 8-6157] synthesizing module 'system_top_sdiv_46ns_26s_32_50_seq_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_sdiv_46ns_26s_32_50_seq_1.v:178]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 50 - type: integer 
+	Parameter din0_WIDTH bound to: 46 - type: integer 
+	Parameter din1_WIDTH bound to: 26 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_sdiv_46ns_26s_32_50_seq_1_div' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_sdiv_46ns_26s_32_50_seq_1.v:87]
+	Parameter in0_WIDTH bound to: 46 - type: integer 
+	Parameter in1_WIDTH bound to: 26 - type: integer 
+	Parameter out_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_sdiv_46ns_26s_32_50_seq_1_div_u' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_sdiv_46ns_26s_32_50_seq_1.v:7]
+	Parameter in0_WIDTH bound to: 46 - type: integer 
+	Parameter in1_WIDTH bound to: 26 - type: integer 
+	Parameter out_WIDTH bound to: 32 - type: integer 
+	Parameter cal_WIDTH bound to: 46 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_sdiv_46ns_26s_32_50_seq_1_div_u' (29#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_sdiv_46ns_26s_32_50_seq_1.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_sdiv_46ns_26s_32_50_seq_1_div' (30#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_sdiv_46ns_26s_32_50_seq_1.v:87]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_sdiv_46ns_26s_32_50_seq_1' (31#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_sdiv_46ns_26s_32_50_seq_1.v:178]
+INFO: [Synth 8-6157] synthesizing module 'system_top_mul_33s_32s_52_1_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_mul_33s_32s_52_1_1.v:16]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 33 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 52 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_mul_33s_32s_52_1_1_Multiplier_2' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_mul_33s_32s_52_1_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_mul_33s_32s_52_1_1_Multiplier_2' (32#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_mul_33s_32s_52_1_1.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_mul_33s_32s_52_1_1' (33#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_mul_33s_32s_52_1_1.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_straightLineProjectorFromLayerIJtoK' (34#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_straightLineProjectorFromLayerIJtoK.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_getParallelograms' (35#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_getParallelograms.v:10]
+INFO: [Synth 8-6157] synthesizing module 'system_top_getShadows' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_getShadows.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 11'b00000000001 
+	Parameter ap_ST_fsm_state2 bound to: 11'b00000000010 
+	Parameter ap_ST_fsm_state3 bound to: 11'b00000000100 
+	Parameter ap_ST_fsm_state4 bound to: 11'b00000001000 
+	Parameter ap_ST_fsm_state5 bound to: 11'b00000010000 
+	Parameter ap_ST_fsm_state6 bound to: 11'b00000100000 
+	Parameter ap_ST_fsm_state7 bound to: 11'b00001000000 
+	Parameter ap_ST_fsm_state8 bound to: 11'b00010000000 
+	Parameter ap_ST_fsm_state9 bound to: 11'b00100000000 
+	Parameter ap_ST_fsm_state10 bound to: 11'b01000000000 
+	Parameter ap_ST_fsm_state11 bound to: 11'b10000000000 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_getShadows' (36#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_getShadows.v:10]
+INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 12'b000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 12'b000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 12'b000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 12'b000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 12'b000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 12'b000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 12'b000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 12'b000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 12'b000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 12'b001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 12'b010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 12'b100000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_0' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V_0.v:48]
+	Parameter DataWidth bound to: 96 - type: integer 
+	Parameter AddressRange bound to: 5 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_0_ram' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V_0.v:6]
+	Parameter DWIDTH bound to: 96 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_0_ram' (37#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V_0.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_makePatch_alignedToLine_init_patch_V_0' (38#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine_init_patch_V_0.v:48]
+INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 45'b000000000000000000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 45'b000000000000000000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 45'b000000000000000000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 45'b000000000000000000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 45'b000000000000000000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 45'b000000000000000000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 45'b000000000000000000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 45'b000000000000000000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 45'b000000000000000000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 45'b000000000000000000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 45'b000000000000000000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 45'b000000000000000000000000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 45'b000000000000000000000000000000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 45'b000000000000000000000000000000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 45'b000000000000000000000000000000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 45'b000000000000000000000000000001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 45'b000000000000000000000000000010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 45'b000000000000000000000000000100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 45'b000000000000000000000000001000000000000000000 
+	Parameter ap_ST_fsm_state20 bound to: 45'b000000000000000000000000010000000000000000000 
+	Parameter ap_ST_fsm_state21 bound to: 45'b000000000000000000000000100000000000000000000 
+	Parameter ap_ST_fsm_state22 bound to: 45'b000000000000000000000001000000000000000000000 
+	Parameter ap_ST_fsm_state23 bound to: 45'b000000000000000000000010000000000000000000000 
+	Parameter ap_ST_fsm_state24 bound to: 45'b000000000000000000000100000000000000000000000 
+	Parameter ap_ST_fsm_state25 bound to: 45'b000000000000000000001000000000000000000000000 
+	Parameter ap_ST_fsm_state26 bound to: 45'b000000000000000000010000000000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 45'b000000000000000000100000000000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 45'b000000000000000001000000000000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 45'b000000000000000010000000000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 45'b000000000000000100000000000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 45'b000000000000001000000000000000000000000000000 
+	Parameter ap_ST_fsm_state32 bound to: 45'b000000000000010000000000000000000000000000000 
+	Parameter ap_ST_fsm_state33 bound to: 45'b000000000000100000000000000000000000000000000 
+	Parameter ap_ST_fsm_state34 bound to: 45'b000000000001000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state35 bound to: 45'b000000000010000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state36 bound to: 45'b000000000100000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state37 bound to: 45'b000000001000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state38 bound to: 45'b000000010000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state39 bound to: 45'b000000100000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state40 bound to: 45'b000001000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state41 bound to: 45'b000010000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state42 bound to: 45'b000100000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state43 bound to: 45'b001000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state44 bound to: 45'b010000000000000000000000000000000000000000000 
+	Parameter ap_ST_fsm_state45 bound to: 45'b100000000000000000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop_get_radiiradii' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop_get_radiiradii.v:39]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 5 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_alignedtoline_per_layer_loop_get_radiiradii_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop_get_radiiradii.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 5 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_alignedtoline_per_layer_loop_get_radiiradii_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop_get_radiiradii.v:21]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'system_top_alignedtoline_per_layer_loop_get_radiiradii_rom' (39#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop_get_radiiradii.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_alignedtoline_per_layer_loop_get_radiiradii' (40#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop_get_radiiradii.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value.v:10]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value_entry211' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value_entry211.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 1'b1 
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value_entry211' (41#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value_entry211.v:10]
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 31'b0000000000000000000000000000001 
+	Parameter ap_ST_fsm_state2 bound to: 31'b0000000000000000000000000000010 
+	Parameter ap_ST_fsm_state3 bound to: 31'b0000000000000000000000000000100 
+	Parameter ap_ST_fsm_state4 bound to: 31'b0000000000000000000000000001000 
+	Parameter ap_ST_fsm_state5 bound to: 31'b0000000000000000000000000010000 
+	Parameter ap_ST_fsm_state6 bound to: 31'b0000000000000000000000000100000 
+	Parameter ap_ST_fsm_state7 bound to: 31'b0000000000000000000000001000000 
+	Parameter ap_ST_fsm_state8 bound to: 31'b0000000000000000000000010000000 
+	Parameter ap_ST_fsm_state9 bound to: 31'b0000000000000000000000100000000 
+	Parameter ap_ST_fsm_state10 bound to: 31'b0000000000000000000001000000000 
+	Parameter ap_ST_fsm_state11 bound to: 31'b0000000000000000000010000000000 
+	Parameter ap_ST_fsm_state12 bound to: 31'b0000000000000000000100000000000 
+	Parameter ap_ST_fsm_state13 bound to: 31'b0000000000000000001000000000000 
+	Parameter ap_ST_fsm_state14 bound to: 31'b0000000000000000010000000000000 
+	Parameter ap_ST_fsm_state15 bound to: 31'b0000000000000000100000000000000 
+	Parameter ap_ST_fsm_state16 bound to: 31'b0000000000000001000000000000000 
+	Parameter ap_ST_fsm_state17 bound to: 31'b0000000000000010000000000000000 
+	Parameter ap_ST_fsm_state18 bound to: 31'b0000000000000100000000000000000 
+	Parameter ap_ST_fsm_state19 bound to: 31'b0000000000001000000000000000000 
+	Parameter ap_ST_fsm_state20 bound to: 31'b0000000000010000000000000000000 
+	Parameter ap_ST_fsm_state21 bound to: 31'b0000000000100000000000000000000 
+	Parameter ap_ST_fsm_state22 bound to: 31'b0000000001000000000000000000000 
+	Parameter ap_ST_fsm_state23 bound to: 31'b0000000010000000000000000000000 
+	Parameter ap_ST_fsm_state24 bound to: 31'b0000000100000000000000000000000 
+	Parameter ap_ST_fsm_state25 bound to: 31'b0000001000000000000000000000000 
+	Parameter ap_ST_fsm_state26 bound to: 31'b0000010000000000000000000000000 
+	Parameter ap_ST_fsm_state27 bound to: 31'b0000100000000000000000000000000 
+	Parameter ap_ST_fsm_state28 bound to: 31'b0001000000000000000000000000000 
+	Parameter ap_ST_fsm_state29 bound to: 31'b0010000000000000000000000000000 
+	Parameter ap_ST_fsm_state30 bound to: 31'b0100000000000000000000000000000 
+	Parameter ap_ST_fsm_state31 bound to: 31'b1000000000000000000000000000000 
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges.v:39]
+	Parameter DataWidth bound to: 32 - type: integer 
+	Parameter AddressRange bound to: 5 - type: integer 
+	Parameter AddressWidth bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges_rom' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges.v:6]
+	Parameter DWIDTH bound to: 32 - type: integer 
+	Parameter AWIDTH bound to: 3 - type: integer 
+	Parameter MEM_SIZE bound to: 5 - type: integer 
+CRITICAL WARNING: [Synth 8-4445] could not open $readmem data file './system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges_rom.dat'; please make sure the file is added to project and has read permission, ignoring [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges.v:21]
+
+Warning: Trying to implement RAM in registers. Block RAM or DRAM implementation is not possible for one or more of the following reasons :
+	1: Unable to determine number of words or word size in RAM. 
+	2: No valid read/write found for RAM. 
+RAM dissolved into registers
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges_rom' (42#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges' (43#1) [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries_get_trapezoid_edgestrapezoid_edges.v:39]
+INFO: [Synth 8-6157] synthesizing module 'system_top_faddfsub_32ns_32ns_32_4_full_dsp_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_faddfsub_32ns_32ns_32_4_full_dsp_1.v:8]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 4 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'system_top_ap_faddfsub_2_full_dsp_32' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/ip/system_top_ap_faddfsub_2_full_dsp_32.v:60]
+ERROR: [Synth 8-439] module 'floating_point_v7_1_11' not found [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/ip/system_top_ap_faddfsub_2_full_dsp_32.v:178]
+	Parameter C_XDEVICEFAMILY bound to: zynq - type: string 
+	Parameter C_PART bound to: xc7z030sbg485-3 - type: string 
+	Parameter C_HAS_ADD bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_HAS_SUBTRACT bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_HAS_MULTIPLY bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_DIVIDE bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_SQRT bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_COMPARE bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_FIX_TO_FLT bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_FLT_TO_FIX bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_FLT_TO_FLT bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_RECIP bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_RECIP_SQRT bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ABSOLUTE bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_LOGARITHM bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_EXPONENTIAL bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_FMA bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_FMS bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_UNFUSED_MULTIPLY_ADD bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_UNFUSED_MULTIPLY_SUB bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_UNFUSED_MULTIPLY_ACCUMULATOR_A bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_UNFUSED_MULTIPLY_ACCUMULATOR_S bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACCUMULATOR_A bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACCUMULATOR_S bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACCUMULATOR_PRIMITIVE_A bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACCUMULATOR_PRIMITIVE_S bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_A_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_A_FRACTION_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter C_B_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_B_FRACTION_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter C_C_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_C_FRACTION_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter C_RESULT_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_RESULT_FRACTION_WIDTH bound to: 32'sb00000000000000000000000000011000 
+	Parameter C_COMPARE_OPERATION bound to: 32'sb00000000000000000000000000001000 
+	Parameter C_LATENCY bound to: 32'sb00000000000000000000000000000010 
+	Parameter C_OPTIMIZATION bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_MULT_USAGE bound to: 32'sb00000000000000000000000000000010 
+	Parameter C_BRAM_USAGE bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_RATE bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_ACCUM_INPUT_MSB bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_ACCUM_MSB bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_ACCUM_LSB bound to: 32'sb11111111111111111111111111100001 
+	Parameter C_HAS_UNDERFLOW bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_OVERFLOW bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_INVALID_OP bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_DIVIDE_BY_ZERO bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACCUM_OVERFLOW bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACCUM_INPUT_OVERFLOW bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_ACLKEN bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_HAS_ARESETN bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_THROTTLE_SCHEME bound to: 32'sb00000000000000000000000000000011 
+	Parameter C_HAS_A_TUSER bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_A_TLAST bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_B bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_HAS_B_TUSER bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_B_TLAST bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_C bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_C_TUSER bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_C_TLAST bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_OPERATION bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_HAS_OPERATION_TUSER bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_OPERATION_TLAST bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_RESULT_TUSER bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_HAS_RESULT_TLAST bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_TLAST_RESOLUTION bound to: 32'sb00000000000000000000000000000000 
+	Parameter C_A_TDATA_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_A_TUSER_WIDTH bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_B_TDATA_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_B_TUSER_WIDTH bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_C_TDATA_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_C_TUSER_WIDTH bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_OPERATION_TDATA_WIDTH bound to: 32'sb00000000000000000000000000001000 
+	Parameter C_OPERATION_TUSER_WIDTH bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_RESULT_TDATA_WIDTH bound to: 32'sb00000000000000000000000000100000 
+	Parameter C_RESULT_TUSER_WIDTH bound to: 32'sb00000000000000000000000000000001 
+	Parameter C_FIXED_DATA_UNSIGNED bound to: 32'sb00000000000000000000000000000000 
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_ap_faddfsub_2_full_dsp_32' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/ip/system_top_ap_faddfsub_2_full_dsp_32.v:60]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_faddfsub_32ns_32ns_32_4_full_dsp_1' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_faddfsub_32ns_32ns_32_4_full_dsp_1.v:8]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_find_left_and_right_boundaries' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_left_and_right_boundaries.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_find_boundaries_and_starting_index_and_value' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_find_boundaries_and_starting_index_and_value.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_alignedtoline_per_layer_loop' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_alignedtoline_per_layer_loop.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_makePatch_alignedToLine' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_makePatch_alignedToLine.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top_p_shadowquilt_main_loop_make_verticle_strip' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top_p_shadowquilt_main_loop_make_verticle_strip.v:10]
+ERROR: [Synth 8-6156] failed synthesizing module 'system_top' [C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/zesen_v3_vivado/zesen_v3_vivado.srcs/sources_1/imports/hdl/verilog/system_top.v:12]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2208.684 ; gain = 352.754
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+101 Infos, 20 Warnings, 4 Critical Warnings and 10 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Sun Aug  4 15:05:39 2024...
