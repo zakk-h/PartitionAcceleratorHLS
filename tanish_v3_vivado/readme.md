@@ -70,3 +70,43 @@ The FPGA used for synthesis and implementation was the
 | Path 8 | -0.12 | 5      | 14          | grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK | grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[0] | 2.51 | 1.54 | 0.97 | 3.00 | ap_clk | ap_clk | | 0.04 |
 | Path 9 | -0.11 | 5      | 14          | grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK | grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[3] | 2.51 | 1.54 | 0.96 | 3.00 | ap_clk | ap_clk | | 0.04 |
 | Path 10 | -0.11 | 5     | 14          | grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK | grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[2] | 2.50 | 1.54 | 0.96 | 3.00 | ap_clk | ap_clk | | 0.04 |
+
+
+# Previous Synthesis and Implementation
+
+These results use the default synthesis and implementation settings in Vivado. Notably, resource sharing is on auto, among other default settings.
+
+## Setup
+- **Worst Negative Slack (WNS):** -0.216 ns
+- **Total Negative Slack (TNS):** -18.513 ns
+- **Number of Failing Endpoints:** 326
+- **Total Number of Endpoints:** 47911
+- **Timing constraints are not met.**
+
+## Hold
+- **Worst Hold Slack (WHS):** 0.010 ns
+- **Total Hold Slack (THS):** 0.000 ns
+- **Number of Failing Endpoints:** 0
+- **Total Number of Endpoints:** 47911
+
+## Pulse Width
+- **Worst Pulse Width Slack (WPWS):** 0.927 ns
+- **Total Pulse Width Negative Slack (TPWS):** 0.000 ns
+- **Number of Failing Endpoints:** 0
+- **Total Number of Endpoints:** 19491
+
+
+## Power Summary
+- **Dynamic:** 0.733 W (11%)
+  - **Clocks:** 0.184 W (25%)
+  - **Signals:** 0.146 W (20%)
+  - **Logic:** 0.093 W (13%)
+  - **BRAM:** 0.075 W (10%)
+  - **DSP:** 0.049 W (7%)
+  - **I/O:** 0.186 W (25%)
+- **Static:** 5.836 W (89%)
+  - **PL Static:** 5.836 W (100%)
+
+## On-Chip
+- **Dynamic:** 0.733 W (11%)
+- **Static:** 5.836 W (89%)
