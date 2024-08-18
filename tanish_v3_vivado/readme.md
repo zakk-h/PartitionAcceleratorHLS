@@ -10,6 +10,48 @@ The FPGA used for synthesis and implementation was the
 
 "xcvu19p-fsvb3824-1-e" in the Virtex UltraScale+ family. 
 
+## Strategy: Performance_ExtraTimingOpt*
+Includes alternate algorithms for timing-driven optimization.
+
+### Design Initialization (init_design)
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+
+### Opt Design (opt_design)
+- is_enabled: Enabled
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+- verbose: (Not Set)
+- directive: ExploreWithRemap
+
+### Place Design (place_design)
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+- directive: ExtraTimingOpt
+
+### Post-Place Power Opt Design (power_opt_design)
+- is_enabled: Disabled
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+
+### Post-Place Phys Opt Design (phys_opt_design)
+- is_enabled: Enabled
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+- directive: AddRetime
+
+### Route Design (route_design)
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+- directive: AggressiveExplore
+
+### Post-Route Phys Opt Design (phys_opt_design)
+- is_enabled: Disabled
+- tcl.pre: (Not Set)
+- tcl.post: (Not Set)
+- directive: AggressiveExplore
+
+
 ## Setup
 - **Worst Negative Slack (WNS):** -0.180 ns
 - **Total Negative Slack (TNS):** -5.792 ns
