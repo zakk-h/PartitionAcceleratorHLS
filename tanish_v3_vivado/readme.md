@@ -38,7 +38,7 @@ Includes alternate algorithms for timing-driven optimization.
 - is_enabled: Enabled
 - tcl.pre: (Not Set)
 - tcl.post: (Not Set)
-- directive: AddRetime
+- directive: AddRetime (changing this to AggressiveFanoutOpt changed no aspect of timing)
 
 ### Route Design (route_design)
 - tcl.pre: (Not Set)
