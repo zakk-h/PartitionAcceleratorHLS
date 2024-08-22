@@ -3,4 +3,22 @@ tanish_v3_vivado/tanish_v3_vivado.sim/sim_1/impl/timing/xsim/MPSQ_time_impl.sdf
 
 trackfinder_vivado/
 rtl_trackfinder/
-Zakk/
+Zakk/./.git/objects/pack/pack-2d5086eeb72dc44825006b10d60df3879e808704.pack
+./.git/objects/pack/pack-66e403d4066977e128d8c5d355ac45dc11003270.pack
+./.git/objects/pack/tmp_pack_5mNvFR
+./LargeCircuit_V1/LargeCircuit_V1.runs/synth_1/.Xil/Vivado-10644-Zakk_Laptop/incrSyn/2843483833/a/t/design.rtd
+./LargeCircuit_V1/LargeCircuit_V1.runs/synth_1/.Xil/Vivado-10644-Zakk_Laptop/incrSyn/2843483833/u/e/elab.rtd
+./LargeCircuit_V1/LargeCircuit_V1.runs/synth_1/.Xil/Vivado-10644-Zakk_Laptop/incrSyn/2843483833/u/t/design.rtd
+./LargeCircuit_V1/LargeCircuit_V1.runs/synth_1/.Xil/Vivado-10644-Zakk_Laptop/realtime/tmp/design.rtd
+./rtl_trackfinder/hdl/verilog/fullSystem_allNodeMinFindersV2_4ul_16ul_s.v
+./rtl_trackfinder/hdl/verilog/fullSystem_allNodeMSS_1ul_2ul_s.v
+./rtl_trackfinder/hdl/verilog/fullSystem_allNodeMSS_4ul_16ul_s.v
+./rtl_trackfinder/hdl/verilog/fullSystem_findAllTracks.v
+./rtl_trackfinder/hdl/verilog/fullSystem_removeGhostTracks.v
+./rtl_trackfinder/hdl/vhdl/fullSystem_allNodeMinFindersV2_4ul_16ul_s.vhd
+./rtl_trackfinder/hdl/vhdl/fullSystem_allNodeMSS_1ul_2ul_s.vhd
+./rtl_trackfinder/hdl/vhdl/fullSystem_allNodeMSS_4ul_16ul_s.vhd
+./rtl_trackfinder/hdl/vhdl/fullSystem_findAllTracks.vhd
+./rtl_trackfinder/hdl/vhdl/fullSystem_removeGhostTracks.vhd
+./rtl_trackfinder.zip
+./tanish_v3_vivado/tanish_v3_vivado.sim/sim_1/impl/timing/xsim/MPSQ_time_impl.sdf
