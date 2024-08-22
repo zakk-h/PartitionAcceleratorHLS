@@ -115,6 +115,8 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Init Design" START { ROLLUP_AUTO }
@@ -127,12 +129,28 @@ set rc [catch {
   set_param power.enableUnconnectedCarry8PinPower 1
   set_param power.enableCarry8RouteBelPower 1
   set_param power.enableLutRouteBelPower 1
-  reset_param project.defaultXPMLibraries 
-  open_checkpoint C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/impl_1/MPSQ.dcp
+OPTRACE "create in-memory project" START { }
+  create_project -in_memory -part xcvu19p-fsvb3824-1-e
+  set_property design_mode GateLvl [current_fileset]
+  set_param project.singleFileAddWarning.threshold 0
+OPTRACE "create in-memory project" END { }
+OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.cache/wt [current_project]
   set_property parent.project_path C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.xpr [current_project]
   set_property ip_output_repo C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+OPTRACE "set parameters" END { }
+OPTRACE "add files" START { }
+  add_files -quiet C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.runs/synth_1/MPSQ.dcp
+OPTRACE "read constraints: implementation" START { }
+  read_xdc C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/tanish_v3_vivado/tanish_v3_vivado.srcs/constrs_1/imports/constraints/MPSQ_ooc.xdc
+OPTRACE "read constraints: implementation" END { }
+OPTRACE "add files" END { }
+OPTRACE "link_design" START { }
+  link_design -top MPSQ -part xcvu19p-fsvb3824-1-e
+OPTRACE "link_design" END { }
+OPTRACE "gray box cells" START { }
+OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
 OPTRACE "init_design_reports" END { }
 OPTRACE "init_design_write_hwdef" START { }
@@ -242,6 +260,7 @@ if {$rc} {
 
 OPTRACE "Phase: Physical Opt Design" END { }
 OPTRACE "Phase: Route Design" START { ROLLUP_AUTO }
+  set_msg_config -source 4 -id {Route 35-39} -severity "critical warning" -new_severity warning
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
@@ -249,7 +268,7 @@ set rc [catch {
 OPTRACE "read constraints: route_design" START { }
 OPTRACE "read constraints: route_design" END { }
 OPTRACE "route_design" START { }
-  route_design -directive AggressiveExplore
+  route_design -directive NoTimingRelaxation
 OPTRACE "route_design" END { }
 OPTRACE "read constraints: route_design_post" START { }
 OPTRACE "read constraints: route_design_post" END { }
@@ -261,7 +280,7 @@ OPTRACE "route_design reports" START { REPORT }
   create_report "impl_1_route_report_methodology_0" "report_methodology -file MPSQ_methodology_drc_routed.rpt -pb MPSQ_methodology_drc_routed.pb -rpx MPSQ_methodology_drc_routed.rpx"
   create_report "impl_1_route_report_power_0" "report_power -file MPSQ_power_routed.rpt -pb MPSQ_power_summary_routed.pb -rpx MPSQ_power_routed.rpx"
   create_report "impl_1_route_report_route_status_0" "report_route_status -file MPSQ_route_status.rpt -pb MPSQ_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file MPSQ_timing_summary_routed.rpt -pb MPSQ_timing_summary_routed.pb -rpx MPSQ_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file MPSQ_timing_summary_routed.rpt -pb MPSQ_timing_summary_routed.pb -rpx MPSQ_timing_summary_routed.rpx"
   create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file MPSQ_incremental_reuse_routed.rpt"
   create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file MPSQ_clock_utilization_routed.rpt"
   create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file MPSQ_bus_skew_routed.rpt -pb MPSQ_bus_skew_routed.pb -rpx MPSQ_bus_skew_routed.rpx"
@@ -282,4 +301,36 @@ if {$rc} {
 
 OPTRACE "route_design misc" END { }
 OPTRACE "Phase: Route Design" END { }
+OPTRACE "Phase: Phys-Opt Design" START { ROLLUP_AUTO }
+start_step post_route_phys_opt_design
+set ACTIVE_STEP post_route_phys_opt_design
+set rc [catch {
+  set tool_flow [get_property -quiet TOOL_FLOW [current_project -quiet]]
+  if {$tool_flow eq {SDx}} {send_msg_id {101-1} {status} {Starting optional post-route physical design optimization.} }
+  create_msg_db post_route_phys_opt_design.pb
+OPTRACE "phys_opt_design" START { }
+  phys_opt_design -directive AggressiveExplore
+OPTRACE "phys_opt_design" END { }
+OPTRACE "Post-Route Phys Opt Design: write_checkpoint" START { CHECKPOINT }
+  write_checkpoint -force MPSQ_postroute_physopt.dcp
+OPTRACE "Post-Route Phys Opt Design: write_checkpoint" END { }
+OPTRACE "phys_opt_design reports" START { REPORT }
+  create_report "impl_1_post_route_phys_opt_report_timing_summary_0" "report_timing_summary -max_paths 10 -warn_on_violation -file MPSQ_timing_summary_postroute_physopted.rpt -pb MPSQ_timing_summary_postroute_physopted.pb -rpx MPSQ_timing_summary_postroute_physopted.rpx"
+  create_report "impl_1_post_route_phys_opt_report_bus_skew_0" "report_bus_skew -warn_on_violation -file MPSQ_bus_skew_postroute_physopted.rpt -pb MPSQ_bus_skew_postroute_physopted.pb -rpx MPSQ_bus_skew_postroute_physopted.rpx"
+OPTRACE "phys_opt_design reports" END { }
+OPTRACE "phys_opt_design misc" START { }
+  close_msg_db -file post_route_phys_opt_design.pb
+  set tool_flow [get_property TOOL_FLOW [current_project]]
+  if {$tool_flow eq {SDx}} {send_msg_id {101-1} {status} {Finished optional post-route physical design optimization.} }
+} RESULT]
+if {$rc} {
+  step_failed post_route_phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step post_route_phys_opt_design
+  unset ACTIVE_STEP 
+}
+
+OPTRACE "phys_opt_design misc" END { }
+OPTRACE "Phase: Phys-Opt Design" END { }
 OPTRACE "impl_1" END { }

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Aug 12 21:31:18 2024
+# Process ID: 10644
+# Current directory: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/LargeCircuit_V1/LargeCircuit_V1.runs/synth_1
+# Command line: vivado.exe -log MPSQ.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source MPSQ.tcl
+# Log file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/LargeCircuit_V1/LargeCircuit_V1.runs/synth_1/MPSQ.vds
+# Journal file: C:/Users/zakkh/Dark_Matter/PartitionAcceleratorHLS/LargeCircuit_V1/LargeCircuit_V1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source MPSQ.tcl -notrace

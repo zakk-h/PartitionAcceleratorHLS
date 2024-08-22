@@ -1,0 +1,16 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date              : Sun Aug 18 17:26:46 2024
+| Host              : Zakk_Laptop running 64-bit major release  (build 9200)
+| Command           : report_bus_skew -warn_on_violation -file MPSQ_bus_skew_postroute_physopted.rpt -pb MPSQ_bus_skew_postroute_physopted.pb -rpx MPSQ_bus_skew_postroute_physopted.rpx
+| Design            : MPSQ
+| Device            : xcvu19p-fsvb3824
+| Speed File        : -1  PRODUCTION 1.30 11-11-2020
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

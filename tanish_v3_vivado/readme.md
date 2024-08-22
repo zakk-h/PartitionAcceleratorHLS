@@ -152,3 +152,11 @@ These results use the default synthesis and implementation settings in Vivado. N
 ## On-Chip
 - **Dynamic:** 0.733 W (11%)
 - **Static:** 5.836 W (89%)
+
+# Research Questions or Notes
+
+LUT and FF counts in Vivado, at least with the implementation strategies run, are approximately two times smaller than in Vitis (20k each vs 40k each, roughly).
+
+We estimate that synthesizing and implementing the large circuit in Vivado could take up to 300 times longer than the small circuit RTL. The small circuit RTL takes approximately 2.5 hours to implement, depending on the implementation strategy. Therefore, it is infeasible to synthesize the large circuit on our personal hardware. We considered utilizing the Duke Computing Cluster (DCC) for this purpose, using X11 forwarding to get a graphical user interface (GUI), but have tabled this discussion.
+
+There is significant benefit to using the test bench (simulation) workflow in Vivado. However, the test bench must be written in Verilog, which I and others do not currently know. We have postponed simulation steps in Vivado because of this. However, this approach will give us access to validation even after implementation, using the actual placement, routing, and other details. Simulation can also be done before, at the RTL level or with a gate-level netlist. From my research, it is uncommon to validate at the transistor level. At any level, we could generate a waveform timing diagram, which could be compared with Vitis quite directly (since the hierarchy in the circuit is mostly preserved). However, depending on the level at which the simulation is performed, some aspects, like routing delays, may not be exact. Not using resource sharing will likely preserve the hierarchy better Additionally, resource sharing makes it difficult to backtrack and contribute a behavior or an issue to a specific method because of the shared nature. The logic and operations are intertwined. 

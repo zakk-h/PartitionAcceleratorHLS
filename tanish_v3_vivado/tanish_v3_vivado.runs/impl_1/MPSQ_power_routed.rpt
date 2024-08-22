@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date             : Fri Aug  2 15:05:34 2024
+| Date             : Sun Aug 18 15:36:38 2024
 | Host             : Zakk_Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file MPSQ_power_routed.rpt -pb MPSQ_power_summary_routed.pb -rpx MPSQ_power_routed.rpx
 | Design           : MPSQ
@@ -54,14 +54,14 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.220 |        3 |       --- |             --- |
 | CLB Logic                |     0.144 |    45749 |       --- |             --- |
-|   LUT as Logic           |     0.103 |    18253 |   4085760 |            0.45 |
+|   LUT as Logic           |     0.103 |    18252 |   4085760 |            0.45 |
 |   LUT as Distributed RAM |     0.017 |      748 |    956160 |            0.08 |
 |   Register               |     0.013 |    22091 |   8171520 |            0.27 |
 |   CARRY8                 |     0.011 |     1191 |    510720 |            0.23 |
 |   LUT as Shift Register  |    <0.001 |       16 |    956160 |           <0.01 |
 |   Others                 |     0.000 |      288 |       --- |             --- |
 |   F7/F8 Muxes            |     0.000 |      310 |   4085760 |           <0.01 |
-| Signals                  |     0.220 |    37332 |       --- |             --- |
+| Signals                  |     0.220 |    37330 |       --- |             --- |
 | Block RAM                |     0.077 |       19 |      2160 |            0.88 |
 | DSPs                     |     0.085 |       83 |      3840 |            2.16 |
 | I/O                      |     0.198 |      245 |      1760 |           13.92 |
@@ -157,7 +157,7 @@ Table of Contents
 |       grp_areWedgeSuperPointsEqual_fu_600             |     0.003 |
 |       grp_getSolveNextPatchPairWhileCondition_fu_582  |     0.001 |
 |       grp_makePatch_alignedToLine_fu_541              |     0.156 |
-|       grp_makeThirdPatch_fu_481                       |     0.239 |
+|       grp_makeThirdPatch_fu_481                       |     0.238 |
 |       grp_solveComplmentaryPatch_fu_508               |     0.188 |
 |       grp_straightLineProjectorFromLayerIJtoK_fu_1464 |     0.019 |
 |       grp_straightLineProjectorFromLayerIJtoK_fu_568  |     0.009 |

@@ -1,14 +1,14 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date              : Fri Aug  2 15:05:38 2024
+| Date              : Sun Aug 18 15:36:44 2024
 | Host              : Zakk_Laptop running 64-bit major release  (build 9200)
-| Command           : report_timing_summary -max_paths 10 -file MPSQ_timing_summary_routed.rpt -pb MPSQ_timing_summary_routed.pb -rpx MPSQ_timing_summary_routed.rpx -warn_on_violation
+| Command           : report_timing_summary -max_paths 10 -file MPSQ_timing_summary_routed.rpt -pb MPSQ_timing_summary_routed.pb -rpx MPSQ_timing_summary_routed.rpx
 | Design            : MPSQ
 | Device            : xcvu19p-fsvb3824
 | Speed File        : -1  PRODUCTION 1.30 11-11-2020
 | Temperature Grade : E
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Timing Summary Report
 
@@ -129,7 +129,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-     -0.180       -5.792                     92                54613        0.002        0.000                      0                54613        0.927        0.000                       0                 23196  
+     -0.155       -7.193                    110                54613        0.002        0.000                      0                54613        0.927        0.000                       0                 23196  
 
 
 Timing constraints are not met.
@@ -152,7 +152,7 @@ ap_clk  {0.000 1.500}        3.000           333.333
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-ap_clk             -0.180       -5.792                     92                54613        0.002        0.000                      0                54613        0.927        0.000                       0                 23196  
+ap_clk             -0.155       -7.193                    110                54613        0.002        0.000                      0                54613        0.927        0.000                       0                 23196  
 
 
 ------------------------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  ap_clk
   To Clock:  ap_clk
 
-Setup :           92  Failing Endpoints,  Worst Slack       -0.180ns,  Total Violation       -5.792ns
+Setup :          110  Failing Endpoints,  Worst Slack       -0.155ns,  Total Violation       -7.193ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.002ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        0.927ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -191,89 +191,7 @@ PW    :            0  Failing Endpoints,  Worst Slack        0.927ns,  Total Vio
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (VIOLATED) :        -0.180ns  (required time - arrival time)
-  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[2]
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Path Group:             ap_clk
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.575ns  (logic 1.557ns (60.466%)  route 1.018ns (39.534%))
-  Logic Levels:           5  (CARRY8=2 LUT6=3)
-  Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.531ns = ( 6.531 - 3.000 ) 
-    Source Clock Delay      (SCD):    4.301ns
-    Clock Pessimism Removal (CPR):    0.634ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      3.413ns (routing 1.764ns, distribution 1.649ns)
-  Clock Net Delay (Destination): 2.953ns (routing 1.608ns, distribution 1.345ns)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock ap_clk rise edge)     0.000     0.000 r  
-    AU48                                              0.000     0.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     0.000    ap_clk_IBUF_inst/I
-    AU48                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
-                                                      0.525     0.525 r  ap_clk_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     0.525    ap_clk_IBUF_inst/OUT
-    AU48                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     0.525 r  ap_clk_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
-    BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.413     4.301    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
-  -------------------------------------------------------------------    -------------------
-    RAMB36_X7Y99         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKBWRCLK_DOUTBDOUT[9])
-                                                      0.963     5.264 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTBDOUT[9]
-                         net (fo=12, routed)          0.416     5.680    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTBDOUT[9]
-    SLICE_X417Y494       LUT6 (Prop_D6LUT_SLICEL_I1_O)
-                                                      0.116     5.796 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_487__0/O
-                         net (fo=1, routed)           0.010     5.806    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_487__0_n_14
-    SLICE_X417Y494       CARRY8 (Prop_CARRY8_SLICEL_S[3]_CO[7])
-                                                      0.195     6.001 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0/CO[7]
-                         net (fo=1, routed)           0.028     6.029    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0_n_14
-    SLICE_X417Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
-                                                      0.073     6.102 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_458__0/CO[2]
-                         net (fo=1, routed)           0.159     6.261    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
-    SLICE_X417Y497       LUT6 (Prop_G6LUT_SLICEL_I1_O)
-                                                      0.147     6.408 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
-                         net (fo=2, routed)           0.162     6.570    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
-    SLICE_X417Y497       LUT6 (Prop_D6LUT_SLICEL_I4_O)
-                                                      0.063     6.633 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
-                         net (fo=4, routed)           0.243     6.876    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[2]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock ap_clk rise edge)     3.000     3.000 r  
-    AU48                                              0.000     3.000 r  ap_clk (IN)
-                         net (fo=0)                   0.000     3.000    ap_clk_IBUF_inst/I
-    AU48                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
-                                                      0.258     3.258 r  ap_clk_IBUF_inst/INBUF_INST/O
-                         net (fo=1, routed)           0.000     3.258    ap_clk_IBUF_inst/OUT
-    AU48                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
-                                                      0.000     3.258 r  ap_clk_IBUF_inst/IBUFCTRL_INST/O
-                         net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
-    BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
-                                                      0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.953     6.531    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
-                         clock pessimism              0.634     7.166    
-                         clock uncertainty           -0.035     7.130    
-    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[2])
-                                                     -0.434     6.696    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
-  -------------------------------------------------------------------
-                         required time                          6.696    
-                         arrival time                          -6.876    
-  -------------------------------------------------------------------
-                         slack                                 -0.180    
-
-Slack (VIOLATED) :        -0.179ns  (required time - arrival time)
+Slack (VIOLATED) :        -0.155ns  (required time - arrival time)
   Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[1]
@@ -281,7 +199,7 @@ Slack (VIOLATED) :        -0.179ns  (required time - arrival time)
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.574ns  (logic 1.557ns (60.490%)  route 1.017ns (39.510%))
+  Data Path Delay:        2.550ns  (logic 1.626ns (63.765%)  route 0.924ns (36.235%))
   Logic Levels:           5  (CARRY8=2 LUT6=3)
   Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    3.531ns = ( 6.531 - 3.000 ) 
@@ -322,13 +240,13 @@ Slack (VIOLATED) :        -0.179ns  (required time - arrival time)
                          net (fo=1, routed)           0.028     6.029    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0_n_14
     SLICE_X417Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
                                                       0.073     6.102 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_458__0/CO[2]
-                         net (fo=1, routed)           0.159     6.261    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
-    SLICE_X417Y497       LUT6 (Prop_G6LUT_SLICEL_I1_O)
-                                                      0.147     6.408 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
-                         net (fo=2, routed)           0.162     6.570    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
-    SLICE_X417Y497       LUT6 (Prop_D6LUT_SLICEL_I4_O)
-                                                      0.063     6.633 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
-                         net (fo=4, routed)           0.242     6.875    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
+                         net (fo=1, routed)           0.170     6.272    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
+    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.179     6.451 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
+                         net (fo=2, routed)           0.054     6.505    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
+    SLICE_X417Y497       LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.100     6.605 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
+                         net (fo=4, routed)           0.246     6.851    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
     RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[1]
   -------------------------------------------------------------------    -------------------
 
@@ -351,19 +269,19 @@ Slack (VIOLATED) :        -0.179ns  (required time - arrival time)
                                                      -0.434     6.696    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
   -------------------------------------------------------------------
                          required time                          6.696    
-                         arrival time                          -6.875    
+                         arrival time                          -6.851    
   -------------------------------------------------------------------
-                         slack                                 -0.179    
+                         slack                                 -0.155    
 
-Slack (VIOLATED) :        -0.172ns  (required time - arrival time)
+Slack (VIOLATED) :        -0.150ns  (required time - arrival time)
   Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[3]
+  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[2]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.567ns  (logic 1.557ns (60.654%)  route 1.010ns (39.346%))
+  Data Path Delay:        2.545ns  (logic 1.626ns (63.890%)  route 0.919ns (36.110%))
   Logic Levels:           5  (CARRY8=2 LUT6=3)
   Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    3.531ns = ( 6.531 - 3.000 ) 
@@ -404,14 +322,14 @@ Slack (VIOLATED) :        -0.172ns  (required time - arrival time)
                          net (fo=1, routed)           0.028     6.029    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0_n_14
     SLICE_X417Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
                                                       0.073     6.102 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_458__0/CO[2]
-                         net (fo=1, routed)           0.159     6.261    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
-    SLICE_X417Y497       LUT6 (Prop_G6LUT_SLICEL_I1_O)
-                                                      0.147     6.408 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
-                         net (fo=2, routed)           0.162     6.570    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
-    SLICE_X417Y497       LUT6 (Prop_D6LUT_SLICEL_I4_O)
-                                                      0.063     6.633 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
-                         net (fo=4, routed)           0.235     6.868    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[3]
+                         net (fo=1, routed)           0.170     6.272    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
+    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.179     6.451 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
+                         net (fo=2, routed)           0.054     6.505    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
+    SLICE_X417Y497       LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.100     6.605 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
+                         net (fo=4, routed)           0.241     6.846    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
+    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[2]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -429,15 +347,15 @@ Slack (VIOLATED) :        -0.172ns  (required time - arrival time)
     RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
                          clock pessimism              0.634     7.166    
                          clock uncertainty           -0.035     7.130    
-    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[3])
+    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[2])
                                                      -0.434     6.696    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
   -------------------------------------------------------------------
                          required time                          6.696    
-                         arrival time                          -6.868    
+                         arrival time                          -6.846    
   -------------------------------------------------------------------
-                         slack                                 -0.172    
+                         slack                                 -0.150    
 
-Slack (VIOLATED) :        -0.171ns  (required time - arrival time)
+Slack (VIOLATED) :        -0.147ns  (required time - arrival time)
   Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[0]
@@ -445,7 +363,7 @@ Slack (VIOLATED) :        -0.171ns  (required time - arrival time)
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.566ns  (logic 1.557ns (60.678%)  route 1.009ns (39.322%))
+  Data Path Delay:        2.542ns  (logic 1.626ns (63.965%)  route 0.916ns (36.035%))
   Logic Levels:           5  (CARRY8=2 LUT6=3)
   Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
     Destination Clock Delay (DCD):    3.531ns = ( 6.531 - 3.000 ) 
@@ -486,13 +404,13 @@ Slack (VIOLATED) :        -0.171ns  (required time - arrival time)
                          net (fo=1, routed)           0.028     6.029    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0_n_14
     SLICE_X417Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
                                                       0.073     6.102 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_458__0/CO[2]
-                         net (fo=1, routed)           0.159     6.261    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
-    SLICE_X417Y497       LUT6 (Prop_G6LUT_SLICEL_I1_O)
-                                                      0.147     6.408 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
-                         net (fo=2, routed)           0.162     6.570    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
-    SLICE_X417Y497       LUT6 (Prop_D6LUT_SLICEL_I4_O)
-                                                      0.063     6.633 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
-                         net (fo=4, routed)           0.234     6.867    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
+                         net (fo=1, routed)           0.170     6.272    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
+    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.179     6.451 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
+                         net (fo=2, routed)           0.054     6.505    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
+    SLICE_X417Y497       LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.100     6.605 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
+                         net (fo=4, routed)           0.238     6.843    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
     RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[0]
   -------------------------------------------------------------------    -------------------
 
@@ -515,22 +433,22 @@ Slack (VIOLATED) :        -0.171ns  (required time - arrival time)
                                                      -0.434     6.696    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
   -------------------------------------------------------------------
                          required time                          6.696    
-                         arrival time                          -6.867    
+                         arrival time                          -6.843    
   -------------------------------------------------------------------
-                         slack                                 -0.171    
+                         slack                                 -0.147    
 
-Slack (VIOLATED) :        -0.165ns  (required time - arrival time)
+Slack (VIOLATED) :        -0.146ns  (required time - arrival time)
   Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/trunc_ln1_reg_311_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/D
+  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/and_ln1080_reg_1903_reg[0]/D
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.922ns  (logic 1.161ns (39.733%)  route 1.761ns (60.267%))
-  Logic Levels:           9  (CARRY8=6 LUT2=2 LUT6=1)
-  Clock Path Skew:        -0.235ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.195ns = ( 6.195 - 3.000 ) 
+  Data Path Delay:        2.893ns  (logic 1.124ns (38.852%)  route 1.769ns (61.148%))
+  Logic Levels:           9  (CARRY8=6 LUT2=2 LUT4=1)
+  Clock Path Skew:        -0.245ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.185ns = ( 6.185 - 3.000 ) 
     Source Clock Delay      (SCD):    3.955ns
     Clock Pessimism Removal (CPR):    0.525ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
@@ -539,7 +457,7 @@ Slack (VIOLATED) :        -0.165ns  (required time - arrival time)
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
   Clock Net Delay (Source):      3.067ns (routing 1.764ns, distribution 1.303ns)
-  Clock Net Delay (Destination): 2.617ns (routing 1.608ns, distribution 1.009ns)
+  Clock Net Delay (Destination): 2.607ns (routing 1.608ns, distribution 0.999ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -565,29 +483,29 @@ Slack (VIOLATED) :        -0.165ns  (required time - arrival time)
                          net (fo=1, routed)           0.028     4.463    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[7]_i_2_n_14
     SLICE_X354Y517       CARRY8 (Prop_CARRY8_SLICEL_CI_O[7])
                                                       0.146     4.609 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[15]_i_2/O[7]
-                         net (fo=2, routed)           0.311     4.920    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/sub_ln69_fu_247_p2[15]
+                         net (fo=2, routed)           0.353     4.962    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/sub_ln69_fu_247_p2[15]
     SLICE_X353Y516       LUT2 (Prop_H6LUT_SLICEL_I0_O)
-                                                      0.100     5.020 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571[15]_i_3/O
-                         net (fo=1, routed)           0.011     5.031    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571[15]_i_3_n_14
+                                                      0.064     5.026 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571[15]_i_3/O
+                         net (fo=1, routed)           0.011     5.037    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571[15]_i_3_n_14
     SLICE_X353Y516       CARRY8 (Prop_CARRY8_SLICEL_S[7]_CO[7])
-                                                      0.148     5.179 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[15]_i_1/CO[7]
-                         net (fo=1, routed)           0.028     5.207    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[15]_i_1_n_14
+                                                      0.148     5.185 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[15]_i_1/CO[7]
+                         net (fo=1, routed)           0.028     5.213    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[15]_i_1_n_14
     SLICE_X353Y517       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
-                                                      0.023     5.230 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[23]_i_1/CO[7]
-                         net (fo=1, routed)           0.028     5.258    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[23]_i_1_n_14
+                                                      0.023     5.236 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[23]_i_1/CO[7]
+                         net (fo=1, routed)           0.028     5.264    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[23]_i_1_n_14
     SLICE_X353Y518       CARRY8 (Prop_CARRY8_SLICEL_CI_O[1])
-                                                      0.104     5.362 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[31]_i_2/O[1]
-                         net (fo=6, routed)           0.373     5.735    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_return[25]
+                                                      0.104     5.368 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/reg_571_reg[31]_i_2/O[1]
+                         net (fo=6, routed)           0.366     5.734    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_return[25]
     SLICE_X352Y513       LUT2 (Prop_E6LUT_SLICEL_I0_O)
-                                                      0.064     5.799 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_CS_fsm[79]_i_13/O
-                         net (fo=1, routed)           0.008     5.807    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_CS_fsm[79]_i_13_n_14
+                                                      0.064     5.798 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_CS_fsm[79]_i_13/O
+                         net (fo=1, routed)           0.008     5.806    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_CS_fsm[79]_i_13_n_14
     SLICE_X352Y513       CARRY8 (Prop_CARRY8_SLICEL_S[4]_CO[7])
-                                                      0.202     6.009 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_CS_fsm_reg[79]_i_2/CO[7]
-                         net (fo=3, routed)           0.765     6.774    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/lopt_43
-    SLICE_X347Y515       LUT6 (Prop_A6LUT_SLICEM_I5_O)
-                                                      0.040     6.814 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_0_LOPT_REMAP_2_comp_1/O
-                         net (fo=1, routed)           0.063     6.877    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_NS_fsm__0[81]
-    SLICE_X347Y515       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/D
+                                                      0.202     6.008 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_straightLineProjectorFromLayerIJtoK_fu_1464/ap_CS_fsm_reg[79]_i_2/CO[7]
+                         net (fo=3, routed)           0.743     6.751    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[79]_0[0]
+    SLICE_X346Y512       LUT4 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.039     6.790 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/and_ln1080_reg_1903[0]_i_1/O
+                         net (fo=1, routed)           0.058     6.848    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/and_ln1080_reg_1903[0]_i_1_n_14
+    SLICE_X346Y512       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/and_ln1080_reg_1903_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -601,39 +519,39 @@ Slack (VIOLATED) :        -0.165ns  (required time - arrival time)
                          net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.617     6.195    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_clk_IBUF_BUFG
-    SLICE_X347Y515       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
-                         clock pessimism              0.525     6.720    
-                         clock uncertainty           -0.035     6.685    
-    SLICE_X347Y515       FDRE (Setup_AFF2_SLICEM_C_D)
-                                                      0.027     6.712    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.607     6.185    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_clk_IBUF_BUFG
+    SLICE_X346Y512       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/and_ln1080_reg_1903_reg[0]/C
+                         clock pessimism              0.525     6.711    
+                         clock uncertainty           -0.035     6.675    
+    SLICE_X346Y512       FDRE (Setup_DFF_SLICEL_C_D)
+                                                      0.027     6.702    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/and_ln1080_reg_1903_reg[0]
   -------------------------------------------------------------------
-                         required time                          6.712    
-                         arrival time                          -6.877    
+                         required time                          6.702    
+                         arrival time                          -6.848    
   -------------------------------------------------------------------
-                         slack                                 -0.165    
+                         slack                                 -0.146    
 
-Slack (VIOLATED) :        -0.122ns  (required time - arrival time)
-  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+Slack (VIOLATED) :        -0.142ns  (required time - arrival time)
+  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[1]
+  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[3]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.520ns  (logic 1.543ns (61.230%)  route 0.977ns (38.770%))
-  Logic Levels:           5  (CARRY8=2 LUT4=1 LUT6=2)
-  Clock Path Skew:        -0.133ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.533ns = ( 6.533 - 3.000 ) 
-    Source Clock Delay      (SCD):    4.300ns
+  Data Path Delay:        2.537ns  (logic 1.626ns (64.091%)  route 0.911ns (35.909%))
+  Logic Levels:           5  (CARRY8=2 LUT6=3)
+  Clock Path Skew:        -0.136ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.531ns = ( 6.531 - 3.000 ) 
+    Source Clock Delay      (SCD):    4.301ns
     Clock Pessimism Removal (CPR):    0.634ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      3.412ns (routing 1.764ns, distribution 1.648ns)
-  Clock Net Delay (Destination): 2.955ns (routing 1.608ns, distribution 1.347ns)
+  Clock Net Delay (Source):      3.413ns (routing 1.764ns, distribution 1.649ns)
+  Clock Net Delay (Destination): 2.953ns (routing 1.608ns, distribution 1.345ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -648,28 +566,28 @@ Slack (VIOLATED) :        -0.122ns  (required time - arrival time)
                          net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.412     4.300    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.413     4.301    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X7Y99         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_DOUTADOUT[0])
-                                                      1.055     5.355 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTADOUT[0]
-                         net (fo=14, routed)          0.381     5.736    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTADOUT[0]
-    SLICE_X416Y494       LUT6 (Prop_A6LUT_SLICEL_I1_O)
-                                                      0.039     5.775 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0/O
-                         net (fo=1, routed)           0.011     5.786    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0_n_14
-    SLICE_X416Y494       CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
-                                                      0.238     6.024 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0/CO[7]
-                         net (fo=1, routed)           0.028     6.052    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0_n_14
-    SLICE_X416Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
-                                                      0.073     6.125 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_363__0/CO[2]
-                         net (fo=2, routed)           0.144     6.269    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_2_fu_505_p2
-    SLICE_X417Y495       LUT4 (Prop_G6LUT_SLICEL_I3_O)
-                                                      0.038     6.307 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_220__0_comp_1/O
-                         net (fo=1, routed)           0.112     6.419    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/lopt_3
-    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I4_O)
-                                                      0.100     6.519 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/i_0_LOPT_REMAP_comp_1/O
-                         net (fo=4, routed)           0.301     6.820    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEBWE[0]
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[1]
+    RAMB36_X7Y99         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKBWRCLK_DOUTBDOUT[9])
+                                                      0.963     5.264 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTBDOUT[9]
+                         net (fo=12, routed)          0.416     5.680    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTBDOUT[9]
+    SLICE_X417Y494       LUT6 (Prop_D6LUT_SLICEL_I1_O)
+                                                      0.116     5.796 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_487__0/O
+                         net (fo=1, routed)           0.010     5.806    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_487__0_n_14
+    SLICE_X417Y494       CARRY8 (Prop_CARRY8_SLICEL_S[3]_CO[7])
+                                                      0.195     6.001 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0/CO[7]
+                         net (fo=1, routed)           0.028     6.029    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_473__0_n_14
+    SLICE_X417Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
+                                                      0.073     6.102 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_458__0/CO[2]
+                         net (fo=1, routed)           0.170     6.272    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_3_fu_511_p2
+    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I1_O)
+                                                      0.179     6.451 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0/O
+                         net (fo=2, routed)           0.054     6.505    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_364__0_n_14
+    SLICE_X417Y497       LUT6 (Prop_E6LUT_SLICEL_I4_O)
+                                                      0.100     6.605 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81__1_comp/O
+                         net (fo=4, routed)           0.233     6.838    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
+    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[3]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -683,39 +601,39 @@ Slack (VIOLATED) :        -0.122ns  (required time - arrival time)
                          net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.955     6.533    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
-                         clock pessimism              0.634     7.168    
-                         clock uncertainty           -0.035     7.132    
-    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_WEBWE[1])
-                                                     -0.434     6.698    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.953     6.531    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+                         clock pessimism              0.634     7.166    
+                         clock uncertainty           -0.035     7.130    
+    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[3])
+                                                     -0.434     6.696    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
   -------------------------------------------------------------------
-                         required time                          6.698    
-                         arrival time                          -6.820    
+                         required time                          6.696    
+                         arrival time                          -6.838    
   -------------------------------------------------------------------
-                         slack                                 -0.122    
+                         slack                                 -0.142    
 
-Slack (VIOLATED) :        -0.120ns  (required time - arrival time)
-  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/ap_CS_fsm_reg[24]/C
+Slack (VIOLATED) :        -0.136ns  (required time - arrival time)
+  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ap_CS_fsm_reg[30]/C
                             (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[6]/D
-                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[0]
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        3.160ns  (logic 1.047ns (33.133%)  route 2.113ns (66.867%))
-  Logic Levels:           8  (CARRY8=4 LUT2=1 LUT3=1 LUT4=1 LUT5=1)
-  Clock Path Skew:        0.048ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.329ns = ( 6.329 - 3.000 ) 
-    Source Clock Delay      (SCD):    3.806ns
+  Data Path Delay:        2.692ns  (logic 0.665ns (24.703%)  route 2.027ns (75.297%))
+  Logic Levels:           6  (LUT2=1 LUT5=1 LUT6=4)
+  Clock Path Skew:        0.026ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.342ns = ( 6.342 - 3.000 ) 
+    Source Clock Delay      (SCD):    3.841ns
     Clock Pessimism Removal (CPR):    0.525ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      2.918ns (routing 1.764ns, distribution 1.154ns)
-  Clock Net Delay (Destination): 2.751ns (routing 1.608ns, distribution 1.143ns)
+  Clock Net Delay (Source):      2.953ns (routing 1.764ns, distribution 1.189ns)
+  Clock Net Delay (Destination): 2.764ns (routing 1.608ns, distribution 1.156ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -730,37 +648,31 @@ Slack (VIOLATED) :        -0.120ns  (required time - arrival time)
                          net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.918     3.806    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/ap_clk_IBUF_BUFG
-    SLICE_X342Y516       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/ap_CS_fsm_reg[24]/C
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.953     3.841    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ap_clk_IBUF_BUFG
+    SLICE_X345Y518       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ap_CS_fsm_reg[30]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X342Y516       FDRE (Prop_AFF_SLICEL_C_Q)
-                                                      0.096     3.902 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/ap_CS_fsm_reg[24]/Q
-                         net (fo=203, routed)         1.079     4.981    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/icmp_ln1502_1_reg_867_reg[0]_0[0]
-    SLICE_X368Y515       LUT3 (Prop_F5LUT_SLICEL_I1_O)
-                                                      0.205     5.186 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/empty_reg_775[3]_i_1__0/O
-                         net (fo=7, routed)           0.183     5.369    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/ppl_assign4_reg_1169_reg[31][3]
-    SLICE_X368Y515       LUT2 (Prop_D6LUT_SLICEL_I1_O)
-                                                      0.039     5.408 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903[10]_i_112__0/O
-                         net (fo=1, routed)           0.010     5.418    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903[10]_i_112__0_n_14
-    SLICE_X368Y515       CARRY8 (Prop_CARRY8_SLICEL_S[3]_CO[7])
-                                                      0.195     5.613 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[10]_i_67__0/CO[7]
-                         net (fo=1, routed)           0.028     5.641    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[10]_i_67__0_n_14
-    SLICE_X368Y516       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
-                                                      0.023     5.664 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[10]_i_65__0/CO[7]
-                         net (fo=1, routed)           0.028     5.692    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[10]_i_65__0_n_14
-    SLICE_X368Y517       CARRY8 (Prop_CARRY8_SLICEL_CI_O[4])
-                                                      0.109     5.801 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[10]_i_46__1/O[4]
-                         net (fo=2, routed)           0.345     6.146    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/grp_mSP_findLRBounds_fu_282/add_ln1507_fu_564_p2[20]
-    SLICE_X369Y515       LUT4 (Prop_C6LUT_SLICEL_I0_O)
-                                                      0.113     6.259 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/grp_mSP_findLRBounds_fu_282/temp_start_reg_903[10]_i_22__1/O
-                         net (fo=1, routed)           0.011     6.270    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/grp_mSP_findLRBounds_fu_282/temp_start_reg_903[10]_i_22__1_n_14
-    SLICE_X369Y515       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
-                                                      0.203     6.473 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/grp_mSP_findLRBounds_fu_282/temp_start_reg_903_reg[10]_i_3__1/CO[7]
-                         net (fo=11, routed)          0.371     6.844    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/grp_mSP_findLRBounds_fu_282/p_1_in
-    SLICE_X376Y514       LUT5 (Prop_H6LUT_SLICEL_I1_O)
-                                                      0.064     6.908 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/grp_mSP_findLRBounds_fu_282/temp_start_reg_903[6]_i_1__1/O
-                         net (fo=1, routed)           0.058     6.966    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_fu_625_p3[6]
-    SLICE_X376Y514       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[6]/D
+    SLICE_X345Y518       FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.096     3.937 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ap_CS_fsm_reg[30]/Q
+                         net (fo=16, routed)          0.266     4.203    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ap_CS_fsm_state31
+    SLICE_X344Y520       LUT6 (Prop_G6LUT_SLICEL_I1_O)
+                                                      0.178     4.381 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ram_reg_bram_1_i_46/O
+                         net (fo=1, routed)           0.334     4.715    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ram_reg_bram_1_i_46_n_14
+    SLICE_X347Y523       LUT5 (Prop_A6LUT_SLICEM_I2_O)
+                                                      0.150     4.865 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_getShadows_fu_517/ram_reg_bram_1_i_37/O
+                         net (fo=1, routed)           0.168     5.033    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_1_i_13_2
+    SLICE_X347Y526       LUT6 (Prop_A6LUT_SLICEM_I4_O)
+                                                      0.100     5.133 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_1_i_24/O
+                         net (fo=1, routed)           0.151     5.284    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_1_i_24_n_14
+    SLICE_X348Y527       LUT6 (Prop_A6LUT_SLICEL_I3_O)
+                                                      0.039     5.323 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_1_i_13/O
+                         net (fo=2, routed)           0.052     5.375    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_1_i_13_n_14
+    SLICE_X348Y527       LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.038     5.413 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_2_i_2/O
+                         net (fo=6, routed)           0.267     5.680    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_add_patch9_fu_433/ram_reg_bram_0
+    SLICE_X344Y532       LUT2 (Prop_B6LUT_SLICEL_I1_O)
+                                                      0.064     5.744 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_add_patch9_fu_433/ram_reg_bram_0_i_62__4/O
+                         net (fo=4, routed)           0.789     6.533    patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0_3[0]
+    RAMB36_X6Y106        RAMB36E2                                     r  patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[0]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -774,39 +686,39 @@ Slack (VIOLATED) :        -0.120ns  (required time - arrival time)
                          net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.751     6.329    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/ap_clk_IBUF_BUFG
-    SLICE_X376Y514       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[6]/C
-                         clock pessimism              0.525     6.854    
-                         clock uncertainty           -0.035     6.819    
-    SLICE_X376Y514       FDRE (Setup_HFF2_SLICEL_C_D)
-                                                      0.027     6.846    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makePatch_alignedToLine_fu_541/grp_makeSuperPoint_alignedToLine11_fu_414/temp_start_reg_903_reg[6]
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.764     6.342    patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X6Y106        RAMB36E2                                     r  patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
+                         clock pessimism              0.525     6.867    
+                         clock uncertainty           -0.035     6.832    
+    RAMB36_X6Y106        RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_WEBWE[0])
+                                                     -0.434     6.398    patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0
   -------------------------------------------------------------------
-                         required time                          6.846    
-                         arrival time                          -6.966    
+                         required time                          6.398    
+                         arrival time                          -6.533    
   -------------------------------------------------------------------
-                         slack                                 -0.120    
+                         slack                                 -0.136    
 
-Slack (VIOLATED) :        -0.117ns  (required time - arrival time)
-  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[0]
+Slack (VIOLATED) :        -0.133ns  (required time - arrival time)
+  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2/WEA[2]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.515ns  (logic 1.543ns (61.352%)  route 0.972ns (38.648%))
-  Logic Levels:           5  (CARRY8=2 LUT4=1 LUT6=2)
-  Clock Path Skew:        -0.133ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.533ns = ( 6.533 - 3.000 ) 
-    Source Clock Delay      (SCD):    4.300ns
-    Clock Pessimism Removal (CPR):    0.634ns
+  Data Path Delay:        2.458ns  (logic 0.598ns (24.329%)  route 1.860ns (75.671%))
+  Logic Levels:           5  (LUT3=1 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.205ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.345ns = ( 6.345 - 3.000 ) 
+    Source Clock Delay      (SCD):    4.074ns
+    Clock Pessimism Removal (CPR):    0.523ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      3.412ns (routing 1.764ns, distribution 1.648ns)
-  Clock Net Delay (Destination): 2.955ns (routing 1.608ns, distribution 1.347ns)
+  Clock Net Delay (Source):      3.186ns (routing 1.764ns, distribution 1.422ns)
+  Clock Net Delay (Destination): 2.767ns (routing 1.608ns, distribution 1.159ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -821,28 +733,28 @@ Slack (VIOLATED) :        -0.117ns  (required time - arrival time)
                          net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.412     4.300    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.186     4.074    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_clk_IBUF_BUFG
+    SLICE_X347Y515       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
   -------------------------------------------------------------------    -------------------
-    RAMB36_X7Y99         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_DOUTADOUT[0])
-                                                      1.055     5.355 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTADOUT[0]
-                         net (fo=14, routed)          0.381     5.736    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTADOUT[0]
-    SLICE_X416Y494       LUT6 (Prop_A6LUT_SLICEL_I1_O)
-                                                      0.039     5.775 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0/O
-                         net (fo=1, routed)           0.011     5.786    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0_n_14
-    SLICE_X416Y494       CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
-                                                      0.238     6.024 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0/CO[7]
-                         net (fo=1, routed)           0.028     6.052    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0_n_14
-    SLICE_X416Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
-                                                      0.073     6.125 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_363__0/CO[2]
-                         net (fo=2, routed)           0.144     6.269    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_2_fu_505_p2
-    SLICE_X417Y495       LUT4 (Prop_G6LUT_SLICEL_I3_O)
-                                                      0.038     6.307 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_220__0_comp_1/O
-                         net (fo=1, routed)           0.112     6.419    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/lopt_3
-    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I4_O)
-                                                      0.100     6.519 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/i_0_LOPT_REMAP_comp_1/O
-                         net (fo=4, routed)           0.296     6.815    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEBWE[0]
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[0]
+    SLICE_X347Y515       FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.096     4.170 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/Q
+                         net (fo=7, routed)           0.192     4.362    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_state82
+    SLICE_X347Y512       LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.148     4.510 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/i___158_i_6/O
+                         net (fo=123, routed)         0.272     4.782    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/ram_reg_bram_5_2
+    SLICE_X343Y512       LUT6 (Prop_A6LUT_SLICEL_I5_O)
+                                                      0.039     4.821 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_5_LOPT_REMAP/O
+                         net (fo=1, routed)           0.185     5.006    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_5/O_n
+    SLICE_X343Y507       LUT5 (Prop_E6LUT_SLICEL_I3_O)
+                                                      0.100     5.106 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_4_LOPT_REMAP_2/O
+                         net (fo=1, routed)           0.101     5.207    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_4/O_n_2
+    SLICE_X344Y507       LUT6 (Prop_A6LUT_SLICEL_I4_O)
+                                                      0.115     5.322 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_0_LOPT_REMAP_2/O
+                         net (fo=11, routed)          0.749     6.071    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_areWedgeSuperPointsEqual_fu_600/ram_reg_bram_2
+    SLICE_X351Y501       LUT3 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.100     6.171 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_areWedgeSuperPointsEqual_fu_600/ram_reg_bram_2_i_5/O
+                         net (fo=4, routed)           0.361     6.532    patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2_4[0]
+    RAMB36_X6Y99         RAMB36E2                                     r  patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2/WEA[2]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -856,39 +768,39 @@ Slack (VIOLATED) :        -0.117ns  (required time - arrival time)
                          net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.955     6.533    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
-                         clock pessimism              0.634     7.168    
-                         clock uncertainty           -0.035     7.132    
-    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_WEBWE[0])
-                                                     -0.434     6.698    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.767     6.345    patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X6Y99         RAMB36E2                                     r  patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2/CLKARDCLK
+                         clock pessimism              0.523     6.869    
+                         clock uncertainty           -0.035     6.833    
+    RAMB36_X6Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[2])
+                                                     -0.434     6.399    patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2
   -------------------------------------------------------------------
-                         required time                          6.698    
-                         arrival time                          -6.815    
+                         required time                          6.399    
+                         arrival time                          -6.532    
   -------------------------------------------------------------------
-                         slack                                 -0.117    
+                         slack                                 -0.133    
 
-Slack (VIOLATED) :        -0.109ns  (required time - arrival time)
-  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[3]
+Slack (VIOLATED) :        -0.131ns  (required time - arrival time)
+  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0/ADDRBWRADDR[9]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.507ns  (logic 1.543ns (61.548%)  route 0.964ns (38.452%))
-  Logic Levels:           5  (CARRY8=2 LUT4=1 LUT6=2)
-  Clock Path Skew:        -0.133ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.533ns = ( 6.533 - 3.000 ) 
-    Source Clock Delay      (SCD):    4.300ns
-    Clock Pessimism Removal (CPR):    0.634ns
+  Data Path Delay:        2.553ns  (logic 0.654ns (25.617%)  route 1.899ns (74.383%))
+  Logic Levels:           6  (LUT4=2 LUT6=4)
+  Clock Path Skew:        -0.208ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.342ns = ( 6.342 - 3.000 ) 
+    Source Clock Delay      (SCD):    4.074ns
+    Clock Pessimism Removal (CPR):    0.523ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      3.412ns (routing 1.764ns, distribution 1.648ns)
-  Clock Net Delay (Destination): 2.955ns (routing 1.608ns, distribution 1.347ns)
+  Clock Net Delay (Source):      3.186ns (routing 1.764ns, distribution 1.422ns)
+  Clock Net Delay (Destination): 2.764ns (routing 1.608ns, distribution 1.156ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -903,28 +815,31 @@ Slack (VIOLATED) :        -0.109ns  (required time - arrival time)
                          net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.412     4.300    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.186     4.074    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_clk_IBUF_BUFG
+    SLICE_X347Y515       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
   -------------------------------------------------------------------    -------------------
-    RAMB36_X7Y99         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_DOUTADOUT[0])
-                                                      1.055     5.355 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTADOUT[0]
-                         net (fo=14, routed)          0.381     5.736    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTADOUT[0]
-    SLICE_X416Y494       LUT6 (Prop_A6LUT_SLICEL_I1_O)
-                                                      0.039     5.775 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0/O
-                         net (fo=1, routed)           0.011     5.786    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0_n_14
-    SLICE_X416Y494       CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
-                                                      0.238     6.024 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0/CO[7]
-                         net (fo=1, routed)           0.028     6.052    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0_n_14
-    SLICE_X416Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
-                                                      0.073     6.125 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_363__0/CO[2]
-                         net (fo=2, routed)           0.144     6.269    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_2_fu_505_p2
-    SLICE_X417Y495       LUT4 (Prop_G6LUT_SLICEL_I3_O)
-                                                      0.038     6.307 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_220__0_comp_1/O
-                         net (fo=1, routed)           0.112     6.419    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/lopt_3
-    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I4_O)
-                                                      0.100     6.519 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/i_0_LOPT_REMAP_comp_1/O
-                         net (fo=4, routed)           0.288     6.807    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEBWE[0]
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[3]
+    SLICE_X347Y515       FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.096     4.170 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/Q
+                         net (fo=7, routed)           0.192     4.362    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_state82
+    SLICE_X347Y512       LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.148     4.510 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/i___158_i_6/O
+                         net (fo=123, routed)         0.271     4.781    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/ram_reg_bram_0_34
+    SLICE_X344Y513       LUT4 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.115     4.896 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_14_LOPT_REMAP_2/O
+                         net (fo=1, routed)           0.191     5.087    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_14/O_n_2
+    SLICE_X344Y519       LUT6 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.039     5.126 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_12_LOPT_REMAP_2/O
+                         net (fo=1, routed)           0.112     5.238    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_12/O_n_2
+    SLICE_X344Y521       LUT6 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.039     5.277 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_9_LOPT_REMAP_3/O
+                         net (fo=1, routed)           0.048     5.325    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_9/O_n_3
+    SLICE_X344Y521       LUT6 (Prop_C6LUT_SLICEL_I4_O)
+                                                      0.038     5.363 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_6_LOPT_REMAP_4/O
+                         net (fo=1, routed)           0.251     5.614    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_6/O_n_4
+    SLICE_X347Y523       LUT6 (Prop_G6LUT_SLICEM_I3_O)
+                                                      0.179     5.793 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_delete_patch_fu_533/i_0_LOPT_REMAP_5/O
+                         net (fo=4, routed)           0.834     6.627    patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/patches_parameters_V_address0[5]
+    RAMB36_X6Y106        RAMB36E2                                     r  patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0/ADDRBWRADDR[9]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -938,39 +853,39 @@ Slack (VIOLATED) :        -0.109ns  (required time - arrival time)
                          net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.955     6.533    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
-                         clock pessimism              0.634     7.168    
-                         clock uncertainty           -0.035     7.132    
-    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_WEBWE[3])
-                                                     -0.434     6.698    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.764     6.342    patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X6Y106        RAMB36E2                                     r  patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
+                         clock pessimism              0.523     6.866    
+                         clock uncertainty           -0.035     6.830    
+    RAMB36_X6Y106        RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_ADDRBWRADDR[9])
+                                                     -0.334     6.496    patches_parameters_V_U/MPSQ_patches_parameters_V_ram_U/ram_reg_bram_0
   -------------------------------------------------------------------
-                         required time                          6.698    
-                         arrival time                          -6.807    
+                         required time                          6.496    
+                         arrival time                          -6.627    
   -------------------------------------------------------------------
-                         slack                                 -0.109    
+                         slack                                 -0.131    
 
-Slack (VIOLATED) :        -0.107ns  (required time - arrival time)
-  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
-  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[2]
+Slack (VIOLATED) :        -0.125ns  (required time - arrival time)
+  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2/WEA[3]
                             (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
   Path Group:             ap_clk
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
-  Data Path Delay:        2.505ns  (logic 1.543ns (61.597%)  route 0.962ns (38.403%))
-  Logic Levels:           5  (CARRY8=2 LUT4=1 LUT6=2)
-  Clock Path Skew:        -0.133ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    3.533ns = ( 6.533 - 3.000 ) 
-    Source Clock Delay      (SCD):    4.300ns
-    Clock Pessimism Removal (CPR):    0.634ns
+  Data Path Delay:        2.450ns  (logic 0.598ns (24.408%)  route 1.852ns (75.592%))
+  Logic Levels:           5  (LUT3=1 LUT4=1 LUT5=1 LUT6=2)
+  Clock Path Skew:        -0.205ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.345ns = ( 6.345 - 3.000 ) 
+    Source Clock Delay      (SCD):    4.074ns
+    Clock Pessimism Removal (CPR):    0.523ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
     Discrete Jitter          (DJ):    0.000ns
     Phase Error              (PE):    0.000ns
-  Clock Net Delay (Source):      3.412ns (routing 1.764ns, distribution 1.648ns)
-  Clock Net Delay (Destination): 2.955ns (routing 1.608ns, distribution 1.347ns)
+  Clock Net Delay (Source):      3.186ns (routing 1.764ns, distribution 1.422ns)
+  Clock Net Delay (Destination): 2.767ns (routing 1.608ns, distribution 1.159ns)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
@@ -985,28 +900,28 @@ Slack (VIOLATED) :        -0.107ns  (required time - arrival time)
                          net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.412     4.300    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.186     4.074    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_clk_IBUF_BUFG
+    SLICE_X347Y515       FDRE                                         r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/C
   -------------------------------------------------------------------    -------------------
-    RAMB36_X7Y99         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_DOUTADOUT[0])
-                                                      1.055     5.355 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTADOUT[0]
-                         net (fo=14, routed)          0.381     5.736    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTADOUT[0]
-    SLICE_X416Y494       LUT6 (Prop_A6LUT_SLICEL_I1_O)
-                                                      0.039     5.775 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0/O
-                         net (fo=1, routed)           0.011     5.786    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_472__0_n_14
-    SLICE_X416Y494       CARRY8 (Prop_CARRY8_SLICEL_S[0]_CO[7])
-                                                      0.238     6.024 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0/CO[7]
-                         net (fo=1, routed)           0.028     6.052    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454__0_n_14
-    SLICE_X416Y495       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
-                                                      0.073     6.125 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_363__0/CO[2]
-                         net (fo=2, routed)           0.144     6.269    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_2_fu_505_p2
-    SLICE_X417Y495       LUT4 (Prop_G6LUT_SLICEL_I3_O)
-                                                      0.038     6.307 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_220__0_comp_1/O
-                         net (fo=1, routed)           0.112     6.419    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/lopt_3
-    SLICE_X417Y497       LUT6 (Prop_H6LUT_SLICEL_I4_O)
-                                                      0.100     6.519 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/grp_wedgePatch_init_fu_404/grp_getParallelograms_fu_239/i_0_LOPT_REMAP_comp_1/O
-                         net (fo=4, routed)           0.286     6.805    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEBWE[0]
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEBWE[2]
+    SLICE_X347Y515       FDRE (Prop_DFF_SLICEM_C_Q)
+                                                      0.096     4.170 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_reg[81]/Q
+                         net (fo=7, routed)           0.192     4.362    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/ap_CS_fsm_state82
+    SLICE_X347Y512       LUT4 (Prop_E6LUT_SLICEM_I0_O)
+                                                      0.148     4.510 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/i___158_i_6/O
+                         net (fo=123, routed)         0.272     4.782    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/ram_reg_bram_5_2
+    SLICE_X343Y512       LUT6 (Prop_A6LUT_SLICEL_I5_O)
+                                                      0.039     4.821 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_5_LOPT_REMAP/O
+                         net (fo=1, routed)           0.185     5.006    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_5/O_n
+    SLICE_X343Y507       LUT5 (Prop_E6LUT_SLICEL_I3_O)
+                                                      0.100     5.106 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_4_LOPT_REMAP_2/O
+                         net (fo=1, routed)           0.101     5.207    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_4/O_n_2
+    SLICE_X344Y507       LUT6 (Prop_A6LUT_SLICEL_I4_O)
+                                                      0.115     5.322 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_add_patch9_fu_433/i_0_LOPT_REMAP_2/O
+                         net (fo=11, routed)          0.749     6.071    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_areWedgeSuperPointsEqual_fu_600/ram_reg_bram_2
+    SLICE_X351Y501       LUT3 (Prop_A6LUT_SLICEL_I0_O)
+                                                      0.100     6.171 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_areWedgeSuperPointsEqual_fu_600/ram_reg_bram_2_i_5/O
+                         net (fo=4, routed)           0.353     6.524    patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2_4[0]
+    RAMB36_X6Y99         RAMB36E2                                     r  patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2/WEA[3]
   -------------------------------------------------------------------    -------------------
 
                          (clock ap_clk rise edge)     3.000     3.000 r  
@@ -1020,17 +935,99 @@ Slack (VIOLATED) :        -0.107ns  (required time - arrival time)
                          net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
     BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
                                                       0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
-    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.955     6.533    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
-    RAMB36_X7Y99         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKBWRCLK
-                         clock pessimism              0.634     7.168    
-                         clock uncertainty           -0.035     7.132    
-    RAMB36_X7Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKBWRCLK_WEBWE[2])
-                                                     -0.434     6.698    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_solveComplmentaryPatch_fu_508/grp_makePatch_alignedToLine_fu_649/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.767     6.345    patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X6Y99         RAMB36E2                                     r  patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2/CLKARDCLK
+                         clock pessimism              0.523     6.869    
+                         clock uncertainty           -0.035     6.833    
+    RAMB36_X6Y99         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[3])
+                                                     -0.434     6.399    patches_superpoints_V_U/MPSQ_patches_superpoints_V_ram_U/ram_reg_bram_2
   -------------------------------------------------------------------
-                         required time                          6.698    
-                         arrival time                          -6.805    
+                         required time                          6.399    
+                         arrival time                          -6.524    
   -------------------------------------------------------------------
-                         slack                                 -0.107    
+                         slack                                 -0.125    
+
+Slack (VIOLATED) :        -0.121ns  (required time - arrival time)
+  Source:                 grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Destination:            grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[0]
+                            (rising edge-triggered cell RAMB36E2 clocked by ap_clk  {rise@0.000ns fall@1.500ns period=3.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            3.000ns  (ap_clk rise@3.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.610ns  (logic 1.552ns (59.464%)  route 1.058ns (40.536%))
+  Logic Levels:           5  (CARRY8=2 LUT4=1 LUT6=2)
+  Clock Path Skew:        -0.042ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    3.342ns = ( 6.342 - 3.000 ) 
+    Source Clock Delay      (SCD):    4.078ns
+    Clock Pessimism Removal (CPR):    0.694ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.190ns (routing 1.764ns, distribution 1.426ns)
+  Clock Net Delay (Destination): 2.764ns (routing 1.608ns, distribution 1.156ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+    AU48                                              0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     0.000    ap_clk_IBUF_inst/I
+    AU48                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.525     0.525 r  ap_clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     0.525    ap_clk_IBUF_inst/OUT
+    AU48                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     0.525 r  ap_clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.335     0.860    ap_clk_IBUF
+    BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.888 r  ap_clk_IBUF_BUFG_inst/O
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       3.190     4.078    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X6Y96         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X6Y96         RAMB36E2 (Prop_RAMB36E2_RAMB36_CLKARDCLK_DOUTADOUT[14])
+                                                      0.968     5.046 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/DOUTADOUT[14]
+                         net (fo=8, routed)           0.508     5.554    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/DOUTADOUT[14]
+    SLICE_X354Y479       LUT6 (Prop_E6LUT_SLICEL_I2_O)
+                                                      0.100     5.654 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_468/O
+                         net (fo=1, routed)           0.008     5.662    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_468_n_14
+    SLICE_X354Y479       CARRY8 (Prop_CARRY8_SLICEL_S[4]_CO[7])
+                                                      0.195     5.857 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454/CO[7]
+                         net (fo=1, routed)           0.028     5.885    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_454_n_14
+    SLICE_X354Y480       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[2])
+                                                      0.073     5.958 f  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_363/CO[2]
+                         net (fo=2, routed)           0.176     6.134    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/icmp_ln874_2_fu_505_p2
+    SLICE_X352Y480       LUT4 (Prop_B6LUT_SLICEL_I3_O)
+                                                      0.177     6.311 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_220_comp_1/O
+                         net (fo=1, routed)           0.109     6.420    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_220_n_14
+    SLICE_X352Y482       LUT6 (Prop_E6LUT_SLICEL_I2_O)
+                                                      0.039     6.459 r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/grp_wedgePatch_init_fu_404/grp_get_acceptanceCorners_fu_249/ram_reg_bram_0_i_81_comp/O
+                         net (fo=4, routed)           0.229     6.688    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/WEA[0]
+    RAMB36_X6Y96         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/WEA[0]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     3.000     3.000 r  
+    AU48                                              0.000     3.000 r  ap_clk (IN)
+                         net (fo=0)                   0.000     3.000    ap_clk_IBUF_inst/I
+    AU48                 INBUF (Prop_INBUF_HPIOB_M_PAD_O)
+                                                      0.258     3.258 r  ap_clk_IBUF_inst/INBUF_INST/O
+                         net (fo=1, routed)           0.000     3.258    ap_clk_IBUF_inst/OUT
+    AU48                 IBUFCTRL (Prop_IBUFCTRL_HPIOB_M_I_O)
+                                                      0.000     3.258 r  ap_clk_IBUF_inst/IBUFCTRL_INST/O
+                         net (fo=1, routed)           0.296     3.554    ap_clk_IBUF
+    BUFGCE_X0Y192        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     3.578 r  ap_clk_IBUF_BUFG_inst/O
+    X6Y8 (CLOCK_ROOT)    net (fo=23567, routed)       2.764     6.342    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ap_clk_IBUF_BUFG
+    RAMB36_X6Y96         RAMB36E2                                     r  grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0/CLKARDCLK
+                         clock pessimism              0.694     7.036    
+                         clock uncertainty           -0.035     7.001    
+    RAMB36_X6Y96         RAMB36E2 (Setup_RAMB36E2_RAMB36_CLKARDCLK_WEA[0])
+                                                     -0.434     6.567    grp_solveNextColumn_fu_336/grp_solveNextPatchPair_fu_190/grp_makeThirdPatch_fu_481/grp_makePatch_alignedToLine_fu_494/NPpatches_parameters_V_U/MPSQ_makePatch_alignedToLine_NPpatches_parameters_V_ram_U/ram_reg_bram_0
+  -------------------------------------------------------------------
+                         required time                          6.567    
+                         arrival time                          -6.688    
+  -------------------------------------------------------------------
+                         slack                                 -0.121    
 
 
 
